@@ -13,6 +13,6 @@ window.SBG_CONFIG = {
   links: {
     crm: "",
     hosting: "",
-    "business-software": ""
+    "business-software": "",
+    "email-marketing": ""
   }
-};
