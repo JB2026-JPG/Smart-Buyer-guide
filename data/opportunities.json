@@ -1,6 +1,179 @@
 {
-  "generatedAt": null,
-  "mode": "waiting-for-github-action",
+  "generatedAt": "2026-08-31T00:50:46.231Z",
+  "mode": "scheduled-public-api",
   "source": "Stack Exchange API v2.3 / Software Recommendations",
-  "opportunities": []
+  "opportunities": [
+    {
+      "id": "95480",
+      "text": "Looking for a free/open-source VS Code AI coding assistant similar to GitHub Copilot or Codex with no strict usage limits",
+      "url": "https://softwarerecs.stackexchange.com/questions/95480/looking-for-a-free-open-source-vs-code-ai-coding-assistant-similar-to-github-cop",
+      "source": "Stack Exchange / Software Recommendations",
+      "createdAt": "2026-07-13T07:24:09.000Z",
+      "topic": "business-software",
+      "score": 59,
+      "status": "RESEARCH",
+      "matched": {
+        "strong": [
+          "looking for",
+          "vs"
+        ],
+        "medium": [],
+        "urgent": [],
+        "info": []
+      }
+    },
+    {
+      "id": "95546",
+      "text": "What are the best alternatives when Zoho Payroll is not available in your country?",
+      "url": "https://softwarerecs.stackexchange.com/questions/95546/what-are-the-best-alternatives-when-zoho-payroll-is-not-available-in-your-countr",
+      "source": "Stack Exchange / Software Recommendations",
+      "createdAt": "2026-08-25T12:12:36.000Z",
+      "topic": "business-software",
+      "score": 49,
+      "status": "RESEARCH",
+      "matched": {
+        "strong": [
+          "alternative"
+        ],
+        "medium": [
+          "best"
+        ],
+        "urgent": [],
+        "info": []
+      }
+    },
+    {
+      "id": "95540",
+      "text": "Alternative to Docker Content Trust (and cosign)?",
+      "url": "https://softwarerecs.stackexchange.com/questions/95540/alternative-to-docker-content-trust-and-cosign",
+      "source": "Stack Exchange / Software Recommendations",
+      "createdAt": "2026-08-23T20:07:05.000Z",
+      "topic": "business-software",
+      "score": 49,
+      "status": "RESEARCH",
+      "matched": {
+        "strong": [
+          "alternative"
+        ],
+        "medium": [
+          "alternative to"
+        ],
+        "urgent": [],
+        "info": []
+      }
+    },
+    {
+      "id": "95397",
+      "text": "Looking for Open source business apps - NextJS React TypeScript MUI MongoDB",
+      "url": "https://softwarerecs.stackexchange.com/questions/95397/looking-for-open-source-business-apps-nextjs-react-typescript-mui-mongodb",
+      "source": "Stack Exchange / Software Recommendations",
+      "createdAt": "2026-05-18T04:06:11.000Z",
+      "topic": "business-software",
+      "score": 37,
+      "status": "RESEARCH",
+      "matched": {
+        "strong": [
+          "looking for"
+        ],
+        "medium": [],
+        "urgent": [],
+        "info": []
+      }
+    },
+    {
+      "id": "95393",
+      "text": "Alternatives to Git or tools built on top of Git that separate whitespace, comment characters and code",
+      "url": "https://softwarerecs.stackexchange.com/questions/95393/alternatives-to-git-or-tools-built-on-top-of-git-that-separate-whitespace-comme",
+      "source": "Stack Exchange / Software Recommendations",
+      "createdAt": "2026-05-16T09:57:48.000Z",
+      "topic": "business-software",
+      "score": 37,
+      "status": "RESEARCH",
+      "matched": {
+        "strong": [
+          "alternative"
+        ],
+        "medium": [],
+        "urgent": [],
+        "info": []
+      }
+    },
+    {
+      "id": "95367",
+      "text": "OCR software for math texts with selective font replacement based on confidence scores",
+      "url": "https://softwarerecs.stackexchange.com/questions/95367/ocr-software-for-math-texts-with-selective-font-replacement-based-on-confidence",
+      "source": "Stack Exchange / Software Recommendations",
+      "createdAt": "2026-05-05T06:50:10.000Z",
+      "topic": "business-software",
+      "score": 37,
+      "status": "RESEARCH",
+      "matched": {
+        "strong": [
+          "replacement"
+        ],
+        "medium": [],
+        "urgent": [],
+        "info": []
+      }
+    },
+    {
+      "id": "95365",
+      "text": "Is there a vscode or IntelliJ plugin that allows me to do inline code completion with a local model that does not come with an agent?",
+      "url": "https://softwarerecs.stackexchange.com/questions/95365/is-there-a-vscode-or-intellij-plugin-that-allows-me-to-do-inline-code-completion",
+      "source": "Stack Exchange / Software Recommendations",
+      "createdAt": "2026-05-03T10:03:47.000Z",
+      "topic": "business-software",
+      "score": 37,
+      "status": "RESEARCH",
+      "matched": {
+        "strong": [
+          "vs"
+        ],
+        "medium": [],
+        "urgent": [],
+        "info": []
+      }
+    },
+    {
+      "id": "95443",
+      "text": "FOSS alternative for fullpagepdf.com",
+      "url": "https://softwarerecs.stackexchange.com/questions/95443/foss-alternative-for-fullpagepdf-com",
+      "source": "Stack Exchange / Software Recommendations",
+      "createdAt": "2026-06-14T15:52:18.000Z",
+      "topic": "business-software",
+      "score": 32,
+      "status": "RESEARCH",
+      "matched": {
+        "strong": [
+          "alternative"
+        ],
+        "medium": [],
+        "urgent": [],
+        "info": []
+      }
+    },
+    {
+      "id": "95488",
+      "text": "Best workflow to import Parasolid (.x_t) CAD models into Blender for Unity?",
+      "url": "https://softwarerecs.stackexchange.com/questions/95488/best-workflow-to-import-parasolid-x-t-cad-models-into-blender-for-unity",
+      "source": "Stack Exchange / Software Recommendations",
+      "createdAt": "2026-07-16T12:12:34.000Z",
+      "topic": "business-software",
+      "score": 27,
+      "status": "RESEARCH",
+      "matched": {
+        "strong": [],
+        "medium": [
+          "best"
+        ],
+        "urgent": [],
+        "info": []
+      }
+    }
+  ],
+  "safety": {
+    "schedule": "every 30 minutes",
+    "maxItems": 50,
+    "publicDataOnly": true
+  }
 }
