@@ -1,0 +1,45 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Demand Finder Dashboard | Smart Buyer Guide</title><meta name="description" content="Live public-demand research dashboard for Smart Buyer Guide."><link rel="stylesheet" href="style.css"><link rel="icon" href="favicon.svg" type="image/svg+xml"></head><body><main class="wrap"><nav class="nav"><a class="brand" href="index.html">Smart Buyer Guide</a><div class="navlinks"><a href="index.html">Home</a><a href="machine.html">Machine</a><a href="how-it-works.html">Method</a></div></nav>
+<section class="hero"><div class="eyebrow">DEMAND FINDER</div><h1>Find public buying signals.</h1><p class="lead">The machine reads public Software Recommendations questions, scores commercial intent, routes the strongest signals and presents a relevant affiliate CTA when you have configured an approved link.</p><div class="notice"><b>Important:</b> These are research signals, not confirmed buyers. The system does not contact, message, profile or identify question authors.</div></section>
+<section class="section"><div class="grid"><div class="card"><span class="pill">PUBLIC SIGNALS</span><div class="stat" id="found">—</div><div class="muted">signals returned by the source</div></div><div class="card"><span class="pill">QUALIFIED</span><div class="stat" id="count">—</div><div class="muted">RESEARCH + TEST NOW</div></div><div class="card"><span class="pill">LAST RUN</span><div class="stat" style="font-size:20px" id="last">—</div><div class="muted">stored in this browser</div></div></div></section>
+<section class="section"><div class="card"><div class="actions"><button class="btn" id="run">Run Demand Finder now</button><button class="btn secondary" id="clear">Clear cached results</button></div><p id="status" class="notice" style="margin-bottom:0">Ready. Click “Run Demand Finder now” to query the public source.</p></div></section>
+<section class="section"><div class="card"><h2>Affiliate link</h2><p class="muted">The website uses the link from <code>affiliate-config.js</code>. You only need to paste your approved HTTPS tracking URL there before uploading. This browser does not save a private affiliate secret.</p><div id="affiliateState" class="notice"></div><p class="small muted">For category-specific offers, you can optionally add CRM, hosting or business-software links in the same file. The default link is used when a category-specific link is empty.</p></div></section>
+<section class="section"><h2>Highest-intent opportunities</h2><div id="list" class="card"><div class="empty">No results yet. Run the Demand Finder.</div></div></section>
+</main><footer class="wrap">Smart Buyer Guide · Public-data research only. Affiliate relationships are disclosed. Verify current prices, features and terms with the provider before purchasing. · <a href="affiliate-disclosure.html">Affiliate disclosure</a> · <a href="privacy.html">Privacy</a></footer>
+<script src="affiliate-config.js"></script><script src="site-config.js"></script><script src="demand-finder.js"></script><script>
+const esc=s=>String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+const fmt=d=>d?new Date(d).toLocaleString():"—";
+function render(data){
+  const a=data?.opportunities||[];
+  document.getElementById('found').textContent=a.length;
+  document.getElementById('count').textContent=a.filter(x=>x.status==='TEST NOW').length;
+  document.getElementById('last').textContent=fmt(data?.generatedAt);
+  const configured=!!SBG.affiliateLink('business-software');
+  document.getElementById('affiliateState').innerHTML=configured?'<b>Affiliate CTA ready.</b> Approved HTTPS link detected.':'<b>No affiliate link yet.</b> That is OK: publish the site first, then paste your approved HTTPS tracking link into affiliate-config.js.';
+  document.getElementById('list').innerHTML=a.length?a.map(x=>{const aff=SBG.affiliateLink(x.topic);const scoreClass=x.score>=60?'score-high':'score-mid';return `<div class="op"><span class="pill">${esc(x.status)} · ${esc(x.topic)}</span><h3>${esc(x.text)}</h3><p class="muted small">Score <span class="score ${scoreClass}">${x.score}/100</span> · ${esc(x.source)} · ${esc(fmt(x.createdAt))}</p><div class="actions"><a class="btn secondary" href="${esc(x.url)}" target="_blank" rel="noopener noreferrer">View public question</a>${aff?`<a class="btn" href="${esc(aff)}" target="_blank" rel="nofollow sponsored noopener">Check the relevant option</a>`:'<span class="muted small">Affiliate link not configured yet.</span>'}</div></div>`}).join(''):'<div class="empty">No qualified opportunities are cached yet.</div>';
+}
+function setStatus(text,success=false){const s=document.getElementById('status');s.className=success?'notice success':'notice';s.textContent=text;}
+async function loadPublishedData(){
+  const url=(window.SBG_SITE_CONFIG&&window.SBG_SITE_CONFIG.demandDataUrl)||'';
+  if(!url) return null;
+  const r=await fetch(url,{cache:'no-store'});
+  if(!r.ok) throw new Error('Published demand data is temporarily unavailable.');
+  return await r.json();
+}
+async function start(){
+  const bundled=SBG.loadCached();
+  render(bundled);
+  const url=(window.SBG_SITE_CONFIG&&window.SBG_SITE_CONFIG.demandDataUrl)||'';
+  if(url){
+    try{
+      const data=await loadPublishedData();
+      render(data);
+      setStatus(`Automatic Demand Finder data loaded. Last background run: ${fmt(data.generatedAt)}.`,true);
+    }catch(e){setStatus('Background demand data is temporarily unavailable. The site remains fully usable.');}
+  } else {
+    setStatus('Website is live. Background Demand Finder will appear after the one-time public GitHub data URL is configured.',true);
+  }
+}
+document.getElementById('run').onclick=async()=>{try{const data=await loadPublishedData();if(data){render(data);setStatus(`Latest background data loaded: ${fmt(data.generatedAt)}.`,true);}else setStatus('The automatic background finder is configured through GitHub Actions. Configure the public GitHub data URL first.');}catch(e){setStatus(e.message||'Background data is temporarily unavailable.');}};
+document.getElementById('clear').onclick=()=>{localStorage.removeItem('sbg_opportunities_v2');render({opportunities:[]});setStatus('Cached results cleared. The safety limit is unchanged.');};
+start();
+</script></body></html>
