@@ -1,7 +1,16 @@
 {
-  "generatedAt": "2026-09-01T19:51:26.117Z",
+  "generatedAt": "2026-09-01T20:25:35.998Z",
   "mode": "scheduled-public-api",
   "opportunities": [
+    {
+      "id": 461449,
+      "title": "Is there a standard, or commonly-used, format for serialized/&#39;stored&#39;/&#39;dumped&#39; function invocation?",
+      "link": "https://softwareengineering.stackexchange.com/questions/461449/is-there-a-standard-or-commonly-used-format-for-serialized-stored-dumped-f",
+      "score": 15,
+      "intentScore": 15,
+      "intentStatus": "DROP",
+      "topic": "Business Software"
+    },
     {
       "id": 365427,
       "title": "Try/Catch/Log/Rethrow - Is this an Anti Pattern?",
@@ -69,15 +78,6 @@
       "id": 304921,
       "title": "Is it better to start a Pull Request or perform a local merge commit on master?",
       "link": "https://softwareengineering.stackexchange.com/questions/304921/is-it-better-to-start-a-pull-request-or-perform-a-local-merge-commit-on-master",
-      "score": 15,
-      "intentScore": 15,
-      "intentStatus": "DROP",
-      "topic": "Business Software"
-    },
-    {
-      "id": 461449,
-      "title": "Is there a standard, or commonly-used, format for serialized/&#39;stored&#39;/&#39;dumped&#39; function invocation?",
-      "link": "https://softwareengineering.stackexchange.com/questions/461449/is-there-a-standard-or-commonly-used-format-for-serialized-stored-dumped-f",
       "score": 15,
       "intentScore": 15,
       "intentStatus": "DROP",
