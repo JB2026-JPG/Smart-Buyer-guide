@@ -1,7 +1,25 @@
 {
-  "generatedAt": "2026-09-01T16:56:29.110Z",
+  "generatedAt": "2026-09-01T17:25:36.786Z",
   "mode": "scheduled-public-api",
   "opportunities": [
+    {
+      "id": 365427,
+      "title": "Try/Catch/Log/Rethrow - Is this an Anti Pattern?",
+      "link": "https://softwareengineering.stackexchange.com/questions/365427/try-catch-log-rethrow-is-this-an-anti-pattern",
+      "score": 15,
+      "intentScore": 15,
+      "intentStatus": "DROP",
+      "topic": "Business Software"
+    },
+    {
+      "id": 205646,
+      "title": "In Java, why were protected members made accessible to classes of the same package?",
+      "link": "https://softwareengineering.stackexchange.com/questions/205646/in-java-why-were-protected-members-made-accessible-to-classes-of-the-same-packa",
+      "score": 15,
+      "intentScore": 15,
+      "intentStatus": "DROP",
+      "topic": "Business Software"
+    },
     {
       "id": 461402,
       "title": "How should I structure a workflow that combines an LLM with multiple APIs?",
@@ -72,24 +90,6 @@
       "score": 10,
       "intentScore": 10,
       "intentStatus": "DROP",
-      "topic": "Business Software"
-    },
-    {
-      "id": 445051,
-      "title": "Domain Services vs Repositories when backed by a remote service",
-      "link": "https://softwareengineering.stackexchange.com/questions/445051/domain-services-vs-repositories-when-backed-by-a-remote-service",
-      "score": 15,
-      "intentScore": 15,
-      "intentStatus": "DROP",
-      "topic": "Business Software"
-    },
-    {
-      "id": 461442,
-      "title": "What is the best way to &quot;flatten&quot; or &quot;unroll&quot; a recursive (descent) function?",
-      "link": "https://softwareengineering.stackexchange.com/questions/461442/what-is-the-best-way-to-flatten-or-unroll-a-recursive-descent-function",
-      "score": 27,
-      "intentScore": 27,
-      "intentStatus": "RESEARCH",
       "topic": "Business Software"
     }
   ]
