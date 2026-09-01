@@ -104,7 +104,7 @@ async function run() {
     const filename = `question-${item.id}.html`;
     const filePath = new URL(filename, PAGES_DIR);
     await fs.writeFile(filePath, generatePageHTML(item));
-    sitemapUrls.push(`pages/${filename}`);
+    sitemapUrls.push(`https://smart-buyer-guide.pages.dev/pages/${filename}`);
   }
 
   // Genereer sitemap.xml
