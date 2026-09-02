@@ -1,94 +1,220 @@
 {
-  "generatedAt": "2026-09-02T07:52:32.887Z",
-  "mode": "scheduled-public-api",
+  "generatedAt": "2026-09-02T09:00:10.640Z",
+  "mode": "market-insights",
   "opportunities": [
     {
-      "id": 461449,
-      "title": "Is there a standard, or commonly-used, format for serialized/&#39;stored&#39;/&#39;dumped&#39; function invocation?",
-      "link": "https://softwareengineering.stackexchange.com/questions/461449/is-there-a-standard-or-commonly-used-format-for-serialized-stored-dumped-f",
+      "id": 77217761,
+      "title": "Javascript to make changes to elements located inside an iframe in HighLevel",
+      "link": "https://stackoverflow.com/questions/77217761/javascript-to-make-changes-to-elements-located-inside-an-iframe-in-highlevel",
       "score": 15,
       "intentScore": 15,
       "intentStatus": "DROP",
       "topic": "Business Software"
     },
     {
-      "id": 445051,
-      "title": "Domain Services vs Repositories when backed by a remote service",
-      "link": "https://softwareengineering.stackexchange.com/questions/445051/domain-services-vs-repositories-when-backed-by-a-remote-service",
+      "id": 75653456,
+      "title": "Python script to reformat a CSV file outputting an empty file",
+      "link": "https://stackoverflow.com/questions/75653456/python-script-to-reformat-a-csv-file-outputting-an-empty-file",
       "score": 15,
       "intentScore": 15,
       "intentStatus": "DROP",
       "topic": "Business Software"
     },
     {
-      "id": 365427,
-      "title": "Try/Catch/Log/Rethrow - Is this an Anti Pattern?",
-      "link": "https://softwareengineering.stackexchange.com/questions/365427/try-catch-log-rethrow-is-this-an-anti-pattern",
+      "id": 11595201,
+      "title": "How to calculate or estimate cost per user on Azure Application (SaaS)?",
+      "link": "https://stackoverflow.com/questions/11595201/how-to-calculate-or-estimate-cost-per-user-on-azure-application-saas",
       "score": 15,
       "intentScore": 15,
       "intentStatus": "DROP",
       "topic": "Business Software"
     },
     {
-      "id": 205646,
-      "title": "In Java, why were protected members made accessible to classes of the same package?",
-      "link": "https://softwareengineering.stackexchange.com/questions/205646/in-java-why-were-protected-members-made-accessible-to-classes-of-the-same-packa",
+      "id": 61292443,
+      "title": "IP Phone Action URL (HTTP GET) to Windows 10 Event/Message",
+      "link": "https://stackoverflow.com/questions/61292443/ip-phone-action-url-http-get-to-windows-10-event-message",
       "score": 15,
       "intentScore": 15,
       "intentStatus": "DROP",
       "topic": "Business Software"
     },
     {
-      "id": 461402,
-      "title": "How should I structure a workflow that combines an LLM with multiple APIs?",
-      "link": "https://softwareengineering.stackexchange.com/questions/461402/how-should-i-structure-a-workflow-that-combines-an-llm-with-multiple-apis",
+      "id": 3228481,
+      "title": "Java Portals and Portlets",
+      "link": "https://stackoverflow.com/questions/3228481/java-portals-and-portlets",
+      "score": 10,
+      "intentScore": 10,
+      "intentStatus": "DROP",
+      "topic": "Business Software"
+    },
+    {
+      "id": 51394238,
+      "title": "Data Warehousing GUID to Int PrimaryKeys",
+      "link": "https://stackoverflow.com/questions/51394238/data-warehousing-guid-to-int-primarykeys",
+      "score": 10,
+      "intentScore": 10,
+      "intentStatus": "DROP",
+      "topic": "Business Software"
+    },
+    {
+      "id": 41546278,
+      "title": "System design for multiple organisations",
+      "link": "https://stackoverflow.com/questions/41546278/system-design-for-multiple-organisations",
+      "score": 10,
+      "intentScore": 10,
+      "intentStatus": "DROP",
+      "topic": "Business Software"
+    },
+    {
+      "id": 28909180,
+      "title": "Microsoft Dynamics CRM Organization Naming",
+      "link": "https://stackoverflow.com/questions/28909180/microsoft-dynamics-crm-organization-naming",
+      "score": 10,
+      "intentScore": 10,
+      "intentStatus": "DROP",
+      "topic": "CRM Software"
+    },
+    {
+      "id": 24946453,
+      "title": "Google API OAuth2, Service Account, &quot;error&quot; : &quot;invalid_grant&quot;",
+      "link": "https://stackoverflow.com/questions/24946453/google-api-oauth2-service-account-error-invalid-grant",
       "score": 15,
       "intentScore": 15,
       "intentStatus": "DROP",
       "topic": "Business Software"
     },
     {
-      "id": 461458,
-      "title": "Client side load balancing when it comes to DNS",
-      "link": "https://softwareengineering.stackexchange.com/questions/461458/client-side-load-balancing-when-it-comes-to-dns",
+      "id": 33499225,
+      "title": "One or multiple database users for SQLServer access",
+      "link": "https://stackoverflow.com/questions/33499225/one-or-multiple-database-users-for-sqlserver-access",
       "score": 15,
       "intentScore": 15,
       "intentStatus": "DROP",
       "topic": "Business Software"
     },
     {
-      "id": 461207,
-      "title": "How can I reduce the carbon footprint of using an AI coding agent?",
-      "link": "https://softwareengineering.stackexchange.com/questions/461207/how-can-i-reduce-the-carbon-footprint-of-using-an-ai-coding-agent",
+      "id": 29530708,
+      "title": "AngularJS Access denied when loading partial in IE11",
+      "link": "https://stackoverflow.com/questions/29530708/angularjs-access-denied-when-loading-partial-in-ie11",
       "score": 15,
       "intentScore": 15,
       "intentStatus": "DROP",
       "topic": "Business Software"
     },
     {
-      "id": 461453,
-      "title": "How should I regression-test a combinatorial configuration space when an exhaustive sweep has grown to ~90 hours?",
-      "link": "https://softwareengineering.stackexchange.com/questions/461453/how-should-i-regression-test-a-combinatorial-configuration-space-when-an-exhaust",
+      "id": 29720351,
+      "title": "Apache Server Hosting Multiple Sites Using Different Directories (CentOS)",
+      "link": "https://stackoverflow.com/questions/29720351/apache-server-hosting-multiple-sites-using-different-directories-centos",
+      "score": 15,
+      "intentScore": 15,
+      "intentStatus": "DROP",
+      "topic": "Web Hosting"
+    },
+    {
+      "id": 25546987,
+      "title": "Export solution in Microsoft Dynamics CRM 2011 fails",
+      "link": "https://stackoverflow.com/questions/25546987/export-solution-in-microsoft-dynamics-crm-2011-fails",
+      "score": 15,
+      "intentScore": 15,
+      "intentStatus": "DROP",
+      "topic": "CRM Software"
+    },
+    {
+      "id": 16360944,
+      "title": "The right back-end for a distributable application",
+      "link": "https://stackoverflow.com/questions/16360944/the-right-back-end-for-a-distributable-application",
       "score": 15,
       "intentScore": 15,
       "intentStatus": "DROP",
       "topic": "Business Software"
     },
     {
-      "id": 461308,
-      "title": "Best architecture for embedding a full SaaS app inside third-party iframes with authentication inside the iframe",
-      "link": "https://softwareengineering.stackexchange.com/questions/461308/best-architecture-for-embedding-a-full-saas-app-inside-third-party-iframes-with",
-      "score": 27,
-      "intentScore": 27,
+      "id": 16025764,
+      "title": "alternative to openssl_encrypt",
+      "link": "https://stackoverflow.com/questions/16025764/alternative-to-openssl-encrypt",
+      "score": 22,
+      "intentScore": 22,
       "intentStatus": "RESEARCH",
       "topic": "Business Software"
     },
     {
-      "id": 304921,
-      "title": "Is it better to start a Pull Request or perform a local merge commit on master?",
-      "link": "https://softwareengineering.stackexchange.com/questions/304921/is-it-better-to-start-a-pull-request-or-perform-a-local-merge-commit-on-master",
+      "id": 15886534,
+      "title": "Visualise the Dynamics CRM database",
+      "link": "https://stackoverflow.com/questions/15886534/visualise-the-dynamics-crm-database",
+      "score": 10,
+      "intentScore": 10,
+      "intentStatus": "DROP",
+      "topic": "CRM Software"
+    },
+    {
+      "id": 14602675,
+      "title": "How to make a website look like a Windows Office application?",
+      "link": "https://stackoverflow.com/questions/14602675/how-to-make-a-website-look-like-a-windows-office-application",
       "score": 15,
       "intentScore": 15,
+      "intentStatus": "DROP",
+      "topic": "Business Software"
+    },
+    {
+      "id": 13938116,
+      "title": "Improve Dynamics CRM Solution Import Speed",
+      "link": "https://stackoverflow.com/questions/13938116/improve-dynamics-crm-solution-import-speed",
+      "score": 10,
+      "intentScore": 10,
+      "intentStatus": "DROP",
+      "topic": "CRM Software"
+    },
+    {
+      "id": 12004748,
+      "title": "Assembla Redmine JIRA Zoho Yodiz review and/or alternatives",
+      "link": "https://stackoverflow.com/questions/12004748/assembla-redmine-jira-zoho-yodiz-review-and-or-alternatives",
+      "score": 15,
+      "intentScore": 15,
+      "intentStatus": "DROP",
+      "topic": "Business Software"
+    },
+    {
+      "id": 6194127,
+      "title": "A web site with embedded remote control capabilities",
+      "link": "https://stackoverflow.com/questions/6194127/a-web-site-with-embedded-remote-control-capabilities",
+      "score": 15,
+      "intentScore": 15,
+      "intentStatus": "DROP",
+      "topic": "Business Software"
+    },
+    {
+      "id": 7483493,
+      "title": "Java Panel not updating completely occasionally",
+      "link": "https://stackoverflow.com/questions/7483493/java-panel-not-updating-completely-occasionally",
+      "score": 15,
+      "intentScore": 15,
+      "intentStatus": "DROP",
+      "topic": "Business Software"
+    },
+    {
+      "id": 3892858,
+      "title": "Possible to connect hosted web application to local database?",
+      "link": "https://stackoverflow.com/questions/3892858/possible-to-connect-hosted-web-application-to-local-database",
+      "score": 15,
+      "intentScore": 15,
+      "intentStatus": "DROP",
+      "topic": "Business Software"
+    },
+    {
+      "id": 2355910,
+      "title": "What to do when you&#39;ve really screwed up the design of a distributed system?",
+      "link": "https://stackoverflow.com/questions/2355910/what-to-do-when-youve-really-screwed-up-the-design-of-a-distributed-system",
+      "score": 15,
+      "intentScore": 15,
+      "intentStatus": "DROP",
+      "topic": "Business Software"
+    },
+    {
+      "id": 1332354,
+      "title": "An architecture question",
+      "link": "https://stackoverflow.com/questions/1332354/an-architecture-question",
+      "score": 10,
+      "intentScore": 10,
       "intentStatus": "DROP",
       "topic": "Business Software"
     }
