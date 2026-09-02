@@ -1,20 +1,20 @@
 {
-  "generatedAt": "2026-09-01T23:50:29.089Z",
+  "generatedAt": "2026-09-02T00:34:44.110Z",
   "mode": "scheduled-public-api",
   "opportunities": [
     {
-      "id": 445051,
-      "title": "Domain Services vs Repositories when backed by a remote service",
-      "link": "https://softwareengineering.stackexchange.com/questions/445051/domain-services-vs-repositories-when-backed-by-a-remote-service",
+      "id": 461449,
+      "title": "Is there a standard, or commonly-used, format for serialized/&#39;stored&#39;/&#39;dumped&#39; function invocation?",
+      "link": "https://softwareengineering.stackexchange.com/questions/461449/is-there-a-standard-or-commonly-used-format-for-serialized-stored-dumped-f",
       "score": 15,
       "intentScore": 15,
       "intentStatus": "DROP",
       "topic": "Business Software"
     },
     {
-      "id": 461449,
-      "title": "Is there a standard, or commonly-used, format for serialized/&#39;stored&#39;/&#39;dumped&#39; function invocation?",
-      "link": "https://softwareengineering.stackexchange.com/questions/461449/is-there-a-standard-or-commonly-used-format-for-serialized-stored-dumped-f",
+      "id": 445051,
+      "title": "Domain Services vs Repositories when backed by a remote service",
+      "link": "https://softwareengineering.stackexchange.com/questions/445051/domain-services-vs-repositories-when-backed-by-a-remote-service",
       "score": 15,
       "intentScore": 15,
       "intentStatus": "DROP",
