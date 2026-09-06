@@ -44,4 +44,12 @@
     <loc>https://saasrealcost.com/how-it-works</loc>
     <changefreq>monthly</changefreq>
   </url>
+    <url>
+    <loc>https://saasrealcost.com/privacy</loc>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://saasrealcost.com/affiliate-disclosure</loc>
+    <changefreq>monthly</changefreq>
+  </url>
 </urlset>
