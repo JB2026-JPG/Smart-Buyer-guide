@@ -581,10 +581,128 @@
       color: #dce3ee;
     }
 
+    /* PRIORITY 3 — REAL COST CALCULATOR */
+
+    .calculator-section {
+      background: #ffffff;
+      border-top: 1px solid #e7ebf2;
+      border-bottom: 1px solid #e7ebf2;
+    }
+
+    .calculator-heading {
+      margin-bottom: 28px;
+    }
+
+    .calculator-kicker {
+      display: inline-block;
+      margin-bottom: 12px;
+      color: #198754;
+      font-size: .78rem;
+      font-weight: 900;
+      letter-spacing: .7px;
+    }
+
+    .calculator-card {
+      background: #f7f9fc;
+      border: 1px solid #dfe5ee;
+      border-radius: 22px;
+      padding: 30px;
+      box-shadow: 0 15px 45px rgba(30,45,70,.07);
+    }
+
+    .calculator-fields {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 15px;
+    }
+
+    .calculator-fields label {
+      display: block;
+      color: #344158;
+      font-size: .82rem;
+      font-weight: 800;
+    }
+
+    .calculator-fields input {
+      width: 100%;
+      margin-top: 7px;
+      padding: 12px 13px;
+      border: 1px solid #d5dce7;
+      border-radius: 10px;
+      background: white;
+      color: #172033;
+      font: inherit;
+      font-weight: 700;
+      outline: none;
+    }
+
+    .calculator-fields input:focus {
+      border-color: #2864d7;
+      box-shadow: 0 0 0 3px rgba(40,100,215,.10);
+    }
+
+    .calculator-result {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 22px;
+      margin-top: 24px;
+      padding: 22px;
+      border-radius: 16px;
+      background: #172033;
+      color: white;
+    }
+
+    .calculator-result > div {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .result-label {
+      color: #aeb9cc;
+      font-size: .8rem;
+      font-weight: 700;
+      margin-bottom: 3px;
+    }
+
+    .calculator-result strong {
+      font-size: 1.55rem;
+      line-height: 1.2;
+    }
+
+    .btn-calc {
+      border: 0;
+      background: #198754;
+      color: white;
+      cursor: pointer;
+      box-shadow: 0 8px 22px rgba(25,135,84,.20);
+    }
+
+    .btn-calc:hover {
+      background: #157347;
+      transform: translateY(-2px);
+    }
+
+    .calculator-note {
+      margin-top: 14px;
+      color: #68748a;
+      font-size: .78rem;
+    }
+
     @media (max-width: 900px) {
+
       .hero-grid,
       .score-box {
         grid-template-columns: 1fr;
+      }
+
+      .calculator-fields {
+        grid-template-columns: 1fr;
+      }
+
+      .calculator-result {
+        align-items: stretch;
+        flex-direction: column;
       }
 
       .check-grid,
@@ -609,6 +727,7 @@
     }
 
     @media (max-width: 620px) {
+
       .nav {
         min-height: 64px;
       }
@@ -642,6 +761,14 @@
 
       .trap-card {
         padding: 24px;
+      }
+
+      .calculator-card {
+        padding: 20px;
+      }
+
+      .calculator-result {
+        padding: 20px;
       }
     }
   </style>
@@ -677,7 +804,10 @@
   </div>
 </header>
 
+
 <main>
+
+  <!-- HERO / PRIORITY 2 -->
 
   <section class="hero">
 
@@ -701,17 +831,18 @@
 
         <div class="hero-buttons">
 
-          <a href="#guides" class="btn btn-primary">
-            Find the right option →
+          <a href="#real-cost-calculator" class="btn btn-primary">
+            Calculate your real cost →
           </a>
 
-          <a href="#real-cost-check" class="btn btn-secondary">
-            See the Real Cost Check
+          <a href="#guides" class="btn btn-secondary">
+            Explore Buyer Guides
           </a>
 
         </div>
 
       </div>
+
 
       <div class="trap-card">
 
@@ -761,6 +892,150 @@
 
   </section>
 
+
+  <!-- PRIORITY 3 — CALCULATOR -->
+
+  <section id="real-cost-calculator" class="calculator-section">
+
+    <div class="container">
+
+      <div class="section-heading calculator-heading">
+
+        <span class="calculator-kicker">
+          FREE REAL COST CALCULATOR
+        </span>
+
+        <h2>
+          See what a “cheap” plan could really cost.
+        </h2>
+
+        <p>
+          Enter a few numbers and get a simple estimate of your total cost.
+          Use the calculator before you compare providers or commit to a plan.
+        </p>
+
+      </div>
+
+
+      <div class="calculator-card">
+
+        <div class="calculator-fields">
+
+          <label>
+            Starting monthly price
+            <input
+              id="rc-start"
+              type="number"
+              min="0"
+              step="0.01"
+              value="3"
+            >
+          </label>
+
+
+          <label>
+            Intro price lasts (months)
+            <input
+              id="rc-intro"
+              type="number"
+              min="1"
+              step="1"
+              value="12"
+            >
+          </label>
+
+
+          <label>
+            Renewal monthly price
+            <input
+              id="rc-renewal"
+              type="number"
+              min="0"
+              step="0.01"
+              value="10"
+            >
+          </label>
+
+
+          <label>
+            Extras / add-ons per month
+            <input
+              id="rc-extra"
+              type="number"
+              min="0"
+              step="0.01"
+              value="3"
+            >
+          </label>
+
+
+          <label>
+            Compare over (years)
+            <input
+              id="rc-years"
+              type="number"
+              min="1"
+              max="10"
+              step="1"
+              value="3"
+            >
+          </label>
+
+        </div>
+
+
+        <div
+          class="calculator-result"
+          aria-live="polite"
+        >
+
+          <div>
+            <span class="result-label">
+              Estimated total cost
+            </span>
+
+            <strong id="rc-total">
+              $468
+            </strong>
+          </div>
+
+
+          <div>
+            <span class="result-label">
+              Average per month
+            </span>
+
+            <strong id="rc-average">
+              $13.00
+            </strong>
+          </div>
+
+
+          <button
+            type="button"
+            class="btn btn-calc"
+            onclick="calculateRealCost()"
+          >
+            Recalculate →
+          </button>
+
+        </div>
+
+
+        <p class="calculator-note">
+          Illustrative calculation only.
+          Actual costs depend on the provider, plan, billing cycle, taxes and extras.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- REAL COST CHECK -->
+
   <section id="real-cost-check">
 
     <div class="container">
@@ -778,11 +1053,14 @@
 
       </div>
 
+
       <div class="check-grid">
 
         <div class="check-card">
 
-          <div class="number">1</div>
+          <div class="number">
+            1
+          </div>
 
           <h3>
             What will it really cost?
@@ -796,9 +1074,12 @@
 
         </div>
 
+
         <div class="check-card">
 
-          <div class="number">2</div>
+          <div class="number">
+            2
+          </div>
 
           <h3>
             Does it fit the job?
@@ -811,9 +1092,12 @@
 
         </div>
 
+
         <div class="check-card">
 
-          <div class="number">3</div>
+          <div class="number">
+            3
+          </div>
 
           <h3>
             Can you leave easily?
@@ -833,6 +1117,9 @@
 
   </section>
 
+
+  <!-- COST FACTORS -->
+
   <section class="missed">
 
     <div class="container">
@@ -849,11 +1136,14 @@
 
       </div>
 
+
       <div class="missed-grid">
 
         <div class="missed-card">
 
-          <h3>Renewals</h3>
+          <h3>
+            Renewals
+          </h3>
 
           <p>
             The price that attracts you today may not be the price you pay later.
@@ -861,9 +1151,12 @@
 
         </div>
 
+
         <div class="missed-card">
 
-          <h3>Add-ons</h3>
+          <h3>
+            Add-ons
+          </h3>
 
           <p>
             Important functionality can sometimes require another plan or paid feature.
@@ -871,9 +1164,12 @@
 
         </div>
 
+
         <div class="missed-card">
 
-          <h3>Growth</h3>
+          <h3>
+            Growth
+          </h3>
 
           <p>
             More customers, contacts, storage or usage can change your monthly bill.
@@ -881,9 +1177,12 @@
 
         </div>
 
+
         <div class="missed-card">
 
-          <h3>Switching</h3>
+          <h3>
+            Switching
+          </h3>
 
           <p>
             Leaving a platform can involve migration work, lost data or rebuilding workflows.
@@ -896,6 +1195,9 @@
     </div>
 
   </section>
+
+
+  <!-- BUYING PATHS -->
 
   <section class="paths">
 
@@ -912,6 +1214,7 @@
         </p>
 
       </div>
+
 
       <div class="path-grid">
 
@@ -936,6 +1239,7 @@
 
         </div>
 
+
         <div class="path-card">
 
           <div class="label">
@@ -955,6 +1259,7 @@
           </a>
 
         </div>
+
 
         <div class="path-card">
 
@@ -982,6 +1287,9 @@
 
   </section>
 
+
+  <!-- BUYER GUIDES -->
+
   <section id="guides">
 
     <div class="container">
@@ -999,7 +1307,9 @@
 
       </div>
 
+
       <div class="guide-grid">
+
 
         <a href="/guide-crm.html" class="guide-card">
 
@@ -1021,6 +1331,7 @@
 
         </a>
 
+
         <a href="/guide-hosting.html" class="guide-card">
 
           <div class="tag">
@@ -1040,6 +1351,7 @@
           </span>
 
         </a>
+
 
         <a href="/guide-business-software.html" class="guide-card">
 
@@ -1061,6 +1373,7 @@
 
         </a>
 
+
         <a href="/guide-email-marketing.html" class="guide-card">
 
           <div class="tag">
@@ -1080,6 +1393,7 @@
           </span>
 
         </a>
+
 
         <a href="/guide-wordpress-mail-hosting.html" class="guide-card">
 
@@ -1101,6 +1415,7 @@
           </span>
 
         </a>
+
 
         <a href="/how-to-start-a-blog-with-bluehost.html" class="guide-card">
 
@@ -1128,6 +1443,9 @@
 
   </section>
 
+
+  <!-- PROVIDERS -->
+
   <section class="providers">
 
     <div class="container">
@@ -1144,7 +1462,9 @@
 
       </div>
 
+
       <div class="provider-grid">
+
 
         <div class="provider-card">
 
@@ -1175,6 +1495,7 @@
 
         </div>
 
+
         <div class="provider-card">
 
           <h3>
@@ -1203,6 +1524,7 @@
           </a>
 
         </div>
+
 
         <div class="provider-card future">
 
@@ -1234,6 +1556,9 @@
 
   </section>
 
+
+  <!-- REAL COST SCORE -->
+
   <section class="score-section">
 
     <div class="container">
@@ -1252,6 +1577,7 @@
           </p>
 
         </div>
+
 
         <div class="score-list">
 
@@ -1288,6 +1614,9 @@
 
   </section>
 
+
+  <!-- APPROACH -->
+
   <section id="approach" class="approach">
 
     <div class="container">
@@ -1305,6 +1634,7 @@
 
       </div>
 
+
       <div class="approach-grid">
 
         <div class="approach-card">
@@ -1319,6 +1649,7 @@
           </p>
 
         </div>
+
 
         <div class="approach-card">
 
@@ -1338,6 +1669,9 @@
     </div>
 
   </section>
+
+
+  <!-- FINAL CTA -->
 
   <section class="final-cta">
 
@@ -1360,6 +1694,9 @@
 
   </section>
 
+
+  <!-- DISCLOSURE -->
+
   <section class="disclosure">
 
     <div class="container">
@@ -1377,6 +1714,7 @@
   </section>
 
 </main>
+
 
 <footer>
 
@@ -1397,6 +1735,84 @@
   </div>
 
 </footer>
+
+
+<!-- REAL COST CALCULATOR SCRIPT -->
+
+<script>
+  function calculateRealCost() {
+
+    const start =
+      Math.max(
+        0,
+        parseFloat(
+          document.getElementById('rc-start').value
+        ) || 0
+      );
+
+    const intro =
+      Math.max(
+        1,
+        parseInt(
+          document.getElementById('rc-intro').value,
+          10
+        ) || 1
+      );
+
+    const renewal =
+      Math.max(
+        0,
+        parseFloat(
+          document.getElementById('rc-renewal').value
+        ) || 0
+      );
+
+    const extra =
+      Math.max(
+        0,
+        parseFloat(
+          document.getElementById('rc-extra').value
+        ) || 0
+      );
+
+    const years =
+      Math.min(
+        10,
+        Math.max(
+          1,
+          parseInt(
+            document.getElementById('rc-years').value,
+            10
+          ) || 1
+        )
+      );
+
+    const months = years * 12;
+
+    const introMonths =
+      Math.min(
+        months,
+        intro
+      );
+
+    const renewalMonths =
+      months - introMonths;
+
+    const total =
+      (start * introMonths) +
+      (renewal * renewalMonths) +
+      (extra * months);
+
+    const average =
+      total / months;
+
+    document.getElementById('rc-total').textContent =
+      '$' + total.toFixed(2);
+
+    document.getElementById('rc-average').textContent =
+      '$' + average.toFixed(2);
+  }
+</script>
 
 </body>
 </html>
