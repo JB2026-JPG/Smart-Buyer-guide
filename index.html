@@ -1,821 +1,1325 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>SaaS Real Cost — Know the Real Cost Before You Buy</title>
+  <title>SaaS Real Cost — Know What Software Really Costs</title>
 
-<meta name="description" content="SaaS Real Cost helps you look beyond the headline price: renewals, add-ons, limits, fit, support and switching costs before you buy software or hosting.">
+  <meta name="description" content="Compare software and hosting by looking beyond the advertised price. Discover renewals, add-ons, limits, growth costs and switching difficulty before you commit.">
 
-<meta property="og:title" content="SaaS Real Cost — Know the Real Cost Before You Buy">
-<meta property="og:description" content="Look beyond the headline price. Compare real long-term costs, fit and exit options before committing to software or hosting.">
-<meta property="og:url" content="https://saasrealcost.com/">
-<meta property="og:image" content="https://saasrealcost.com/hero-graphic.svg">
-<meta property="og:type" content="website">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://saasrealcost.com/">
 
-<link rel="stylesheet" href="style.css">
-<link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <meta property="og:title" content="SaaS Real Cost — Know What Software Really Costs">
+  <meta property="og:description" content="The price you see is not always the price you pay. Compare software and hosting by looking at the real cost.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://saasrealcost.com/">
 
-<meta name="google-site-verification" content="whAWO02KSsRR5Vy-HRd2BZbFeduo6olPrWfZiw_KXfU">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      background: #f7f9fc;
+      color: #172033;
+      line-height: 1.65;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1160px, 92%);
+      margin: 0 auto;
+    }
+
+    /* HEADER */
+
+    header {
+      background: rgba(255,255,255,0.97);
+      border-bottom: 1px solid #e6eaf0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(10px);
+    }
+
+    .nav {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+
+    .logo {
+      font-size: 1.25rem;
+      font-weight: 800;
+      letter-spacing: -0.4px;
+      white-space: nowrap;
+    }
+
+    .logo span {
+      color: #2864d7;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      font-size: 0.94rem;
+      font-weight: 600;
+    }
+
+    nav a {
+      color: #536078;
+      transition: color .2s ease;
+    }
+
+    nav a:hover {
+      color: #2864d7;
+    }
+
+    /* HERO */
+
+    .hero {
+      padding: 92px 0 65px;
+      background:
+        radial-gradient(circle at 85% 20%, rgba(49,105,220,.10), transparent 30%),
+        linear-gradient(180deg, #ffffff 0%, #f7f9fc 100%);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 55px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 18px;
+      padding: 7px 13px;
+      border-radius: 999px;
+      background: #edf3ff;
+      color: #2864d7;
+      font-size: .82rem;
+      font-weight: 800;
+      letter-spacing: .5px;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 5vw, 4.4rem);
+      line-height: 1.04;
+      letter-spacing: -2.5px;
+      margin-bottom: 24px;
+      max-width: 760px;
+    }
+
+    .hero p {
+      font-size: 1.18rem;
+      color: #59657a;
+      max-width: 690px;
+      margin-bottom: 30px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 20px;
+      border-radius: 10px;
+      font-weight: 800;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      background: #2864d7;
+      color: white;
+      box-shadow: 0 8px 24px rgba(40,100,215,.20);
+    }
+
+    .btn-secondary {
+      background: white;
+      border: 1px solid #dbe1ea;
+      color: #26334a;
+    }
+
+    /* REAL COST TRAP */
+
+    .trap-card {
+      background: #172033;
+      color: white;
+      border-radius: 22px;
+      padding: 30px;
+      box-shadow: 0 18px 50px rgba(23,32,51,.18);
+    }
+
+    .trap-card small {
+      color: #aeb9cc;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .8px;
+    }
+
+    .trap-card h2 {
+      font-size: 1.65rem;
+      line-height: 1.2;
+      margin: 10px 0 20px;
+    }
+
+    .cost-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      padding: 11px 0;
+      border-bottom: 1px solid rgba(255,255,255,.12);
+      color: #d7deea;
+    }
+
+    .cost-row:last-child {
+      border-bottom: 0;
+    }
+
+    .cost-row strong {
+      color: white;
+    }
+
+    .trap-total {
+      margin-top: 19px;
+      padding: 17px;
+      border-radius: 12px;
+      background: rgba(255,255,255,.08);
+    }
+
+    .trap-total span {
+      display: block;
+      color: #aeb9cc;
+      font-size: .84rem;
+    }
+
+    .trap-total strong {
+      font-size: 1.5rem;
+    }
+
+    .illustration-note {
+      margin-top: 15px;
+      color: #9da9bd;
+      font-size: .78rem;
+    }
+
+    /* SECTIONS */
+
+    section {
+      padding: 78px 0;
+    }
+
+    .section-heading {
+      max-width: 760px;
+      margin-bottom: 42px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.12;
+      letter-spacing: -1.2px;
+      margin-bottom: 15px;
+    }
+
+    .section-heading p {
+      color: #667289;
+      font-size: 1.05rem;
+    }
+
+    /* CHECK CARDS */
+
+    .check-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .check-card {
+      background: white;
+      border: 1px solid #e5e9f0;
+      border-radius: 17px;
+      padding: 27px;
+      box-shadow: 0 8px 30px rgba(30,45,70,.05);
+    }
+
+    .number {
+      width: 38px;
+      height: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: #edf3ff;
+      color: #2864d7;
+      font-weight: 900;
+      margin-bottom: 18px;
+    }
+
+    .check-card h3 {
+      margin-bottom: 10px;
+      font-size: 1.18rem;
+    }
+
+    .check-card p {
+      color: #657187;
+      font-size: .96rem;
+    }
+
+    /* MISSED COSTS */
+
+    .missed {
+      background: white;
+    }
+
+    .missed-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .missed-card {
+      border: 1px solid #e5e9f0;
+      border-radius: 15px;
+      padding: 24px;
+      background: #fbfcfe;
+    }
+
+    .missed-card h3 {
+      font-size: 1.05rem;
+      margin-bottom: 9px;
+    }
+
+    .missed-card p {
+      color: #667289;
+      font-size: .92rem;
+    }
+
+    /* PATHS */
+
+    .paths {
+      background: #f0f4fa;
+    }
+
+    .path-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .path-card {
+      background: white;
+      border-radius: 18px;
+      padding: 29px;
+      border: 1px solid #e0e6ef;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    .path-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 35px rgba(35,53,80,.10);
+    }
+
+    .path-card .label {
+      color: #2864d7;
+      font-weight: 800;
+      font-size: .82rem;
+      text-transform: uppercase;
+      letter-spacing: .5px;
+    }
+
+    .path-card h3 {
+      font-size: 1.28rem;
+      margin: 8px 0 10px;
+    }
+
+    .path-card p {
+      color: #667289;
+      margin-bottom: 17px;
+    }
+
+    .text-link {
+      color: #2864d7;
+      font-weight: 800;
+    }
+
+    /* GUIDES */
+
+    .guide-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .guide-card {
+      display: flex;
+      flex-direction: column;
+      background: white;
+      border: 1px solid #e4e8ef;
+      border-radius: 17px;
+      padding: 27px;
+      min-height: 220px;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    .guide-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 15px 35px rgba(30,45,70,.08);
+    }
+
+    .guide-card .tag {
+      color: #2864d7;
+      font-size: .78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .6px;
+      margin-bottom: 9px;
+    }
+
+    .guide-card h3 {
+      font-size: 1.35rem;
+      line-height: 1.25;
+      margin-bottom: 11px;
+    }
+
+    .guide-card p {
+      color: #68748a;
+      flex-grow: 1;
+      margin-bottom: 17px;
+    }
+
+    /* PROVIDERS */
+
+    .providers {
+      background: #172033;
+      color: white;
+    }
+
+    .providers .section-heading p {
+      color: #aeb9cc;
+    }
+
+    .provider-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .provider-card {
+      background: #202b40;
+      border: 1px solid rgba(255,255,255,.10);
+      border-radius: 18px;
+      padding: 27px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .provider-card h3 {
+      font-size: 1.35rem;
+      margin-bottom: 9px;
+    }
+
+    .provider-card p {
+      color: #bdc7d7;
+      font-size: .94rem;
+      margin-bottom: 17px;
+    }
+
+    .provider-card ul {
+      padding-left: 19px;
+      color: #d4dbe6;
+      font-size: .91rem;
+      margin-bottom: 22px;
+    }
+
+    .provider-card li {
+      margin-bottom: 7px;
+    }
+
+    .provider-card .btn {
+      margin-top: auto;
+      background: white;
+      color: #172033;
+    }
+
+    .future {
+      opacity: .82;
+      border-style: dashed;
+    }
+
+    /* SCORE */
+
+    .score-section {
+      background: white;
+    }
+
+    .score-box {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 45px;
+      align-items: center;
+      background: #f4f7fb;
+      border: 1px solid #e0e6ef;
+      border-radius: 22px;
+      padding: 38px;
+    }
+
+    .score-intro h2 {
+      font-size: 2.1rem;
+      line-height: 1.15;
+      margin-bottom: 14px;
+    }
+
+    .score-intro p {
+      color: #68748a;
+    }
+
+    .score-list {
+      display: grid;
+      gap: 11px;
+    }
+
+    .score-item {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 13px 16px;
+      border-radius: 10px;
+      background: white;
+      border: 1px solid #e3e8ef;
+      font-weight: 700;
+    }
+
+    .score-item span:last-child {
+      color: #2864d7;
+    }
+
+    /* APPROACH */
+
+    .approach {
+      background: #f7f9fc;
+    }
+
+    .approach-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+    }
+
+    .approach-card {
+      background: white;
+      border: 1px solid #e4e8ef;
+      border-radius: 17px;
+      padding: 30px;
+    }
+
+    .approach-card h3 {
+      margin-bottom: 11px;
+    }
+
+    .approach-card p {
+      color: #667289;
+    }
+
+    /* FINAL CTA */
+
+    .final-cta {
+      padding: 82px 0;
+      background: linear-gradient(135deg, #2864d7, #174aa8);
+      color: white;
+      text-align: center;
+    }
+
+    .final-cta h2 {
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+
+    .final-cta p {
+      max-width: 680px;
+      margin: 0 auto 27px;
+      color: #dce8ff;
+      font-size: 1.05rem;
+    }
+
+    .final-cta .btn {
+      background: white;
+      color: #174aa8;
+    }
+
+    /* DISCLOSURE / FOOTER */
+
+    .disclosure {
+      padding: 35px 0;
+      background: #ffffff;
+      border-bottom: 1px solid #e5e9f0;
+    }
+
+    .disclosure p {
+      max-width: 850px;
+      color: #69758a;
+      font-size: .84rem;
+    }
+
+    footer {
+      background: #111927;
+      color: #aeb9cc;
+      padding: 35px 0;
+      font-size: .87rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    footer a {
+      color: #dce3ee;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 900px) {
+
+      .hero-grid,
+      .score-box {
+        grid-template-columns: 1fr;
+      }
+
+      .check-grid,
+      .missed-grid,
+      .path-grid,
+      .provider-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .guide-grid,
+      .approach-grid {
+        grid-template-columns: 1fr;
+      }
+
+      nav {
+        gap: 12px;
+      }
+
+      nav a:nth-child(n+4) {
+        display: none;
+      }
+    }
+
+    @media (max-width: 620px) {
+
+      .nav {
+        min-height: 64px;
+      }
+
+      nav {
+        display: none;
+      }
+
+      .hero {
+        padding: 65px 0 45px;
+      }
+
+      h1 {
+        letter-spacing: -1.6px;
+      }
+
+      section {
+        padding: 60px 0;
+      }
+
+      .check-grid,
+      .missed-grid,
+      .path-grid,
+      .provider-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .score-box {
+        padding: 25px;
+      }
+
+      .trap-card {
+        padding: 24px;
+      }
+    }
+  </style>
+
+  <!-- Organization / Website structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "SaaS Real Cost",
+    "url": "https://saasrealcost.com/",
+    "description": "Independent guides and comparisons focused on the real cost of software, hosting and online business tools."
+  }
+  </script>
+
 </head>
 
 <body>
 
-<header class="site-header">
-  <div class="wrap nav">
+<header>
+  <div class="container nav">
+    <a href="/" class="logo">SaaS <span>Real Cost</span></a>
 
-    <a class="brand" href="index.html">
-      <span>SaaS</span> Real Cost
-    </a>
-
-    <nav class="navlinks" aria-label="Main navigation">
+    <nav>
       <a href="#guides">Buyer Guides</a>
       <a href="#real-cost-check">Real Cost Check</a>
-      <a href="how-it-works.html">How it works</a>
-      <a href="about.html">About</a>
+      <a href="#approach">How it works</a>
+      <a href="/about.html">About</a>
     </nav>
-
   </div>
 </header>
 
+
 <main>
 
-<!-- HERO -->
+  <!-- HERO -->
 
-<section class="hero">
-
-  <div class="wrap hero-grid">
-
-    <div class="hero-copy">
-
-      <div class="eyebrow">
-        BUY SMARTER · AVOID COSTLY SURPRISES
-      </div>
-
-      <h1>
-        The price you see is not always the price you pay.
-      </h1>
-
-      <p class="lead">
-        Software and hosting can look affordable at first. We help you look at what happens after the sale — renewals, add-ons, limits, support and switching — before you commit.
-      </p>
-
-      <div class="actions">
-
-        <a class="btn" href="#guides">
-          Explore buyer guides <span>→</span>
-        </a>
-
-        <a class="btn secondary" href="#real-cost-check">
-          See what we check
-        </a>
-
-      </div>
-
-      <div class="hero-proof" aria-label="What we compare">
-        <span>✓ Real total cost</span>
-        <span>✓ Renewal pricing</span>
-        <span>✓ Usage limits</span>
-        <span>✓ Exit options</span>
-      </div>
-
-    </div>
-
-    <div class="hero-visual">
-
-      <img
-        src="hero-graphic.svg"
-        alt="Illustration representing the real cost of software and hosting"
-        class="hero-image"
-      >
-
-      <div class="floating-note">
-
-        <span>BEFORE YOU BUY</span>
-
-        <strong>
-          Check the full cost.
-        </strong>
-
-        <small>
-          Not just today's price.
-        </small>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- INTRO -->
-
-<section class="section intro-section">
-
-  <div class="wrap intro-grid">
-
-    <div>
-
-      <div class="eyebrow">
-        WHAT IS SAAS REAL COST?
-      </div>
-
-      <h2>
-        A clearer way to think about software purchases.
-      </h2>
-
-    </div>
-
-    <div>
-
-      <p class="large-muted">
-        Most comparisons focus on features and the starting price. That is only part of the decision.
-      </p>
-
-      <p class="muted">
-        SaaS Real Cost focuses on the practical questions that become expensive later: What will it cost as you grow? What will you actually use? And how difficult will it be to leave?
-      </p>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- REAL COST CHECK -->
-
-<section id="real-cost-check" class="section check-section">
-
-  <div class="wrap">
-
-    <div class="section-title centered">
-
-      <div class="eyebrow">
-        THE SAAS REAL COST CHECK
-      </div>
-
-      <h2>
-        Three questions before you buy
-      </h2>
-
-      <p class="muted">
-        Use these three checks before choosing a tool, even when the starting price looks attractive.
-      </p>
-
-    </div>
-
-
-    <div class="check-grid">
-
-      <article class="check-card">
-
-        <span class="number">01</span>
-
-        <span class="pill">
-          REAL COST
-        </span>
-
-        <h3>
-          What will it really cost?
-        </h3>
-
-        <p>
-          Check recurring pricing, renewals, add-ons, usage limits and minimum commitments.
-        </p>
-
-        <a href="#guides">
-          See buyer guides →
-        </a>
-
-      </article>
-
-
-      <article class="check-card featured-check">
-
-        <span class="number">02</span>
-
-        <span class="pill">
-          FIT
-        </span>
-
-        <h3>
-          Does it fit the job?
-        </h3>
-
-        <p>
-          Choose around the workflow you actually need instead of paying for features you may never use.
-        </p>
-
-        <a href="#guides">
-          Compare by use case →
-        </a>
-
-      </article>
-
-
-      <article class="check-card">
-
-        <span class="number">03</span>
-
-        <span class="pill">
-          EXIT
-        </span>
-
-        <h3>
-          Can you leave easily?
-        </h3>
-
-        <p>
-          Check cancellation, refunds, data export, migration and lock-in before committing.
-        </p>
-
-        <a href="how-it-works.html">
-          See how we check →
-        </a>
-
-      </article>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- HIDDEN COSTS -->
-
-<section class="section hidden-costs">
-
-  <div class="wrap">
-
-    <div class="section-title">
-
-      <div class="eyebrow">
-        THE COSTS PEOPLE OFTEN MISS
-      </div>
-
-      <h2>
-        The cheap option can become expensive later.
-      </h2>
-
-      <p class="muted">
-        A good buying decision is not only about today's price. It is about what the product costs and requires over time.
-      </p>
-
-    </div>
-
-
-    <div class="grid four-grid">
-
-      <article class="mini-card">
-
-        <span class="mini-icon">↗</span>
-
-        <h3>
-          Renewal increases
-        </h3>
-
-        <p>
-          Introductory pricing can be very different from the price you pay later.
-        </p>
-
-      </article>
-
-
-      <article class="mini-card">
-
-        <span class="mini-icon">+</span>
-
-        <h3>
-          Add-ons & extras
-        </h3>
-
-        <p>
-          Important functions may sit outside the plan you first compared.
-        </p>
-
-      </article>
-
-
-      <article class="mini-card">
-
-        <span class="mini-icon">◎</span>
-
-        <h3>
-          Growth & limits
-        </h3>
-
-        <p>
-          Subscribers, storage, contacts, users or usage can change your real cost.
-        </p>
-
-      </article>
-
-
-      <article class="mini-card">
-
-        <span class="mini-icon">↪</span>
-
-        <h3>
-          Switching difficulty
-        </h3>
-
-        <p>
-          Data export, migration and cancellation matter when the tool stops fitting.
-        </p>
-
-      </article>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- BUYER GUIDES -->
-
-<section id="guides" class="section guides-section">
-
-  <div class="wrap">
-
-    <div class="guides-heading">
+  <section class="hero">
+    <div class="container hero-grid">
 
       <div>
+        <span class="eyebrow">Buy smarter. See the full cost.</span>
 
-        <div class="eyebrow">
-          BUYER GUIDES
+        <h1>The price you see is not always the price you pay.</h1>
+
+        <p>
+          Software and hosting can look inexpensive at first.
+          Renewals, add-ons, limits, extra users and growth can change the real cost.
+          SaaS Real Cost helps you look beyond the headline price before you commit.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#guides" class="btn btn-primary">
+            Find the right option →
+          </a>
+
+          <a href="#real-cost-check" class="btn btn-secondary">
+            See the Real Cost Check
+          </a>
+        </div>
+      </div>
+
+
+      <div class="trap-card">
+
+        <small>Illustrative example</small>
+
+        <h2>The $3 deal that isn't really $3.</h2>
+
+        <div class="cost-row">
+          <span>Starting price</span>
+          <strong>$3</strong>
         </div>
 
-        <h2>
-          Find the guide for what you're buying.
-        </h2>
+        <div class="cost-row">
+          <span>Renewal increase</span>
+          <strong>+$5</strong>
+        </div>
+
+        <div class="cost-row">
+          <span>Extra feature</span>
+          <strong>+$4</strong>
+        </div>
+
+        <div class="cost-row">
+          <span>Additional users</span>
+          <strong>+$6</strong>
+        </div>
+
+        <div class="cost-row">
+          <span>Backup / add-on</span>
+          <strong>+$3</strong>
+        </div>
+
+        <div class="trap-total">
+          <span>Illustrative potential monthly cost</span>
+          <strong>$21</strong>
+        </div>
+
+        <div class="illustration-note">
+          This is a hypothetical example, not a provider's current price.
+        </div>
 
       </div>
 
-      <p class="muted">
-        Start with the category closest to your decision, then check the details that affect your long-term cost.
-      </p>
-
     </div>
+  </section>
 
 
-    <div class="grid guide-grid">
+  <!-- REAL COST CHECK -->
 
+  <section id="real-cost-check">
+    <div class="container">
 
-      <!-- CRM -->
-
-      <article class="card guide-card">
-
-        <img
-          src="icon-crm.svg"
-          alt=""
-          width="52"
-          height="52"
-        >
-
-        <span class="pill">
-          CRM
-        </span>
-
-        <h3>
-          Choose a CRM without overpaying
-        </h3>
+      <div class="section-heading">
+        <h2>Use the Real Cost Check before you buy.</h2>
 
         <p>
-          Compare pipeline workflow, integrations, recurring cost and data portability.
+          Instead of asking only “How much does it cost?”
+          ask three questions that reveal whether the product actually makes sense for you.
         </p>
-
-        <a class="text-link" href="guide-crm.html">
-          Read CRM guide →
-        </a>
-
-      </article>
-
-
-      <!-- HOSTING -->
-
-      <article class="card guide-card">
-
-        <img
-          src="icon-hosting.svg"
-          alt=""
-          width="52"
-          height="52"
-        >
-
-        <span class="pill">
-          HOSTING
-        </span>
-
-        <h3>
-          Choose web hosting intelligently
-        </h3>
-
-        <p>
-          Look beyond the introductory price: renewals, limits, performance, backups and cancellation matter.
-        </p>
-
-        <a class="text-link" href="guide-hosting.html">
-          Read hosting guide →
-        </a>
-
-      </article>
-
-
-      <!-- BUSINESS SOFTWARE -->
-
-      <article class="card guide-card">
-
-        <img
-          src="icon-software.svg"
-          alt=""
-          width="52"
-          height="52"
-        >
-
-        <span class="pill">
-          BUSINESS SOFTWARE
-        </span>
-
-        <h3>
-          Compare software with the job to be done
-        </h3>
-
-        <p>
-          Compare cost, integrations, learning effort and lock-in — not just the feature list.
-        </p>
-
-        <a class="text-link" href="guide-business-software.html">
-          Read software guide →
-        </a>
-
-      </article>
-
-
-      <!-- EMAIL -->
-
-      <article class="card guide-card">
-
-        <img
-          src="icon-email.svg"
-          alt=""
-          width="52"
-          height="52"
-        >
-
-        <span class="pill">
-          EMAIL MARKETING
-        </span>
-
-        <h3>
-          Choose email marketing software
-        </h3>
-
-        <p>
-          Compare subscriber limits, deliverability, automation and how easy it is to switch later.
-        </p>
-
-        <a class="text-link" href="guide-email-marketing.html">
-          Read email guide →
-        </a>
-
-      </article>
-
-
-      <!-- WORDPRESS -->
-
-      <article class="card guide-card">
-
-        <img
-          src="icon-hosting.svg"
-          alt=""
-          width="52"
-          height="52"
-        >
-
-        <span class="pill">
-          WORDPRESS + HOSTING
-        </span>
-
-        <h3>
-          Fix WordPress email problems on cloud servers
-        </h3>
-
-        <p>
-          Understand why self-managed cloud hosting can make email delivery harder and when managed hosting is simpler.
-        </p>
-
-        <a class="text-link" href="guide-wordpress-mail-hosting.html">
-          Read the guide →
-        </a>
-
-      </article>
-
-
-      <!-- BLOG -->
-
-      <article class="card guide-card guide-card-alt">
-
-        <span class="guide-label">
-          STARTING A WEBSITE
-        </span>
-
-        <h3>
-          How to start a blog with Bluehost
-        </h3>
-
-        <p>
-          A practical starting point for comparing hosting, setup and the costs that come with a new website.
-        </p>
-
-        <a class="text-link" href="guide-blog-bluehost.html">
-          Read the guide →
-        </a>
-
-      </article>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- DIFFERENTIATOR -->
-
-<section class="section differentiator">
-
-  <div class="wrap dark-panel">
-
-    <div>
-
-      <div class="eyebrow light">
-        OUR APPROACH
       </div>
 
-      <h2>
-        We don't just compare features.
-      </h2>
 
-      <p>
-        Features tell you what a product can do. We focus on what the choice means for your money, your workflow and your ability to change your mind later.
-      </p>
+      <div class="check-grid">
 
-    </div>
+        <div class="check-card">
+          <div class="number">1</div>
 
-
-    <ul>
-
-      <li>
-        <span>✓</span>
-        Real total cost over time
-      </li>
-
-      <li>
-        <span>✓</span>
-        Fit for the actual job
-      </li>
-
-      <li>
-        <span>✓</span>
-        Limits as you grow
-      </li>
-
-      <li>
-        <span>✓</span>
-        Cancellation & exit options
-      </li>
-
-    </ul>
-
-  </div>
-
-</section>
-
-
-<!-- PROVIDERS -->
-
-<section class="section recommendations">
-
-  <div class="wrap">
-
-    <div class="section-title">
-
-      <div class="eyebrow">
-        A STARTING POINT WORTH CHECKING
-      </div>
-
-      <h2>
-        Providers we currently feature
-      </h2>
-
-      <p class="muted">
-        These are not universal recommendations. Check the guide and the provider's current terms before purchasing.
-      </p>
-
-    </div>
-
-
-    <div class="feature-grid">
-
-
-      <!-- BLUEHOST -->
-
-      <article class="provider-card">
-
-        <div class="provider-copy">
-
-          <span class="pill">
-            HOSTING
-          </span>
-
-          <h3>
-            Bluehost
-          </h3>
+          <h3>What will it really cost?</h3>
 
           <p>
-            If you're comparing hosting for a new or growing website, Bluehost is one option worth checking. Look beyond the introductory price and verify renewal pricing, included features, support and cancellation terms.
+            Look beyond the introductory price.
+            Check renewals, required extras, users, storage, transactions and other costs
+            that can appear as your needs change.
+          </p>
+        </div>
+
+
+        <div class="check-card">
+          <div class="number">2</div>
+
+          <h3>Does it fit the job?</h3>
+
+          <p>
+            A cheap tool can become expensive if it lacks something important.
+            Compare the features you actually need instead of paying for everything on the list.
+          </p>
+        </div>
+
+
+        <div class="check-card">
+          <div class="number">3</div>
+
+          <h3>Can you leave easily?</h3>
+
+          <p>
+            Switching costs matter.
+            Check contracts, data portability, migration effort and how difficult it may be
+            to move somewhere else later.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- MISSED COSTS -->
+
+  <section class="missed">
+    <div class="container">
+
+      <div class="section-heading">
+        <h2>What people often discover too late.</h2>
+
+        <p>
+          The advertised price is only one part of the buying decision.
+        </p>
+      </div>
+
+
+      <div class="missed-grid">
+
+        <div class="missed-card">
+          <h3>Renewals</h3>
+          <p>
+            The price that attracts you today may not be the price you pay later.
+          </p>
+        </div>
+
+        <div class="missed-card">
+          <h3>Add-ons</h3>
+          <p>
+            Important functionality can sometimes require another plan or paid feature.
+          </p>
+        </div>
+
+        <div class="missed-card">
+          <h3>Growth</h3>
+          <p>
+            More customers, contacts, storage or usage can change your monthly bill.
+          </p>
+        </div>
+
+        <div class="missed-card">
+          <h3>Switching</h3>
+          <p>
+            Leaving a platform can involve migration work, lost data or rebuilding workflows.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- PATHS -->
+
+  <section class="paths">
+    <div class="container">
+
+      <div class="section-heading">
+        <h2>What are you actually trying to buy?</h2>
+
+        <p>
+          Start with the problem you need to solve, then compare the tools that fit it.
+        </p>
+      </div>
+
+
+      <div class="path-grid">
+
+        <div class="path-card">
+          <div class="label">Website</div>
+
+          <h3>Hosting</h3>
+
+          <p>
+            Compare hosting beyond the introductory price, including renewal costs,
+            support, backups, limits and what happens as your site grows.
           </p>
 
+          <a href="/hosting.html" class="text-link">
+            Explore hosting →
+          </a>
+        </div>
+
+
+        <div class="path-card">
+          <div class="label">Customers</div>
+
+          <h3>CRM & business software</h3>
+
+          <p>
+            Find out what happens to the bill when your team, contacts and workflow become larger.
+          </p>
+
+          <a href="/crm-buying-guide.html" class="text-link">
+            Explore CRM →
+          </a>
+        </div>
+
+
+        <div class="path-card">
+          <div class="label">Audience</div>
+
+          <h3>Email marketing</h3>
+
+          <p>
+            Compare platforms based on list size, features and what happens when your audience grows.
+          </p>
+
+          <a href="/email-marketing.html" class="text-link">
+            Explore email tools →
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- BUYER GUIDES -->
+
+  <section id="guides">
+    <div class="container">
+
+      <div class="section-heading">
+        <h2>Buyer guides built around the questions buyers forget to ask.</h2>
+
+        <p>
+          No endless feature lists. We focus on cost, fit, growth and the ability to change your mind.
+        </p>
+      </div>
+
+
+      <div class="guide-grid">
+
+        <a href="/crm-buying-guide.html" class="guide-card">
+          <div class="tag">CRM</div>
+
+          <h3>The CRM That Looks Cheap Until You Grow</h3>
+
+          <p>
+            See what to check before choosing a CRM and how growth can affect your real cost.
+          </p>
+
+          <span class="text-link">Read the guide →</span>
+        </a>
+
+
+        <a href="/hosting.html" class="guide-card">
+          <div class="tag">Hosting</div>
+
+          <h3>The Hosting Price You See Isn't the Price You'll Keep Paying</h3>
+
+          <p>
+            Understand introductory pricing, renewals, extras, support and long-term hosting costs.
+          </p>
+
+          <span class="text-link">Read the guide →</span>
+        </a>
+
+
+        <a href="/business-software.html" class="guide-card">
+          <div class="tag">Business software</div>
+
+          <h3>The Features You Pay For But Never Use</h3>
+
+          <p>
+            A better buying decision starts with what your business actually needs.
+          </p>
+
+          <span class="text-link">Read the guide →</span>
+        </a>
+
+
+        <a href="/email-marketing.html" class="guide-card">
+          <div class="tag">Email marketing</div>
+
+          <h3>Your Email List Gets Bigger — So Does the Bill</h3>
+
+          <p>
+            Learn which cost factors become important as your audience grows.
+          </p>
+
+          <span class="text-link">Read the guide →</span>
+        </a>
+
+
+        <a href="/wordpress-email-cloud.html" class="guide-card">
+          <div class="tag">WordPress</div>
+
+          <h3>When Cheap Cloud Hosting Creates Another Problem</h3>
+
+          <p>
+            Look beyond the monthly price and consider setup, management, support and scalability.
+          </p>
+
+          <span class="text-link">Read the guide →</span>
+        </a>
+
+
+        <a href="/guide-blog-bluehost.html" class="guide-card">
+          <div class="tag">Website</div>
+
+          <h3>How to Start a Website Without Choosing Blindly</h3>
+
+          <p>
+            A practical Bluehost-focused guide that looks at the real cost before you start.
+          </p>
+
+          <span class="text-link">Read the guide →</span>
+        </a>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- PROVIDERS -->
+
+  <section class="providers">
+    <div class="container">
+
+      <div class="section-heading">
+        <h2>Options worth considering.</h2>
+
+        <p>
+          Once you understand the real cost, the next question is which provider fits your situation.
+        </p>
+      </div>
+
+
+      <div class="provider-grid">
+
+        <!-- BLUEHOST -->
+
+        <div class="provider-card">
+
+          <h3>Bluehost</h3>
+
+          <p>
+            A straightforward option to consider if your goal is to get a website online
+            without making the setup unnecessarily complicated.
+          </p>
+
+          <ul>
+            <li>Check the real cost before committing</li>
+            <li>Consider renewal pricing</li>
+            <li>Think about what you may need later</li>
+            <li>Consider how easy switching would be</li>
+          </ul>
+
           <a
-            class="btn"
             href="https://bluehost.sjv.io/c/7706622/1376228/11352"
             target="_blank"
             rel="nofollow sponsored noopener"
+            class="btn"
           >
-            Check Bluehost →
+            Check Bluehost's current plans →
           </a>
-
-          <p class="small muted">
-            Affiliate link.
-            <a href="affiliate-disclosure.html">
-              See disclosure
-            </a>
-            ·
-            <a href="guide-hosting.html">
-              Read hosting guide
-            </a>
-          </p>
 
         </div>
 
-        <img
-          src="bluehost-feature.svg"
-          alt=""
-          class="provider-image"
-        >
 
-      </article>
+        <!-- KIT -->
 
+        <div class="provider-card">
 
-      <!-- KIT -->
-
-      <article class="provider-card">
-
-        <div class="provider-copy">
-
-          <span class="pill">
-            EMAIL MARKETING
-          </span>
-
-          <h3>
-            Kit
-          </h3>
+          <h3>Kit</h3>
 
           <p>
-            For creators building an email list, Kit is another option worth checking. Compare subscriber limits, automation, deliverability, pricing and how easy it will be to switch later.
+            An option worth considering for creators who want tools for building and managing
+            an email audience.
           </p>
 
+          <ul>
+            <li>Consider audience size</li>
+            <li>Check available features</li>
+            <li>Understand how pricing changes with growth</li>
+            <li>Choose based on your actual workflow</li>
+          </ul>
+
           <a
-            class="btn"
             href="https://partners.kit.com/sf35s0p1xm0a"
             target="_blank"
             rel="nofollow sponsored noopener"
+            class="btn"
           >
-            Check Kit →
+            Check Kit's current plans →
           </a>
 
-          <p class="small muted">
-            Affiliate link.
-            <a href="affiliate-disclosure.html">
-              See disclosure
-            </a>
-            ·
-            <a href="guide-email-marketing.html">
-              Read email guide
-            </a>
+        </div>
+
+
+        <!-- FUTURE PROVIDER -->
+
+        <div class="provider-card future">
+
+          <h3>More comparisons coming</h3>
+
+          <p>
+            Additional software providers will be added when they can be evaluated
+            using the same Real Cost framework.
+          </p>
+
+          <ul>
+            <li>Real cost</li>
+            <li>Growth</li>
+            <li>Fit</li>
+            <li>Ease of exit</li>
+          </ul>
+
+          <span class="btn">
+            Compare before you commit
+          </span>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- REAL COST SCORE -->
+
+  <section class="score-section">
+    <div class="container">
+
+      <div class="score-box">
+
+        <div class="score-intro">
+
+          <h2>The Real Cost Score™</h2>
+
+          <p>
+            A simple way to think about more than the advertised monthly price.
+            The goal is to compare what matters after you actually start using the product.
           </p>
 
         </div>
 
-        <img
-          src="icon-email.svg"
-          alt=""
-          class="provider-icon"
-        >
 
-      </article>
+        <div class="score-list">
+
+          <div class="score-item">
+            <span>Price</span>
+            <span>✓</span>
+          </div>
+
+          <div class="score-item">
+            <span>Growth cost</span>
+            <span>✓</span>
+          </div>
+
+          <div class="score-item">
+            <span>Hidden extras</span>
+            <span>✓</span>
+          </div>
+
+          <div class="score-item">
+            <span>Cost transparency</span>
+            <span>✓</span>
+          </div>
+
+          <div class="score-item">
+            <span>Ease of exit</span>
+            <span>✓</span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- APPROACH -->
+
+  <section id="approach" class="approach">
+    <div class="container">
+
+      <div class="section-heading">
+        <h2>Our approach.</h2>
+
+        <p>
+          SaaS Real Cost is designed to help you make a better buying decision,
+          not simply push the cheapest-looking option.
+        </p>
+      </div>
+
+
+      <div class="approach-grid">
+
+        <div class="approach-card">
+
+          <h3>Look beyond the headline price.</h3>
+
+          <p>
+            We focus on the costs and limitations that can become important after
+            the initial purchase decision.
+          </p>
+
+        </div>
+
+
+        <div class="approach-card">
+
+          <h3>Choose for your situation.</h3>
+
+          <p>
+            The cheapest option isn't automatically the best option.
+            A better choice is one that fits your needs now and remains sensible as they change.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- FINAL CTA -->
+
+  <section class="final-cta">
+
+    <div class="container">
+
+      <h2>Know the real cost before you commit.</h2>
+
+      <p>
+        Before choosing software or hosting, look beyond the number that first catches your eye.
+        Compare the cost, fit, growth and exit.
+      </p>
+
+      <a href="#guides" class="btn">
+        Start with a Buyer Guide →
+      </a>
 
     </div>
 
-  </div>
-
-</section>
+  </section>
 
 
-<!-- FINAL CTA -->
+  <!-- DISCLOSURE -->
 
-<section class="section final-cta">
+  <section class="disclosure">
 
-  <div class="wrap cta-box">
-
-    <div>
-
-      <div class="eyebrow">
-        BEFORE YOU COMMIT
-      </div>
-
-      <h2>
-        Know the real cost — not just the starting price.
-      </h2>
+    <div class="container">
 
       <p>
-        Use the buyer guides to make a clearer decision before you sign up, upgrade or lock yourself in.
+        <strong>Affiliate disclosure:</strong>
+        Some links on SaaS Real Cost are affiliate links.
+        If you purchase through one of these links, we may receive a commission at no additional
+        cost to you. Our goal is to provide useful buying information and make the cost factors
+        easier to understand.
       </p>
 
     </div>
 
-    <a class="btn" href="#guides">
-      Explore the guides →
-    </a>
-
-  </div>
-
-</section>
-
-
-<!-- TRANSPARENCY -->
-
-<section class="section transparency">
-
-  <div class="wrap">
-
-    <div class="notice">
-
-      <strong>Transparency:</strong>
-      SaaS Real Cost focuses on costs and trade-offs that are easy to miss before buying. Some pages contain affiliate links. They are clearly disclosed. Prices, features, availability and affiliate terms can change, so verify current details with the provider before purchasing.
-
-    </div>
-
-  </div>
-
-</section>
+  </section>
 
 </main>
 
 
-<!-- FOOTER -->
+<footer>
 
-<footer class="site-footer">
-
-  <div class="wrap footer-inner">
+  <div class="container footer-inner">
 
     <div>
-
-      <a class="brand" href="index.html">
-        <span>SaaS</span> Real Cost
-      </a>
-
-      <p>
-        Independent buyer guides focused on the real cost of software and hosting.
-      </p>
-
+      © 2026 SaaS Real Cost. All rights reserved.
     </div>
 
-
-    <div class="footer-links">
-
-      <a href="about.html">
-        About
-      </a>
-
-      <a href="how-it-works.html">
-        How it works
-      </a>
-
-      <a href="affiliate-disclosure.html">
-        Affiliate disclosure
-      </a>
-
-      <a href="privacy.html">
-        Privacy
-      </a>
-
+    <div>
+      <a href="/about.html">About</a>
+      &nbsp; · &nbsp;
+      <a href="/privacy.html">Privacy</a>
+      &nbsp; · &nbsp;
+      <a href="/affiliate-disclosure.html">Affiliate Disclosure</a>
     </div>
 
   </div>
