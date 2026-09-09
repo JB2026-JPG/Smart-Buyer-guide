@@ -1,318 +1,755 @@
 <!doctype html>
 <html lang="en">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-89RYYZGH1F"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-89RYYZGH1F"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-89RYYZGH1F');
+  </script>
 
-  gtag('config', 'G-89RYYZGH1F');
-</script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
 
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Best Web Hosting 2026: Real Cost Comparison Calculator | SaaS Real Cost</title>
 
-<title>Best Web Hosting 2026: Real Cost Comparison Calculator | SaaS Real Cost</title>
+  <meta
+    name="description"
+    content="Don't get trapped by intro pricing. Use our free hosting cost calculator and compare hosting on renewal price, limits, backups, support and cancellation."
+  >
 
-<meta name="description" content="Don't get trapped by intro pricing. Use our free hosting cost calculator and compare Hostinger, Kinsta and DigitalOcean on renewal price, backups and support.">
+  <meta
+    property="og:title"
+    content="Best Web Hosting 2026: Real Cost Comparison Calculator | SaaS Real Cost"
+  >
 
-<meta property="og:title" content="Best Web Hosting 2026: Real Cost Comparison Calculator">
-<meta property="og:description" content="Use our free hosting cost calculator and compare providers on renewal price, backups and support.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://saasrealcost.com/guide-hosting.html">
-<meta property="og:image" content="https://saasrealcost.com/icon-hosting.svg">
+  <meta
+    property="og:description"
+    content="Compare hosting on real total cost, renewal pricing, limits, backups and support before you buy."
+  >
 
-<link rel="stylesheet" href="style.css">
-<link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://saasrealcost.com/guide-hosting.html">
+  <meta property="og:image" content="https://saasrealcost.com/icon-hosting.svg">
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
 </head>
 
 <body>
 
 <main class="wrap">
 
-<nav class="nav">
-  <a class="brand" href="index.html">SaaS Real Cost</a>
-  <div class="navlinks">
-    <a href="index.html">Home</a>
-  </div>
-</nav>
+  <!-- NAVIGATION -->
+  <nav class="nav">
+    <a class="brand" href="index.html">SaaS Real Cost</a>
 
-<section class="hero">
-  <img src="icon-hosting.svg" alt="" width="56" height="56" style="margin-bottom:12px"/>
-  <div class="eyebrow">HOSTING BUYING GUIDE</div>
-  <h1>Choose web hosting without getting trapped by the intro price.</h1>
-  <p class="small muted" style="margin-top:-10px;margin-bottom:20px;"><b>Last checked:</b> September 2026</p>
-  <p class="lead">The cheapest advertised plan is not always the cheapest over a full year. Compare the terms that matter after checkout.</p>
-</section>
+    <div class="navlinks">
+      <a href="index.html">Home</a>
+    </div>
+  </nav>
 
-<section class="section">
 
-  <div class="card">
+  <!-- HERO -->
+  <section class="hero">
 
-    <h2>Real cost calculator</h2>
+    <img
+      src="icon-hosting.svg"
+      alt=""
+      width="56"
+      height="56"
+      style="margin-bottom:12px"
+    >
 
-    <p class="muted" style="margin-top:-6px">
-      Enter a plan's intro price and renewal price to see the real cost over time.
+    <div class="eyebrow">
+      HOSTING BUYING GUIDE
+    </div>
+
+    <h1>
+      The hosting price you see today may not be the price you pay next year.
+    </h1>
+
+    <p class="lead">
+      Compare introductory pricing with renewal pricing, limits,
+      backups, support and cancellation—before you commit.
     </p>
 
-    <div class="grid" style="grid-template-columns:1fr 1fr;gap:16px;margin-top:16px">
+    <div class="hero-proof">
+      <span>Real total cost</span>
+      <span>Renewal pricing</span>
+      <span>Exit options</span>
+    </div>
 
-      <div>
-        <label class="label" for="introPrice">Intro price (per month)</label>
-        <input class="input" type="number" id="introPrice" placeholder="e.g. 2.99" step="0.01" min="0">
+  </section>
+
+
+  <!-- CALCULATOR -->
+  <section class="section">
+
+    <div class="card calculator-card">
+
+      <div class="eyebrow">
+        REAL COST CALCULATOR
       </div>
 
-      <div>
-        <label class="label" for="introMonths">Intro period (months)</label>
-        <input class="input" type="number" id="introMonths" placeholder="e.g. 12" min="1">
+      <h2>
+        What will hosting really cost you?
+      </h2>
+
+      <p class="muted">
+        Enter the promotional price, promotional period and renewal price.
+        We calculate the total cost over the period you choose.
+      </p>
+
+      <div
+        class="grid calculator-grid"
+        style="grid-template-columns:1fr 1fr;gap:16px;margin-top:20px"
+      >
+
+        <div>
+          <label class="label" for="introPrice">
+            Intro price per month
+          </label>
+
+          <input
+            class="input"
+            type="number"
+            id="introPrice"
+            placeholder="e.g. 2.99"
+            step="0.01"
+            min="0"
+          >
+        </div>
+
+
+        <div>
+          <label class="label" for="introMonths">
+            Intro period in months
+          </label>
+
+          <input
+            class="input"
+            type="number"
+            id="introMonths"
+            placeholder="e.g. 12"
+            min="1"
+          >
+        </div>
+
+
+        <div>
+          <label class="label" for="renewPrice">
+            Renewal price per month
+          </label>
+
+          <input
+            class="input"
+            type="number"
+            id="renewPrice"
+            placeholder="e.g. 9.99"
+            step="0.01"
+            min="0"
+          >
+        </div>
+
+
+        <div>
+          <label class="label" for="years">
+            Compare over how many years?
+          </label>
+
+          <input
+            class="input"
+            type="number"
+            id="years"
+            placeholder="e.g. 3"
+            min="1"
+            value="3"
+          >
+        </div>
+
       </div>
 
-      <div>
-        <label class="label" for="renewPrice">Renewal price (per month)</label>
-        <input class="input" type="number" id="renewPrice" placeholder="e.g. 9.99" step="0.01" min="0">
+      <div id="calcResult" style="margin-top:22px"></div>
+
+    </div>
+
+  </section>
+
+
+  <!-- AFFILIATE DISCLOSURE -->
+  <section class="section">
+
+    <div class="notice">
+
+      <b>Affiliate disclosure:</b>
+
+      This page may contain a sponsored affiliate link.
+      We only use approved tracking URLs supplied by the relevant
+      affiliate program.
+
+    </div>
+
+  </section>
+
+
+  <!-- WHAT TO COMPARE -->
+  <article class="card">
+
+    <div class="eyebrow">
+      BEFORE YOU BUY
+    </div>
+
+    <h2>
+      Compare these five things
+    </h2>
+
+    <div class="grid">
+
+      <div class="feature-card">
+
+        <h3>
+          Renewal price
+        </h3>
+
+        <p class="muted">
+          The introductory price is only part of the picture.
+          Check what you will pay when the promotional period ends.
+        </p>
+
       </div>
 
-      <div>
-        <label class="label" for="years">Compare over how many years?</label>
-        <input class="input" type="number" id="years" placeholder="e.g. 3" min="1" value="3">
+
+      <div class="feature-card">
+
+        <h3>
+          Limits
+        </h3>
+
+        <p class="muted">
+          Check storage, bandwidth, websites, visitors,
+          databases and other technical limits.
+        </p>
+
+      </div>
+
+
+      <div class="feature-card">
+
+        <h3>
+          Performance
+        </h3>
+
+        <p class="muted">
+          Look at the resources available to your website
+          and the performance you actually need.
+        </p>
+
+      </div>
+
+
+      <div class="feature-card">
+
+        <h3>
+          Backups & security
+        </h3>
+
+        <p class="muted">
+          Confirm what backups, SSL, malware protection
+          and security features are included.
+        </p>
+
+      </div>
+
+
+      <div class="feature-card">
+
+        <h3>
+          Support & cancellation
+        </h3>
+
+        <p class="muted">
+          Check support availability, migration assistance,
+          cancellation terms and how easy it is to leave.
+        </p>
+
       </div>
 
     </div>
 
-    <div id="calcResult" style="margin-top:20px"></div>
 
-  </div>
+    <h2>
+      Before checkout
+    </h2>
 
-</section>
+    <p>
+      Check what happens after the introductory period.
+      Confirm whether important backups, security features or
+      support are included or sold as add-ons.
+    </p>
 
-<article class="card">
 
-  <div class="notice">
-    <b>Affiliate disclosure:</b>
-    This page may contain a sponsored affiliate link. It is only activated when an approved tracking URL is configured.
-  </div>
+    <!-- CTA -->
+    <div
+      id="cta"
+      class="card cta-card"
+      style="margin-top:28px"
+    >
 
-  <h2>Compare these five things</h2>
+      <div class="eyebrow">
+        CURRENT OPTION
+      </div>
 
-  <ul>
-    <li>Renewal price and contract length</li>
-    <li>Storage, bandwidth and technical limits</li>
-    <li>Performance and uptime expectations</li>
-    <li>Backups, security and SSL coverage</li>
-    <li>Migration, support and cancellation</li>
-  </ul>
+      <h2>
+        Check the current option
+      </h2>
 
-  <h2>Before checkout</h2>
+      <p class="muted">
+        Review the current hosting option and verify its renewal price,
+        limits and cancellation terms before signing up.
+      </p>
 
-  <p>
-    Check what happens after the introductory period.
-    Confirm whether important backups, security features or support are included or sold as add-ons.
-  </p>
-
-  <div class="notice" style="margin-top:16px;background:#f0f7ff;border-color:#b8daff;">
-    <strong>Where the price changes:</strong> The introductory rate applies only to your first billing term. Check the renewal price on Bluehost's official pricing page before extending — use the calculator above to visualize the difference.
-  </div>
-
-  <div id="cta" class="card" style="margin-top:26px;background:#f8faff">
-    <h2>Check an option</h2>
-    <p class="muted">No approved hosting affiliate link has been configured yet.</p>
-  </div>
-
-</article>
-
-<section class="section">
-
-  <h2>Popular options compared</h2>
-
-  <p class="lead" style="font-size:16px">
-    A quick look at three common hosting types. Always confirm current renewal pricing before signing up.
-  </p>
-
-  <div class="grid">
-
-    <div class="card">
-      <span class="pill">BEST FOR SMALL SITES</span>
-      <h3 style="margin-top:12px">Hostinger</h3>
-      <p class="muted" style="margin-top:-8px">Budget-friendly shared hosting for simple websites.</p>
-      <ul style="padding-left:18px;margin:14px 0">
-        <li>✓ Low entry-level pricing</li>
-        <li>✓ Simple control panel</li>
-        <li>✓ One-click WordPress install</li>
-      </ul>
     </div>
 
-    <div class="card">
-      <span class="pill">BEST FOR WORDPRESS</span>
-      <h3 style="margin-top:12px">Kinsta</h3>
-      <p class="muted" style="margin-top:-8px">Fully managed WordPress hosting with automatic maintenance.</p>
-      <ul style="padding-left:18px;margin:14px 0">
-        <li>✓ Automatic backups</li>
-        <li>✓ Built-in caching & security</li>
-        <li>✓ Strong support response times</li>
-      </ul>
+  </article>
+
+
+  <!-- POPULAR OPTIONS -->
+  <section class="section">
+
+    <div class="eyebrow">
+      QUICK COMPARISON
     </div>
 
-    <div class="card">
-      <span class="pill">BEST FOR CONTROL</span>
-      <h3 style="margin-top:12px">DigitalOcean</h3>
-      <p class="muted" style="margin-top:-8px">Cloud/VPS hosting for teams that want full server control.</p>
-      <ul style="padding-left:18px;margin:14px 0">
-        <li>✓ Scalable server resources</li>
-        <li>✓ Pay-as-you-go pricing model</li>
-        <li>✓ Developer-friendly tools</li>
-      </ul>
+    <h2>
+      Popular hosting options
+    </h2>
+
+    <p class="lead" style="font-size:16px">
+      A quick look at three common hosting types.
+      Always confirm current renewal pricing before signing up.
+    </p>
+
+
+    <div class="grid">
+
+      <div class="card">
+
+        <span class="pill">
+          BEST FOR SMALL SITES
+        </span>
+
+        <h3>
+          Hostinger
+        </h3>
+
+        <p class="muted">
+          Budget-friendly shared hosting for simple websites.
+        </p>
+
+        <ul>
+          <li>Low entry-level pricing</li>
+          <li>Simple control panel</li>
+          <li>One-click WordPress install</li>
+        </ul>
+
+      </div>
+
+
+      <div class="card">
+
+        <span class="pill">
+          BEST FOR WORDPRESS
+        </span>
+
+        <h3>
+          Kinsta
+        </h3>
+
+        <p class="muted">
+          Fully managed WordPress hosting with automatic maintenance.
+        </p>
+
+        <ul>
+          <li>Automatic backups</li>
+          <li>Built-in caching and security</li>
+          <li>Managed WordPress environment</li>
+        </ul>
+
+      </div>
+
+
+      <div class="card">
+
+        <span class="pill">
+          BEST FOR CONTROL
+        </span>
+
+        <h3>
+          DigitalOcean
+        </h3>
+
+        <p class="muted">
+          Cloud/VPS hosting for teams that want more server control.
+        </p>
+
+        <ul>
+          <li>Scalable server resources</li>
+          <li>Pay-as-you-go pricing model</li>
+          <li>Developer-friendly tools</li>
+        </ul>
+
+      </div>
+
     </div>
 
-  </div>
+  </section>
 
-</section>
 
-<section class="section">
+  <!-- SPECIFIC GUIDES -->
+  <section class="section">
 
-  <h2>More specific hosting guides</h2>
+    <div class="eyebrow">
+      MORE HOSTING GUIDES
+    </div>
 
-  <div class="grid">
+    <h2>
+      Find the guide that fits you
+    </h2>
 
-    <a class="card" href="guide-hosting-small-business.html" style="text-decoration:none;color:inherit">
-      <h3>For small business</h3>
-      <p class="muted">Storage, email, uptime and what to check for a company website.</p>
-    </a>
+    <div class="grid">
 
-    <a class="card" href="guide-hosting-beginners.html" style="text-decoration:none;color:inherit">
-      <h3>For beginners</h3>
-      <p class="muted">Building your first website? Start here.</p>
-    </a>
+      <a
+        class="card card-link"
+        href="guide-hosting-small-business.html"
+      >
 
-    <a class="card" href="guide-hosting-cheap.html" style="text-decoration:none;color:inherit">
-      <h3>Cheap hosting</h3>
-      <p class="muted">What to check before choosing on price alone.</p>
-    </a>
+        <h3>
+          Hosting for small business
+        </h3>
 
-  </div>
+        <p class="muted">
+          Storage, email, uptime and what to check
+          for a company website.
+        </p>
 
-</section>
+        <span class="text-link">
+          Read guide →
+        </span>
 
-<section class="section">
+      </a>
 
-  <h2>Frequently asked</h2>
 
-  <details class="card" style="margin-bottom:12px">
-    <summary style="font-weight:700;cursor:pointer">Why did my hosting bill increase after year one?</summary>
-    <p class="muted" style="margin-top:10px">Most hosts advertise a discounted first-term price. Renewal pricing is often listed separately—check it before signing up.</p>
-  </details>
+      <a
+        class="card card-link"
+        href="guide-hosting-beginners.html"
+      >
 
-  <details class="card" style="margin-bottom:12px">
-    <summary style="font-weight:700;cursor:pointer">Do I need managed hosting?</summary>
-    <p class="muted" style="margin-top:10px">If you don't want to handle server maintenance yourself, managed hosting is worth the premium. For simple static sites, shared hosting is usually enough.</p>
-  </details>
+        <h3>
+          Hosting for beginners
+        </h3>
 
-  <details class="card">
-    <summary style="font-weight:700;cursor:pointer">What should I check before migrating providers?</summary>
-    <p class="muted" style="margin-top:10px">Confirm the new host supports a full backup import, and keep the old host active until DNS has fully propagated.</p>
-  </details>
+        <p class="muted">
+          Building your first website?
+          Start with the basics.
+        </p>
 
-</section>
+        <span class="text-link">
+          Read guide →
+        </span>
+
+      </a>
+
+
+      <a
+        class="card card-link"
+        href="guide-hosting-cheap.html"
+      >
+
+        <h3>
+          Cheap hosting
+        </h3>
+
+        <p class="muted">
+          What to check before choosing a host
+          based on price alone.
+        </p>
+
+        <span class="text-link">
+          Read guide →
+        </span>
+
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- FAQ -->
+  <section class="section">
+
+    <div class="eyebrow">
+      FAQ
+    </div>
+
+    <h2>
+      Frequently asked
+    </h2>
+
+
+    <details class="card faq-card">
+
+      <summary>
+        Why did my hosting bill increase after year one?
+      </summary>
+
+      <p class="muted">
+        Most hosts advertise a discounted first-term price.
+        Renewal pricing is often listed separately, so check
+        the renewal price before signing up.
+      </p>
+
+    </details>
+
+
+    <details class="card faq-card">
+
+      <summary>
+        Do I need managed hosting?
+      </summary>
+
+      <p class="muted">
+        If you don't want to handle server maintenance yourself,
+        managed hosting can be worth the premium.
+        For simple static sites, simpler hosting may be enough.
+      </p>
+
+    </details>
+
+
+    <details class="card faq-card">
+
+      <summary>
+        What should I check before migrating providers?
+      </summary>
+
+      <p class="muted">
+        Confirm that the new host supports your website,
+        backups and required software. Keep the old host active
+        until the migration and DNS changes are fully complete.
+      </p>
+
+    </details>
+
+  </section>
 
 </main>
 
+
+<!-- FOOTER -->
 <footer class="wrap">
-  Independent buyer information. Verify current pricing and terms with the provider.
-  · <a href="about.html">About</a>
-  · <a href="affiliate-disclosure.html">Affiliate disclosure</a>
-  · <a href="privacy.html">Privacy</a>
+
+  Independent buyer information.
+  Verify current pricing and terms with the provider.
+
+  ·
+
+  <a href="index.html">
+    Home
+  </a>
+
+  ·
+
+  <a href="about.html">
+    About
+  </a>
+
+  ·
+
+  <a href="affiliate-disclosure.html">
+    Affiliate disclosure
+  </a>
+
+  ·
+
+  <a href="privacy.html">
+    Privacy
+  </a>
+
 </footer>
 
-<!-- Affiliate configuration -->
+
+<!-- AFFILIATE CONFIGURATION -->
 <script src="affiliate-config.js"></script>
 
-<!-- Existing demand finder -->
+
+<!-- DEMAND FINDER -->
 <script src="demand-finder.js"></script>
 
-<!-- Bluehost affiliate CTA -->
+
+<!-- AFFILIATE CTA -->
 <script>
 (function(){
+
   const config = window.SBG_CONFIG || {};
-  const a = (config.links && config.links.hosting) || config.defaultAffiliateLink || "";
+
+  const affiliateLink =
+    (config.links && config.links.hosting) ||
+    config.defaultAffiliateLink ||
+    "https://bluehost.sjv.io/c/7706622/1376228/11352";
+
   const cta = document.getElementById("cta");
 
-  if (a && cta) {
+  if (!cta) return;
+
+  if (affiliateLink) {
+
     cta.innerHTML =
-      '<h2>Check Bluehost deals</h2>' +
-      '<p>Review the current offer and verify its renewal and cancellation terms.</p>' +
+
+      '<div class="eyebrow">CURRENT OPTION</div>' +
+
+      '<h2>Check the current option</h2>' +
+
+      '<p class="muted">' +
+      'Review the current hosting option and verify its renewal price, limits and cancellation terms before signing up.' +
+      '</p>' +
+
       '<a class="btn" href="' +
-      a.replace(/"/g, '&quot;') +
+      affiliateLink.replace(/"/g, '&quot;') +
       '" target="_blank" rel="nofollow sponsored noopener">' +
-      'Check Bluehost deals →' +
-      '</a>';
+      'Check the option' +
+      '</a>' +
+
+      '<p class="small muted" style="margin-top:10px">' +
+      'Affiliate link. Verify current pricing and terms before purchasing.' +
+      '</p>';
+
   }
+
 })();
 </script>
 
-<!-- Hosting calculator -->
+
+<!-- HOSTING CALCULATOR -->
 <script>
 function calcHosting(){
-  const intro = parseFloat(document.getElementById('introPrice').value) || 0;
-  const introM = parseInt(document.getElementById('introMonths').value) || 0;
-  const renew = parseFloat(document.getElementById('renewPrice').value) || 0;
-  const years = parseInt(document.getElementById('years').value) || 1;
+
+  const intro =
+    parseFloat(document.getElementById('introPrice').value) || 0;
+
+  const introMonths =
+    parseInt(document.getElementById('introMonths').value) || 0;
+
+  const renew =
+    parseFloat(document.getElementById('renewPrice').value) || 0;
+
+  const years =
+    parseInt(document.getElementById('years').value) || 1;
 
   const totalMonths = years * 12;
-  const introMonthsUsed = Math.min(introM, totalMonths);
-  const renewMonthsUsed = Math.max(0, totalMonths - introMonthsUsed);
 
-  const total = (intro * introMonthsUsed) + (renew * renewMonthsUsed);
-  const avgMonthly = (total / totalMonths).toFixed(2);
-  const el = document.getElementById('calcResult');
+  const introMonthsUsed =
+    Math.min(introMonths, totalMonths);
 
-  if(intro === 0 && renew === 0){
-    el.innerHTML = '';
+  const renewMonthsUsed =
+    Math.max(0, totalMonths - introMonthsUsed);
+
+  const total =
+    (intro * introMonthsUsed) +
+    (renew * renewMonthsUsed);
+
+  const averageMonthly =
+    totalMonths > 0
+      ? (total / totalMonths).toFixed(2)
+      : "0.00";
+
+  const result =
+    document.getElementById('calcResult');
+
+  if (
+    intro === 0 &&
+    renew === 0
+  ) {
+    result.innerHTML = '';
     return;
   }
 
-  el.innerHTML =
-    '<div style="background:#eaf3ee;border-radius:10px;padding:18px">' +
-      '<div style="font-size:14px;color:#5c6b62">Total cost over ' + years + ' year(s)</div>' +
-      '<div class="stat">€' + total.toFixed(2) + '</div>' +
-      '<div class="muted" style="margin-top:6px">Average €' + avgMonthly + ' / month once the intro period ends</div>' +
+  result.innerHTML =
+
+    '<div class="success calculator-result">' +
+
+      '<div class="small muted">' +
+        'Estimated total cost over ' +
+        years +
+        ' year' +
+        (years === 1 ? '' : 's') +
+      '</div>' +
+
+      '<div class="stat">' +
+        '€' +
+        total.toFixed(2) +
+      '</div>' +
+
+      '<div class="muted" style="margin-top:6px">' +
+        'Average cost: €' +
+        averageMonthly +
+        ' per month over the full period.' +
+      '</div>' +
+
     '</div>';
+
 }
 
-document.getElementById('introPrice').addEventListener('input', calcHosting);
-document.getElementById('introMonths').addEventListener('input', calcHosting);
-document.getElementById('renewPrice').addEventListener('input', calcHosting);
-document.getElementById('years').addEventListener('input', calcHosting);
+
+document
+  .getElementById('introPrice')
+  .addEventListener('input', calcHosting);
+
+document
+  .getElementById('introMonths')
+  .addEventListener('input', calcHosting);
+
+document
+  .getElementById('renewPrice')
+  .addEventListener('input', calcHosting);
+
+document
+  .getElementById('years')
+  .addEventListener('input', calcHosting);
 </script>
 
-<!-- FAQ structured data -->
+
+<!-- FAQ STRUCTURED DATA -->
 <script type="application/ld+json">
 {
-  "@context":"https://schema.org",
-  "@type":"FAQPage",
-  "mainEntity":[
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
     {
-      "@type":"Question",
-      "name":"Why did my hosting bill increase after year one?",
-      "acceptedAnswer":{
-        "@type":"Answer",
-        "text":"Most hosts advertise a discounted first-term price. Renewal pricing is often listed separately—check it before signing up."
+      "@type": "Question",
+      "name": "Why did my hosting bill increase after year one?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most hosts advertise a discounted first-term price. Renewal pricing is often listed separately, so check the renewal price before signing up."
       }
     },
     {
-      "@type":"Question",
-      "name":"Do I need managed hosting?",
-      "acceptedAnswer":{
-        "@type":"Answer",
-        "text":"If you don't want to handle server maintenance yourself, managed hosting is worth the premium. For simple static sites, shared hosting is usually enough."
+      "@type": "Question",
+      "name": "Do I need managed hosting?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "If you don't want to handle server maintenance yourself, managed hosting can be worth the premium. For simple static sites, simpler hosting may be enough."
       }
     },
     {
-      "@type":"Question",
-      "name":"What should I check before migrating providers?",
-      "acceptedAnswer":{
-        "@type":"Answer",
-        "text":"Confirm the new host supports a full backup import, and keep the old host active until DNS has fully propagated."
+      "@type": "Question",
+      "name": "What should I check before migrating providers?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Confirm that the new host supports your website, backups and required software. Keep the old host active until the migration and DNS changes are fully complete."
       }
     }
   ]
