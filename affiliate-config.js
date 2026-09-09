@@ -1,1 +1,16 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Affiliate Disclosure | SaaS Real Cost</title><meta name="description" content="Affiliate disclosure for SaaS Real Cost."><link rel="stylesheet" href="style.css"><link rel="icon" href="favicon.svg" type="image/svg+xml"></head><body><main class="wrap"><nav class="nav"><a class="brand" href="index.html">SaaS Real Cost</a><a href="index.html">Home</a></nav><section class="hero"><div class="eyebrow">TRANSPARENCY</div><h1>Affiliate disclosure.</h1><p class="lead">Some links on this site may be affiliate links. If you use one and later purchase from the provider, the site may receive a commission.</p></section><article class="card"><h2>How links are selected</h2><p>Affiliate URLs are not invented by the site. They must be supplied by the relevant affiliate program after approval. The site labels sponsored calls to action clearly.</p><h2>Editorial independence</h2><p>A commission does not mean a provider is best for every buyer. Compare current price, features, contract terms and alternatives before purchasing.</p></article></main><footer class="wrap">SaaS Real Cost · <a href="index.html">Home</a></footer></body></html>
+/*
+  SAAS REAL COST — AFFILIATE CONFIGURATION
+  ------------------------------------------------
+  This is the ONLY file you need to edit for affiliate links.
+*/
+
+window.SBG_CONFIG = {
+  defaultAffiliateLink: "https://bluehost.sjv.io/c/7706622/1376228/11352",
+
+  links: {
+    crm: "",
+    hosting: "https://bluehost.sjv.io/c/7706622/1376228/11352",
+    "business-software": "",
+    "email-marketing": ""
+  }
+};
