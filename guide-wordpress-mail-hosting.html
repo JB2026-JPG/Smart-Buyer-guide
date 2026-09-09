@@ -1,51 +1,163 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Why WordPress Email Keeps Failing on Google Compute Engine (And the Easier Fix)</title><meta name="description" content="Struggling to activate email for WordPress on Google Compute Engine? Here's why self-managed cloud hosting causes this problem, and a simpler alternative that includes email out of the box."><meta property="og:title" content="Why WordPress Email Keeps Failing on Google Compute Engine"><meta property="og:description" content="Self-managed cloud hosting breaks WordPress email delivery. Here's why, and when managed hosting is the simpler fix."><meta property="og:url" content="https://smart-buyer-guide.pages.dev/guide-wordpress-mail-hosting.html"><meta property="og:image" content="https://smart-buyer-guide.pages.dev/hero-graphic.svg"><meta property="og:type" content="article"><link rel="stylesheet" href="style.css"><link rel="icon" href="favicon.svg" type="image/svg+xml"></head><body><main class="wrap">
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 
-<nav class="nav"><a class="brand" href="index.html">Smart Buyer Guide</a><div class="navlinks"><a href="how-it-works.html">How it works</a><a href="about.html">About</a></div></nav>
+<title>Why WordPress Email Keeps Failing on Google Compute Engine (And the Easier Fix) | SaaS Real Cost</title>
+
+<meta name="description" content="Struggling to activate email for WordPress on Google Compute Engine? Here's why self-managed cloud hosting causes this problem, and a simpler alternative that includes email out of the box.">
+
+<meta property="og:title" content="Why WordPress Email Keeps Failing on Google Compute Engine">
+<meta property="og:description" content="Self-managed cloud hosting breaks WordPress email delivery. Here's why, and when managed hosting is the simpler fix.">
+<meta property="og:url" content="https://saasrealcost.com/guide-wordpress-mail-hosting">
+<meta property="og:image" content="https://saasrealcost.com/hero-graphic.svg">
+<meta property="og:type" content="article">
+
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+</head>
+
+<body>
+
+<main class="wrap">
+
+<nav class="nav">
+  <a class="brand" href="/">SaaS Real Cost</a>
+
+  <div class="navlinks">
+    <a href="how-it-works.html">How it works</a>
+    <a href="about.html">About</a>
+  </div>
+</nav>
 
 <section class="hero" style="padding:50px 0 24px">
+
   <div class="eyebrow">WEB HOSTING</div>
-  <h1>Why WordPress Email Keeps Failing on Google Compute Engine (And the Easier Fix)</h1>
-  <p class="lead">Smart Buyer Guide · Hosting guides</p>
+
+  <h1>
+    Why WordPress Email Keeps Failing on Google Compute Engine (And the Easier Fix)
+  </h1>
+
+  <p class="lead">
+    SaaS Real Cost · Hosting guides
+  </p>
+
 </section>
 
 <section class="section">
-  <p>If you've searched for a way to get outbound email working on a WordPress site hosted on Google Compute Engine, you already know the frustration: no built-in mail server, SMTP ports blocked by default, and a maze of DNS records (SPF, DKIM, DMARC) you have to configure by hand just to stop your emails from landing in spam.</p>
-  <p>This isn't a WordPress problem. It's a <em>self-managed infrastructure</em> problem. Google Compute Engine gives you a raw virtual machine — powerful, but it assumes you're comfortable acting as your own systems administrator. Email delivery is one of the first things that exposes that gap.</p>
+
+  <p>
+    If you've searched for a way to get outbound email working on a WordPress site hosted on Google Compute Engine, you already know the frustration: no built-in mail server, SMTP ports blocked by default, and a maze of DNS records (SPF, DKIM, DMARC) you have to configure by hand just to stop your emails from landing in spam.
+  </p>
+
+  <p>
+    This isn't a WordPress problem. It's a <em>self-managed infrastructure</em> problem. Google Compute Engine gives you a raw virtual machine — powerful, but it assumes you're comfortable acting as your own systems administrator. Email delivery is one of the first things that exposes that gap.
+  </p>
+
 </section>
 
 <section class="section">
+
   <h2>Why this keeps happening</h2>
+
   <div class="grid" style="grid-template-columns:1fr">
-    <div class="card"><b>No mail service included.</b> Compute Engine is infrastructure-as-a-service — you get compute and storage, not a configured mail transfer agent.</div>
-    <div class="card"><b>Port 25 is blocked by default</b> on most cloud providers, including Google Cloud, to prevent spam abuse. You typically need to request an exception or route through a third-party relay (like SendGrid or Mailgun) just to send mail.</div>
-    <div class="card"><b>DNS authentication is manual.</b> SPF, DKIM, and DMARC records all need to be added correctly, or your emails get flagged as spam regardless of the relay you use.</div>
-    <div class="card"><b>You're responsible for everything else too</b> — security patches, backups, SSL renewal, and uptime, all of which come free on managed hosting.</div>
+
+    <div class="card">
+      <b>No mail service included.</b>
+      Compute Engine is infrastructure-as-a-service — you get compute and storage, not a configured mail transfer agent.
+    </div>
+
+    <div class="card">
+      <b>Port 25 is blocked by default</b>
+      on most cloud providers, including Google Cloud, to prevent spam abuse. You typically need to request an exception or route through a third-party relay (like SendGrid or Mailgun) just to send mail.
+    </div>
+
+    <div class="card">
+      <b>DNS authentication is manual.</b>
+      SPF, DKIM, and DMARC records all need to be added correctly, or your emails get flagged as spam regardless of the relay you use.
+    </div>
+
+    <div class="card">
+      <b>You're responsible for everything else too</b>
+      — security patches, backups, SSL renewal, and uptime, all of which come free on managed hosting.
+    </div>
+
   </div>
+
 </section>
 
 <section class="section">
+
   <h2>The simpler path: managed WordPress hosting</h2>
-  <p>If your goal is a working website with reliable email — not a side project in cloud server administration — managed WordPress hosting removes this entire category of problem. Email accounts, SSL, backups, and security are configured for you from the start, so there's no relay to set up and no DNS records to debug at 11pm.</p>
+
+  <p>
+    If your goal is a working website with reliable email — not a side project in cloud server administration — managed WordPress hosting removes this entire category of problem. Email accounts, SSL, backups, and security are configured for you from the start, so there's no relay to set up and no DNS records to debug at 11pm.
+  </p>
+
 </section>
 
 <section class="section" style="background:#f8faff">
+
   <div class="card" style="display:grid;grid-template-columns:1.1fr 1fr;gap:28px;align-items:center">
+
     <div>
+
       <span class="pill">EDITOR'S PICK</span>
-      <h2 style="margin-top:14px">A hosting setup built for this exact situation</h2>
-      <p class="muted">Bluehost is one of the most widely used managed WordPress hosts, and it includes working email out of the box — no separate mail relay, no manual SPF/DKIM setup. It's a practical option if you'd rather spend your time running your site than your own mail server.</p>
-      <a class="btn" href="https://bluehost.sjv.io/c/7706622/1376228/11352" target="_blank" rel="nofollow sponsored noopener" style="margin-top:10px;display:inline-flex">See Bluehost plans</a>
-      <p class="small muted" style="margin-top:10px">Affiliate link—see our <a href="affiliate-disclosure.html">disclosure</a>.</p>
+
+      <h2 style="margin-top:14px">
+        A hosting setup built for this exact situation
+      </h2>
+
+      <p class="muted">
+        Bluehost is one of the most widely used managed WordPress hosts, and it includes working email out of the box — no separate mail relay, no manual SPF/DKIM setup. It's a practical option if you'd rather spend your time running your site than your own mail server.
+      </p>
+
+      <a
+        class="btn"
+        href="https://bluehost.sjv.io/c/7706622/1376228/11352"
+        target="_blank"
+        rel="nofollow sponsored noopener"
+        style="margin-top:10px;display:inline-flex"
+      >
+        See Bluehost plans
+      </a>
+
+      <p class="small muted" style="margin-top:10px">
+        Affiliate link—see our
+        <a href="affiliate-disclosure.html">disclosure</a>.
+      </p>
+
     </div>
-    <img src="bluehost-feature.svg" alt="" style="width:100%;max-width:360px" />
+
+    <img
+      src="bluehost-feature.svg"
+      alt=""
+      style="width:100%;max-width:360px"
+    />
+
   </div>
+
 </section>
 
 <section class="section">
+
   <h2>When self-hosting on Google Cloud still makes sense</h2>
-  <p>If you already run other infrastructure on Google Cloud, need fine-grained control over your server environment, or have the in-house expertise to manage mail delivery and security patching, staying on Compute Engine can still be the right call. For most WordPress sites — especially small business or personal sites — the maintenance overhead usually outweighs the benefit.</p>
+
+  <p>
+    If you already run other infrastructure on Google Cloud, need fine-grained control over your server environment, or have the in-house expertise to manage mail delivery and security patching, staying on Compute Engine can still be the right call. For most WordPress sites — especially small business or personal sites — the maintenance overhead usually outweighs the benefit.
+  </p>
+
 </section>
 
 </main>
-<footer class="wrap">Independent buyer guides. Prices, features, availability and affiliate terms can change. Verify current details with the provider before purchasing. · <a href="about.html">About</a> · <a href="affiliate-disclosure.html">Affiliate disclosure</a> · <a href="privacy.html">Privacy</a></footer>
-</body></html>
+
+<footer class="wrap">
+  Independent buyer guides. Prices, features, availability and affiliate terms can change. Verify current details with the provider before purchasing.
+  · <a href="about.html">About</a>
+  · <a href="affiliate-disclosure.html">Affiliate disclosure</a>
+  · <a href="privacy.html">Privacy</a>
+</footer>
+
+</body>
+</html>
