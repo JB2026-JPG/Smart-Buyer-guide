@@ -83,12 +83,20 @@
     Before checkout, verify data export, cancellation, refunds and contract terms.
   </p>
 
+  <!--
+    FIX: this block used to just sit with a static "No CRM affiliate
+    offer is currently configured" message when SBG_CONFIG.links.crm
+    was empty, with nothing to click. The script below now always
+    fills it in — either the live affiliate offer once you add one
+    to affiliate-config.js, or a neutral fallback that still gives
+    the reader a next step instead of a dead end.
+  -->
   <div id="cta" class="card" style="margin-top:26px;background:#f8faff">
 
     <h2>Compare CRM options</h2>
 
     <p class="muted">
-      No CRM affiliate offer is currently configured. Start by comparing workflow, pricing, integrations and exit options before choosing a provider.
+      Loading current recommendation…
     </p>
 
   </div>
@@ -181,6 +189,36 @@
 
 </section>
 
+<!--
+  FIX: cross-links to other guides. guide-hosting.html has these
+  and has the lowest bounce rate on the site — this page had none,
+  so a reader who finished the FAQ had nowhere left to go but out.
+-->
+<section class="section">
+
+  <h2>More buyer guides</h2>
+
+  <div class="grid">
+
+    <a class="card" href="guide-hosting.html" style="display:block;text-decoration:none;color:inherit">
+      <h3>Web hosting</h3>
+      <p class="muted">Renewal price, limits and cancellation terms compared.</p>
+    </a>
+
+    <a class="card" href="guide-email-marketing.html" style="display:block;text-decoration:none;color:inherit">
+      <h3>Email marketing</h3>
+      <p class="muted">Compare deliverability, automation depth and switching cost.</p>
+    </a>
+
+    <a class="card" href="guide-business-software.html" style="display:block;text-decoration:none;color:inherit">
+      <h3>Business software</h3>
+      <p class="muted">Cost, integrations, learning effort and lock-in compared.</p>
+    </a>
+
+  </div>
+
+</section>
+
 </main>
 
 <footer class="wrap">
@@ -212,6 +250,20 @@ if(a){
     a.replace(/"/g,'&quot;') +
     '" target="_blank" rel="nofollow sponsored noopener">' +
     'Review current CRM option' +
+    '</a>';
+
+} else {
+
+  // FIX: fallback for when no CRM affiliate link is configured yet.
+  // Gives a next step instead of leaving a dead "not configured" message.
+  document.getElementById('cta').innerHTML =
+    '<h2>Compare CRM options</h2>' +
+    '<p class="muted">We don\'t have an active CRM partnership yet, ' +
+    'so here\'s the short version: match a category above to your ' +
+    'workflow, then check pricing, integrations and exit terms ' +
+    'directly with the provider before committing.</p>' +
+    '<a class="btn" href="guide-business-software.html">' +
+    'See our business software guide' +
     '</a>';
 
 }
