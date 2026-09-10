@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Best Web Hosting for Beginners 2026: A No-Jargon Guide | Smart Buyer Guide</title>
+<title>Best Web Hosting for Beginners 2026: A No-Jargon Guide | SaaS Real Cost</title>
 <meta name="description" content="Building your first website? Learn what hosting actually is, whether you need a domain separately, and how to avoid the most common beginner mistakes.">
 <meta property="og:title" content="Best Web Hosting for Beginners 2026">
 <meta property="og:description" content="Learn what hosting actually is and how to avoid the most common beginner mistakes.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://smart-buyer-guide.pages.dev/guide-hosting-beginners.html">
-<meta property="og:image" content="https://smart-buyer-guide.pages.dev/icon-hosting.svg">
+<meta property="og:url" content="https://saasrealcost.com/guide-hosting-beginners.html">
+<meta property="og:image" content="https://saasrealcost.com/icon-hosting.svg">
 <link rel="stylesheet" href="style.css">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 </head>
@@ -19,7 +19,7 @@
 <main class="wrap">
 
 <nav class="nav">
-<a class="brand" href="index.html">Smart Buyer Guide</a>
+<a class="brand" href="index.html">SaaS Real Cost</a>
 <div class="navlinks">
 <a href="index.html">Home</a>
 <a href="guide-hosting.html">Hosting guide</a>
@@ -89,13 +89,28 @@ you choose in 2026. If a host charges extra for basic SSL, that's a red flag.
 <li>Choosing a host with no live chat or beginner-friendly support</li>
 </ul>
 
+<!--
+  FIX: this block previously had static text with no link at all
+  ("Review the current offer...") that only became clickable once
+  SBG.affiliateLink('hosting') resolved via JS. If that config key
+  is ever empty, or JS doesn't run (crawlers, slow connections),
+  the reader sees an instruction with nothing to click. The static
+  fallback below is now a real, useful next step on its own — the
+  script further down still overwrites it once a live offer exists.
+-->
 <div id="cta" class="card" style="margin-top:26px;background:#f8faff">
 
 <h2>Check beginner-friendly hosting</h2>
 
 <p class="muted">
-Review the current offer and verify its renewal and cancellation terms.
+We don't have a beginner-specific offer live right now — see our
+full hosting guide for the current recommended host and a real-cost
+calculator to compare renewal pricing.
 </p>
+
+<a class="btn" href="guide-hosting.html">
+See the full hosting guide
+</a>
 
 </div>
 
@@ -210,6 +225,9 @@ Verify current pricing and terms with the provider.
 <script src="demand-finder.js"></script>
 
 <script>
+// The HTML fallback above is already complete and useful on its own.
+// This script only OVERWRITES it once a live hosting affiliate link
+// is configured — no else-branch needed, nothing is left empty.
 const a = SBG.affiliateLink('hosting');
 
 if (a)
