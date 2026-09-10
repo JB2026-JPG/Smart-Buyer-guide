@@ -86,18 +86,24 @@
   <!--
     FIX: this block used to just sit with a static "No CRM affiliate
     offer is currently configured" message when SBG_CONFIG.links.crm
-    was empty, with nothing to click. The script below now always
-    fills it in — either the live affiliate offer once you add one
-    to affiliate-config.js, or a neutral fallback that still gives
-    the reader a next step instead of a dead end.
+    was empty, with nothing to click. The fallback content below is
+    now real, readable HTML from the start — not a "Loading…"
+    placeholder — so search engines and anyone without JS still see
+    a complete page. The script further down only REPLACES this with
+    the live affiliate offer once one is configured; it never has to
+    fill in empty content.
   -->
   <div id="cta" class="card" style="margin-top:26px;background:#f8faff">
 
     <h2>Compare CRM options</h2>
 
     <p class="muted">
-      Loading current recommendation…
+      We don't have an active CRM partnership yet, so here's the short version: match a category above to your workflow, then check pricing, integrations and exit terms directly with the provider before committing.
     </p>
+
+    <a class="btn" href="guide-business-software.html">
+      See our business software guide
+    </a>
 
   </div>
 
@@ -241,6 +247,10 @@ const a =
    SBG_CONFIG.links &&
    SBG_CONFIG.links.crm) || "";
 
+// The HTML fallback above is already complete and readable on its own
+// (for search engines, no-JS clients, and slow connections). This script
+// only OVERWRITES it once a real CRM affiliate link is configured —
+// it no longer needs an else-branch, because there's nothing empty to fill.
 if(a){
 
   document.getElementById('cta').innerHTML =
@@ -250,20 +260,6 @@ if(a){
     a.replace(/"/g,'&quot;') +
     '" target="_blank" rel="nofollow sponsored noopener">' +
     'Review current CRM option' +
-    '</a>';
-
-} else {
-
-  // FIX: fallback for when no CRM affiliate link is configured yet.
-  // Gives a next step instead of leaving a dead "not configured" message.
-  document.getElementById('cta').innerHTML =
-    '<h2>Compare CRM options</h2>' +
-    '<p class="muted">We don\'t have an active CRM partnership yet, ' +
-    'so here\'s the short version: match a category above to your ' +
-    'workflow, then check pricing, integrations and exit terms ' +
-    'directly with the provider before committing.</p>' +
-    '<a class="btn" href="guide-business-software.html">' +
-    'See our business software guide' +
     '</a>';
 
 }
