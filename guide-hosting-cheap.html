@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Cheap Web Hosting: What to Check Before You Buy | Smart Buyer Guide</title>
+<title>Cheap Web Hosting: What to Check Before You Buy | SaaS Real Cost</title>
 <meta name="description" content="Cheap hosting isn't always cheap long-term. Learn what to check—renewal pricing, hidden add-ons, domain fees—before choosing a budget host.">
 <meta property="og:title" content="Cheap Web Hosting: What to Check Before You Buy">
 <meta property="og:description" content="Learn what to check—renewal pricing, hidden add-ons, domain fees—before choosing a budget host.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://smart-buyer-guide.pages.dev/guide-hosting-cheap.html">
-<meta property="og:image" content="https://smart-buyer-guide.pages.dev/icon-hosting.svg">
+<meta property="og:url" content="https://saasrealcost.com/guide-hosting-cheap.html">
+<meta property="og:image" content="https://saasrealcost.com/icon-hosting.svg">
 <link rel="stylesheet" href="style.css">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 </head>
@@ -20,7 +20,7 @@
 
 <nav class="nav">
 
-<a class="brand" href="index.html">Smart Buyer Guide</a>
+<a class="brand" href="index.html">SaaS Real Cost</a>
 
 <div class="navlinks">
 
@@ -115,13 +115,25 @@ often perfectly fine. For a business site where downtime costs money,
 the cheapest option is rarely the best value.
 </p>
 
+<!--
+  FIX: same issue as the beginners page — the static text here had
+  no link at all until SBG.affiliateLink('hosting') resolved via JS.
+  Real fallback content below, script only overwrites it when a
+  live offer exists.
+-->
 <div id="cta" class="card" style="margin-top:26px;background:#f8faff">
 
 <h2>Compare total hosting costs</h2>
 
 <p class="muted">
-Review the current offer and verify its renewal and cancellation terms.
+We don't have a budget-specific offer live right now — use our
+real-cost calculator in the full hosting guide to compare renewal
+pricing across providers before you commit.
 </p>
+
+<a class="btn" href="guide-hosting.html">
+See the full hosting guide
+</a>
 
 </div>
 
@@ -201,6 +213,9 @@ Verify current pricing and terms with the provider.
 <script src="demand-finder.js"></script>
 
 <script>
+// The HTML fallback above is already complete and useful on its own.
+// This script only OVERWRITES it once a live hosting affiliate link
+// is configured — no else-branch needed, nothing is left empty.
 const a = SBG.affiliateLink('hosting');
 
 if (a)
