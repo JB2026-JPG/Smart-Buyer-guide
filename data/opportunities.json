@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-11T18:52:41.878Z",
+  "generatedAt": "2026-09-11T19:25:09.033Z",
   "mode": "market-insights",
   "opportunities": [
     {
@@ -28,6 +28,195 @@
       "intentScore": 20,
       "intentStatus": "RESEARCH",
       "topic": "Web Hosting"
+    },
+    {
+      "id": 2855536,
+      "title": "Best and most convenient way of handling multiple sites for different clients?",
+      "link": "https://stackoverflow.com/questions/2855536/best-and-most-convenient-way-of-handling-multiple-sites-for-different-clients",
+      "score": -1,
+      "intentScore": 50,
+      "intentStatus": "BUY",
+      "topic": "Business Software"
+    },
+    {
+      "id": 16231971,
+      "title": "Best Free alternative to WHM/Cpanel",
+      "link": "https://stackoverflow.com/questions/16231971/best-free-alternative-to-whm-cpanel",
+      "score": 2,
+      "intentScore": 50,
+      "intentStatus": "BUY",
+      "topic": "Business Software"
+    },
+    {
+      "id": 65740219,
+      "title": "Can I upload Django project on Cpanel without CloudLinux installed",
+      "link": "https://stackoverflow.com/questions/65740219/can-i-upload-django-project-on-cpanel-without-cloudlinux-installed",
+      "score": 0,
+      "intentScore": 20,
+      "intentStatus": "RESEARCH",
+      "topic": "Business Software"
+    },
+    {
+      "id": 13280897,
+      "title": "Node.js + PHP + MySQL VPS hosting",
+      "link": "https://stackoverflow.com/questions/13280897/node-js-php-mysql-vps-hosting",
+      "score": 3,
+      "intentScore": 20,
+      "intentStatus": "RESEARCH",
+      "topic": "Web Hosting"
+    },
+    {
+      "id": 104106,
+      "title": "Lowest cost Windows VPS hosting?",
+      "link": "https://stackoverflow.com/questions/104106/lowest-cost-windows-vps-hosting",
+      "score": 4,
+      "intentScore": 20,
+      "intentStatus": "RESEARCH",
+      "topic": "Web Hosting"
+    },
+    {
+      "id": 21014794,
+      "title": "Shared Hosting/VPS for mediawiki engine",
+      "link": "https://stackoverflow.com/questions/21014794/shared-hosting-vps-for-mediawiki-engine",
+      "score": 0,
+      "intentScore": 20,
+      "intentStatus": "RESEARCH",
+      "topic": "Web Hosting"
+    },
+    {
+      "id": 3718398,
+      "title": "Real life unit testing for small companies and applications",
+      "link": "https://stackoverflow.com/questions/3718398/real-life-unit-testing-for-small-companies-and-applications",
+      "score": 10,
+      "intentScore": 20,
+      "intentStatus": "RESEARCH",
+      "topic": "Business Software"
+    },
+    {
+      "id": 29017951,
+      "title": "linked server : &quot;No transaction is active.&quot; and &quot;unable to begin a distributed transaction&quot;",
+      "link": "https://stackoverflow.com/questions/29017951/linked-server-no-transaction-is-active-and-unable-to-begin-a-distributed-t",
+      "score": 1,
+      "intentScore": 20,
+      "intentStatus": "RESEARCH",
+      "topic": "Business Software"
+    },
+    {
+      "id": 11003601,
+      "title": "Google Cloud SQL front-end options, or RAD suggestions?",
+      "link": "https://stackoverflow.com/questions/11003601/google-cloud-sql-front-end-options-or-rad-suggestions",
+      "score": 1,
+      "intentScore": 20,
+      "intentStatus": "RESEARCH",
+      "topic": "Business Software"
+    },
+    {
+      "id": 11165195,
+      "title": "Best email marketing software (alternative to PHPlist)",
+      "link": "https://stackoverflow.com/questions/11165195/best-email-marketing-software-alternative-to-phplist",
+      "score": -1,
+      "intentScore": 50,
+      "intentStatus": "BUY",
+      "topic": "Business Software"
+    },
+    {
+      "id": 48525729,
+      "title": "Combining Disparate Schemas in Postgres - ETL or SQL?",
+      "link": "https://stackoverflow.com/questions/48525729/combining-disparate-schemas-in-postgres-etl-or-sql",
+      "score": 0,
+      "intentScore": 20,
+      "intentStatus": "RESEARCH",
+      "topic": "Business Software"
+    },
+    {
+      "id": 12185080,
+      "title": "Best Practice to Manage Multiple Newsletter Databases",
+      "link": "https://stackoverflow.com/questions/12185080/best-practice-to-manage-multiple-newsletter-databases",
+      "score": 1,
+      "intentScore": 50,
+      "intentStatus": "BUY",
+      "topic": "Business Software"
+    },
+    {
+      "id": 76715945,
+      "title": "HubSpot SSO setup with WSO2 Identity Server - encountering &#39;405 - Method Not Allowed&#39; error",
+      "link": "https://stackoverflow.com/questions/76715945/hubspot-sso-setup-with-wso2-identity-server-encountering-405-method-not-all",
+      "score": 0,
+      "intentScore": 20,
+      "intentStatus": "RESEARCH",
+      "topic": "Business Software"
+    },
+    {
+      "id": 60471501,
+      "title": "Hubspot will not recognise &amp; log to CRM my BCC emails from AMndrill",
+      "link": "https://stackoverflow.com/questions/60471501/hubspot-will-not-recognise-log-to-crm-my-bcc-emails-from-amndrill",
+      "score": 0,
+      "intentScore": 20,
+      "intentStatus": "RESEARCH",
+      "topic": "Business Software"
+    },
+    {
+      "id": 63116862,
+      "title": "Replicating Hubspots drag and drop form builder UI with jQuery UI Sortable and Bootstrap grid",
+      "link": "https://stackoverflow.com/questions/63116862/replicating-hubspots-drag-and-drop-form-builder-ui-with-jquery-ui-sortable-and-b",
+      "score": 1,
+      "intentScore": 20,
+      "intentStatus": "RESEARCH",
+      "topic": "Business Software"
+    },
+    {
+      "id": 16373624,
+      "title": "grails cloud-hosting recommendation",
+      "link": "https://stackoverflow.com/questions/16373624/grails-cloud-hosting-recommendation",
+      "score": 7,
+      "intentScore": 50,
+      "intentStatus": "BUY",
+      "topic": "Web Hosting"
+    },
+    {
+      "id": 15697839,
+      "title": "Recommendations for Cloud Hosting Service for Socket.io",
+      "link": "https://stackoverflow.com/questions/15697839/recommendations-for-cloud-hosting-service-for-socket-io",
+      "score": 3,
+      "intentScore": 50,
+      "intentStatus": "BUY",
+      "topic": "Web Hosting"
+    },
+    {
+      "id": 9460404,
+      "title": "Cloud Hosting for ASP.Net website developed in C# 3.0",
+      "link": "https://stackoverflow.com/questions/9460404/cloud-hosting-for-asp-net-website-developed-in-c-3-0",
+      "score": 2,
+      "intentScore": 20,
+      "intentStatus": "RESEARCH",
+      "topic": "Web Hosting"
+    },
+    {
+      "id": 1421876,
+      "title": "Best Practices in Design of Billing / Invoice Software in .NET",
+      "link": "https://stackoverflow.com/questions/1421876/best-practices-in-design-of-billing-invoice-software-in-net",
+      "score": 5,
+      "intentScore": 50,
+      "intentStatus": "BUY",
+      "topic": "Business Software"
+    },
+    {
+      "id": 10325386,
+      "title": "Storing invoices in a database",
+      "link": "https://stackoverflow.com/questions/10325386/storing-invoices-in-a-database",
+      "score": 8,
+      "intentScore": 20,
+      "intentStatus": "RESEARCH",
+      "topic": "Business Software"
+    },
+    {
+      "id": 73852535,
+      "title": "Check if PDF File is available before downloading?",
+      "link": "https://stackoverflow.com/questions/73852535/check-if-pdf-file-is-available-before-downloading",
+      "score": 0,
+      "intentScore": 20,
+      "intentStatus": "RESEARCH",
+      "topic": "Business Software"
     }
   ]
 }
