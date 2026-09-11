@@ -290,3 +290,42 @@ footer a{
   }
 
 }
+/* REAL COST SCORES COMPARISON */
+.score-comparison-link {
+  background: #ffffff;
+  padding-top: 0;
+}
+
+.score-comparison-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  padding: 30px 34px;
+  background: #f4f7fb;
+  border: 1px solid #e0e6ef;
+  border-radius: 18px;
+}
+
+.score-comparison-card h2 {
+  font-size: 1.7rem;
+  line-height: 1.2;
+  margin: 5px 0 8px;
+}
+
+.score-comparison-card p {
+  color: #68748a;
+  max-width: 700px;
+}
+
+@media (max-width: 620px) {
+  .score-comparison-card {
+    align-items: stretch;
+    flex-direction: column;
+    padding: 25px;
+  }
+
+  .score-comparison-card .btn {
+    width: 100%;
+  }
+}
