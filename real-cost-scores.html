@@ -1,0 +1,1266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Real Cost Scores | SaaS Real Cost™</title>
+
+<meta name="description" content="Compare the real cost of software and hosting. SaaS Real Cost™ evaluates providers on starting cost, growth cost, hidden extras, transparency and ease of exit.">
+
+<style>
+:root {
+    --navy: #0b1f3a;
+    --blue: #1769e0;
+    --blue-dark: #0f4fae;
+    --green: #18a66a;
+    --green-dark: #128052;
+    --light-blue: #eef5ff;
+    --light-green: #edf9f4;
+    --light-gray: #f5f7fa;
+    --border: #dce3ec;
+    --text: #172033;
+    --muted: #637083;
+    --white: #ffffff;
+    --shadow: 0 8px 30px rgba(11, 31, 58, 0.08);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--text);
+    background: #ffffff;
+    line-height: 1.6;
+}
+
+a {
+    color: var(--blue);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.container {
+    width: min(1120px, 92%);
+    margin: 0 auto;
+}
+
+/* HEADER */
+
+header {
+    background: var(--navy);
+    color: white;
+    padding: 22px 0;
+}
+
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo {
+    font-size: 1.35rem;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+}
+
+.logo span {
+    color: #61a5ff;
+}
+
+nav a {
+    color: white;
+    margin-left: 22px;
+    font-size: 0.95rem;
+}
+
+/* HERO */
+
+.hero {
+    background: linear-gradient(180deg, var(--light-blue), #ffffff);
+    text-align: center;
+    padding: 72px 20px 55px;
+}
+
+.hero h1 {
+    margin: 0 auto 16px;
+    max-width: 820px;
+    font-size: clamp(2.3rem, 5vw, 3.6rem);
+    line-height: 1.1;
+    color: var(--navy);
+}
+
+.hero p {
+    max-width: 780px;
+    margin: 0 auto;
+    color: var(--muted);
+    font-size: 1.12rem;
+}
+
+.disclosure {
+    max-width: 800px;
+    margin: 25px auto 0;
+    padding: 15px 18px;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    font-size: 0.9rem;
+    color: var(--muted);
+}
+
+/* SECTIONS */
+
+section {
+    padding: 62px 0;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 36px;
+}
+
+.section-title h2 {
+    margin: 0 0 10px;
+    color: var(--navy);
+    font-size: 2rem;
+}
+
+.section-title p {
+    margin: 0 auto;
+    max-width: 760px;
+    color: var(--muted);
+}
+
+/* SCORE CARDS */
+
+.score-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.score-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 25px;
+    box-shadow: var(--shadow);
+}
+
+.category {
+    color: var(--blue);
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+}
+
+.score-card h3 {
+    margin: 8px 0 4px;
+    color: var(--navy);
+    font-size: 1.35rem;
+}
+
+.score-number {
+    font-size: 2.7rem;
+    line-height: 1;
+    font-weight: 800;
+    color: var(--green-dark);
+    margin: 18px 0 5px;
+}
+
+.score-label {
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+.score-card a {
+    display: inline-block;
+    margin-top: 18px;
+    font-weight: 700;
+}
+
+.card-disclosure {
+    margin-top: 18px;
+    font-size: 0.82rem;
+    color: var(--muted);
+}
+
+/* TABLE */
+
+.table-wrapper {
+    overflow-x: auto;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    box-shadow: var(--shadow);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 900px;
+    background: white;
+}
+
+th,
+td {
+    padding: 17px 15px;
+    border-bottom: 1px solid var(--border);
+    text-align: center;
+}
+
+th {
+    background: var(--navy);
+    color: white;
+    font-size: 0.82rem;
+}
+
+td:first-child,
+th:first-child {
+    text-align: left;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.provider {
+    font-weight: 800;
+    color: var(--navy);
+}
+
+.category-cell {
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+.overall {
+    font-weight: 800;
+    color: var(--green-dark);
+    font-size: 1.05rem;
+}
+
+/* FORMULA */
+
+.formula-box {
+    margin-top: 30px;
+    padding: 24px;
+    border-radius: 12px;
+    background: var(--light-green);
+    border: 1px solid #ccefe0;
+    text-align: center;
+}
+
+.formula {
+    font-weight: 800;
+    color: var(--green-dark);
+    font-size: 1.05rem;
+}
+
+.formula-box p {
+    margin: 8px 0 0;
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+/* METHOD */
+
+.method-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
+}
+
+.method-card {
+    padding: 22px;
+    background: var(--light-blue);
+    border-radius: 12px;
+    border: 1px solid #d8e7fb;
+}
+
+.method-card .number {
+    display: inline-flex;
+    width: 32px;
+    height: 32px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--blue);
+    color: white;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.method-card h3 {
+    margin: 5px 0 8px;
+    font-size: 1rem;
+    color: var(--navy);
+}
+
+.method-card p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--muted);
+}
+
+/* EXPLANATION */
+
+.explanation {
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.explanation h3 {
+    color: var(--navy);
+    margin-top: 30px;
+}
+
+.explanation p {
+    color: var(--muted);
+}
+
+/* CATEGORY BUTTONS */
+
+.category-buttons {
+    text-align: center;
+}
+
+.category-button {
+    display: inline-block;
+    margin: 5px;
+    padding: 10px 17px;
+    border-radius: 8px;
+    background: var(--light-blue);
+    color: var(--blue);
+    border: 1px solid #d8e7fb;
+    font-weight: 700;
+}
+
+.category-button:hover {
+    background: var(--blue);
+    color: white;
+    text-decoration: none;
+}
+
+/* CTA */
+
+.cta {
+    background: var(--navy);
+    color: white;
+    text-align: center;
+    border-radius: 18px;
+    padding: 52px 25px;
+}
+
+.cta h2 {
+    margin: 0 0 12px;
+    font-size: 2rem;
+}
+
+.cta p {
+    max-width: 650px;
+    margin: 0 auto 25px;
+    color: #d7e1ef;
+}
+
+.button {
+    display: inline-block;
+    background: var(--green);
+    color: white;
+    padding: 13px 23px;
+    border-radius: 8px;
+    font-weight: 800;
+}
+
+.button:hover {
+    background: var(--green-dark);
+    text-decoration: none;
+}
+
+/* NOTE */
+
+.note {
+    margin-top: 25px;
+    padding: 18px;
+    background: var(--light-gray);
+    border-radius: 10px;
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+/* FOOTER */
+
+footer {
+    margin-top: 60px;
+    padding: 35px 0;
+    background: var(--light-gray);
+    color: var(--muted);
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.footer-links {
+    margin-top: 10px;
+}
+
+.footer-links a {
+    margin: 0 8px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 950px) {
+    .score-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .method-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .header-inner {
+        flex-direction: column;
+    }
+
+    nav a {
+        margin: 0 7px;
+    }
+
+    .hero {
+        padding: 52px 15px 42px;
+    }
+
+    section {
+        padding: 45px 0;
+    }
+
+    .score-grid,
+    .method-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .score-card {
+        padding: 22px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="container header-inner">
+
+        <div class="logo">
+            SaaS <span>REAL COST™</span>
+        </div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="calculator.html">Calculator</a>
+            <a href="about.html">About</a>
+        </nav>
+
+    </div>
+</header>
+
+
+<main>
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="container">
+
+        <h1>Which software really costs the least?</h1>
+
+        <p>
+            The advertised price is only the starting point.
+            The <strong>Real Cost Score™</strong> looks at what happens
+            after you buy: growth costs, extras, pricing transparency
+            and how easy it is to leave.
+        </p>
+
+        <div class="disclosure">
+
+            We may earn a commission from some of the providers
+            compared here. Every provider is scored using the same
+            five criteria, and every provider we research gets
+            published regardless of the outcome.
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SCORES -->
+
+<section>
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>The Real Cost Score™</h2>
+
+            <p>
+                A simple way to compare the financial reality behind
+                different software and hosting choices.
+            </p>
+
+        </div>
+
+
+        <div class="score-grid">
+
+
+            <!-- BLUEHOST -->
+
+            <div class="score-card">
+
+                <div class="category">
+                    Hosting
+                </div>
+
+                <h3>Bluehost</h3>
+
+                <div class="score-number">
+                    6.8
+                </div>
+
+                <div class="score-label">
+                    Real Cost Score / 10
+                </div>
+
+                <a href="bluehost-real-cost.html">
+                    See Bluehost's Real Cost →
+                </a>
+
+                <p class="card-disclosure">
+                    Affiliate disclosure: if you purchase Bluehost
+                    through our link, SaaS Real Cost may earn a
+                    commission at no additional cost to you.
+                    This does not affect the Real Cost Score.
+                </p>
+
+            </div>
+
+
+            <!-- KIT -->
+
+            <div class="score-card">
+
+                <div class="category">
+                    Email Marketing
+                </div>
+
+                <h3>Kit</h3>
+
+                <div class="score-number">
+                    9.0
+                </div>
+
+                <div class="score-label">
+                    Real Cost Score / 10
+                </div>
+
+                <a href="kit-real-cost.html">
+                    See Kit's Real Cost →
+                </a>
+
+            </div>
+
+
+            <!-- MAILCHIMP -->
+
+            <div class="score-card">
+
+                <div class="category">
+                    Email Marketing
+                </div>
+
+                <h3>Mailchimp</h3>
+
+                <div class="score-number">
+                    6.8
+                </div>
+
+                <div class="score-label">
+                    Real Cost Score / 10
+                </div>
+
+                <a href="#">
+                    Compare with Kit →
+                </a>
+
+            </div>
+
+
+            <!-- HOSTINGER -->
+
+            <div class="score-card">
+
+                <div class="category">
+                    Hosting
+                </div>
+
+                <h3>Hostinger</h3>
+
+                <div class="score-number">
+                    6.2
+                </div>
+
+                <div class="score-label">
+                    Real Cost Score / 10
+                </div>
+
+                <a href="#">
+                    See Hostinger's Real Cost →
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- COMPARISON TABLE -->
+
+<section style="background:#f8fafc;">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>Real Cost Comparison</h2>
+
+            <p>
+                Every provider is assessed using the same five criteria.
+                Each criterion has equal weight in the final score.
+            </p>
+
+        </div>
+
+
+        <div class="table-wrapper">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+                        <th>Software / Provider</th>
+                        <th>Category</th>
+                        <th>Starting Cost</th>
+                        <th>Growth Cost</th>
+                        <th>Hidden Extras</th>
+                        <th>Transparency</th>
+                        <th>Ease of Exit</th>
+                        <th>Overall</th>
+                    </tr>
+
+                </thead>
+
+
+                <tbody>
+
+
+                    <!-- BLUEHOST -->
+
+                    <tr>
+
+                        <td class="provider">
+                            Bluehost
+                        </td>
+
+                        <td class="category-cell">
+                            Hosting
+                        </td>
+
+                        <td>
+                            $3.99/mo*
+                        </td>
+
+                        <td>
+                            6/10
+                        </td>
+
+                        <td>
+                            7/10
+                        </td>
+
+                        <td>
+                            7/10
+                        </td>
+
+                        <td>
+                            7/10
+                        </td>
+
+                        <td class="overall">
+                            6.8/10
+                        </td>
+
+                    </tr>
+
+
+                    <!-- KIT -->
+
+                    <tr>
+
+                        <td class="provider">
+                            Kit
+                        </td>
+
+                        <td class="category-cell">
+                            Creator email marketing
+                        </td>
+
+                        <td>
+                            $0/mo*
+                        </td>
+
+                        <td>
+                            8/10
+                        </td>
+
+                        <td>
+                            9/10
+                        </td>
+
+                        <td>
+                            9/10
+                        </td>
+
+                        <td>
+                            9/10
+                        </td>
+
+                        <td class="overall">
+                            9.0/10
+                        </td>
+
+                    </tr>
+
+
+                    <!-- MAILCHIMP -->
+
+                    <tr>
+
+                        <td class="provider">
+                            Mailchimp
+                        </td>
+
+                        <td class="category-cell">
+                            Email marketing
+                        </td>
+
+                        <td>
+                            Free / paid*
+                        </td>
+
+                        <td>
+                            6/10
+                        </td>
+
+                        <td>
+                            5/10
+                        </td>
+
+                        <td>
+                            7/10
+                        </td>
+
+                        <td>
+                            9/10
+                        </td>
+
+                        <td class="overall">
+                            6.8/10
+                        </td>
+
+                    </tr>
+
+
+                    <!-- HOSTINGER -->
+
+                    <tr>
+
+                        <td class="provider">
+                            Hostinger
+                        </td>
+
+                        <td class="category-cell">
+                            Hosting
+                        </td>
+
+                        <td>
+                            $1.99/mo*
+                        </td>
+
+                        <td>
+                            5/10
+                        </td>
+
+                        <td>
+                            6/10
+                        </td>
+
+                        <td>
+                            6/10
+                        </td>
+
+                        <td>
+                            6/10
+                        </td>
+
+                        <td class="overall">
+                            6.2/10
+                        </td>
+
+                    </tr>
+
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+
+        <!-- SCORE FORMULA -->
+
+        <div class="formula-box">
+
+            <div class="formula">
+
+                Overall Score =
+                (Starting Cost + Growth Cost + Hidden Extras
+                + Transparency + Ease of Exit) ÷ 5
+
+            </div>
+
+            <p>
+                All five criteria have equal weight.
+                The final score is rounded to one decimal place.
+            </p>
+
+        </div>
+
+
+        <div class="note">
+
+            * Starting prices are snapshots, not guarantees.
+            Taxes, billing term, subscriber/contact count, plan
+            selection, renewal pricing and promotional pricing can
+            change the actual amount you pay. Always verify the
+            final checkout price before purchasing.
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- METHODOLOGY -->
+
+<section>
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>How We Calculate the Score</h2>
+
+            <p>
+                Every provider is assessed using the same five questions.
+                No single low introductory price can hide a difficult
+                long-term cost.
+            </p>
+
+        </div>
+
+
+        <div class="method-grid">
+
+
+            <div class="method-card">
+
+                <div class="number">
+                    1
+                </div>
+
+                <h3>
+                    Starting Cost
+                </h3>
+
+                <p>
+                    How attractive is the real starting price,
+                    considering the plan, billing term and conditions?
+                </p>
+
+            </div>
+
+
+            <div class="method-card">
+
+                <div class="number">
+                    2
+                </div>
+
+                <h3>
+                    Growth Cost
+                </h3>
+
+                <p>
+                    What happens to the bill as your usage,
+                    subscribers, contacts or website grows?
+                </p>
+
+            </div>
+
+
+            <div class="method-card">
+
+                <div class="number">
+                    3
+                </div>
+
+                <h3>
+                    Hidden Extras
+                </h3>
+
+                <p>
+                    Are important features, add-ons, limits or
+                    overages likely to increase the bill?
+                </p>
+
+            </div>
+
+
+            <div class="method-card">
+
+                <div class="number">
+                    4
+                </div>
+
+                <h3>
+                    Transparency
+                </h3>
+
+                <p>
+                    Can a buyer understand the pricing and important
+                    conditions before committing?
+                </p>
+
+            </div>
+
+
+            <div class="method-card">
+
+                <div class="number">
+                    5
+                </div>
+
+                <h3>
+                    Ease of Exit
+                </h3>
+
+                <p>
+                    How easy is it to cancel, downgrade or move away
+                    when the provider no longer fits?
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- DIFFERENCE -->
+
+<section style="background:#f8fafc;">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>What Makes This Different?</h2>
+
+        </div>
+
+
+        <div class="explanation">
+
+            <p>
+                We are not asking:
+                <strong>"Which tool has the most features?"</strong>
+            </p>
+
+            <p>
+                We are asking a buyer question:
+                <strong>
+                    "What is this choice likely to cost me once
+                    I actually start using it?"
+                </strong>
+            </p>
+
+            <p>
+                That means a tool can have a low advertised price and
+                still receive a lower Real Cost Score if growth, limits,
+                add-ons or pricing complexity make the long-term cost
+                harder to predict.
+            </p>
+
+
+            <h3>
+                A Real Cost Score is not a product review
+            </h3>
+
+            <p>
+                The Real Cost Score measures the financial reality of
+                a provider under our five criteria. It does not attempt
+                to determine which provider has the best features,
+                design, performance or overall customer experience.
+            </p>
+
+            <p>
+                A higher score means the provider is more favorable
+                under the <strong>SaaS Real Cost methodology</strong>
+                based on these five financial criteria.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CATEGORY -->
+
+<section>
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>Compare by Category</h2>
+
+            <p>
+                Use the categories to focus on the type of software
+                or service you are researching.
+            </p>
+
+        </div>
+
+
+        <div class="category-buttons">
+
+            <a class="category-button" href="#comparison">
+                All
+            </a>
+
+            <a class="category-button" href="#comparison">
+                Hosting
+            </a>
+
+            <a class="category-button" href="#comparison">
+                Email Marketing
+            </a>
+
+            <a class="category-button" href="#comparison">
+                CRM
+            </a>
+
+            <a class="category-button" href="#comparison">
+                Business Software
+            </a>
+
+        </div>
+
+
+        <p style="text-align:center; color:#637083; margin-top:20px;">
+            Showing all currently scored tools.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- CALCULATOR CTA -->
+
+<section>
+
+    <div class="container">
+
+        <div class="cta">
+
+            <h2>
+                Want to Know Your Own Real Cost?
+            </h2>
+
+            <p>
+                Use the free SaaS Real Cost Calculator to estimate
+                the long-term cost of a software or hosting deal
+                before you buy.
+            </p>
+
+            <a class="button" href="calculator.html">
+                Calculate Your Real Cost →
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SCORE UPDATES -->
+
+<section>
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>
+                Why the Scores Can Change
+            </h2>
+
+            <p>
+                Software pricing changes. The Real Cost Score is
+                therefore a current editorial snapshot, not a
+                permanent ranking.
+            </p>
+
+        </div>
+
+
+        <div class="explanation">
+
+
+            <p>
+                <strong>Bluehost:</strong>
+                The Starter plan is currently advertised at
+                <strong>$3.99/month</strong> for a 36-month term
+                and renews at <strong>$9.99/month</strong>.
+                Taxes are not included.
+            </p>
+
+
+            <p>
+                <strong>Hostinger:</strong>
+                The Single plan is currently advertised from
+                <strong>$1.99/month</strong> for a 48-month term
+                and renews at <strong>$8.99/month</strong>.
+            </p>
+
+
+            <p>
+                <strong>Kit:</strong>
+                The Free plan is currently available for up to
+                <strong>10,000 subscribers</strong>. The Creator
+                plan is listed at <strong>$33/month</strong> and
+                the Pro plan at <strong>$66/month</strong> for
+                1,000 subscribers.
+            </p>
+
+
+            <p>
+                <strong>Mailchimp:</strong>
+                Current pricing includes a Free plan with a
+                <strong>250-contact limit</strong>, while paid
+                plans vary according to the selected plan and
+                contact volume.
+            </p>
+
+
+            <p>
+                <strong>Method:</strong>
+                Scores are editorial assessments based on the five
+                criteria above. They are not user reviews, financial
+                advice or paid rankings.
+            </p>
+
+
+            <p>
+                <strong>Pricing verification date:</strong>
+                September 11, 2026.
+            </p>
+
+
+            <p>
+                Provider pricing, limits, renewal rates and included
+                features can change. Always verify the provider's
+                current pricing and terms before purchasing.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div class="container">
+
+        <div>
+            © 2026 SaaS Real Cost™
+        </div>
+
+        <div class="footer-links">
+
+            <a href="about.html">
+                About
+            </a>
+
+            <a href="privacy.html">
+                Privacy
+            </a>
+
+            <a href="affiliate-disclosure.html">
+                Affiliate Disclosure
+            </a>
+
+            <a href="index.html">
+                Home
+            </a>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+</body>
+</html>
