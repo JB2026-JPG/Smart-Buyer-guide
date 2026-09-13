@@ -1,71 +1,148 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- 1. Homepage -->
   <url>
     <loc>https://saasrealcost.com/</loc>
     <changefreq>weekly</changefreq>
   </url>
+
+  <!-- 2. Business Software Guide -->
   <url>
     <loc>https://saasrealcost.com/guide-business-software</loc>
     <changefreq>weekly</changefreq>
   </url>
+
+  <!-- 3. CRM Guide -->
   <url>
     <loc>https://saasrealcost.com/guide-crm</loc>
     <changefreq>weekly</changefreq>
   </url>
+
+  <!-- 4. Email Marketing Guide -->
   <url>
     <loc>https://saasrealcost.com/guide-email-marketing</loc>
     <changefreq>weekly</changefreq>
   </url>
+
+  <!-- 5. Hosting Guide -->
   <url>
     <loc>https://saasrealcost.com/guide-hosting</loc>
     <changefreq>weekly</changefreq>
   </url>
+
+  <!-- 6. Hosting for Beginners -->
   <url>
     <loc>https://saasrealcost.com/guide-hosting-beginners</loc>
     <changefreq>weekly</changefreq>
   </url>
+
+  <!-- 7. Cheap Hosting -->
   <url>
     <loc>https://saasrealcost.com/guide-hosting-cheap</loc>
     <changefreq>weekly</changefreq>
   </url>
+
+  <!-- 8. Hosting for Small Business -->
   <url>
     <loc>https://saasrealcost.com/guide-hosting-small-business</loc>
     <changefreq>weekly</changefreq>
   </url>
+
+  <!-- 9. WordPress Mail Hosting -->
   <url>
     <loc>https://saasrealcost.com/guide-wordpress-mail-hosting</loc>
     <changefreq>weekly</changefreq>
   </url>
+
+  <!-- 10. About -->
   <url>
     <loc>https://saasrealcost.com/about</loc>
     <changefreq>monthly</changefreq>
   </url>
+
+  <!-- 11. How It Works -->
   <url>
     <loc>https://saasrealcost.com/how-it-works</loc>
     <changefreq>monthly</changefreq>
   </url>
-    <url>
+
+  <!-- 12. Privacy -->
+  <url>
     <loc>https://saasrealcost.com/privacy</loc>
     <changefreq>monthly</changefreq>
   </url>
+
+  <!-- 13. Affiliate Disclosure -->
   <url>
     <loc>https://saasrealcost.com/affiliate-disclosure</loc>
     <changefreq>monthly</changefreq>
   </url>
-    <url>
+
+  <!-- 14. Bluehost Real Cost -->
+  <url>
     <loc>https://saasrealcost.com/bluehost-real-cost</loc>
     <changefreq>monthly</changefreq>
   </url>
+
+  <!-- 15. Kit Real Cost -->
   <url>
     <loc>https://saasrealcost.com/kit-real-cost</loc>
     <changefreq>monthly</changefreq>
   </url>
+
+  <!-- 16. Kit vs Mailchimp Real Cost -->
   <url>
     <loc>https://saasrealcost.com/kit-vs-mailchimp-real-cost</loc>
     <changefreq>monthly</changefreq>
   </url>
+
+  <!-- 17. General Real Cost Scores -->
   <url>
     <loc>https://saasrealcost.com/real-cost-scores</loc>
     <changefreq>monthly</changefreq>
   </url>
+
+  <!-- 18. CRM Real Cost Scorecard -->
+  <url>
+    <loc>https://saasrealcost.com/real-cost-scores-crm</loc>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <!-- 19. Pipedrive Real Cost -->
+  <url>
+    <loc>https://saasrealcost.com/pipedrive-real-cost.html</loc>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <!-- 20. Zoho CRM Real Cost -->
+  <url>
+    <loc>https://saasrealcost.com/zoho-crm-real-cost.html</loc>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <!-- 21. Freshsales Real Cost -->
+  <url>
+    <loc>https://saasrealcost.com/freshsales-real-cost.html</loc>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <!-- 22. monday CRM Real Cost -->
+  <url>
+    <loc>https://saasrealcost.com/monday-crm-real-cost.html</loc>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <!-- 23. HubSpot Sales Hub Real Cost -->
+  <url>
+    <loc>https://saasrealcost.com/hubspot-real-cost.html</loc>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <!-- 24. How to Start a Blog with Bluehost -->
+  <url>
+    <loc>https://saasrealcost.com/how-to-start-a-blog-with-bluehost</loc>
+    <changefreq>monthly</changefreq>
+  </url>
+
 </urlset>
