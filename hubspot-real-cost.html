@@ -4,356 +4,257 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 
-<title>HubSpot Real Cost: Pricing, Growth & Hidden Costs | SaaS Real Cost</title>
+<title>HubSpot Sales Hub Real Cost — SaaSRealCost</title>
 
-<meta name="description" content="HubSpot real cost analysis covering today's pricing, growth costs, onboarding, contacts, seats and the costs that can appear beyond the headline price.">
-
-<meta property="og:title" content="HubSpot Real Cost | SaaS Real Cost">
-<meta property="og:description" content="Look beyond HubSpot's advertised price and understand the real cost before you commit.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://saasrealcost.com/hubspot-real-cost.html">
-
-<link rel="stylesheet" href="style.css">
-<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="description" content="HubSpot Sales Hub Real Cost Score: see how price, growth cost, hidden extras, transparency and ease of exit affect the real cost of HubSpot.">
 
 <style>
-.article{
-  max-width:900px;
-  margin:0 auto;
+:root{
+  --blue:#2864d7;
+  --blue-dark:#174aa8;
+  --green:#198754;
+  --navy:#10254d;
+  --text:#172033;
+  --muted:#667085;
+  --bg:#f7f9fc;
+  --white:#fff;
+  --border:#e4e9f1;
+  --gold:#c58a19;
+  --shadow:0 12px 35px rgba(16,37,77,.08);
 }
-.article-hero{
-  padding:65px 0 35px;
-}
-.article-intro{
-  font-size:19px;
-  color:var(--muted);
-  max-width:760px;
-}
-.article-section{
-  margin:34px 0;
-}
-.article-list{
-  padding-left:22px;
-}
-.article-list li{
-  margin:9px 0;
-}
-.provider-card{
-  background:#fff;
-  border:1px solid var(--line);
-  border-radius:14px;
-  padding:25px;
-  box-shadow:0 8px 24px rgba(28,43,36,.05);
-}
-.price-date{
-  background:#faf4e6;
-  border:1px solid #e9d9a8;
-  padding:16px 18px;
-  border-radius:12px;
-  margin:22px 0;
-}
-.price-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:16px;
-  margin-top:20px;
-}
-.price-card{
-  background:#fff;
-  border:1px solid var(--line);
-  border-radius:12px;
-  padding:22px;
-}
-.price-card strong{
-  display:block;
-  font-family:'Source Serif 4',Georgia,serif;
-  font-size:30px;
-  line-height:1.1;
-  margin:7px 0;
-}
-.score-box{
-  background:#f4f7fb;
-  border:1px solid #e0e6ef;
-  border-radius:16px;
-  padding:25px;
-}
-.score-list{
-  margin-top:18px;
-}
-.score-row{
-  display:flex;
-  justify-content:space-between;
-  gap:20px;
-  padding:13px 0;
-  border-top:1px solid var(--line);
-}
-.score-row:first-child{
-  border-top:0;
-}
-.provider-cta{
-  margin-top:25px;
-}
-.disclosure{
-  margin-top:40px;
-  padding:18px;
-  background:#f8f8f6;
-  border:1px solid var(--line);
-  border-radius:12px;
-  color:var(--muted);
-}
-.back-link{
-  display:inline-block;
-  margin-top:25px;
-  color:var(--brand);
-  font-weight:700;
-  text-decoration:none;
-}
-@media(max-width:650px){
-  .article-hero{
-    padding:45px 0 25px;
-  }
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,Helvetica,sans-serif;line-height:1.65}
+a{text-decoration:none;color:inherit}
+.container{width:min(1050px,92%);margin:auto}
+header{background:#fff;border-bottom:1px solid var(--border)}
+.nav{min-height:70px;display:flex;align-items:center;justify-content:space-between}
+.brand{font-weight:900;font-size:21px;color:var(--navy)}
+.brand span{color:var(--blue)}
+.navlinks{display:flex;gap:22px;font-size:14px;font-weight:700}
+.navlinks a:hover{color:var(--blue)}
+.hero{padding:80px 0;background:linear-gradient(135deg,#fff,#f1f6ff)}
+.eyebrow,.kicker{color:var(--gold);font-size:12px;font-weight:900;letter-spacing:1px;text-transform:uppercase}
+h1,h2{font-family:Georgia,serif;color:var(--navy)}
+h1{font-size:clamp(40px,6vw,62px);line-height:1.05;margin:15px 0}
+.hero p{font-size:18px;color:var(--muted);max-width:760px}
+.score-hero{margin-top:30px;background:#fff;border:1px solid var(--border);border-radius:20px;padding:25px;display:flex;justify-content:space-between;align-items:center;gap:25px;box-shadow:var(--shadow)}
+.score-number{font-size:48px;font-weight:900;color:var(--green)}
+.score-number small{font-size:16px;color:var(--muted)}
+.btn{display:inline-block;background:var(--green);color:#fff;padding:13px 20px;border-radius:9px;font-weight:800}
+.btn:hover{background:#126b42}
+section{padding:65px 0}
+.card{background:#fff;border:1px solid var(--border);border-radius:18px;padding:28px;box-shadow:var(--shadow)}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.factor h3{margin:0;color:var(--navy)}
+.factor-score{font-size:30px;font-weight:900;color:var(--green);margin:8px 0}
+.factor p{color:var(--muted);margin:0}
+.price-box{background:#eef4ff;border:1px solid #d8e5ff;border-radius:16px;padding:25px}
+.price-box strong{font-size:25px;color:var(--navy)}
+table{width:100%;border-collapse:collapse;background:#fff}
+th,td{padding:15px;border-bottom:1px solid var(--border);text-align:left}
+th{background:#f3f6fa;color:var(--navy)}
+.score{font-weight:900;color:var(--green)}
+.disclosure{border-top:1px solid var(--border);background:#fff;padding:28px 0;color:var(--muted);font-size:13px}
+footer{background:#0b1935;color:#c8d2e4;padding:30px 0;font-size:13px}
+@media(max-width:700px){
+.navlinks{display:none}
+.grid{grid-template-columns:1fr}
+.score-hero{display:block}
 }
 </style>
 </head>
 
 <body>
 
-<main class="wrap">
-
-<nav class="nav">
-  <a class="brand" href="index.html">SaaS Real Cost</a>
-
-  <div class="navlinks">
-    <a href="index.html">Home</a>
-    <a href="real-cost-scores-crm.html">CRM Scores</a>
-    <a href="crm-cost-calculator.html">Calculator</a>
-  </div>
+<header>
+<div class="container nav">
+<a href="/" class="brand">SaaS<span>RealCost</span></a>
+<nav class="navlinks">
+<a href="/real-cost-scores-crm.html">CRM Scores</a>
+<a href="/">Home</a>
 </nav>
+</div>
+</header>
 
-<article class="article">
+<section class="hero">
+<div class="container">
 
-<section class="article-hero">
+<span class="eyebrow">CRM REAL COST RESEARCH</span>
 
-  <div class="eyebrow">CRM REAL COST ANALYSIS</div>
+<h1>HubSpot Sales Hub Real Cost</h1>
 
-  <h1>HubSpot can be more than the price you first see.</h1>
+<p>
+HubSpot is powerful and offers a free entry point. But the real cost can
+change significantly as a sales team grows and moves into higher tiers.
+SaaSRealCost evaluates HubSpot Sales Hub using the same five criteria used
+for every CRM we compare.
+</p>
 
-  <p class="article-intro">
-    HubSpot offers a free starting point and a wide range of tools.
-    But the real cost can change significantly as you add seats,
-    contacts, automation, marketing features and higher-tier plans.
-  </p>
-
-  <div class="price-date">
-    <strong>Pricing checked today — September 13, 2026.</strong><br>
-    The prices shown on this page were checked against HubSpot's
-    publicly available pricing today. SaaS pricing can change at any
-    time, and prices, plans, limits, discounts or fees may be different
-    as soon as the next day. Always verify the provider's current pricing
-    before you commit.
-  </div>
-
-</section>
-
-<section class="article-section">
-
-<h2>HubSpot pricing today</h2>
-
-<div class="price-grid">
-
-  <div class="price-card">
-    <span class="pill">FREE</span>
-    <strong>$0/mo</strong>
-    <span class="muted">Free for up to 2 users.</span>
-  </div>
-
-  <div class="price-card">
-    <span class="pill">STARTER</span>
-    <strong>$7/seat</strong>
-    <span class="muted">
-      Starting price shown for annual billing.
-      Monthly billing is shown at $20/seat.
-    </span>
-  </div>
-
-  <div class="price-card">
-    <span class="pill">PROFESSIONAL</span>
-    <strong>$800/mo</strong>
-    <span class="muted">
-      Starts at $800/month and includes 3 Core Seats.
-    </span>
-  </div>
-
-  <div class="price-card">
-    <span class="pill">ENTERPRISE</span>
-    <strong>$3,600/mo</strong>
-    <span class="muted">
-      Starts at $3,600/month and includes 5 Core Seats.
-    </span>
-  </div>
-
+<div class="score-hero">
+<div>
+<span class="kicker">SAASREALCOST EDITORIAL SCORE</span>
+<div class="score-number">7.4 <small>/ 10</small></div>
 </div>
 
-<p class="small muted" style="margin-top:15px">
-  HubSpot's pricing depends on the product, plan, seats, contacts and
-  billing period. The prices above are a snapshot of the pricing shown
-  by HubSpot when checked today.
-</p>
-
-</section>
-
-<section class="article-section">
-
-<h2>Where HubSpot's real cost can increase</h2>
-
-<ul class="article-list">
-
-<li>
-  <strong>More users:</strong>
-  additional seats can increase the recurring cost.
-</li>
-
-<li>
-  <strong>More contacts:</strong>
-  marketing plans can become more expensive as the number of contacts grows.
-</li>
-
-<li>
-  <strong>Higher-tier features:</strong>
-  automation, reporting and advanced functionality can require a higher plan.
-</li>
-
-<li>
-  <strong>Onboarding:</strong>
-  HubSpot currently lists a required one-time Professional onboarding fee
-  of $3,000 and Enterprise onboarding of $7,000.
-</li>
-
-<li>
-  <strong>Usage:</strong>
-  some newer AI and automation functionality can involve additional
-  usage-based costs or credits.
-</li>
-
-</ul>
-
-</section>
-
-<section class="article-section">
-
-<h2>Today's HubSpot cost is not necessarily tomorrow's cost</h2>
-
-<div class="provider-card">
-
-<p>
-  This is an important part of our Real Cost approach.
-</p>
-
-<p>
-  A pricing page is a snapshot. Promotions can change, plan limits can
-  change, billing terms can change and providers can introduce new
-  features or usage-based charges.
-</p>
-
-<p>
-  That means a price checked on September 13, 2026 should not be treated
-  as a permanent price.
-</p>
-
+<a href="https://www.hubspot.com/pricing/sales" target="_blank" rel="noopener" class="btn">
+Check current HubSpot pricing →
+</a>
 </div>
 
-</section>
-
-<section class="article-section">
-
-<h2>HubSpot Real Cost Score framework</h2>
-
-<div class="score-box">
-
-  <div class="score-row">
-    <span>Price</span>
-    <strong>To evaluate</strong>
-  </div>
-
-  <div class="score-row">
-    <span>Growth cost</span>
-    <strong>To evaluate</strong>
-  </div>
-
-  <div class="score-row">
-    <span>Hidden extras</span>
-    <strong>To evaluate</strong>
-  </div>
-
-  <div class="score-row">
-    <span>Cost transparency</span>
-    <strong>To evaluate</strong>
-  </div>
-
-  <div class="score-row">
-    <span>Ease of exit</span>
-    <strong>To evaluate</strong>
-  </div>
-
 </div>
-
-<p class="small muted">
-  We are not assigning a final numerical score until the same framework
-  can be applied consistently across the CRM providers being compared.
-</p>
-
 </section>
 
-<section class="article-section">
+<section>
+<div class="container">
 
-<h2>Who should look closely at HubSpot?</h2>
+<h2>HubSpot Sales Hub pricing today</h2>
+
+<div class="price-box">
+
+<strong>Current public pricing checked September 13, 2026</strong>
 
 <p>
-  HubSpot can make sense for businesses that want a broad customer platform
-  and are prepared to evaluate more than the entry-level price.
+Free: $0/month for up to 2 users.
 </p>
 
 <p>
-  For a small business, the important question is not simply
-  “Is HubSpot cheap?”
+Starter: from $7/seat/month when billed annually.
+The displayed monthly commitment price is $20/seat/month.
 </p>
 
 <p>
-  The better question is:
-  <strong>“What will HubSpot cost us when we actually start using the
-  features and capacity we need?”</strong>
+Professional: from $90/seat/month when billed annually.
+A required one-time Professional onboarding fee of $1,500 applies.
 </p>
 
-</section>
+<p>
+Enterprise: from $150/seat/month.
+A required one-time Enterprise onboarding fee of $3,500 applies.
+</p>
 
-<div class="provider-cta">
-  <a class="btn secondary" href="real-cost-scores-crm.html">
-    Compare CRM Real Cost Scores →
-  </a>
+<p>
+HubSpot also lists HubSpot Credits at $9 per 1,000 credits when paid annually.
+</p>
 
-  <a class="btn" href="crm-cost-calculator.html">
-    Calculate CRM cost →
-  </a>
-</div>
-
-<div class="disclosure">
-  <strong>Affiliate disclosure:</strong>
-  This page contains affiliate links. If you purchase through one of
-  these links, we may earn a commission at no additional cost to you.
-  This does not affect our editorial recommendations.
-</div>
-
-<a class="back-link" href="index.html">
-  ← Back to SaaS Real Cost
+<a href="https://www.hubspot.com/pricing/sales" target="_blank" rel="noopener">
+View official HubSpot Sales Hub pricing →
 </a>
 
-</article>
+</div>
+
+<p>
+These prices were checked today. SaaS pricing can change at any time and
+may already be different the next day.
+</p>
+
+</div>
+</section>
+
+<section>
+<div class="container">
+
+<h2>Why HubSpot scores 7.4/10</h2>
+
+<div class="grid">
+
+<div class="card factor">
+<h3>Price — 8/10</h3>
+<div class="factor-score">8/10</div>
+<p>
+The free plan is a strong entry point and Starter is relatively accessible.
+That keeps HubSpot from receiving a low price score.
+</p>
+</div>
+
+<div class="card factor">
+<h3>Growth cost — 6/10</h3>
+<div class="factor-score">6/10</div>
+<p>
+The jump from Starter to Professional and Enterprise is substantial.
+Growing teams can therefore experience a significant increase in recurring cost.
+</p>
+</div>
+
+<div class="card factor">
+<h3>Hidden extras — 6/10</h3>
+<div class="factor-score">6/10</div>
+<p>
+Required onboarding fees on Professional and Enterprise and usage-based
+HubSpot Credits mean the headline seat price does not tell the complete story.
+</p>
+</div>
+
+<div class="card factor">
+<h3>Transparency — 8/10</h3>
+<div class="factor-score">8/10</div>
+<p>
+HubSpot publishes extensive pricing and feature information. The downside
+is that multiple products, tiers, seats and credits can make the final
+cost harder to understand.
+</p>
+</div>
+
+<div class="card factor">
+<h3>Ease of exit — 9/10</h3>
+<div class="factor-score">9/10</div>
+<p>
+There is no unusual technical barrier that automatically prevents a normal
+CRM migration. The practical migration workload can still be significant.
+</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<section>
+<div class="container card">
+
+<h2>The SaaSRealCost verdict</h2>
+
+<p>
+HubSpot is not necessarily expensive at the entry level. The issue is what
+happens when a company needs more advanced sales automation, reporting,
+AI functionality or higher-tier features.
+</p>
+
+<p>
+That is why HubSpot scores well on entry price and transparency, but lower
+on growth cost and extras.
+</p>
+
+<p><strong>Best suited for:</strong> businesses that value a broad sales ecosystem
+and expect to use more than a basic CRM.</p>
+
+<p><strong>Watch carefully:</strong> onboarding requirements, higher tiers,
+additional seats and usage-based features.</p>
+
+</div>
+</section>
+
+<div class="disclosure">
+<div class="container">
+
+<strong>Pricing checked today — September 13, 2026.</strong>
+Prices, plans, limits, discounts and fees can change at any time and may
+already be different the next day. Always verify the provider's current
+pricing before committing.
+
+<br><br>
+
+<strong>Scoring methodology:</strong>
+Each factor represents 20% of the final Real Cost Score. The score is a
+SaaSRealCost editorial assessment and is not supplied by HubSpot.
+
+</div>
+</div>
 
 <footer>
-  © 2026 SaaS Real Cost. All rights reserved.
+<div class="container">
+© 2026 SaaSRealCost ·
+<a href="/real-cost-scores-crm.html">Compare CRM Real Cost Scores →</a>
+</div>
 </footer>
-
-</main>
 
 </body>
 </html>
