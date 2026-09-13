@@ -4,265 +4,167 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 
-<title>CRM Real Cost Scores | Compare CRM Costs Before You Commit</title>
+<title>CRM Real Cost Scores™ — SaaSRealCost</title>
 
-<meta name="description" content="Compare CRM providers using the SaaS Real Cost Score framework: price, growth cost, hidden extras, transparency and ease of exit.">
-
-<meta property="og:title" content="CRM Real Cost Scores | SaaS Real Cost">
-<meta property="og:description" content="Compare the real cost of CRM software before you commit.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://saasrealcost.com/real-cost-scores-crm.html">
-
-<link rel="stylesheet" href="style.css">
-<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="description" content="Compare CRM providers using the SaaSRealCost Real Cost Score™. Five providers, five criteria and one consistent scoring system.">
 
 <style>
-.article{
-  max-width:1000px;
-  margin:0 auto;
+:root{
+--blue:#2864d7;
+--green:#198754;
+--navy:#10254d;
+--text:#172033;
+--muted:#667085;
+--bg:#f7f9fc;
+--border:#e4e9f1;
+--gold:#c58a19;
 }
-.article-hero{
-  padding:65px 0 35px;
-}
-.article-intro{
-  font-size:19px;
-  color:var(--muted);
-  max-width:780px;
-}
-.price-date{
-  background:#faf4e6;
-  border:1px solid #e9d9a8;
-  padding:16px 18px;
-  border-radius:12px;
-  margin:22px 0;
-}
-.score-table-wrap{
-  overflow-x:auto;
-  margin-top:25px;
-}
-.score-table{
-  width:100%;
-  border-collapse:collapse;
-  background:#fff;
-  border:1px solid var(--line);
-  border-radius:14px;
-  overflow:hidden;
-}
-.score-table th,
-.score-table td{
-  padding:17px 18px;
-  text-align:left;
-  border-bottom:1px solid var(--line);
-}
-.score-table th{
-  background:#f4f7fb;
-  color:var(--ink);
-  font-weight:800;
-}
-.score-table tr:last-child td{
-  border-bottom:0;
-}
-.score-number{
-  font-size:24px;
-  font-weight:800;
-  font-family:'Source Serif 4',Georgia,serif;
-}
-.score-pending{
-  color:var(--muted);
-  font-weight:700;
-}
-.provider-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:20px;
-  margin-top:25px;
-}
-.provider-card{
-  background:#fff;
-  border:1px solid var(--line);
-  border-radius:14px;
-  padding:26px;
-  box-shadow:0 8px 24px rgba(28,43,36,.05);
-}
-.framework{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(190px,1fr));
-  gap:15px;
-  margin-top:22px;
-}
-.framework-card{
-  background:#fff;
-  border:1px solid var(--line);
-  border-radius:12px;
-  padding:20px;
-}
-.framework-card strong{
-  display:block;
-  margin-bottom:5px;
-}
-.disclosure{
-  margin-top:40px;
-  padding:18px;
-  background:#f8f8f6;
-  border:1px solid var(--line);
-  border-radius:12px;
-  color:var(--muted);
-}
-.back-link{
-  display:inline-block;
-  margin-top:25px;
-  color:var(--brand);
-  font-weight:700;
-  text-decoration:none;
-}
-@media(max-width:650px){
-  .article-hero{
-    padding:45px 0 25px;
-  }
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Arial;line-height:1.65}
+a{text-decoration:none;color:inherit}
+.container{width:min(1100px,92%);margin:auto}
+header{background:#fff;border-bottom:1px solid var(--border)}
+.nav{height:70px;display:flex;justify-content:space-between;align-items:center}
+.brand{font-size:21px;font-weight:900;color:var(--navy)}
+.brand span{color:var(--blue)}
+.navlinks{display:flex;gap:20px;font-size:14px;font-weight:700}
+.hero{padding:85px 0;background:linear-gradient(135deg,#fff,#f1f6ff)}
+.eyebrow,.kicker{font-size:12px;font-weight:900;letter-spacing:1px;text-transform:uppercase;color:var(--gold)}
+h1,h2{font-family:Georgia;color:var(--navy)}
+h1{font-size:clamp(42px,6vw,65px);line-height:1.05;margin:15px 0}
+.hero p{font-size:19px;color:var(--muted);max-width:780px}
+section{padding:65px 0}
+.table-wrap{overflow-x:auto;background:#fff;border:1px solid var(--border);border-radius:18px}
+table{border-collapse:collapse;width:100%;min-width:850px}
+th,td{padding:16px;border-bottom:1px solid var(--border);text-align:left}
+th{background:#f3f6fa;color:var(--navy);font-size:13px;text-transform:uppercase}
+tr:last-child td{border-bottom:0}
+.score{font-size:20px;font-weight:900;color:var(--green)}
+.top{background:#f0faf5}
+.cards{display:grid;grid-template-columns:repeat(5,1fr);gap:15px}
+.card{background:#fff;border:1px solid var(--border);border-radius:16px;padding:22px}
+.card h3{color:var(--navy);margin-top:0}
+.weight{font-size:27px;font-weight:900;color:var(--green)}
+.formula{background:#eef4ff;border:1px solid #d8e5ff;border-radius:18px;padding:28px}
+.provider-links{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.provider-link{background:#fff;border:1px solid var(--border);border-radius:15px;padding:20px}
+.provider-link strong{color:var(--navy);display:block;margin-bottom:6px}
+.provider-link a{color:var(--blue);font-weight:800}
+.disclosure{background:#fff;border-top:1px solid var(--border);padding:28px 0;color:var(--muted);font-size:13px}
+footer{background:#0b1935;color:#c8d2e4;padding:30px 0}
+@media(max-width:800px){
+.navlinks{display:none}
+.cards,.provider-links{grid-template-columns:1fr}
 }
 </style>
 </head>
 
 <body>
 
-<main class="wrap">
-
-<nav class="nav">
-
-  <a class="brand" href="index.html">
-    SaaS Real Cost
-  </a>
-
-  <div class="navlinks">
-    <a href="index.html">Home</a>
-    <a href="#providers">Providers</a>
-    <a href="crm-cost-calculator.html">Calculator</a>
-  </div>
-
+<header>
+<div class="container nav">
+<a href="/" class="brand">SaaS<span>RealCost</span></a>
+<nav class="navlinks">
+<a href="/">Home</a>
+<a href="#scores">Scores</a>
 </nav>
+</div>
+</header>
 
-<article class="article">
+<section class="hero">
+<div class="container">
 
-<section class="article-hero">
+<span class="eyebrow">REAL COST SCORE™</span>
 
-  <div class="eyebrow">REAL COST SCORE™ — CRM</div>
-
-  <h1>Compare the real cost before you commit.</h1>
-
-  <p class="article-intro">
-    A CRM can look affordable when you only compare the advertised
-    starting price. The Real Cost Score™ looks at what happens after
-    you actually start using the platform.
-  </p>
-
-  <div class="price-date">
-    <strong>Pricing checked today — September 13, 2026.</strong><br>
-    Pricing is a snapshot. SaaS prices, plans, limits, discounts and
-    fees can change at any time and may already be different the next day.
-    Always verify current pricing before committing.
-  </div>
-
-</section>
-
-<section>
-
-<h2>How the Real Cost Score™ works</h2>
+<h1>Compare the real cost before you commit.</h1>
 
 <p>
-  Every provider is evaluated using the same five factors.
-  The goal is not simply to reward the cheapest CRM.
+The cheapest-looking CRM is not always the cheapest CRM to own.
+SaaSRealCost evaluates providers using the same five criteria so you can
+see what happens beyond the advertised starting price.
 </p>
 
-<div class="framework">
-
-  <div class="framework-card">
-    <strong>Price</strong>
-    <span class="muted">What does the starting plan actually cost?</span>
-  </div>
-
-  <div class="framework-card">
-    <strong>Growth cost</strong>
-    <span class="muted">What happens when users, contacts or usage grow?</span>
-  </div>
-
-  <div class="framework-card">
-    <strong>Hidden extras</strong>
-    <span class="muted">What additional products, fees or upgrades matter?</span>
-  </div>
-
-  <div class="framework-card">
-    <strong>Cost transparency</strong>
-    <span class="muted">How easy is it to understand the actual bill?</span>
-  </div>
-
-  <div class="framework-card">
-    <strong>Ease of exit</strong>
-    <span class="muted">How difficult or expensive is it to leave later?</span>
-  </div>
+<p>
+<strong>Current methodology version: 1.0</strong><br>
+Prices and provider information checked September 13, 2026.
+</p>
 
 </div>
-
 </section>
 
-<section id="providers" style="margin-top:50px">
 
-<h2>CRM providers</h2>
+<section id="scores">
 
-<div class="score-table-wrap">
+<div class="container">
 
-<table class="score-table">
+<h2>CRM Real Cost Scores</h2>
+
+<div class="table-wrap">
+
+<table>
 
 <thead>
 <tr>
-  <th>Provider</th>
-  <th>Today's starting price</th>
-  <th>Real Cost Score™</th>
-  <th>Best for</th>
+<th>Provider</th>
+<th>Price</th>
+<th>Growth</th>
+<th>Extras</th>
+<th>Transparency</th>
+<th>Exit</th>
+<th>Real Cost Score</th>
 </tr>
 </thead>
 
 <tbody>
 
-<tr>
-  <td>
-    <strong>HubSpot</strong>
-  </td>
+<tr class="top">
+<td><strong>Pipedrive</strong></td>
+<td>9/10</td>
+<td>8/10</td>
+<td>8/10</td>
+<td>9/10</td>
+<td>9/10</td>
+<td class="score">8.6/10</td>
+</tr>
 
-  <td>
-    $0 free<br>
-    <span class="small muted">Starter from $7/seat</span>
-  </td>
-
-  <td>
-    <span class="score-pending">
-      Score in progress
-    </span>
-  </td>
-
-  <td>
-    Broad customer platform
-  </td>
+<tr class="top">
+<td><strong>Zoho CRM</strong></td>
+<td>9/10</td>
+<td>9/10</td>
+<td>8/10</td>
+<td>9/10</td>
+<td>8/10</td>
+<td class="score">8.6/10</td>
 </tr>
 
 <tr>
-  <td>
-    <strong>Pipedrive</strong>
-  </td>
+<td><strong>Freshsales</strong></td>
+<td>9/10</td>
+<td>8/10</td>
+<td>8/10</td>
+<td>9/10</td>
+<td>8/10</td>
+<td class="score">8.4/10</td>
+</tr>
 
-  <td>
-    €14/seat/mo<br>
-    <span class="small muted">Annual billing</span>
-  </td>
+<tr>
+<td><strong>monday CRM</strong></td>
+<td>8/10</td>
+<td>8/10</td>
+<td>7/10</td>
+<td>8/10</td>
+<td>9/10</td>
+<td class="score">8.0/10</td>
+</tr>
 
-  <td>
-    <span class="score-pending">
-      Score in progress
-    </span>
-  </td>
-
-  <td>
-    Sales-focused teams
-  </td>
+<tr>
+<td><strong>HubSpot Sales Hub</strong></td>
+<td>8/10</td>
+<td>6/10</td>
+<td>6/10</td>
+<td>8/10</td>
+<td>9/10</td>
+<td class="score">7.4/10</td>
 </tr>
 
 </tbody>
@@ -271,116 +173,201 @@
 
 </div>
 
-<p class="small muted" style="margin-top:15px">
-  We are deliberately not publishing numerical scores yet. A useful
-  Real Cost Score should be based on the same evidence and weighting
-  for every provider, rather than being an arbitrary number.
-</p>
-
+</div>
 </section>
 
-<section style="margin-top:50px">
 
-<h2>Explore each provider</h2>
+<section>
 
-<div class="provider-grid">
+<div class="container">
 
-  <div class="provider-card">
+<h2>How the Real Cost Score™ works</h2>
 
-    <span class="pill">HUBSPOT</span>
+<div class="formula">
 
-    <h3>HubSpot Real Cost</h3>
+<strong>Every factor has equal weight.</strong>
 
-    <p>
-      Explore HubSpot's current pricing, growth costs, onboarding,
-      contacts, seats and potential additional costs.
-    </p>
+<p>
+Price 20% + Growth cost 20% + Hidden extras 20% +
+Cost transparency 20% + Ease of exit 20%
+</p>
 
-    <a class="btn secondary" href="hubspot-real-cost.html">
-      View HubSpot analysis →
-    </a>
+<p>
+The five scores are averaged to create the final score out of 10.
+</p>
 
-  </div>
+<p>
+Example: 9 + 8 + 8 + 9 + 9 = 43 ÷ 5 = <strong>8.6/10</strong>.
+</p>
 
-  <div class="provider-card">
-
-    <span class="pill">PIPEDRIVE</span>
-
-    <h3>Pipedrive Real Cost</h3>
-
-    <p>
-      Explore Pipedrive's current per-seat pricing, add-ons, VAT
-      and the costs that can appear as your sales team grows.
-    </p>
-
-    <a class="btn secondary" href="pipedrive-real-cost.html">
-      View Pipedrive analysis →
-    </a>
-
-  </div>
+</div>
 
 </div>
 
 </section>
 
-<section style="margin-top:50px">
 
-<h2>Why we don't rank providers on price alone</h2>
+<section>
 
-<p>
-  The cheapest CRM is not automatically the cheapest CRM for your business.
-</p>
+<div class="container">
 
-<p>
-  A low entry price can become less attractive when you need more users,
-  more contacts, automation, integrations or additional functionality.
-</p>
+<h2>The five criteria</h2>
 
-<p>
-  That is why the Real Cost Score™ is designed to look at the full
-  buying decision rather than just the number displayed on a pricing page.
-</p>
-
-</section>
-
-<section style="margin-top:50px">
+<div class="cards">
 
 <div class="card">
+<h3>Price</h3>
+<div class="weight">20%</div>
+<p>
+How attractive is the actual entry cost for the product being compared?
+</p>
+</div>
 
-<h2>Calculate your CRM cost</h2>
+<div class="card">
+<h3>Growth cost</h3>
+<div class="weight">20%</div>
+<p>
+What happens to the cost when users, features or business requirements grow?
+</p>
+</div>
 
-<p class="muted">
-  Want to estimate what a CRM could cost for your own team?
+<div class="card">
+<h3>Hidden extras</h3>
+<div class="weight">20%</div>
+<p>
+Can add-ons, credits, onboarding, storage or other extras materially
+change the final bill?
+</p>
+</div>
+
+<div class="card">
+<h3>Transparency</h3>
+<div class="weight">20%</div>
+<p>
+How clearly does the provider explain plans, limits, billing and extras?
+</p>
+</div>
+
+<div class="card">
+<h3>Ease of exit</h3>
+<div class="weight">20%</div>
+<p>
+How difficult is it to cancel, export data and move to another provider?
+</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+
+<section>
+
+<div class="container">
+
+<h2>Why the scores differ</h2>
+
+<div class="provider-links">
+
+<div class="provider-link">
+<strong>Pipedrive — 8.6</strong>
+Clear pricing and strong transparency, with additional functionality
+available through add-ons.
+<br><br>
+<a href="/pipedrive-real-cost.html">Read the full research →</a>
+</div>
+
+<div class="provider-link">
+<strong>Zoho CRM — 8.6</strong>
+Strong value potential and detailed pricing tools, but add-ons and
+support can affect the final cost.
+<br><br>
+<a href="/zoho-crm-real-cost.html">Read the full research →</a>
+</div>
+
+<div class="provider-link">
+<strong>Freshsales — 8.4</strong>
+Competitive entry pricing and clear plans, with paid AI and document
+add-ons.
+<br><br>
+<a href="/freshsales-real-cost.html">Read the full research →</a>
+</div>
+
+<div class="provider-link">
+<strong>monday CRM — 8.0</strong>
+Flexible platform, but minimum users, plan limits and advanced features
+matter.
+<br><br>
+<a href="/monday-crm-real-cost.html">Read the full research →</a>
+</div>
+
+<div class="provider-link">
+<strong>HubSpot Sales Hub — 7.4</strong>
+Excellent entry point, but higher-tier growth and onboarding costs can
+change the economics.
+<br><br>
+<a href="/hubspot-real-cost.html">Read the full research →</a>
+</div>
+
+</div>
+
+</div>
+</section>
+
+
+<section>
+
+<div class="container">
+
+<h2>Our research rule</h2>
+
+<p>
+We do not give a provider a high score simply because its first advertised
+price is low.
 </p>
 
-<a class="btn" href="crm-cost-calculator.html">
-  Open the CRM Cost Calculator →
-</a>
+<p>
+The purpose of the Real Cost Score™ is to answer a different question:
+<strong>what is this product likely to cost and feel like as your needs
+develop?</strong>
+</p>
+
+<p>
+Scores are reviewed when material pricing, plan or product changes occur.
+</p>
 
 </div>
 
 </section>
+
 
 <div class="disclosure">
 
-<strong>Affiliate disclosure:</strong>
-This page contains affiliate links. If you purchase through one of
-these links, we may earn a commission at no additional cost to you.
-This does not affect our editorial recommendations.
+<div class="container">
+
+<strong>Pricing checked today — September 13, 2026.</strong>
+Prices, plans, limits, discounts, taxes, add-ons and fees can change at any
+time and may already be different the next day. Always verify current
+provider pricing before committing.
+
+<br><br>
+
+<strong>Editorial disclosure:</strong>
+Real Cost Scores are SaaSRealCost editorial assessments based on the
+published five-factor methodology. They are not ratings supplied or approved
+by the providers.
 
 </div>
 
-<a class="back-link" href="index.html">
-  ← Back to SaaS Real Cost
-</a>
+</div>
 
-</article>
 
 <footer>
-  © 2026 SaaS Real Cost. All rights reserved.
+<div class="container">
+© 2026 SaaSRealCost · Independent SaaS cost research.
+</div>
 </footer>
-
-</main>
 
 </body>
 </html>
