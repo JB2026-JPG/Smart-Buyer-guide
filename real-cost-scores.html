@@ -6,14 +6,14 @@
 
 <title>Real Cost Scores™ — Compare SaaS Providers | SaaSRealCost</title>
 
-<meta name="description" content="Compare SaaS providers using the SaaSRealCost Real Cost Score™. See starting price, growth cost, hidden extras, transparency and ease of exit for hosting, email marketing and CRM software.">
+<meta name="description" content="Compare SaaS providers using the Real Cost Score™. See starting price, growth cost, hidden extras, transparency and ease of exit before you commit.">
 
 <link rel="canonical" href="https://saasrealcost.com/real-cost-scores.html">
 
 <meta property="og:title" content="Real Cost Scores™ — Compare SaaS Providers">
-<meta property="og:description" content="Compare SaaS providers using the same five Real Cost criteria. See what software may really cost as your needs grow.">
-<meta property="og:type" content="website">
+<meta property="og:description" content="Compare the real cost of SaaS providers beyond the advertised starting price.">
 <meta property="og:url" content="https://saasrealcost.com/real-cost-scores.html">
+<meta property="og:type" content="website">
 
 <style>
 :root{
@@ -21,12 +21,11 @@
   --navy:#172033;
   --green:#198754;
   --bg:#f7f9fc;
-  --white:#ffffff;
-  --text:#263244;
+  --white:#fff;
   --muted:#667085;
-  --border:#e3e8ef;
-  --soft:#eef4ff;
+  --border:#e5e7eb;
   --shadow:0 8px 24px rgba(23,32,51,.07);
+  --radius:14px;
 }
 
 *{
@@ -41,8 +40,8 @@ body{
   margin:0;
   font-family:Inter,Arial,Helvetica,sans-serif;
   background:var(--bg);
-  color:var(--text);
-  line-height:1.65;
+  color:var(--navy);
+  line-height:1.6;
 }
 
 a{
@@ -56,7 +55,7 @@ a:hover{
 
 .container{
   width:min(1120px,92%);
-  margin:0 auto;
+  margin:auto;
 }
 
 /* HEADER */
@@ -66,7 +65,7 @@ header{
   border-bottom:1px solid var(--border);
   position:sticky;
   top:0;
-  z-index:20;
+  z-index:100;
 }
 
 .nav{
@@ -81,7 +80,7 @@ header{
   font-size:21px;
   font-weight:800;
   color:var(--navy);
-  letter-spacing:-.4px;
+  white-space:nowrap;
 }
 
 .logo span{
@@ -92,6 +91,7 @@ nav{
   display:flex;
   align-items:center;
   gap:22px;
+  flex-wrap:wrap;
 }
 
 nav a{
@@ -108,103 +108,90 @@ nav a:hover{
 /* HERO */
 
 .hero{
-  padding:72px 0 54px;
-  background:
-    linear-gradient(180deg,#ffffff 0%,#f7f9fc 100%);
-  border-bottom:1px solid var(--border);
+  padding:72px 0 48px;
+  text-align:center;
+  background:linear-gradient(180deg,#fff 0%,var(--bg) 100%);
 }
 
 .eyebrow{
-  display:inline-block;
-  margin-bottom:14px;
   color:var(--blue);
   font-size:13px;
   font-weight:800;
   letter-spacing:.08em;
-  text-transform:uppercase;
+  margin-bottom:12px;
 }
 
-h1{
-  margin:0 0 18px;
-  color:var(--navy);
-  font-size:clamp(36px,5vw,58px);
+.hero h1{
+  margin:0 auto 16px;
+  max-width:850px;
+  font-size:clamp(34px,5vw,54px);
   line-height:1.08;
-  letter-spacing:-1.5px;
+  letter-spacing:-.03em;
 }
 
 .hero p{
-  max-width:760px;
-  margin:0;
-  font-size:19px;
+  max-width:720px;
+  margin:0 auto 18px;
   color:var(--muted);
+  font-size:18px;
 }
 
 .checked{
-  margin-top:22px;
   font-size:13px;
   color:var(--muted);
 }
 
 /* FILTERS */
 
-.filter-section{
-  padding:30px 0 10px;
-}
-
 .filters{
   display:flex;
-  flex-wrap:wrap;
+  justify-content:center;
   gap:10px;
+  flex-wrap:wrap;
+  margin:28px 0 42px;
 }
 
-.filter-btn{
-  appearance:none;
+.filter{
   border:1px solid var(--border);
-  background:var(--white);
+  background:#fff;
   color:var(--navy);
   border-radius:999px;
-  padding:9px 17px;
+  padding:9px 16px;
   font-size:14px;
   font-weight:700;
   cursor:pointer;
 }
 
-.filter-btn:hover{
+.filter:hover{
   border-color:var(--blue);
-  color:var(--blue);
 }
 
-.filter-btn.active{
+.filter.active{
   background:var(--blue);
-  border-color:var(--blue);
   color:#fff;
+  border-color:var(--blue);
 }
 
-/* INTRO */
+/* SECTION */
 
-.section{
-  padding:42px 0;
+section{
+  padding:30px 0 64px;
 }
 
-.section-title{
-  margin:0 0 10px;
-  color:var(--navy);
+.section-heading{
+  text-align:center;
+  margin-bottom:28px;
+}
+
+.section-heading h2{
   font-size:30px;
-  line-height:1.2;
-  letter-spacing:-.5px;
+  margin:0 0 8px;
 }
 
-.section-intro{
-  margin:0 0 28px;
-  max-width:780px;
+.section-heading p{
   color:var(--muted);
-}
-
-.provider-count{
-  margin:0 0 22px;
-  color:var(--muted);
-  font-size:14px;
-  font-weight:600;
+  margin:0 auto;
+  max-width:720px;
 }
 
 /* PROVIDER GRID */
@@ -216,267 +203,226 @@ h1{
 }
 
 .card{
-  background:var(--white);
+  background:#fff;
   border:1px solid var(--border);
-  border-radius:16px;
-  padding:25px;
+  border-radius:var(--radius);
   box-shadow:var(--shadow);
-  display:flex;
-  flex-direction:column;
 }
 
-.card.hidden{
-  display:none;
+.provider-card{
+  padding:24px;
+  display:flex;
+  flex-direction:column;
+  min-height:285px;
+}
+
+.provider-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:15px;
+}
+
+.provider-name{
+  font-size:21px;
+  font-weight:800;
+  margin:0;
 }
 
 .category{
-  color:var(--blue);
+  color:var(--muted);
   font-size:12px;
-  font-weight:800;
-  text-transform:uppercase;
-  letter-spacing:.07em;
-  margin-bottom:8px;
-}
-
-.card h3{
-  margin:0;
-  color:var(--navy);
-  font-size:23px;
-  line-height:1.2;
-}
-
-.score-row{
-  display:flex;
-  align-items:flex-end;
-  gap:7px;
-  margin:20px 0 13px;
+  margin-top:3px;
 }
 
 .score{
-  color:var(--navy);
-  font-size:40px;
-  font-weight:800;
-  line-height:1;
-  letter-spacing:-1px;
-}
-
-.score-label{
-  color:var(--muted);
-  font-size:13px;
-  padding-bottom:3px;
-}
-
-.card p{
-  color:var(--muted);
-  font-size:15px;
-  margin:0 0 20px;
-}
-
-.card-link{
-  margin-top:auto;
-  display:inline-flex;
+  min-width:66px;
+  height:66px;
+  border-radius:50%;
+  background:#edf3ff;
+  color:var(--blue);
+  display:flex;
   align-items:center;
   justify-content:center;
-  width:100%;
-  padding:11px 15px;
-  border-radius:9px;
-  background:var(--soft);
-  color:var(--blue);
+  font-size:21px;
+  font-weight:800;
+}
+
+.provider-card p{
+  color:var(--muted);
   font-size:14px;
+  margin:18px 0;
+}
+
+.provider-link{
+  margin-top:auto;
   font-weight:800;
 }
 
-.card-link:hover{
-  background:#e1ebff;
-  text-decoration:none;
+/* PLANNED CARD */
+
+.planned-card{
+  border:1px dashed #b8c0cc;
+  box-shadow:none;
+  background:#fafbfc;
 }
 
-/* SCORE TABLE */
-
-.table-wrap{
-  overflow-x:auto;
-  background:var(--white);
-  border:1px solid var(--border);
-  border-radius:16px;
-  box-shadow:var(--shadow);
+.planned-card .score{
+  background:#f0f1f3;
+  color:#667085;
+  font-size:13px;
 }
 
-.score-table{
-  width:100%;
-  border-collapse:collapse;
-  min-width:900px;
-}
-
-.score-table th,
-.score-table td{
-  padding:15px 14px;
-  border-bottom:1px solid var(--border);
-  text-align:center;
-  font-size:14px;
-}
-
-.score-table th{
-  background:#f9fafc;
-  color:var(--navy);
+.planned-label{
+  display:inline-block;
+  margin-top:15px;
+  padding:5px 9px;
+  border-radius:6px;
+  background:#eef0f3;
+  color:#667085;
+  font-size:12px;
   font-weight:800;
 }
 
-.score-table th:first-child,
-.score-table td:first-child{
-  text-align:left;
-}
-
-.score-table tr:last-child td{
-  border-bottom:0;
-}
-
-.score-table td:first-child{
-  color:var(--navy);
-  font-weight:800;
-}
-
-.overall{
-  color:var(--blue);
-  font-weight:900;
-}
-
-/* FEATURED CRM */
+/* FEATURED */
 
 .featured{
-  margin-top:34px;
-  padding:30px;
-  background:var(--navy);
-  color:#fff;
-  border-radius:18px;
+  padding:28px;
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  margin-top:28px;
 }
 
 .featured h2{
-  margin:0 0 9px;
-  font-size:28px;
-  line-height:1.2;
+  margin-top:0;
 }
 
 .featured p{
-  margin:0 0 20px;
-  color:#d7deea;
-  max-width:720px;
+  color:var(--muted);
 }
 
-.featured-btn{
+.button{
   display:inline-block;
-  padding:12px 18px;
-  border-radius:9px;
-  background:#fff;
-  color:var(--navy);
+  background:var(--blue);
+  color:#fff;
+  padding:11px 18px;
+  border-radius:8px;
   font-weight:800;
 }
 
-.featured-btn:hover{
+.button:hover{
+  color:#fff;
   text-decoration:none;
-  background:#f0f4fa;
+  opacity:.92;
+}
+
+/* TABLE */
+
+.table-wrap{
+  overflow-x:auto;
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+}
+
+table{
+  width:100%;
+  border-collapse:collapse;
+  min-width:780px;
+}
+
+th,td{
+  padding:14px 16px;
+  border-bottom:1px solid var(--border);
+  text-align:left;
+  font-size:14px;
+}
+
+th{
+  background:#f8fafc;
+  font-size:13px;
+}
+
+td:first-child,
+th:first-child{
+  font-weight:800;
+}
+
+tr:last-child td{
+  border-bottom:none;
 }
 
 /* METHODOLOGY */
 
-.criteria{
+.method-grid{
   display:grid;
   grid-template-columns:repeat(5,1fr);
   gap:14px;
-  margin-top:25px;
 }
 
-.criteria-card{
-  background:var(--white);
-  border:1px solid var(--border);
-  border-radius:14px;
+.method{
   padding:20px;
-}
-
-.criteria-card strong{
-  display:block;
-  color:var(--navy);
-  margin-bottom:7px;
-  font-size:16px;
-}
-
-.criteria-card span{
-  color:var(--blue);
-  font-size:13px;
-  font-weight:800;
-}
-
-.criteria-card p{
-  margin:9px 0 0;
-  color:var(--muted);
-  font-size:14px;
-  line-height:1.55;
-}
-
-/* INDEPENDENCE */
-
-.independence{
-  background:var(--white);
+  background:#fff;
   border:1px solid var(--border);
-  border-left:4px solid var(--green);
   border-radius:12px;
-  padding:23px 25px;
-  margin-top:32px;
 }
 
-.independence h3{
-  margin:0 0 7px;
-  color:var(--navy);
+.method strong{
+  display:block;
+  margin-bottom:6px;
 }
 
-.independence p{
-  margin:0;
+.method span{
+  display:block;
   color:var(--muted);
-  font-size:15px;
+  font-size:13px;
 }
 
-/* CALCULATOR CTA */
+/* TRUST */
 
-.calculator{
-  margin:15px 0 65px;
-  padding:38px;
+.trust{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:28px;
+  margin-top:28px;
+}
+
+.trust h2{
+  margin-top:0;
+}
+
+.trust p{
+  color:var(--muted);
+}
+
+/* CTA */
+
+.cta{
   text-align:center;
-  background:var(--soft);
-  border:1px solid #dce8ff;
-  border-radius:18px;
+  padding:54px 20px;
 }
 
-.calculator h2{
-  margin:0 0 10px;
-  color:var(--navy);
-  font-size:30px;
+.cta h2{
+  font-size:32px;
+  margin-bottom:10px;
 }
 
-.calculator p{
-  margin:0 auto 22px;
-  max-width:680px;
+.cta p{
   color:var(--muted);
-}
-
-.btn{
-  display:inline-block;
-  padding:12px 20px;
-  border-radius:9px;
-  background:var(--blue);
-  color:#fff;
-  font-weight:800;
-}
-
-.btn:hover{
-  background:#1e55bc;
-  text-decoration:none;
+  max-width:650px;
+  margin:0 auto 22px;
 }
 
 /* FOOTER */
 
 footer{
   border-top:1px solid var(--border);
-  background:var(--white);
-  padding:30px 0;
+  background:#fff;
+  padding:32px 0;
   color:var(--muted);
   font-size:13px;
 }
@@ -488,12 +434,6 @@ footer{
   flex-wrap:wrap;
 }
 
-.footer-links{
-  display:flex;
-  gap:18px;
-  flex-wrap:wrap;
-}
-
 /* RESPONSIVE */
 
 @media(max-width:900px){
@@ -501,56 +441,36 @@ footer{
     grid-template-columns:repeat(2,1fr);
   }
 
-  .criteria{
+  .method-grid{
     grid-template-columns:repeat(2,1fr);
   }
 }
 
 @media(max-width:650px){
-  header{
-    position:static;
-  }
-
   .nav{
-    padding:14px 0;
+    padding:12px 0;
     align-items:flex-start;
     flex-direction:column;
-    gap:10px;
   }
 
   nav{
-    width:100%;
-    gap:15px;
-    flex-wrap:wrap;
+    gap:14px;
   }
 
   .hero{
-    padding:50px 0 40px;
-  }
-
-  h1{
-    font-size:39px;
-  }
-
-  .hero p{
-    font-size:17px;
+    padding:52px 0 32px;
   }
 
   .provider-grid{
     grid-template-columns:1fr;
   }
 
-  .criteria{
+  .method-grid{
     grid-template-columns:1fr;
   }
 
-  .featured,
-  .calculator{
-    padding:25px;
-  }
-
-  .section{
-    padding:35px 0;
+  .hero h1{
+    font-size:36px;
   }
 }
 </style>
@@ -560,614 +480,607 @@ footer{
 
 <header>
   <div class="container nav">
-    <a class="logo" href="https://saasrealcost.com/">SaaS<span>RealCost</span></a>
 
-    <nav aria-label="Main navigation">
+    <a class="logo" href="https://saasrealcost.com/">
+      SaaS<span>RealCost</span>
+    </a>
+
+    <nav>
       <a href="https://saasrealcost.com/">Home</a>
       <a href="https://saasrealcost.com/real-cost-scores.html">Real Cost Scores</a>
       <a href="https://saasrealcost.com/crm-cost-calculator.html">Calculator</a>
       <a href="https://saasrealcost.com/about.html">About</a>
     </nav>
+
   </div>
 </header>
 
 
 <main>
 
-  <!-- HERO -->
+<!-- HERO -->
 
-  <section class="hero">
-    <div class="container">
+<section class="hero">
+  <div class="container">
 
-      <span class="eyebrow">REAL COST SCORE™</span>
+    <div class="eyebrow">REAL COST SCORE™</div>
 
-      <h1>Compare the Real Cost Before You Commit.</h1>
+    <h1>Compare the Real Cost Before You Commit.</h1>
+
+    <p>
+      The advertised price is only the starting point.
+      Our Real Cost Score™ looks at what SaaS can really cost as you grow.
+    </p>
+
+    <div class="checked">
+      Pricing and research checked: September 15, 2026
+    </div>
+
+  </div>
+</section>
+
+
+<!-- FILTERS -->
+
+<div class="container">
+
+  <div class="filters">
+
+    <button class="filter active" data-filter="all">
+      All <span class="count">9</span>
+    </button>
+
+    <button class="filter" data-filter="hosting">
+      Hosting <span class="count">2</span>
+    </button>
+
+    <button class="filter" data-filter="email">
+      Email Marketing <span class="count">2</span>
+    </button>
+
+    <button class="filter" data-filter="crm">
+      CRM <span class="count">5</span>
+    </button>
+
+    <button class="filter" data-filter="business">
+      Business Software
+    </button>
+
+  </div>
+
+</div>
+
+
+<!-- PROVIDERS -->
+
+<section>
+  <div class="container">
+
+    <div class="section-heading">
+      <h2>Real Cost Scores</h2>
+      <p>
+        Every provider is evaluated using the same five criteria.
+        Higher scores mean stronger overall value and cost transparency.
+      </p>
+    </div>
+
+
+    <div class="provider-grid">
+
+
+      <!-- BLUEHOST -->
+
+      <article class="card provider-card" data-category="hosting">
+
+        <div class="provider-top">
+          <div>
+            <h3 class="provider-name">Bluehost</h3>
+            <div class="category">Web Hosting</div>
+          </div>
+
+          <div class="score">6.8</div>
+        </div>
+
+        <p>
+          Low introductory hosting prices can become significantly more
+          expensive at renewal.
+        </p>
+
+        <a class="provider-link"
+           href="https://saasrealcost.com/bluehost-real-cost.html">
+          See Bluehost's Real Cost →
+        </a>
+
+      </article>
+
+
+      <!-- HOSTINGER -->
+
+      <article class="card provider-card" data-category="hosting">
+
+        <div class="provider-top">
+          <div>
+            <h3 class="provider-name">Hostinger</h3>
+            <div class="category">Web Hosting</div>
+          </div>
+
+          <div class="score">6.2</div>
+        </div>
+
+        <p>
+          Attractive entry pricing, but renewal costs and additional
+          features can materially change the long-term cost.
+        </p>
+
+        <a class="provider-link"
+           href="https://www.hostinger.com/web-hosting">
+          View Hostinger Pricing →
+        </a>
+
+      </article>
+
+
+      <!-- KIT -->
+
+      <article class="card provider-card" data-category="email">
+
+        <div class="provider-top">
+          <div>
+            <h3 class="provider-name">Kit</h3>
+            <div class="category">Email Marketing</div>
+          </div>
+
+          <div class="score">9.0</div>
+        </div>
+
+        <p>
+          Strong free entry level and comparatively clear subscriber-based
+          pricing as your audience grows.
+        </p>
+
+        <a class="provider-link"
+           href="https://saasrealcost.com/kit-real-cost.html">
+          See Kit's Real Cost →
+        </a>
+
+      </article>
+
+
+      <!-- MAILCHIMP -->
+
+      <article class="card provider-card" data-category="email">
+
+        <div class="provider-top">
+          <div>
+            <h3 class="provider-name">Mailchimp</h3>
+            <div class="category">Email Marketing</div>
+          </div>
+
+          <div class="score">6.8</div>
+        </div>
+
+        <p>
+          A familiar platform, but costs can rise with contacts, features
+          and plan requirements.
+        </p>
+
+        <a class="provider-link"
+           href="https://mailchimp.com/pricing/">
+          View Mailchimp Pricing →
+        </a>
+
+      </article>
+
+
+      <!-- PIPEDRIVE -->
+
+      <article class="card provider-card" data-category="crm">
+
+        <div class="provider-top">
+          <div>
+            <h3 class="provider-name">Pipedrive</h3>
+            <div class="category">CRM</div>
+          </div>
+
+          <div class="score">8.6</div>
+        </div>
+
+        <p>
+          Strong overall value with relatively transparent pricing and
+          manageable growth costs.
+        </p>
+
+        <a class="provider-link"
+           href="https://saasrealcost.com/pipedrive-real-cost.html">
+          See Pipedrive's Real Cost →
+        </a>
+
+      </article>
+
+
+      <!-- ZOHO -->
+
+      <article class="card provider-card" data-category="crm">
+
+        <div class="provider-top">
+          <div>
+            <h3 class="provider-name">Zoho CRM</h3>
+            <div class="category">CRM</div>
+          </div>
+
+          <div class="score">8.6</div>
+        </div>
+
+        <p>
+          Broad functionality and strong pricing value, particularly for
+          businesses that need room to grow.
+        </p>
+
+        <a class="provider-link"
+           href="https://saasrealcost.com/zoho-real-cost.html">
+          See Zoho's Real Cost →
+        </a>
+
+      </article>
+
+
+      <!-- FRESHSALES -->
+
+      <article class="card provider-card" data-category="crm">
+
+        <div class="provider-top">
+          <div>
+            <h3 class="provider-name">Freshsales</h3>
+            <div class="category">CRM</div>
+          </div>
+
+          <div class="score">8.4</div>
+        </div>
+
+        <p>
+          Competitive entry pricing with useful features for growing
+          sales teams.
+        </p>
+
+        <a class="provider-link"
+           href="https://saasrealcost.com/freshsales-real-cost.html">
+          See Freshsales' Real Cost →
+        </a>
+
+      </article>
+
+
+      <!-- MONDAY CRM -->
+
+      <article class="card provider-card" data-category="crm">
+
+        <div class="provider-top">
+          <div>
+            <h3 class="provider-name">monday CRM</h3>
+            <div class="category">CRM</div>
+          </div>
+
+          <div class="score">8.0</div>
+        </div>
+
+        <p>
+          Flexible visual workflows and strong usability, with pricing
+          affected by seats and plan level.
+        </p>
+
+        <a class="provider-link"
+           href="https://saasrealcost.com/monday-crm-real-cost.html">
+          See monday CRM's Real Cost →
+        </a>
+
+      </article>
+
+
+      <!-- HUBSPOT -->
+
+      <article class="card provider-card" data-category="crm">
+
+        <div class="provider-top">
+          <div>
+            <h3 class="provider-name">HubSpot Sales Hub</h3>
+            <div class="category">CRM</div>
+          </div>
+
+          <div class="score">7.4</div>
+        </div>
+
+        <p>
+          Powerful ecosystem and free entry point, but costs can increase
+          considerably as advanced features and scale are added.
+        </p>
+
+        <a class="provider-link"
+           href="https://saasrealcost.com/hubspot-real-cost.html">
+          See HubSpot's Real Cost →
+        </a>
+
+      </article>
+
+
+      <!-- BUSINESS SOFTWARE PLANNED -->
+
+      <article class="card provider-card planned-card"
+               data-category="business">
+
+        <div class="provider-top">
+          <div>
+            <h3 class="provider-name">Business Software</h3>
+            <div class="category">Research category</div>
+          </div>
+
+          <div class="score">—</div>
+        </div>
+
+        <p>
+          Additional business software providers are being researched
+          and will be scored using the same Real Cost Score™ methodology.
+        </p>
+
+        <span class="planned-label">
+          Research planned
+        </span>
+
+      </article>
+
+    </div>
+
+
+    <!-- FEATURED CRM -->
+
+    <div class="featured">
+
+      <h2>Compare the Top CRM Real Cost Scores</h2>
 
       <p>
-        The advertised price is only the starting point.
-        SaaSRealCost evaluates providers using the same five criteria
-        to show what software may really cost as your needs grow.
+        CRM is currently our most developed comparison category.
+        Compare five providers using the full five-factor scoring system,
+        including growth cost, hidden extras and ease of exit.
       </p>
 
-      <div class="checked">
-        Pricing and research last verified: <strong>September 15, 2026</strong>.
-      </div>
+      <a class="button"
+         href="https://saasrealcost.com/real-cost-scores-crm.html">
+        View CRM Real Cost Scores →
+      </a>
 
     </div>
-  </section>
+
+  </div>
+</section>
 
 
-  <!-- FILTERS -->
+<!-- SCORE TABLE -->
 
-  <section class="filter-section">
-    <div class="container">
+<section>
+  <div class="container">
 
-      <div class="filters" role="group" aria-label="Filter providers by category">
+    <div class="section-heading">
+      <h2>How the Scores Are Built</h2>
+      <p>
+        Each provider receives a score from 1–10 for five equally weighted
+        criteria.
+      </p>
+    </div>
 
-        <button class="filter-btn active" data-filter="all">
-          All
-        </button>
 
-        <button class="filter-btn" data-filter="hosting">
-          Hosting
-        </button>
+    <div class="table-wrap">
 
-        <button class="filter-btn" data-filter="email">
-          Email Marketing
-        </button>
+      <table>
 
-        <button class="filter-btn" data-filter="crm">
-          CRM
-        </button>
+        <thead>
+          <tr>
+            <th>Provider</th>
+            <th>Price</th>
+            <th>Growth Cost</th>
+            <th>Hidden Extras</th>
+            <th>Transparency</th>
+            <th>Ease of Exit</th>
+            <th>Overall</th>
+          </tr>
+        </thead>
 
-        <button class="filter-btn" data-filter="business">
-          Business Software
-        </button>
+        <tbody>
 
-      </div>
+          <tr>
+            <td>Bluehost</td>
+            <td>7</td>
+            <td>6</td>
+            <td>7</td>
+            <td>7</td>
+            <td>7</td>
+            <td><strong>6.8</strong></td>
+          </tr>
+
+          <tr>
+            <td>Hostinger</td>
+            <td>8</td>
+            <td>5</td>
+            <td>6</td>
+            <td>6</td>
+            <td>6</td>
+            <td><strong>6.2</strong></td>
+          </tr>
+
+          <tr>
+            <td>Kit</td>
+            <td>10</td>
+            <td>8</td>
+            <td>9</td>
+            <td>9</td>
+            <td>9</td>
+            <td><strong>9.0</strong></td>
+          </tr>
+
+          <tr>
+            <td>Mailchimp</td>
+            <td>7</td>
+            <td>6</td>
+            <td>5</td>
+            <td>7</td>
+            <td>9</td>
+            <td><strong>6.8</strong></td>
+          </tr>
+
+          <tr>
+            <td>Pipedrive</td>
+            <td>9</td>
+            <td>8</td>
+            <td>8</td>
+            <td>9</td>
+            <td>9</td>
+            <td><strong>8.6</strong></td>
+          </tr>
+
+          <tr>
+            <td>Zoho CRM</td>
+            <td>9</td>
+            <td>9</td>
+            <td>8</td>
+            <td>9</td>
+            <td>8</td>
+            <td><strong>8.6</strong></td>
+          </tr>
+
+          <tr>
+            <td>Freshsales</td>
+            <td>9</td>
+            <td>8</td>
+            <td>8</td>
+            <td>9</td>
+            <td>8</td>
+            <td><strong>8.4</strong></td>
+          </tr>
+
+          <tr>
+            <td>monday CRM</td>
+            <td>8</td>
+            <td>8</td>
+            <td>7</td>
+            <td>8</td>
+            <td>9</td>
+            <td><strong>8.0</strong></td>
+          </tr>
+
+          <tr>
+            <td>HubSpot Sales Hub</td>
+            <td>8</td>
+            <td>6</td>
+            <td>6</td>
+            <td>8</td>
+            <td>9</td>
+            <td><strong>7.4</strong></td>
+          </tr>
+
+        </tbody>
+
+      </table>
 
     </div>
-  </section>
+
+  </div>
+</section>
 
 
-  <!-- PROVIDER SCORES -->
+<!-- METHODOLOGY -->
 
-  <section class="section">
-    <div class="container">
+<section>
+  <div class="container">
 
-      <h2 class="section-title">Real Cost Scores by Provider</h2>
+    <div class="section-heading">
 
-      <p class="section-intro">
-        Every scored provider is evaluated using the same five criteria.
-        The purpose is not simply to identify the cheapest advertised plan,
-        but to understand the likely cost as your usage, team or business grows.
+      <h2>The Five Real Cost Criteria</h2>
+
+      <p>
+        Every scored provider is evaluated against the same methodology.
+        Each criterion represents 20% of the final score.
       </p>
 
-      <p class="provider-count" id="providerCount">
-        All currently scored providers · 9 providers · 3 categories currently covered
+    </div>
+
+
+    <div class="method-grid">
+
+      <div class="method">
+        <strong>1. Starting Price</strong>
+        <span>How attractive and accessible is the entry-level price?</span>
+      </div>
+
+      <div class="method">
+        <strong>2. Growth Cost</strong>
+        <span>What happens to the cost as users, contacts or usage increase?</span>
+      </div>
+
+      <div class="method">
+        <strong>3. Hidden Extras</strong>
+        <span>Are important features, add-ons or services charged separately?</span>
+      </div>
+
+      <div class="method">
+        <strong>4. Cost Transparency</strong>
+        <span>How clearly does the provider explain what customers actually pay?</span>
+      </div>
+
+      <div class="method">
+        <strong>5. Ease of Exit</strong>
+        <span>How easy is it to downgrade, cancel or move away?</span>
+      </div>
+
+    </div>
+
+
+    <div class="trust">
+
+      <h2>Independent Research</h2>
+
+      <p>
+        SaaSRealCost researches providers independently and publishes
+        results regardless of whether a provider receives a high or low
+        Real Cost Score™.
       </p>
 
-
-      <div class="provider-grid">
-
-
-        <!-- BLUEHOST -->
-
-        <article class="card provider-card" data-category="hosting">
-
-          <div class="category">Hosting</div>
-
-          <h3>Bluehost</h3>
-
-          <div class="score-row">
-            <div class="score">6.8</div>
-            <div class="score-label">out of 10</div>
-          </div>
-
-          <p>
-            A strong entry-level hosting option, but renewal pricing,
-            growth costs and optional extras can materially change the
-            long-term cost.
-          </p>
-
-          <a class="card-link" href="https://saasrealcost.com/bluehost-real-cost.html">
-            See Bluehost's Real Cost →
-          </a>
-
-        </article>
-
-
-        <!-- HOSTINGER -->
-
-        <article class="card provider-card" data-category="hosting">
-
-          <div class="category">Hosting</div>
-
-          <h3>Hostinger</h3>
-
-          <div class="score-row">
-            <div class="score">6.2</div>
-            <div class="score-label">out of 10</div>
-          </div>
-
-          <p>
-            Attractive introductory pricing, but renewal pricing,
-            longer commitments and growth costs matter when calculating
-            the real cost.
-          </p>
-
-          <a class="card-link" href="https://www.hostinger.com/">
-            Check Hostinger Pricing →
-          </a>
-
-        </article>
-
-
-        <!-- KIT -->
-
-        <article class="card provider-card" data-category="email">
-
-          <div class="category">Email Marketing</div>
-
-          <h3>Kit</h3>
-
-          <div class="score-row">
-            <div class="score">9.0</div>
-            <div class="score-label">out of 10</div>
-          </div>
-
-          <p>
-            Strong overall value, particularly for creators who can use
-            the generous free plan and straightforward pricing structure.
-          </p>
-
-          <a class="card-link" href="https://saasrealcost.com/kit-real-cost.html">
-            See Kit's Real Cost →
-          </a>
-
-        </article>
-
-
-        <!-- MAILCHIMP -->
-
-        <article class="card provider-card" data-category="email">
-
-          <div class="category">Email Marketing</div>
-
-          <h3>Mailchimp</h3>
-
-          <div class="score-row">
-            <div class="score">6.8</div>
-            <div class="score-label">out of 10</div>
-          </div>
-
-          <p>
-            A well-established platform with a useful entry point,
-            but audience growth, feature limits and paid tiers can
-            increase the real cost.
-          </p>
-
-          <a class="card-link" href="https://mailchimp.com/pricing/">
-            View Mailchimp Pricing Research →
-          </a>
-
-        </article>
-
-
-        <!-- PIPEDRIVE -->
-
-        <article class="card provider-card" data-category="crm">
-
-          <div class="category">CRM</div>
-
-          <h3>Pipedrive</h3>
-
-          <div class="score-row">
-            <div class="score">8.6</div>
-            <div class="score-label">out of 10</div>
-          </div>
-
-          <p>
-            Clear sales-focused plans and strong pricing transparency,
-            with additional functionality available through paid add-ons.
-          </p>
-
-          <a class="card-link" href="https://saasrealcost.com/pipedrive-real-cost.html">
-            See Pipedrive's Real Cost →
-          </a>
-
-        </article>
-
-
-        <!-- ZOHO -->
-
-        <article class="card provider-card" data-category="crm">
-
-          <div class="category">CRM</div>
-
-          <h3>Zoho CRM</h3>
-
-          <div class="score-row">
-            <div class="score">8.6</div>
-            <div class="score-label">out of 10</div>
-          </div>
-
-          <p>
-            Strong value and broad functionality, although add-ons,
-            higher tiers and additional services can affect the final cost.
-          </p>
-
-          <a class="card-link" href="https://saasrealcost.com/zoho-real-cost.html">
-            See Zoho CRM's Real Cost →
-          </a>
-
-        </article>
-
-
-        <!-- FRESHSALES -->
-
-        <article class="card provider-card" data-category="crm">
-
-          <div class="category">CRM</div>
-
-          <h3>Freshsales</h3>
-
-          <div class="score-row">
-            <div class="score">8.4</div>
-            <div class="score-label">out of 10</div>
-          </div>
-
-          <p>
-            Competitive entry pricing and clear plans, with paid AI
-            and document functionality affecting the real cost at higher needs.
-          </p>
-
-          <a class="card-link" href="https://saasrealcost.com/freshsales-real-cost.html">
-            See Freshsales' Real Cost →
-          </a>
-
-        </article>
-
-
-        <!-- MONDAY CRM -->
-
-        <article class="card provider-card" data-category="crm">
-
-          <div class="category">CRM</div>
-
-          <h3>monday CRM</h3>
-
-          <div class="score-row">
-            <div class="score">8.0</div>
-            <div class="score-label">out of 10</div>
-          </div>
-
-          <p>
-            Flexible workflows and strong customization, but minimum
-            users, plan limits and advanced functionality matter.
-          </p>
-
-          <a class="card-link" href="https://saasrealcost.com/monday-crm-real-cost.html">
-            See monday CRM's Real Cost →
-          </a>
-
-        </article>
-
-
-        <!-- HUBSPOT -->
-
-        <article class="card provider-card" data-category="crm">
-
-          <div class="category">CRM</div>
-
-          <h3>HubSpot Sales Hub</h3>
-
-          <div class="score-row">
-            <div class="score">7.4</div>
-            <div class="score-label">out of 10</div>
-          </div>
-
-          <p>
-            Excellent entry point and broad ecosystem, but higher-tier
-            growth, onboarding fees and usage-based features can change
-            the economics significantly.
-          </p>
-
-          <a class="card-link" href="https://saasrealcost.com/hubspot-real-cost.html">
-            See HubSpot's Real Cost →
-          </a>
-
-        </article>
-
-
-        <!-- BUSINESS SOFTWARE -->
-
-        <article class="card provider-card" data-category="business" style="display:none;">
-
-          <div class="category">Business Software</div>
-
-          <h3>Research in Progress</h3>
-
-          <div class="score-row">
-            <div class="score">—</div>
-          </div>
-
-          <p>
-            Business software is a planned category. No score is published
-            until the provider has been evaluated using the complete
-            Real Cost Score™ methodology.
-          </p>
-
-        </article>
-
-      </div>
-
-    </div>
-  </section>
-
-
-  <!-- CRM FEATURE -->
-
-  <section class="section">
-    <div class="container">
-
-      <div class="featured">
-
-        <h2>Compare All CRM Scores</h2>
-
-        <p>
-          Five CRM providers have now been evaluated using exactly the same
-          five-factor Real Cost Score™ framework. Compare the individual
-          criteria and see why the scores differ.
-        </p>
-
-        <a class="featured-btn" href="https://saasrealcost.com/real-cost-scores-crm.html">
-          See the Full CRM Scorecard →
-        </a>
-
-      </div>
-
-    </div>
-  </section>
-
-
-  <!-- SCORE TABLE -->
-
-  <section class="section">
-    <div class="container">
-
-      <h2 class="section-title">Compare the Scores</h2>
-
-      <p class="section-intro">
-        Every scored provider is evaluated using exactly the same five criteria.
-        Each criterion carries equal weight.
+      <p>
+        Some provider links may be affiliate links. If you purchase through
+        one of these links, SaaSRealCost may earn a commission at no
+        additional cost to you. Affiliate relationships do not determine
+        the score.
       </p>
 
-      <div class="table-wrap">
-
-        <table class="score-table">
-
-          <thead>
-            <tr>
-              <th>Provider</th>
-              <th>Starting Cost</th>
-              <th>Growth Cost</th>
-              <th>Hidden Extras</th>
-              <th>Transparency</th>
-              <th>Ease of Exit</th>
-              <th>Overall</th>
-              <th>Status</th>
-            </tr>
-          </thead>
-
-          <tbody>
-
-            <tr>
-              <td>Bluehost</td>
-              <td>7/10</td>
-              <td>6/10</td>
-              <td>7/10</td>
-              <td>7/10</td>
-              <td>7/10</td>
-              <td class="overall">6.8/10</td>
-              <td>Scored</td>
-            </tr>
-
-            <tr>
-              <td>Hostinger</td>
-              <td>8/10</td>
-              <td>5/10</td>
-              <td>6/10</td>
-              <td>6/10</td>
-              <td>6/10</td>
-              <td class="overall">6.2/10</td>
-              <td>Scored</td>
-            </tr>
-
-            <tr>
-              <td>Kit</td>
-              <td>10/10</td>
-              <td>8/10</td>
-              <td>9/10</td>
-              <td>9/10</td>
-              <td>9/10</td>
-              <td class="overall">9.0/10</td>
-              <td>Scored</td>
-            </tr>
-
-            <tr>
-              <td>Mailchimp</td>
-              <td>7/10</td>
-              <td>6/10</td>
-              <td>5/10</td>
-              <td>7/10</td>
-              <td>9/10</td>
-              <td class="overall">6.8/10</td>
-              <td>Scored</td>
-            </tr>
-
-            <tr>
-              <td>Pipedrive</td>
-              <td>9/10</td>
-              <td>8/10</td>
-              <td>8/10</td>
-              <td>9/10</td>
-              <td>9/10</td>
-              <td class="overall">8.6/10</td>
-              <td>Scored</td>
-            </tr>
-
-            <tr>
-              <td>Zoho CRM</td>
-              <td>9/10</td>
-              <td>9/10</td>
-              <td>8/10</td>
-              <td>9/10</td>
-              <td>8/10</td>
-              <td class="overall">8.6/10</td>
-              <td>Scored</td>
-            </tr>
-
-            <tr>
-              <td>Freshsales</td>
-              <td>9/10</td>
-              <td>8/10</td>
-              <td>8/10</td>
-              <td>9/10</td>
-              <td>8/10</td>
-              <td class="overall">8.4/10</td>
-              <td>Scored</td>
-            </tr>
-
-            <tr>
-              <td>monday CRM</td>
-              <td>8/10</td>
-              <td>8/10</td>
-              <td>7/10</td>
-              <td>8/10</td>
-              <td>9/10</td>
-              <td class="overall">8.0/10</td>
-              <td>Scored</td>
-            </tr>
-
-            <tr>
-              <td>HubSpot Sales Hub</td>
-              <td>8/10</td>
-              <td>6/10</td>
-              <td>6/10</td>
-              <td>8/10</td>
-              <td>9/10</td>
-              <td class="overall">7.4/10</td>
-              <td>Scored</td>
-            </tr>
-
-          </tbody>
-
-        </table>
-
-      </div>
-
-    </div>
-  </section>
-
-
-  <!-- METHODOLOGY -->
-
-  <section class="section">
-    <div class="container">
-
-      <h2 class="section-title">How the Real Cost Score™ Works</h2>
-
-      <p class="section-intro">
-        The Real Cost Score is designed to look beyond the advertised
-        starting price. Every provider is evaluated using the same five
-        criteria, with each criterion receiving equal weight.
+      <p>
+        Providers are evaluated using the same five criteria so that the
+        comparisons remain consistent across categories.
       </p>
 
-      <div class="criteria">
-
-        <div class="criteria-card">
-          <strong>Starting Cost</strong>
-          <span>20%</span>
-          <p>
-            How attractive and realistic the entry price is.
-          </p>
-        </div>
-
-        <div class="criteria-card">
-          <strong>Growth Cost</strong>
-          <span>20%</span>
-          <p>
-            What happens to the cost as users, customers or needs increase.
-          </p>
-        </div>
-
-        <div class="criteria-card">
-          <strong>Hidden Extras</strong>
-          <span>20%</span>
-          <p>
-            Important additional costs, limitations or paid extras.
-          </p>
-        </div>
-
-        <div class="criteria-card">
-          <strong>Transparency</strong>
-          <span>20%</span>
-          <p>
-            How clearly pricing, renewals and important conditions are communicated.
-          </p>
-        </div>
-
-        <div class="criteria-card">
-          <strong>Ease of Exit</strong>
-          <span>20%</span>
-          <p>
-            How easy it is to cancel, leave or move to another provider.
-          </p>
-        </div>
-
-      </div>
-
-
-      <div class="independence">
-
-        <h3>Independent by Methodology</h3>
-
-        <p>
-          SaaSRealCost may use affiliate links, but affiliate relationships
-          do not determine the score. Every provider is evaluated using the
-          same five criteria. Every provider we research is eligible to be
-          published, regardless of the outcome.
-        </p>
-
-      </div>
-
     </div>
-  </section>
+
+  </div>
+</section>
 
 
-  <!-- CALCULATOR -->
+<!-- CALCULATOR CTA -->
 
-  <section class="section">
-    <div class="container">
+<section class="cta">
 
-      <div class="calculator">
+  <div class="container">
 
-        <h2>Want to Calculate Your Own Real Cost?</h2>
+    <h2>Want to Calculate Your CRM Cost?</h2>
 
-        <p>
-          Use the Real Cost Calculator to look beyond the advertised price
-          and estimate what a provider could actually cost over time.
-        </p>
+    <p>
+      Estimate how CRM pricing can change based on seats, contacts,
+      automation and additional features.
+    </p>
 
-        <a class="btn" href="https://saasrealcost.com/crm-cost-calculator.html">
-          Open the Real Cost Calculator →
-        </a>
+    <a class="button"
+       href="https://saasrealcost.com/crm-cost-calculator.html">
+      Open the CRM Cost Calculator →
+    </a>
 
-      </div>
+  </div>
 
-    </div>
-  </section>
+</section>
 
 </main>
 
@@ -1177,13 +1090,17 @@ footer{
   <div class="container footer-inner">
 
     <div>
-      © 2026 SaaS Real Cost. Independent software and hosting cost research.
+      © 2026 SaaSRealCost. Independent SaaS cost research.
     </div>
 
-    <div class="footer-links">
+    <div>
       <a href="https://saasrealcost.com/">Home</a>
-      <a href="https://saasrealcost.com/real-cost-scores.html">Real Cost Scores</a>
+      &nbsp; · &nbsp;
       <a href="https://saasrealcost.com/about.html">About</a>
+      &nbsp; · &nbsp;
+      <a href="https://saasrealcost.com/real-cost-scores.html">
+        Real Cost Scores
+      </a>
     </div>
 
   </div>
@@ -1192,53 +1109,40 @@ footer{
 
 
 <script>
-(function(){
 
-  const buttons = document.querySelectorAll(".filter-btn");
-  const cards = document.querySelectorAll(".provider-card");
-  const count = document.getElementById("providerCount");
+const filters = document.querySelectorAll(".filter");
+const cards = document.querySelectorAll(".provider-card");
 
-  const counts = {
-    all: "All currently scored providers · 9 providers · 3 categories currently covered",
-    hosting: "Hosting · 2 scored providers",
-    email: "Email Marketing · 2 scored providers",
-    crm: "CRM · 5 scored providers",
-    business: "Business Software · Research planned"
-  };
+filters.forEach(filter => {
 
-  buttons.forEach(function(button){
+  filter.addEventListener("click", () => {
 
-    button.addEventListener("click", function(){
+    const selected = filter.dataset.filter;
 
-      const filter = button.dataset.filter;
+    filters.forEach(item => {
+      item.classList.remove("active");
+    });
 
-      buttons.forEach(function(item){
-        item.classList.remove("active");
-      });
+    filter.classList.add("active");
 
-      button.classList.add("active");
+    cards.forEach(card => {
 
-      cards.forEach(function(card){
+      const category = card.dataset.category;
 
-        if(filter === "all"){
-          card.classList.remove("hidden");
-        }else{
-          if(card.dataset.category === filter){
-            card.classList.remove("hidden");
-          }else{
-            card.classList.add("hidden");
-          }
-        }
-
-      });
-
-      count.textContent = counts[filter];
+      if(selected === "all"){
+        card.style.display = "flex";
+      } else if(category === selected){
+        card.style.display = "flex";
+      } else {
+        card.style.display = "none";
+      }
 
     });
 
   });
 
-})();
+});
+
 </script>
 
 </body>
