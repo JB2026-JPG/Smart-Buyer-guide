@@ -3,21 +3,34 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+
 <title>SaaSRealCost — Compare the Real Cost Before You Commit</title>
-<meta name="description" content="Independent SaaS cost research comparing price, growth cost, hidden extras, transparency and ease of exit.">
+
+<meta name="description" content="Independent SaaS cost research comparing starting price, growth cost, hidden extras, transparency and ease of exit. See the Real Cost Score™ before you buy.">
+
 <link rel="canonical" href="https://saasrealcost.com/">
+
+<meta property="og:title" content="SaaSRealCost — Compare the Real Cost Before You Commit">
+<meta property="og:description" content="The price you see is not always the price you pay. Compare the real cost of SaaS before you commit.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://saasrealcost.com/">
 
 <style>
 :root{
   --blue:#2864d7;
-  --blue-dark:#174aa8;
+  --blue-dark:#1d4fae;
   --navy:#172033;
-  --green:#198754;
-  --bg:#f7f9fc;
+  --text:#263247;
   --muted:#667085;
-  --border:#e5e7eb;
-  --white:#fff;
-  --shadow:0 8px 30px rgba(23,32,51,.08);
+  --green:#198754;
+  --green-dark:#146c43;
+  --bg:#f7f9fc;
+  --white:#ffffff;
+  --border:#e2e7ef;
+  --soft-blue:#eef4ff;
+  --soft-green:#eef9f3;
+  --shadow:0 8px 28px rgba(23,32,51,.07);
+  --radius:14px;
 }
 
 *{
@@ -30,10 +43,10 @@ html{
 
 body{
   margin:0;
-  font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
-  color:var(--navy);
+  font-family:Inter,Arial,Helvetica,sans-serif;
+  color:var(--text);
   background:var(--bg);
-  line-height:1.6;
+  line-height:1.65;
 }
 
 a{
@@ -46,30 +59,33 @@ a:hover{
 }
 
 .container{
-  width:min(1120px,calc(100% - 40px));
+  width:min(1120px,92%);
   margin:auto;
 }
 
+/* NAVIGATION */
+
 header{
-  background:var(--white);
+  background:#fff;
   border-bottom:1px solid var(--border);
   position:sticky;
   top:0;
-  z-index:50;
+  z-index:100;
 }
 
 .nav{
-  min-height:68px;
+  min-height:70px;
   display:flex;
   align-items:center;
   justify-content:space-between;
-  gap:20px;
+  gap:24px;
 }
 
 .logo{
-  font-size:21px;
+  font-size:1.18rem;
   font-weight:800;
   color:var(--navy);
+  letter-spacing:-.3px;
 }
 
 .logo span{
@@ -84,68 +100,136 @@ nav{
 }
 
 nav a{
-  color:var(--navy);
-  font-size:14px;
+  color:var(--text);
+  font-size:.94rem;
   font-weight:600;
 }
 
+nav a:hover{
+  color:var(--blue);
+  text-decoration:none;
+}
+
+/* HERO */
+
 .hero{
-  background:linear-gradient(180deg,#fff 0%,#f7f9fc 100%);
-  padding:78px 0 62px;
-  text-align:center;
+  background:
+    linear-gradient(180deg,#fff 0%,#f8faff 100%);
+  padding:76px 0 68px;
+  border-bottom:1px solid var(--border);
 }
 
-.hero h1{
-  max-width:850px;
-  margin:0 auto 20px;
-  font-size:clamp(38px,6vw,66px);
-  line-height:1.05;
-  letter-spacing:-2px;
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.15fr .85fr;
+  gap:52px;
+  align-items:center;
 }
 
-.hero p{
-  max-width:720px;
-  margin:0 auto 30px;
-  color:var(--muted);
-  font-size:19px;
+.eyebrow{
+  display:inline-block;
+  margin-bottom:16px;
+  padding:6px 11px;
+  border-radius:999px;
+  background:var(--soft-blue);
+  color:var(--blue-dark);
+  font-size:.78rem;
+  font-weight:800;
+  letter-spacing:.5px;
+  text-transform:uppercase;
 }
 
-.hero-actions{
+h1{
+  margin:0 0 18px;
+  color:var(--navy);
+  font-size:clamp(2.3rem,5vw,4rem);
+  line-height:1.08;
+  letter-spacing:-1.8px;
+}
+
+.hero-lead{
+  max-width:680px;
+  font-size:1.18rem;
+  color:#526078;
+  margin:0 0 26px;
+}
+
+.hero-buttons{
   display:flex;
-  justify-content:center;
   gap:12px;
   flex-wrap:wrap;
 }
 
 .btn{
   display:inline-block;
-  padding:13px 20px;
+  padding:12px 18px;
   border-radius:9px;
-  font-weight:700;
-  border:1px solid transparent;
-  cursor:pointer;
+  font-weight:800;
+  font-size:.94rem;
+  transition:.15s ease;
 }
 
 .btn-primary{
-  background:var(--green);
+  background:var(--blue);
   color:#fff;
 }
 
 .btn-primary:hover{
-  background:#157347;
+  background:var(--blue-dark);
   text-decoration:none;
+  transform:translateY(-1px);
 }
 
 .btn-secondary{
   background:#fff;
-  color:var(--blue);
-  border-color:#cbd5e1;
+  color:var(--navy);
+  border:1px solid var(--border);
 }
 
 .btn-secondary:hover{
-  background:#f8fafc;
+  border-color:#b8c3d4;
   text-decoration:none;
 }
+
+.hero-card{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  padding:26px;
+}
+
+.hero-card h2{
+  margin:0 0 12px;
+  font-size:1.1rem;
+  color:var(--navy);
+}
+
+.hero-card p{
+  margin:0 0 20px;
+  color:var(--muted);
+  font-size:.95rem;
+}
+
+.score-mini{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
+  padding:12px 0;
+  border-top:1px solid var(--border);
+}
+
+.score-mini strong{
+  color:var(--navy);
+}
+
+.score-number{
+  font-weight:900;
+  color:var(--blue);
+}
+
+/* SECTIONS */
 
 section{
   padding:68px 0;
@@ -153,15 +237,14 @@ section{
 
 .section-head{
   max-width:760px;
-  margin:0 auto 35px;
-  text-align:center;
+  margin-bottom:30px;
 }
 
 .section-head h2{
   margin:0 0 10px;
-  font-size:clamp(28px,4vw,42px);
-  line-height:1.15;
-  letter-spacing:-1px;
+  color:var(--navy);
+  font-size:2rem;
+  letter-spacing:-.7px;
 }
 
 .section-head p{
@@ -169,436 +252,444 @@ section{
   color:var(--muted);
 }
 
-.score-intro{
+/* REAL COST SCORE */
+
+.score-section{
   background:#fff;
 }
 
-.score-card{
-  max-width:920px;
-  margin:auto;
+.score-grid{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:15px;
+}
+
+.provider-card{
   background:#fff;
   border:1px solid var(--border);
-  border-radius:18px;
+  border-radius:var(--radius);
+  padding:20px;
+  box-shadow:0 5px 18px rgba(23,32,51,.045);
+}
+
+.provider-card:hover{
   box-shadow:var(--shadow);
-  overflow:hidden;
+  transform:translateY(-2px);
+  transition:.15s ease;
 }
 
-.score-top{
-  padding:28px 30px;
-  background:#f8fbff;
-  border-bottom:1px solid var(--border);
+.provider-card h3{
+  margin:0 0 5px;
+  color:var(--navy);
+  font-size:1rem;
 }
 
-.score-top h3{
-  margin:0 0 8px;
-  font-size:25px;
-}
-
-.score-top p{
-  margin:0;
+.provider-card .description{
+  min-height:45px;
+  margin:0 0 15px;
   color:var(--muted);
-}
-
-.provider-list{
-  display:grid;
-}
-
-.provider-row{
-  display:grid;
-  grid-template-columns:1fr auto auto;
-  align-items:center;
-  gap:20px;
-  padding:19px 26px;
-  border-bottom:1px solid var(--border);
-}
-
-.provider-row:last-child{
-  border-bottom:0;
-}
-
-.provider-name{
-  font-weight:750;
-}
-
-.provider-use{
-  color:var(--muted);
-  font-size:14px;
+  font-size:.84rem;
+  line-height:1.45;
 }
 
 .score{
-  min-width:64px;
-  text-align:center;
+  font-size:1.75rem;
+  font-weight:900;
+  color:var(--blue);
+  line-height:1;
+}
+
+.score-label{
+  margin-top:4px;
+  font-size:.76rem;
+  color:var(--muted);
+}
+
+.card-link{
+  display:inline-block;
+  margin-top:16px;
+  font-size:.86rem;
   font-weight:800;
-  color:var(--blue);
-  font-size:20px;
 }
 
-.score-good{
-  color:var(--green);
+.score-note{
+  margin-top:24px;
+  padding:17px 19px;
+  background:var(--soft-blue);
+  border-radius:10px;
+  color:#41516b;
+  font-size:.91rem;
 }
 
-.score-link{
-  padding:8px 12px;
-  border-radius:7px;
-  background:#eef4ff;
-  color:var(--blue);
-  font-weight:700;
-  font-size:13px;
+.score-cta{
+  margin-top:22px;
 }
 
-.score-link:hover{
-  text-decoration:none;
-  background:#e1ebff;
-}
+/* CRITERIA */
 
-.scorecard-link{
-  padding:25px;
-  text-align:center;
-  border-top:1px solid var(--border);
-}
-
-.scorecard-link a{
-  font-weight:750;
-}
-
-.framework{
-  background:#fff;
-}
-
-.factor-grid{
+.criteria{
   display:grid;
   grid-template-columns:repeat(5,1fr);
   gap:16px;
 }
 
-.factor{
-  padding:23px 18px;
-  background:#f8fafc;
+.criteria-item{
+  padding:20px;
+  background:var(--bg);
   border:1px solid var(--border);
-  border-radius:13px;
-  text-align:center;
+  border-radius:12px;
 }
 
-.factor-icon{
+.criteria-item strong{
   display:block;
-  color:var(--green);
-  font-size:23px;
-  font-weight:800;
   margin-bottom:7px;
+  color:var(--navy);
 }
 
-.factor strong{
-  display:block;
-  font-size:15px;
-}
-
-.factor small{
-  display:block;
+.criteria-item span{
+  font-size:.86rem;
   color:var(--muted);
-  margin-top:6px;
-  font-size:12px;
 }
+
+/* CATEGORIES */
 
 .categories{
-  background:var(--bg);
-}
-
-.category-grid{
   display:grid;
   grid-template-columns:repeat(4,1fr);
   gap:18px;
 }
 
 .category{
+  display:block;
   background:#fff;
   border:1px solid var(--border);
-  border-radius:14px;
-  padding:25px;
-  box-shadow:0 4px 15px rgba(23,32,51,.04);
+  border-radius:var(--radius);
+  padding:23px;
+  color:var(--text);
+  box-shadow:0 4px 16px rgba(23,32,51,.035);
+}
+
+.category:hover{
+  border-color:#c4d0e3;
+  text-decoration:none;
+  transform:translateY(-2px);
+  transition:.15s ease;
 }
 
 .category h3{
   margin:0 0 7px;
+  color:var(--navy);
+  font-size:1.05rem;
 }
 
 .category p{
+  margin:0;
   color:var(--muted);
-  font-size:14px;
-  margin:0 0 15px;
+  font-size:.88rem;
 }
 
-.category a{
-  font-weight:750;
-  font-size:14px;
+/* GUIDES */
+
+.guides-section{
+  background:#fff;
 }
 
 .guides{
-  background:#fff;
-}
-
-.guide-grid{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:18px;
-}
-
-.guide{
-  border:1px solid var(--border);
-  border-radius:14px;
-  padding:24px;
-  background:#fff;
-}
-
-.guide h3{
-  margin:0 0 8px;
-}
-
-.guide p{
-  color:var(--muted);
-  margin:0 0 14px;
-  font-size:14px;
-}
-
-.guide a{
-  font-weight:750;
-}
-
-.providers{
-  background:var(--bg);
-}
-
-.provider-grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
   gap:18px;
 }
 
-.provider-card{
+.guide{
+  background:var(--bg);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:22px;
+}
+
+.guide h3{
+  margin:0 0 8px;
+  font-size:1.05rem;
+  color:var(--navy);
+}
+
+.guide p{
+  margin:0 0 15px;
+  color:var(--muted);
+  font-size:.88rem;
+}
+
+.guide a{
+  font-weight:800;
+  font-size:.87rem;
+}
+
+/* PROVIDER RESEARCH */
+
+.research-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+.research-card{
   background:#fff;
   border:1px solid var(--border);
-  border-radius:14px;
-  padding:25px;
+  border-radius:var(--radius);
+  padding:21px;
 }
 
-.provider-card h3{
-  margin:0 0 8px;
+.research-card h3{
+  margin:0 0 7px;
+  color:var(--navy);
+  font-size:1rem;
 }
 
-.provider-card p{
+.research-card p{
+  margin:0 0 13px;
   color:var(--muted);
-  font-size:14px;
-  margin:0 0 14px;
+  font-size:.87rem;
 }
 
-.provider-card a{
-  font-weight:750;
+.research-card a{
+  font-weight:800;
+  font-size:.86rem;
+}
+
+/* CALCULATOR */
+
+.calculator-section{
+  background:#fff;
 }
 
 .calculator{
-  background:#fff;
-}
-
-.calc{
-  max-width:720px;
-  margin:auto;
-  padding:30px;
+  max-width:820px;
+  background:var(--bg);
   border:1px solid var(--border);
-  border-radius:18px;
-  box-shadow:var(--shadow);
+  border-radius:var(--radius);
+  padding:28px;
 }
 
 .form-grid{
   display:grid;
-  grid-template-columns:repeat(2,1fr);
+  grid-template-columns:1fr 1fr;
   gap:18px;
 }
 
 .field label{
   display:block;
-  font-weight:700;
-  margin-bottom:7px;
-  font-size:14px;
+  margin-bottom:6px;
+  font-size:.86rem;
+  font-weight:800;
+  color:var(--navy);
 }
 
-.field input,
-.field select{
+.field input{
   width:100%;
   padding:12px 13px;
-  border:1px solid #cbd5e1;
+  border:1px solid #ccd5e2;
   border-radius:8px;
-  font:inherit;
   background:#fff;
+  font-size:1rem;
+  color:var(--text);
 }
 
-.result{
+.field input:focus{
+  outline:2px solid rgba(40,100,215,.15);
+  border-color:var(--blue);
+}
+
+.calculate-button{
+  margin-top:20px;
+}
+
+.calculator-result{
   margin-top:22px;
-  padding:22px;
-  background:#f1f7ff;
-  border-radius:12px;
-  border:1px solid #d8e6ff;
+  padding:20px;
+  border-radius:10px;
+  background:var(--soft-green);
+  border:1px solid #cdebd9;
 }
 
-.result strong{
-  font-size:27px;
-  color:var(--blue);
+.result-main{
+  font-size:1.65rem;
+  font-weight:900;
+  color:var(--green-dark);
 }
 
-.result p{
-  margin:6px 0 0;
+.result-sub{
+  margin-top:3px;
+  color:#526078;
+  font-size:.9rem;
+}
+
+.calculator-note{
+  margin-top:15px;
   color:var(--muted);
-  font-size:14px;
+  font-size:.8rem;
 }
+
+/* APPROACH */
 
 .approach{
-  background:var(--bg);
-}
-
-.approach-grid{
   display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:18px;
+  grid-template-columns:1fr 1fr;
+  gap:30px;
+  align-items:start;
 }
 
-.approach-card{
+.approach-box{
   background:#fff;
   border:1px solid var(--border);
-  border-radius:14px;
+  border-radius:var(--radius);
   padding:25px;
 }
 
-.approach-card h3{
-  margin-top:0;
+.approach-box h3{
+  margin:0 0 12px;
+  color:var(--navy);
 }
 
-.approach-card p{
+.approach-box p{
   color:var(--muted);
-  font-size:14px;
+  margin:0 0 14px;
 }
+
+.approach-list{
+  margin:0;
+  padding-left:20px;
+}
+
+.approach-list li{
+  margin-bottom:8px;
+}
+
+/* DISCLOSURE */
 
 .disclosure{
+  padding:34px 0;
+  border-top:1px solid var(--border);
   background:#fff;
 }
 
-.disclosure-box{
-  max-width:900px;
-  margin:auto;
-  padding:25px;
-  border:1px solid var(--border);
-  border-radius:13px;
-  background:#f8fafc;
+.disclosure p{
+  margin:0;
   color:var(--muted);
-  font-size:14px;
+  font-size:.82rem;
 }
 
-.pricing-note{
-  margin-top:20px;
-  padding:18px 20px;
-  border-left:4px solid var(--blue);
-  background:#f5f8ff;
-  color:#475467;
-  font-size:13px;
+.disclosure strong{
+  color:var(--text);
 }
+
+/* FOOTER */
 
 footer{
-  background:#172033;
-  color:#cbd5e1;
+  background:var(--navy);
+  color:#cbd3df;
   padding:38px 0;
 }
 
-.footer-inner{
+.footer-grid{
   display:flex;
   justify-content:space-between;
-  gap:20px;
-  align-items:center;
+  gap:30px;
   flex-wrap:wrap;
 }
 
-footer a{
+footer .logo{
   color:#fff;
+}
+
+footer .logo span{
+  color:#77a4ff;
+}
+
+footer p{
+  margin:8px 0 0;
+  font-size:.83rem;
+  color:#aeb8c8;
 }
 
 .footer-links{
   display:flex;
   gap:18px;
   flex-wrap:wrap;
-  font-size:14px;
 }
 
-@media(max-width:900px){
-  .factor-grid{
-    grid-template-columns:repeat(3,1fr);
+.footer-links a{
+  color:#dce4f0;
+  font-size:.84rem;
+}
+
+/* MOBILE */
+
+@media(max-width:950px){
+
+  .hero-grid{
+    grid-template-columns:1fr;
   }
 
-  .category-grid{
+  .score-grid{
     grid-template-columns:repeat(2,1fr);
   }
 
-  .provider-grid{
+  .criteria{
     grid-template-columns:repeat(2,1fr);
   }
+
+  .categories{
+    grid-template-columns:repeat(2,1fr);
+  }
+
 }
 
 @media(max-width:700px){
-  .container{
-    width:min(100% - 28px,1120px);
-  }
 
   .nav{
-    padding:10px 0;
+    padding:13px 0;
     align-items:flex-start;
+    flex-direction:column;
+    gap:10px;
   }
 
   nav{
-    gap:12px;
-    justify-content:flex-end;
+    gap:12px 17px;
   }
 
   .hero{
-    padding:58px 0 45px;
-  }
-
-  .hero h1{
-    letter-spacing:-1.2px;
+    padding:52px 0;
   }
 
   section{
     padding:52px 0;
   }
 
-  .factor-grid,
-  .category-grid,
-  .provider-grid,
-  .guide-grid,
-  .approach-grid{
+  .score-grid,
+  .criteria,
+  .categories,
+  .guides,
+  .research-grid,
+  .approach{
     grid-template-columns:1fr;
-  }
-
-  .provider-row{
-    grid-template-columns:1fr auto;
-    gap:8px 15px;
-  }
-
-  .provider-use{
-    grid-column:1;
-  }
-
-  .score{
-    grid-column:2;
-    grid-row:1;
-  }
-
-  .score-link{
-    grid-column:1 / -1;
-    text-align:center;
   }
 
   .form-grid{
     grid-template-columns:1fr;
   }
 
-  .calc{
-    padding:22px;
+  h1{
+    font-size:2.45rem;
   }
+
+  .hero-lead{
+    font-size:1.05rem;
+  }
+
+  .section-head h2{
+    font-size:1.7rem;
+  }
+
 }
 </style>
 </head>
@@ -607,157 +698,83 @@ footer a{
 
 <header>
   <div class="container nav">
-    <a class="logo" href="/">SaaS<span>RealCost</span></a>
 
-    <nav>
-      <a href="#scores">Real Cost Score</a>
-      <a href="#guides">Guides</a>
+    <a class="logo" href="/">
+      SaaS<span>Real</span>Cost
+    </a>
+
+    <nav aria-label="Main navigation">
+      <a href="/real-cost-scores.html">Real Cost Score</a>
+      <a href="/guide-crm.html">Guides</a>
       <a href="#calculator">Calculator</a>
-      <a href="/about">About</a>
+      <a href="#approach">About</a>
     </nav>
+
   </div>
 </header>
 
+
 <main>
 
+<!-- HERO -->
+
 <section class="hero">
-  <div class="container">
-    <h1>The price you see is not always the price you pay.</h1>
+  <div class="container hero-grid">
 
-    <p>
-      SaaSRealCost researches the real cost of software — including growth,
-      hidden extras, transparency and the cost of leaving.
-    </p>
+    <div>
 
-    <div class="hero-actions">
-      <a class="btn btn-primary" href="#scores">See the Real Cost Score</a>
-      <a class="btn btn-secondary" href="#calculator">Calculate your cost</a>
-    </div>
-  </div>
-</section>
+      <span class="eyebrow">Independent SaaS Cost Research</span>
 
+      <h1>The price you see is not always the price you pay.</h1>
 
-<section id="scores" class="score-intro">
-  <div class="container">
-
-    <div class="section-head">
-      <h2>Real Cost Score™</h2>
-      <p>
-        Compare the real cost before you commit.
-        Every provider is researched and evaluated using the same independent framework.
+      <p class="hero-lead">
+        SaaSRealCost looks beyond the advertised starting price to compare what software can really cost as you grow — including extras, pricing complexity, transparency and how easy it is to leave.
       </p>
-    </div>
 
-    <div class="score-card">
+      <div class="hero-buttons">
+        <a class="btn btn-primary" href="/real-cost-scores.html">
+          See the Real Cost Scores
+        </a>
 
-      <div class="score-top">
-        <h3>CRM providers</h3>
-        <p>
-          Our current CRM comparison looks beyond the advertised starting price.
-        </p>
-      </div>
-
-      <div class="provider-list">
-
-        <div class="provider-row">
-          <div>
-            <div class="provider-name">Pipedrive</div>
-            <div class="provider-use">Best for straightforward CRM value</div>
-          </div>
-          <div class="score score-good">8.6/10</div>
-          <a class="score-link" href="/pipedrive-real-cost.html">View score</a>
-        </div>
-
-        <div class="provider-row">
-          <div>
-            <div class="provider-name">Zoho CRM</div>
-            <div class="provider-use">Best for broad value and flexibility</div>
-          </div>
-          <div class="score score-good">8.6/10</div>
-          <a class="score-link" href="/zoho-crm-real-cost.html">View score</a>
-        </div>
-
-        <div class="provider-row">
-          <div>
-            <div class="provider-name">Freshsales</div>
-            <div class="provider-use">Best for growing teams</div>
-          </div>
-          <div class="score score-good">8.4/10</div>
-          <a class="score-link" href="/freshsales-real-cost.html">View score</a>
-        </div>
-
-        <div class="provider-row">
-          <div>
-            <div class="provider-name">monday CRM</div>
-            <div class="provider-use">Best for visual workflows</div>
-          </div>
-          <div class="score">8.0/10</div>
-          <a class="score-link" href="/monday-crm-real-cost.html">View score</a>
-        </div>
-
-        <div class="provider-row">
-          <div>
-            <div class="provider-name">HubSpot Sales Hub</div>
-            <div class="provider-use">Best for ecosystem and scale</div>
-          </div>
-          <div class="score">7.4/10</div>
-          <a class="score-link" href="/hubspot-real-cost.html">View score</a>
-        </div>
-
-      </div>
-
-      <div class="scorecard-link">
-        <a href="/real-cost-scores-crm">
-          See the complete CRM scorecard →
+        <a class="btn btn-secondary" href="#calculator">
+          Calculate Your Cost
         </a>
       </div>
 
     </div>
 
-  </div>
-</section>
 
+    <div class="hero-card">
 
-<section class="framework">
-  <div class="container">
+      <h2>What makes SaaSRealCost different?</h2>
 
-    <div class="section-head">
-      <h2>How the Real Cost Score works</h2>
       <p>
-        We use the same five factors for every provider so comparisons remain consistent.
+        We score providers using the same five criteria instead of relying only on the advertised starting price.
       </p>
-    </div>
 
-    <div class="factor-grid">
-
-      <div class="factor">
-        <span class="factor-icon">✓</span>
-        <strong>Price</strong>
-        <small>What you actually pay at the starting level.</small>
+      <div class="score-mini">
+        <strong>Starting price</strong>
+        <span class="score-number">20%</span>
       </div>
 
-      <div class="factor">
-        <span class="factor-icon">✓</span>
+      <div class="score-mini">
         <strong>Growth cost</strong>
-        <small>How costs change as your needs increase.</small>
+        <span class="score-number">20%</span>
       </div>
 
-      <div class="factor">
-        <span class="factor-icon">✓</span>
+      <div class="score-mini">
         <strong>Hidden extras</strong>
-        <small>Add-ons, fees and important extras.</small>
+        <span class="score-number">20%</span>
       </div>
 
-      <div class="factor">
-        <span class="factor-icon">✓</span>
+      <div class="score-mini">
         <strong>Cost transparency</strong>
-        <small>How clearly pricing and limitations are presented.</small>
+        <span class="score-number">20%</span>
       </div>
 
-      <div class="factor">
-        <span class="factor-icon">✓</span>
+      <div class="score-mini">
         <strong>Ease of exit</strong>
-        <small>How easy it is to cancel, switch or leave.</small>
+        <span class="score-number">20%</span>
       </div>
 
     </div>
@@ -766,407 +783,755 @@ footer a{
 </section>
 
 
-<section class="categories">
+<!-- REAL COST SCORE -->
+
+<section class="score-section" id="scores">
+
   <div class="container">
 
     <div class="section-head">
-      <h2>Compare software by category</h2>
+      <h2>Real Cost Score™</h2>
+
       <p>
-        Explore software with the real cost in mind, not just the advertised starting price.
+        A simple way to compare SaaS providers beyond the headline price. Every provider is evaluated using the same five criteria.
       </p>
     </div>
 
-    <div class="category-grid">
 
-      <div class="category">
+    <div class="score-grid">
+
+      <article class="provider-card">
+
+        <h3>Pipedrive</h3>
+
+        <p class="description">
+          Best for straightforward CRM value.
+        </p>
+
+        <div class="score">8.6</div>
+        <div class="score-label">out of 10</div>
+
+        <a class="card-link" href="/pipedrive-real-cost.html">
+          See Pipedrive's real cost →
+        </a>
+
+      </article>
+
+
+      <article class="provider-card">
+
+        <h3>Zoho CRM</h3>
+
+        <p class="description">
+          Broad value and flexibility.
+        </p>
+
+        <div class="score">8.6</div>
+        <div class="score-label">out of 10</div>
+
+        <a class="card-link" href="/zoho-crm-real-cost.html">
+          See Zoho's real cost →
+        </a>
+
+      </article>
+
+
+      <article class="provider-card">
+
+        <h3>Freshsales</h3>
+
+        <p class="description">
+          Strong value for growing teams.
+        </p>
+
+        <div class="score">8.4</div>
+        <div class="score-label">out of 10</div>
+
+        <a class="card-link" href="/freshsales-real-cost.html">
+          See Freshsales' real cost →
+        </a>
+
+      </article>
+
+
+      <article class="provider-card">
+
+        <h3>monday CRM</h3>
+
+        <p class="description">
+          Visual workflows and flexible setup.
+        </p>
+
+        <div class="score">8.0</div>
+        <div class="score-label">out of 10</div>
+
+        <a class="card-link" href="/monday-crm-real-cost.html">
+          See monday CRM's real cost →
+        </a>
+
+      </article>
+
+
+      <article class="provider-card">
+
+        <h3>HubSpot Sales Hub</h3>
+
+        <p class="description">
+          Strong ecosystem and scale, but complexity can increase costs.
+        </p>
+
+        <div class="score">7.4</div>
+        <div class="score-label">out of 10</div>
+
+        <a class="card-link" href="/hubspot-real-cost.html">
+          See HubSpot's real cost →
+        </a>
+
+      </article>
+
+    </div>
+
+
+    <div class="score-note">
+      <strong>How the score works:</strong>
+      Price, growth cost, hidden extras, transparency and ease of exit each account for 20% of the final score.
+    </div>
+
+    <div class="score-cta">
+      <a class="btn btn-primary" href="/real-cost-scores.html">
+        Compare All Real Cost Scores →
+      </a>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- FIVE CRITERIA -->
+
+<section>
+
+  <div class="container">
+
+    <div class="section-head">
+
+      <h2>What the Real Cost Score measures</h2>
+
+      <p>
+        A low starting price does not automatically mean low real cost.
+      </p>
+
+    </div>
+
+
+    <div class="criteria">
+
+      <div class="criteria-item">
+        <strong>1. Starting Price</strong>
+        <span>How attractive and accessible is the entry-level price?</span>
+      </div>
+
+      <div class="criteria-item">
+        <strong>2. Growth Cost</strong>
+        <span>What happens to the bill as users, contacts or usage increase?</span>
+      </div>
+
+      <div class="criteria-item">
+        <strong>3. Hidden Extras</strong>
+        <span>Which important features or capabilities may cost extra?</span>
+      </div>
+
+      <div class="criteria-item">
+        <strong>4. Transparency</strong>
+        <span>How clearly does the provider explain pricing, limits and conditions?</span>
+      </div>
+
+      <div class="criteria-item">
+        <strong>5. Ease of Exit</strong>
+        <span>How easy is it to downgrade, cancel or move away?</span>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- CATEGORIES -->
+
+<section class="score-section">
+
+  <div class="container">
+
+    <div class="section-head">
+
+      <h2>Compare SaaS by category</h2>
+
+      <p>
+        Explore real costs in the software categories where pricing can become complicated as your needs grow.
+      </p>
+
+    </div>
+
+
+    <div class="categories">
+
+      <a class="category" href="/guide-crm.html">
         <h3>CRM</h3>
         <p>
-          Compare CRM platforms based on price, growth costs and long-term value.
+          Compare CRM pricing, seats, upgrades, add-ons and growth costs.
         </p>
-        <a href="/guide-crm.html">Explore CRM →</a>
-      </div>
+      </a>
 
-      <div class="category">
+
+      <a class="category" href="/guide-hosting.html">
         <h3>Web Hosting</h3>
         <p>
-          Look beyond cheap introductory hosting prices and compare the real cost.
+          Look beyond introductory hosting prices and compare renewal costs and extras.
         </p>
-        <a href="/guide-hosting.html">Explore hosting →</a>
-      </div>
+      </a>
 
-      <div class="category">
+
+      <a class="category" href="/guide-business-software.html">
         <h3>Business Software</h3>
         <p>
-          Understand what business software can really cost as your company grows.
+          Understand the real cost of tools used to run your business.
         </p>
-        <a href="/guide-business-software.html">Explore business software →</a>
-      </div>
+      </a>
 
-      <div class="category">
+
+      <a class="category" href="/guide-email-marketing.html">
         <h3>Email Marketing</h3>
         <p>
-          Compare email marketing platforms beyond their headline pricing.
+          Compare subscriber-based pricing, automation and other potential costs.
         </p>
-        <a href="/guide-email-marketing.html">Explore email marketing →</a>
-      </div>
+      </a>
 
     </div>
 
   </div>
+
 </section>
 
 
-<section id="guides" class="guides">
+<!-- BUYER GUIDES -->
+
+<section class="guides-section">
+
   <div class="container">
 
     <div class="section-head">
+
       <h2>Buyer guides</h2>
+
       <p>
-        Practical guides to help you understand costs before choosing a provider.
+        Practical guides designed to help you understand the cost before choosing a provider.
       </p>
+
     </div>
 
-    <div class="guide-grid">
+
+    <div class="guides">
 
       <article class="guide">
-        <h3>CRM Guide</h3>
+
+        <h3>CRM Buyer Guide</h3>
+
         <p>
-          What to look for when comparing CRM software and where costs can increase.
+          Compare CRM pricing and understand what changes as your team grows.
         </p>
-        <a href="/guide-crm.html">Read the CRM guide →</a>
+
+        <a href="/guide-crm.html">
+          Read the CRM guide →
+        </a>
+
       </article>
 
-      <article class="guide">
-        <h3>Web Hosting Guide</h3>
-        <p>
-          Compare hosting based on more than the first-year promotional price.
-        </p>
-        <a href="/guide-hosting.html">Read the hosting guide →</a>
-      </article>
 
       <article class="guide">
-        <h3>Hosting for Small Business</h3>
+
+        <h3>Web Hosting Buyer Guide</h3>
+
         <p>
-          Important hosting costs and considerations for small businesses.
+          Learn how introductory prices, renewals and add-ons affect your real hosting cost.
         </p>
-        <a href="/guide-hosting-small-business.html">Read the guide →</a>
+
+        <a href="/guide-hosting.html">
+          Read the hosting guide →
+        </a>
+
       </article>
 
+
       <article class="guide">
+
+        <h3>Small Business Hosting</h3>
+
+        <p>
+          A practical look at what small businesses should consider before choosing hosting.
+        </p>
+
+        <a href="/guide-hosting-small-business.html">
+          Read the guide →
+        </a>
+
+      </article>
+
+
+      <article class="guide">
+
         <h3>Hosting for Beginners</h3>
+
         <p>
-          A straightforward starting point for choosing web hosting.
+          Understand the basic costs before buying your first hosting plan.
         </p>
-        <a href="/guide-hosting-beginners.html">Read the guide →</a>
+
+        <a href="/guide-hosting-beginners.html">
+          Read the guide →
+        </a>
+
       </article>
 
-      <article class="guide">
-        <h3>Cheap Hosting</h3>
-        <p>
-          Understand when cheap hosting is actually cheap — and when it isn't.
-        </p>
-        <a href="/guide-hosting-cheap.html">Read the guide →</a>
-      </article>
 
       <article class="guide">
-        <h3>Email Marketing</h3>
+
+        <h3>Cheap Web Hosting</h3>
+
         <p>
-          Compare email marketing platforms by real-world cost and features.
+          Cheap does not always mean cheap long-term. Compare the costs that matter.
         </p>
-        <a href="/guide-email-marketing.html">Read the guide →</a>
+
+        <a href="/guide-hosting-cheap.html">
+          Read the guide →
+        </a>
+
+      </article>
+
+
+      <article class="guide">
+
+        <h3>Email Marketing Guide</h3>
+
+        <p>
+          Understand subscriber pricing and the features that can change your monthly bill.
+        </p>
+
+        <a href="/guide-email-marketing.html">
+          Read the guide →
+        </a>
+
       </article>
 
     </div>
 
   </div>
+
 </section>
 
 
-<section class="providers">
+<!-- PROVIDER RESEARCH -->
+
+<section>
+
   <div class="container">
 
     <div class="section-head">
+
       <h2>Provider research</h2>
+
       <p>
-        Detailed pages explain where each provider's costs come from.
+        See the actual cost analysis behind individual providers instead of relying on a single advertised starting price.
       </p>
+
     </div>
 
-    <div class="provider-grid">
 
-      <div class="provider-card">
-        <h3>Pipedrive</h3>
-        <p>
-          Real Cost Score: <strong>8.6/10</strong>
-        </p>
-        <a href="/pipedrive-real-cost.html">See Pipedrive's real cost →</a>
-      </div>
+    <div class="research-grid">
 
-      <div class="provider-card">
-        <h3>Zoho CRM</h3>
-        <p>
-          Real Cost Score: <strong>8.6/10</strong>
-        </p>
-        <a href="/zoho-crm-real-cost.html">See Zoho CRM's real cost →</a>
-      </div>
+      <article class="research-card">
 
-      <div class="provider-card">
-        <h3>Freshsales</h3>
-        <p>
-          Real Cost Score: <strong>8.4/10</strong>
-        </p>
-        <a href="/freshsales-real-cost.html">See Freshsales' real cost →</a>
-      </div>
+        <h3>Pipedrive Real Cost</h3>
 
-      <div class="provider-card">
-        <h3>monday CRM</h3>
         <p>
-          Real Cost Score: <strong>8.0/10</strong>
+          Plans, growth costs, add-ons and the factors behind its 8.6 Real Cost Score.
         </p>
-        <a href="/monday-crm-real-cost.html">See monday CRM's real cost →</a>
-      </div>
 
-      <div class="provider-card">
-        <h3>HubSpot Sales Hub</h3>
-        <p>
-          Real Cost Score: <strong>7.4/10</strong>
-        </p>
-        <a href="/hubspot-real-cost.html">See HubSpot's real cost →</a>
-      </div>
+        <a href="/pipedrive-real-cost.html">
+          Read the Pipedrive analysis →
+        </a>
 
-      <div class="provider-card">
-        <h3>Bluehost</h3>
+      </article>
+
+
+      <article class="research-card">
+
+        <h3>Zoho CRM Real Cost</h3>
+
         <p>
-          Detailed hosting cost research, including introductory pricing and renewal considerations.
+          Pricing structure, flexibility, growth costs and the factors behind its 8.6 score.
         </p>
-        <a href="/bluehost-real-cost.html">See Bluehost's real cost →</a>
-      </div>
+
+        <a href="/zoho-crm-real-cost.html">
+          Read the Zoho analysis →
+        </a>
+
+      </article>
+
+
+      <article class="research-card">
+
+        <h3>Freshsales Real Cost</h3>
+
+        <p>
+          Understand the pricing and extras behind Freshsales' 8.4 Real Cost Score.
+        </p>
+
+        <a href="/freshsales-real-cost.html">
+          Read the Freshsales analysis →
+        </a>
+
+      </article>
+
+
+      <article class="research-card">
+
+        <h3>monday CRM Real Cost</h3>
+
+        <p>
+          See how seats, plan structure and pricing conditions affect the real cost.
+        </p>
+
+        <a href="/monday-crm-real-cost.html">
+          Read the monday CRM analysis →
+        </a>
+
+      </article>
+
+
+      <article class="research-card">
+
+        <h3>HubSpot Real Cost</h3>
+
+        <p>
+          Explore how seats, tiers, onboarding and additional costs affect HubSpot's score.
+        </p>
+
+        <a href="/hubspot-real-cost.html">
+          Read the HubSpot analysis →
+        </a>
+
+      </article>
+
+
+      <article class="research-card">
+
+        <h3>More Provider Research</h3>
+
+        <p>
+          Explore the complete Real Cost Score database across the categories currently covered.
+        </p>
+
+        <a href="/real-cost-scores.html">
+          See all scored providers →
+        </a>
+
+      </article>
 
     </div>
 
   </div>
+
 </section>
 
 
-<section id="calculator" class="calculator">
+<!-- CALCULATOR -->
+
+<section class="calculator-section" id="calculator">
+
   <div class="container">
 
     <div class="section-head">
-      <h2>Calculate your real software cost</h2>
+
+      <h2>Calculate your real SaaS cost</h2>
+
       <p>
-        A simple estimate can show how user count changes your total monthly cost.
+        Use this simple calculator to estimate your recurring monthly and annual software cost.
       </p>
+
     </div>
 
-    <div class="calc">
+
+    <div class="calculator">
 
       <div class="form-grid">
 
         <div class="field">
-          <label for="monthlyPrice">Monthly price per user</label>
+
+          <label for="pricePerUser">
+            Monthly price per user
+          </label>
+
           <input
-            id="monthlyPrice"
+            id="pricePerUser"
             type="number"
             min="0"
             step="0.01"
-            value="20"
+            value="10"
           >
+
         </div>
 
+
         <div class="field">
-          <label for="seats">Seats / users</label>
+
+          <label for="userCount">
+            Number of users
+          </label>
+
           <input
-            id="seats"
+            id="userCount"
             type="number"
             min="1"
             step="1"
-            value="1"
+            value="2"
           >
+
         </div>
 
+
         <div class="field">
-          <label for="extraMonthly">Monthly extras</label>
+
+          <label for="monthlyExtras">
+            Monthly extras
+          </label>
+
           <input
-            id="extraMonthly"
+            id="monthlyExtras"
             type="number"
             min="0"
             step="0.01"
             value="0"
           >
+
         </div>
 
+
         <div class="field">
-          <label for="annualFee">Annual fees</label>
+
+          <label for="yearlyFees">
+            Annual fees
+          </label>
+
           <input
-            id="annualFee"
+            id="yearlyFees"
             type="number"
             min="0"
             step="0.01"
             value="0"
           >
+
         </div>
 
       </div>
 
-      <div class="result">
-        <strong id="monthlyResult">$20.00 / month</strong>
-        <p id="annualResult">
+
+      <button
+        class="btn btn-primary calculate-button"
+        type="button"
+        onclick="calculateCost()"
+      >
+        Calculate Your Cost
+      </button>
+
+
+      <div class="calculator-result">
+
+        <div
+          class="result-main"
+          id="monthlyResult"
+        >
+          $20.00 / month
+        </div>
+
+        <div
+          class="result-sub"
+          id="annualResult"
+        >
           Estimated annual cost: $240.00
-        </p>
+        </div>
+
       </div>
+
+
+      <p class="calculator-note">
+        This calculator provides an estimate based on the numbers you enter. It does not automatically include VAT, taxes, discounts, implementation costs, usage-based charges or provider-specific add-ons unless you enter them.
+      </p>
 
     </div>
 
   </div>
+
 </section>
 
 
-<section class="approach">
+<!-- APPROACH -->
+
+<section id="approach">
+
   <div class="container">
 
     <div class="section-head">
+
       <h2>Our approach</h2>
+
       <p>
-        The goal is simple: make software costs easier to understand before you commit.
+        SaaSRealCost is designed to make software pricing easier to understand before you commit.
       </p>
+
     </div>
 
-    <div class="approach-grid">
 
-      <div class="approach-card">
-        <h3>Independent research</h3>
+    <div class="approach">
+
+      <div class="approach-box">
+
+        <h3>We look beyond the headline price</h3>
+
         <p>
-          We research provider pricing, plans, limitations, add-ons and other
-          costs that can affect the real price.
+          A provider can advertise an attractive starting price while the cost changes significantly when you add users, contacts, features or other requirements.
         </p>
+
+        <p>
+          Our research focuses on those changes so you can make a better-informed decision.
+        </p>
+
       </div>
 
-      <div class="approach-card">
-        <h3>Same framework</h3>
-        <p>
-          Providers in the same category are evaluated using the same Real Cost
-          Score framework.
-        </p>
-      </div>
 
-      <div class="approach-card">
-        <h3>Built for buyers</h3>
+      <div class="approach-box">
+
+        <h3>One scoring framework</h3>
+
+        <ul class="approach-list">
+
+          <li>Starting price</li>
+          <li>Growth cost</li>
+          <li>Hidden extras</li>
+          <li>Cost transparency</li>
+          <li>Ease of exit</li>
+
+        </ul>
+
         <p>
-          The purpose is to help buyers understand what they may actually pay
-          before choosing a software provider.
+          Each criterion contributes 20% to the final Real Cost Score™.
         </p>
+
       </div>
 
     </div>
 
   </div>
+
 </section>
 
+
+<!-- DISCLOSURE -->
 
 <section class="disclosure">
+
   <div class="container">
 
-    <div class="section-head">
-      <h2>Pricing & affiliate disclosure</h2>
-      <p>
-        Transparency matters when comparing software costs.
-      </p>
-    </div>
-
-    <div class="disclosure-box">
-
-      <p>
-        This page contains affiliate links. If you purchase through one of
-        these links, we may earn a commission at no additional cost to you.
-        This does not affect our editorial recommendations.
-      </p>
-
-      <p>
-        Affiliate availability does not determine which providers are included
-        in our research or how they are scored.
-      </p>
-
-      <div class="pricing-note">
-        <strong>Pricing checked today — September 13, 2026.</strong><br>
-        Prices, plans, limits, discounts, taxes, add-ons and fees can change
-        at any time and may be different the next day. Always verify the
-        provider's current pricing before committing.
-      </div>
-
-    </div>
+    <p>
+      <strong>Pricing checked today — September 15, 2026.</strong>
+      Prices, plans, limits, discounts, taxes, add-ons and fees can change at any time. Always verify current pricing with the provider before committing.
+      SaaSRealCost is independent. We may earn a commission when you purchase through certain links. Providers are scored using the same five-criteria framework, and our research is published regardless of the outcome.
+    </p>
 
   </div>
+
 </section>
 
 </main>
 
 
+<!-- FOOTER -->
+
 <footer>
-  <div class="container footer-inner">
+
+  <div class="container footer-grid">
 
     <div>
-      © 2026 SaaSRealCost
+
+      <a class="logo" href="/">
+        SaaS<span>Real</span>Cost
+      </a>
+
+      <p>
+        Compare the real cost before you commit.
+      </p>
+
     </div>
 
+
     <div class="footer-links">
-      <a href="/about">About</a>
-      <a href="/privacy">Privacy</a>
-      <a href="/affiliate-disclosure">Affiliate Disclosure</a>
+
+      <a href="/real-cost-scores.html">
+        Real Cost Score
+      </a>
+
+      <a href="/guide-crm.html">
+        Guides
+      </a>
+
+      <a href="#calculator">
+        Calculator
+      </a>
+
+      <a href="#approach">
+        About
+      </a>
+
     </div>
 
   </div>
+
 </footer>
 
 
 <script>
-(function(){
 
-  const monthlyPrice = document.getElementById("monthlyPrice");
-  const seats = document.getElementById("seats");
-  const extraMonthly = document.getElementById("extraMonthly");
-  const annualFee = document.getElementById("annualFee");
+function calculateCost(){
 
-  const monthlyResult = document.getElementById("monthlyResult");
-  const annualResult = document.getElementById("annualResult");
+  const pricePerUser =
+    parseFloat(document.getElementById("pricePerUser").value) || 0;
 
-  function numberValue(input){
-    const value = parseFloat(input.value);
-    return Number.isFinite(value) ? value : 0;
-  }
+  const userCount =
+    parseInt(document.getElementById("userCount").value) || 0;
 
-  function calculate(){
+  const monthlyExtras =
+    parseFloat(document.getElementById("monthlyExtras").value) || 0;
 
-    const pricePerUser = numberValue(monthlyPrice);
-    const userCount = Math.max(1,numberValue(seats));
-    const extras = numberValue(extraMonthly);
-    const yearlyFees = numberValue(annualFee);
+  const yearlyFees =
+    parseFloat(document.getElementById("yearlyFees").value) || 0;
 
-    const monthlyTotal =
-      (pricePerUser * userCount) + extras;
 
-    const annualTotal =
-      (monthlyTotal * 12) + yearlyFees;
+  const monthlyTotal =
+    (pricePerUser * userCount) + monthlyExtras;
 
-    monthlyResult.textContent =
-      "$" + monthlyTotal.toFixed(2) + " / month";
+  const annualTotal =
+    (monthlyTotal * 12) + yearlyFees;
 
-    annualResult.textContent =
-      "Estimated annual cost: $" + annualTotal.toFixed(2);
-  }
 
-  [
-    monthlyPrice,
-    seats,
-    extraMonthly,
-    annualFee
-  ].forEach(function(input){
-    input.addEventListener("input",calculate);
-    input.addEventListener("change",calculate);
-  });
+  document.getElementById("monthlyResult").textContent =
+    "$" + monthlyTotal.toFixed(2) + " / month";
 
-  calculate();
+  document.getElementById("annualResult").textContent =
+    "Estimated annual cost: $" + annualTotal.toFixed(2);
 
-})();
+}
+
 </script>
 
 </body>
