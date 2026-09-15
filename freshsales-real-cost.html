@@ -3,21 +3,258 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+
 <title>Freshsales Real Cost — SaaSRealCost</title>
+
 <meta name="description" content="Freshsales Real Cost Score: compare price, growth cost, hidden extras, transparency and ease of exit.">
+
 <style>
-:root{--blue:#2864d7;--green:#198754;--navy:#10254d;--text:#172033;--muted:#667085;--bg:#f7f9fc;--border:#e4e9f1;--gold:#c58a19}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:Arial;line-height:1.65}a{text-decoration:none;color:inherit}.container{width:min(1050px,92%);margin:auto}header{background:#fff;border-bottom:1px solid var(--border)}.nav{height:70px;display:flex;justify-content:space-between;align-items:center}.brand{font-size:21px;font-weight:900;color:var(--navy)}.brand span{color:var(--blue)}.navlinks{display:flex;gap:20px;font-weight:700;font-size:14px}.hero{padding:80px 0;background:linear-gradient(135deg,#fff,#f1f6ff)}.eyebrow,.kicker{color:var(--gold);font-size:12px;font-weight:900;letter-spacing:1px;text-transform:uppercase}h1,h2{font-family:Georgia;color:var(--navy)}h1{font-size:clamp(40px,6vw,62px);line-height:1.05}.hero p{font-size:18px;color:var(--muted);max-width:760px}.score,.card,.price{background:#fff;border:1px solid var(--border);border-radius:18px;padding:28px}.score{margin-top:30px;display:flex;justify-content:space-between;align-items:center}.score strong{font-size:48px;color:var(--green)}.btn{display:inline-block;background:var(--green);color:#fff;padding:13px 20px;border-radius:9px;font-weight:800}section{padding:65px 0}.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}.factor-score{font-size:30px;color:var(--green);font-weight:900}.muted{color:var(--muted)}.price{background:#eef4ff;border-color:#d8e5ff}.disclosure{background:#fff;border-top:1px solid var(--border);padding:28px 0;color:var(--muted);font-size:13px}footer{background:#0b1935;color:#c8d2e4;padding:30px 0}@media(max-width:700px){.navlinks{display:none}.grid{grid-template-columns:1fr}.score{display:block}}
+:root{
+  --blue:#2864d7;
+  --green:#198754;
+  --navy:#10254d;
+  --text:#172033;
+  --muted:#667085;
+  --bg:#f7f9fc;
+  --border:#e4e9f1;
+  --gold:#c58a19
+}
+
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:Arial;
+  line-height:1.65
+}
+
+a{
+  text-decoration:none;
+  color:inherit
+}
+
+.container{
+  width:min(1050px,92%);
+  margin:auto
+}
+
+header{
+  background:#fff;
+  border-bottom:1px solid var(--border)
+}
+
+.nav{
+  height:70px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center
+}
+
+.brand{
+  font-size:21px;
+  font-weight:900;
+  color:var(--navy)
+}
+
+.brand span{
+  color:var(--blue)
+}
+
+.navlinks{
+  display:flex;
+  gap:20px;
+  font-weight:700;
+  font-size:14px
+}
+
+.hero{
+  padding:80px 0;
+  background:linear-gradient(135deg,#fff,#f1f6ff)
+}
+
+.eyebrow,
+.kicker{
+  color:var(--gold);
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:1px;
+  text-transform:uppercase
+}
+
+h1,
+h2{
+  font-family:Georgia;
+  color:var(--navy)
+}
+
+h1{
+  font-size:clamp(40px,6vw,62px);
+  line-height:1.05;
+  margin:15px 0
+}
+
+.hero p{
+  font-size:18px;
+  color:var(--muted);
+  max-width:760px
+}
+
+.score,
+.card,
+.price{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding:28px
+}
+
+.score{
+  margin-top:30px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px
+}
+
+.score strong{
+  font-size:48px;
+  color:var(--green)
+}
+
+.btn{
+  display:inline-block;
+  background:var(--green);
+  color:#fff;
+  padding:13px 20px;
+  border-radius:9px;
+  font-weight:800
+}
+
+section{
+  padding:65px 0
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:20px
+}
+
+.factor-score{
+  font-size:30px;
+  color:var(--green);
+  font-weight:900
+}
+
+.muted{
+  color:var(--muted)
+}
+
+.price{
+  background:#eef4ff;
+  border-color:#d8e5ff
+}
+
+/* CRM comparison links */
+
+.crm-links{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:16px;
+  margin-top:25px
+}
+
+.crm-link-card{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:20px;
+  transition:.2s ease
+}
+
+.crm-link-card:hover{
+  transform:translateY(-2px);
+  border-color:#cbd8ef
+}
+
+.crm-link-card strong{
+  color:var(--navy);
+  font-size:17px
+}
+
+.crm-link-score{
+  display:block;
+  color:var(--green);
+  font-weight:900;
+  margin-top:5px
+}
+
+.crm-link-arrow{
+  display:block;
+  margin-top:10px;
+  color:var(--blue);
+  font-weight:800;
+  font-size:14px
+}
+
+.disclosure{
+  background:#fff;
+  border-top:1px solid var(--border);
+  padding:28px 0;
+  color:var(--muted);
+  font-size:13px
+}
+
+footer{
+  background:#0b1935;
+  color:#c8d2e4;
+  padding:30px 0
+}
+
+@media(max-width:700px){
+
+  .navlinks{
+    display:none
+  }
+
+  .grid,
+  .crm-links{
+    grid-template-columns:1fr
+  }
+
+  .score{
+    display:block
+  }
+
+  .score .btn{
+    margin-top:20px
+  }
+}
 </style>
 </head>
+
 <body>
 
-<header><div class="container nav">
-<a href="/" class="brand">SaaS<span>RealCost</span></a>
-<nav class="navlinks"><a href="/real-cost-scores-crm.html">CRM Scores</a><a href="/">Home</a></nav>
-</div></header>
+<header>
+<div class="container nav">
+
+<a href="/" class="brand">
+SaaS<span>RealCost</span>
+</a>
+
+<nav class="navlinks">
+<a href="/real-cost-scores-crm.html">CRM Scores</a>
+<a href="/">Home</a>
+</nav>
+
+</div>
+</header>
+
 
 <section class="hero">
+
 <div class="container">
 
 <span class="eyebrow">CRM REAL COST RESEARCH</span>
@@ -31,25 +268,36 @@ what happens as a small team grows and starts using additional capabilities.
 </p>
 
 <div class="score">
-<div><span class="kicker">SAASREALCOST EDITORIAL SCORE</span><br>
-<strong>8.4 / 10</strong></div>
 
-<a href="https://www.freshworks.com/crm/pricing/" target="_blank" rel="noopener" class="btn">
+<div>
+<span class="kicker">SAASREALCOST EDITORIAL SCORE</span><br>
+<strong>8.4 / 10</strong>
+</div>
+
+<a
+href="https://www.freshworks.com/crm/pricing/"
+target="_blank"
+rel="noopener"
+class="btn">
 Check Freshsales pricing →
 </a>
+
 </div>
 
 </div>
+
 </section>
 
+
 <section>
+
 <div class="container">
 
 <h2>Current Freshsales pricing</h2>
 
 <div class="price">
 
-<strong>Prices checked September 13, 2026.</strong>
+<strong>USD pricing checked September 15, 2026.</strong>
 
 <p>
 Growth: $9/user/month, billed annually.
@@ -72,15 +320,22 @@ Freddy AI Agent at $49 per 100 sessions.
 Freshsales provides a 21-day trial of the fully loaded CRM.
 </p>
 
-<a href="https://www.freshworks.com/crm/pricing/" target="_blank" rel="noopener">
+<a
+href="https://www.freshworks.com/crm/pricing/"
+target="_blank"
+rel="noopener">
 Official Freshsales pricing →
 </a>
 
 </div>
+
 </div>
+
 </section>
 
+
 <section>
+
 <div class="container">
 
 <h2>Why Freshsales scores 8.4/10</h2>
@@ -88,55 +343,82 @@ Official Freshsales pricing →
 <div class="grid">
 
 <div class="card">
+
 <h3>Price — 9/10</h3>
+
 <div class="factor-score">9/10</div>
+
 <p class="muted">
 The $9 Growth entry price is competitive for a dedicated sales CRM.
 </p>
+
 </div>
 
+
 <div class="card">
+
 <h3>Growth cost — 8/10</h3>
+
 <div class="factor-score">8/10</div>
+
 <p class="muted">
 The jump from Growth to Pro and Enterprise is significant, but the
 three-tier structure remains relatively easy to understand.
 </p>
+
 </div>
 
+
 <div class="card">
+
 <h3>Hidden extras — 8/10</h3>
+
 <div class="factor-score">8/10</div>
+
 <p class="muted">
 Freshworks clearly lists add-ons, including Branded Documents and Freddy AI,
 but these can increase the real cost beyond the seat price.
 </p>
+
 </div>
 
+
 <div class="card">
+
 <h3>Transparency — 9/10</h3>
+
 <div class="factor-score">9/10</div>
+
 <p class="muted">
 The official pricing page clearly lists plans, billing frequency and
 additional paid functionality.
 </p>
+
 </div>
 
+
 <div class="card">
+
 <h3>Ease of exit — 8/10</h3>
+
 <div class="factor-score">8/10</div>
-<p class="factor-score">8/10</p>
+
 <p class="muted">
 There is no unusual technical lock-in assumed in the score, although
 moving CRM data, workflows and processes still creates normal migration work.
 </p>
+
 </div>
 
 </div>
+
 </div>
+
 </section>
 
+
 <section>
+
 <div class="container card">
 
 <h2>The SaaSRealCost verdict</h2>
@@ -151,31 +433,109 @@ The key Real Cost question is whether the additional functionality you need
 requires moving from Growth to Pro or Enterprise.
 </p>
 
-<p><strong>Best suited for:</strong> startups and SMB sales teams looking for
-a competitively priced dedicated CRM.</p>
+<p>
+<strong>Best suited for:</strong>
+startups and SMB sales teams looking for a competitively priced dedicated CRM.
+</p>
 
-<p><strong>Watch carefully:</strong> higher tiers and AI/document add-ons.</p>
+<p>
+<strong>Watch carefully:</strong>
+higher tiers and AI/document add-ons.
+</p>
 
 </div>
+
 </section>
 
-<div class="disclosure">
+
+<section>
+
 <div class="container">
 
-<strong>Pricing checked today — September 13, 2026.</strong>
+<h2>Compare Other CRM Providers</h2>
+
+<p class="muted">
+See how Freshsales compares with the other CRM providers currently
+evaluated by SaaSRealCost.
+</p>
+
+<div class="crm-links">
+
+<a href="/pipedrive-real-cost.html" class="crm-link-card">
+<strong>Pipedrive</strong>
+<span class="crm-link-score">8.6 / 10</span>
+<span class="crm-link-arrow">Read Pipedrive Real Cost →</span>
+</a>
+
+
+<a href="/zoho-crm-real-cost.html" class="crm-link-card">
+<strong>Zoho CRM</strong>
+<span class="crm-link-score">8.6 / 10</span>
+<span class="crm-link-arrow">Read Zoho CRM Real Cost →</span>
+</a>
+
+
+<a href="/monday-crm-real-cost.html" class="crm-link-card">
+<strong>monday CRM</strong>
+<span class="crm-link-score">8.0 / 10</span>
+<span class="crm-link-arrow">Read monday CRM Real Cost →</span>
+</a>
+
+
+<a href="/hubspot-real-cost.html" class="crm-link-card">
+<strong>HubSpot Sales Hub</strong>
+<span class="crm-link-score">7.4 / 10</span>
+<span class="crm-link-arrow">Read HubSpot Real Cost →</span>
+</a>
+
+</div>
+
+<p style="margin-top:25px">
+<a
+href="/real-cost-scores-crm.html"
+style="color:var(--blue);font-weight:800">
+View the complete CRM Real Cost Score™ →
+</a>
+</p>
+
+</div>
+
+</section>
+
+
+<div class="disclosure">
+
+<div class="container">
+
+<strong>USD pricing checked September 15, 2026.</strong>
+
 Pricing can change at any time and may already be different the next day.
+Always verify current pricing before committing.
 
 <br><br>
 
 <strong>Scoring methodology:</strong>
+
 Each factor represents 20% of the final Real Cost Score.
 The score is a SaaSRealCost editorial assessment.
-</div>
+
 </div>
 
-<footer><div class="container">
-© 2026 SaaSRealCost · <a href="/real-cost-scores-crm.html">Compare CRM Scores →</a>
-</div></footer>
+</div>
+
+
+<footer>
+
+<div class="container">
+
+© 2026 SaaSRealCost ·
+<a href="/real-cost-scores-crm.html">
+Compare CRM Scores →
+</a>
+
+</div>
+
+</footer>
 
 </body>
 </html>
