@@ -16,6 +16,7 @@
 <meta property="og:url" content="https://saasrealcost.com/">
 
 <style>
+
 :root{
   --blue:#2864d7;
   --blue-dark:#1d4fae;
@@ -63,6 +64,7 @@ a:hover{
   margin:auto;
 }
 
+
 /* NAVIGATION */
 
 header{
@@ -109,6 +111,7 @@ nav a:hover{
   color:var(--blue);
   text-decoration:none;
 }
+
 
 /* HERO */
 
@@ -229,6 +232,7 @@ h1{
   color:var(--blue);
 }
 
+
 /* SECTIONS */
 
 section{
@@ -251,6 +255,7 @@ section{
   margin:0;
   color:var(--muted);
 }
+
 
 /* REAL COST SCORE */
 
@@ -325,6 +330,7 @@ section{
   margin-top:22px;
 }
 
+
 /* CRITERIA */
 
 .criteria{
@@ -350,6 +356,7 @@ section{
   font-size:.86rem;
   color:var(--muted);
 }
+
 
 /* CATEGORIES */
 
@@ -388,6 +395,7 @@ section{
   font-size:.88rem;
 }
 
+
 /* GUIDES */
 
 .guides-section{
@@ -418,49 +426,46 @@ section{
   color:var(--muted);
   font-size:.88rem;
 }
-<!-- LATEST INSIGHT -->
 
-<section class="guides-section">
-
-  <div class="container">
-
-    <div class="section-head">
-
-      <h2>Latest Insight</h2>
-
-      <p>
-        New research and analysis on SaaS products, pricing and the real cost of software.
-      </p>
-
-    </div>
-
-
-    <article class="guide">
-
-      <h3>
-        Kit Just Made Your Email List a Lot More Valuable:
-        Everything New From Craft + Commerce 2026
-      </h3>
-
-      <p>
-        Kit announced a major wave of new features at Craft + Commerce 2026,
-        including Subscriber Signals, Kit MCP, newsletter sponsorships,
-        engagement analytics and abandoned checkout recovery.
-      </p>
-
-      <a href="/kit-craft-commerce-2026.html">
-        Read the full Kit analysis →
-      </a>
-
-    </article>
-
-  </div>
-
-</section>
 .guide a{
   font-weight:800;
   font-size:.87rem;
 }
+
+
+/* LATEST INSIGHT */
+
+.latest-insight{
+  background:#f8faff;
+}
+
+.insight-card{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:26px;
+  box-shadow:0 5px 18px rgba(23,32,51,.045);
+}
+
+.insight-card h3{
+  margin:0 0 10px;
+  color:var(--navy);
+  font-size:1.2rem;
+  line-height:1.4;
+}
+
+.insight-card p{
+  margin:0 0 16px;
+  color:var(--muted);
+  font-size:.92rem;
+  max-width:850px;
+}
+
+.insight-card a{
+  font-weight:800;
+  font-size:.9rem;
+}
+
 
 /* PROVIDER RESEARCH */
 
@@ -493,6 +498,7 @@ section{
   font-weight:800;
   font-size:.86rem;
 }
+
 
 /* CALCULATOR */
 
@@ -567,6 +573,7 @@ section{
   font-size:.8rem;
 }
 
+
 /* APPROACH */
 
 .approach{
@@ -602,6 +609,7 @@ section{
   margin-bottom:8px;
 }
 
+
 /* DISCLOSURE */
 
 .disclosure{
@@ -619,6 +627,7 @@ section{
 .disclosure strong{
   color:var(--text);
 }
+
 
 /* FOOTER */
 
@@ -659,6 +668,7 @@ footer p{
   color:#dce4f0;
   font-size:.84rem;
 }
+
 
 /* MOBILE */
 
@@ -729,12 +739,14 @@ footer p{
   }
 
 }
+
 </style>
 </head>
 
 <body>
 
 <header>
+
   <div class="container nav">
 
     <a class="logo" href="/">
@@ -742,34 +754,55 @@ footer p{
     </a>
 
     <nav aria-label="Main navigation">
-      <a href="/real-cost-scores.html">Real Cost Score</a>
-      <a href="/guide-crm.html">Guides</a>
-      <a href="#calculator">Calculator</a>
-      <a href="#approach">About</a>
+
+      <a href="/real-cost-scores.html">
+        Real Cost Score
+      </a>
+
+      <a href="/guide-crm.html">
+        Guides
+      </a>
+
+      <a href="#calculator">
+        Calculator
+      </a>
+
+      <a href="#approach">
+        About
+      </a>
+
     </nav>
 
   </div>
+
 </header>
 
 
 <main>
 
+
 <!-- HERO -->
 
 <section class="hero">
+
   <div class="container hero-grid">
 
     <div>
 
-      <span class="eyebrow">Independent SaaS Cost Research</span>
+      <span class="eyebrow">
+        Independent SaaS Cost Research
+      </span>
 
-      <h1>The price you see is not always the price you pay.</h1>
+      <h1>
+        The price you see is not always the price you pay.
+      </h1>
 
       <p class="hero-lead">
         SaaSRealCost looks beyond the advertised starting price to compare what software can really cost as you grow — including extras, pricing complexity, transparency and how easy it is to leave.
       </p>
 
       <div class="hero-buttons">
+
         <a class="btn btn-primary" href="/real-cost-scores.html">
           See the Real Cost Scores
         </a>
@@ -777,6 +810,7 @@ footer p{
         <a class="btn btn-secondary" href="#calculator">
           Calculate Your Cost
         </a>
+
       </div>
 
     </div>
@@ -784,7 +818,9 @@ footer p{
 
     <div class="hero-card">
 
-      <h2>What makes SaaSRealCost different?</h2>
+      <h2>
+        What makes SaaSRealCost different?
+      </h2>
 
       <p>
         We score providers using the same five criteria instead of relying only on the advertised starting price.
@@ -818,6 +854,7 @@ footer p{
     </div>
 
   </div>
+
 </section>
 
 
@@ -828,26 +865,38 @@ footer p{
   <div class="container">
 
     <div class="section-head">
-      <h2>Real Cost Score™</h2>
+
+      <h2>
+        Real Cost Score™
+      </h2>
 
       <p>
         A simple way to compare SaaS providers beyond the headline price. Every provider is evaluated using the same five criteria.
       </p>
+
     </div>
 
 
     <div class="score-grid">
 
+
       <article class="provider-card">
 
-        <h3>Pipedrive</h3>
+        <h3>
+          Pipedrive
+        </h3>
 
         <p class="description">
           Best for straightforward CRM value.
         </p>
 
-        <div class="score">8.6</div>
-        <div class="score-label">out of 10</div>
+        <div class="score">
+          8.6
+        </div>
+
+        <div class="score-label">
+          out of 10
+        </div>
 
         <a class="card-link" href="/pipedrive-real-cost.html">
           See Pipedrive's real cost →
@@ -858,14 +907,21 @@ footer p{
 
       <article class="provider-card">
 
-        <h3>Zoho CRM</h3>
+        <h3>
+          Zoho CRM
+        </h3>
 
         <p class="description">
           Broad value and flexibility.
         </p>
 
-        <div class="score">8.6</div>
-        <div class="score-label">out of 10</div>
+        <div class="score">
+          8.6
+        </div>
+
+        <div class="score-label">
+          out of 10
+        </div>
 
         <a class="card-link" href="/zoho-crm-real-cost.html">
           See Zoho's real cost →
@@ -876,14 +932,21 @@ footer p{
 
       <article class="provider-card">
 
-        <h3>Freshsales</h3>
+        <h3>
+          Freshsales
+        </h3>
 
         <p class="description">
           Strong value for growing teams.
         </p>
 
-        <div class="score">8.4</div>
-        <div class="score-label">out of 10</div>
+        <div class="score">
+          8.4
+        </div>
+
+        <div class="score-label">
+          out of 10
+        </div>
 
         <a class="card-link" href="/freshsales-real-cost.html">
           See Freshsales' real cost →
@@ -894,14 +957,21 @@ footer p{
 
       <article class="provider-card">
 
-        <h3>monday CRM</h3>
+        <h3>
+          monday CRM
+        </h3>
 
         <p class="description">
           Visual workflows and flexible setup.
         </p>
 
-        <div class="score">8.0</div>
-        <div class="score-label">out of 10</div>
+        <div class="score">
+          8.0
+        </div>
+
+        <div class="score-label">
+          out of 10
+        </div>
 
         <a class="card-link" href="/monday-crm-real-cost.html">
           See monday CRM's real cost →
@@ -912,14 +982,21 @@ footer p{
 
       <article class="provider-card">
 
-        <h3>HubSpot Sales Hub</h3>
+        <h3>
+          HubSpot Sales Hub
+        </h3>
 
         <p class="description">
           Strong ecosystem and scale, but complexity can increase costs.
         </p>
 
-        <div class="score">7.4</div>
-        <div class="score-label">out of 10</div>
+        <div class="score">
+          7.4
+        </div>
+
+        <div class="score-label">
+          out of 10
+        </div>
 
         <a class="card-link" href="/hubspot-real-cost.html">
           See HubSpot's real cost →
@@ -931,14 +1008,22 @@ footer p{
 
 
     <div class="score-note">
-      <strong>How the score works:</strong>
+
+      <strong>
+        How the score works:
+      </strong>
+
       Price, growth cost, hidden extras, transparency and ease of exit each account for 20% of the final score.
+
     </div>
 
+
     <div class="score-cta">
+
       <a class="btn btn-primary" href="/real-cost-scores.html">
         Compare All Real Cost Scores →
       </a>
+
     </div>
 
   </div>
@@ -954,7 +1039,9 @@ footer p{
 
     <div class="section-head">
 
-      <h2>What the Real Cost Score measures</h2>
+      <h2>
+        What the Real Cost Score measures
+      </h2>
 
       <p>
         A low starting price does not automatically mean low real cost.
@@ -965,29 +1052,69 @@ footer p{
 
     <div class="criteria">
 
-      <div class="criteria-item">
-        <strong>1. Starting Price</strong>
-        <span>How attractive and accessible is the entry-level price?</span>
-      </div>
 
       <div class="criteria-item">
-        <strong>2. Growth Cost</strong>
-        <span>What happens to the bill as users, contacts or usage increase?</span>
+
+        <strong>
+          1. Starting Price
+        </strong>
+
+        <span>
+          How attractive and accessible is the entry-level price?
+        </span>
+
       </div>
 
-      <div class="criteria-item">
-        <strong>3. Hidden Extras</strong>
-        <span>Which important features or capabilities may cost extra?</span>
-      </div>
 
       <div class="criteria-item">
-        <strong>4. Transparency</strong>
-        <span>How clearly does the provider explain pricing, limits and conditions?</span>
+
+        <strong>
+          2. Growth Cost
+        </strong>
+
+        <span>
+          What happens to the bill as users, contacts or usage increase?
+        </span>
+
       </div>
 
+
       <div class="criteria-item">
-        <strong>5. Ease of Exit</strong>
-        <span>How easy is it to downgrade, cancel or move away?</span>
+
+        <strong>
+          3. Hidden Extras
+        </strong>
+
+        <span>
+          Which important features or capabilities may cost extra?
+        </span>
+
+      </div>
+
+
+      <div class="criteria-item">
+
+        <strong>
+          4. Transparency
+        </strong>
+
+        <span>
+          How clearly does the provider explain pricing, limits and conditions?
+        </span>
+
+      </div>
+
+
+      <div class="criteria-item">
+
+        <strong>
+          5. Ease of Exit
+        </strong>
+
+        <span>
+          How easy is it to downgrade, cancel or move away?
+        </span>
+
       </div>
 
     </div>
@@ -1005,7 +1132,9 @@ footer p{
 
     <div class="section-head">
 
-      <h2>Compare SaaS by category</h2>
+      <h2>
+        Compare SaaS by category
+      </h2>
 
       <p>
         Explore real costs in the software categories where pricing can become complicated as your needs grow.
@@ -1016,35 +1145,56 @@ footer p{
 
     <div class="categories">
 
+
       <a class="category" href="/guide-crm.html">
-        <h3>CRM</h3>
+
+        <h3>
+          CRM
+        </h3>
+
         <p>
           Compare CRM pricing, seats, upgrades, add-ons and growth costs.
         </p>
+
       </a>
 
 
       <a class="category" href="/guide-hosting.html">
-        <h3>Web Hosting</h3>
+
+        <h3>
+          Web Hosting
+        </h3>
+
         <p>
           Look beyond introductory hosting prices and compare renewal costs and extras.
         </p>
+
       </a>
 
 
       <a class="category" href="/guide-business-software.html">
-        <h3>Business Software</h3>
+
+        <h3>
+          Business Software
+        </h3>
+
         <p>
           Understand the real cost of tools used to run your business.
         </p>
+
       </a>
 
 
       <a class="category" href="/guide-email-marketing.html">
-        <h3>Email Marketing</h3>
+
+        <h3>
+          Email Marketing
+        </h3>
+
         <p>
           Compare subscriber-based pricing, automation and other potential costs.
         </p>
+
       </a>
 
     </div>
@@ -1062,7 +1212,9 @@ footer p{
 
     <div class="section-head">
 
-      <h2>Buyer guides</h2>
+      <h2>
+        Buyer guides
+      </h2>
 
       <p>
         Practical guides designed to help you understand the cost before choosing a provider.
@@ -1073,9 +1225,12 @@ footer p{
 
     <div class="guides">
 
+
       <article class="guide">
 
-        <h3>CRM Buyer Guide</h3>
+        <h3>
+          CRM Buyer Guide
+        </h3>
 
         <p>
           Compare CRM pricing and understand what changes as your team grows.
@@ -1090,7 +1245,9 @@ footer p{
 
       <article class="guide">
 
-        <h3>Web Hosting Buyer Guide</h3>
+        <h3>
+          Web Hosting Buyer Guide
+        </h3>
 
         <p>
           Learn how introductory prices, renewals and add-ons affect your real hosting cost.
@@ -1105,7 +1262,9 @@ footer p{
 
       <article class="guide">
 
-        <h3>Small Business Hosting</h3>
+        <h3>
+          Small Business Hosting
+        </h3>
 
         <p>
           A practical look at what small businesses should consider before choosing hosting.
@@ -1120,7 +1279,9 @@ footer p{
 
       <article class="guide">
 
-        <h3>Hosting for Beginners</h3>
+        <h3>
+          Hosting for Beginners
+        </h3>
 
         <p>
           Understand the basic costs before buying your first hosting plan.
@@ -1135,7 +1296,9 @@ footer p{
 
       <article class="guide">
 
-        <h3>Cheap Web Hosting</h3>
+        <h3>
+          Cheap Web Hosting
+        </h3>
 
         <p>
           Cheap does not always mean cheap long-term. Compare the costs that matter.
@@ -1150,7 +1313,9 @@ footer p{
 
       <article class="guide">
 
-        <h3>Email Marketing Guide</h3>
+        <h3>
+          Email Marketing Guide
+        </h3>
 
         <p>
           Understand subscriber pricing and the features that can change your monthly bill.
@@ -1169,6 +1334,49 @@ footer p{
 </section>
 
 
+<!-- LATEST INSIGHT -->
+
+<section class="latest-insight">
+
+  <div class="container">
+
+    <div class="section-head">
+
+      <h2>
+        Latest Insight
+      </h2>
+
+      <p>
+        New research and analysis on SaaS products, pricing and the real cost of software.
+      </p>
+
+    </div>
+
+
+    <article class="insight-card">
+
+      <h3>
+        Kit Just Made Your Email List a Lot More Valuable:
+        Everything New From Craft + Commerce 2026
+      </h3>
+
+      <p>
+        Kit announced a major wave of new features at Craft + Commerce 2026,
+        including Subscriber Signals, Kit MCP, newsletter sponsorships,
+        engagement analytics and abandoned checkout recovery.
+      </p>
+
+      <a href="/kit-craft-commerce-2026.html">
+        Read the full Kit analysis →
+      </a>
+
+    </article>
+
+  </div>
+
+</section>
+
+
 <!-- PROVIDER RESEARCH -->
 
 <section>
@@ -1177,7 +1385,9 @@ footer p{
 
     <div class="section-head">
 
-      <h2>Provider research</h2>
+      <h2>
+        Provider research
+      </h2>
 
       <p>
         See the actual cost analysis behind individual providers instead of relying on a single advertised starting price.
@@ -1188,9 +1398,12 @@ footer p{
 
     <div class="research-grid">
 
+
       <article class="research-card">
 
-        <h3>Pipedrive Real Cost</h3>
+        <h3>
+          Pipedrive Real Cost
+        </h3>
 
         <p>
           Plans, growth costs, add-ons and the factors behind its 8.6 Real Cost Score.
@@ -1205,7 +1418,9 @@ footer p{
 
       <article class="research-card">
 
-        <h3>Zoho CRM Real Cost</h3>
+        <h3>
+          Zoho CRM Real Cost
+        </h3>
 
         <p>
           Pricing structure, flexibility, growth costs and the factors behind its 8.6 score.
@@ -1220,7 +1435,9 @@ footer p{
 
       <article class="research-card">
 
-        <h3>Freshsales Real Cost</h3>
+        <h3>
+          Freshsales Real Cost
+        </h3>
 
         <p>
           Understand the pricing and extras behind Freshsales' 8.4 Real Cost Score.
@@ -1235,7 +1452,9 @@ footer p{
 
       <article class="research-card">
 
-        <h3>monday CRM Real Cost</h3>
+        <h3>
+          monday CRM Real Cost
+        </h3>
 
         <p>
           See how seats, plan structure and pricing conditions affect the real cost.
@@ -1250,7 +1469,9 @@ footer p{
 
       <article class="research-card">
 
-        <h3>HubSpot Real Cost</h3>
+        <h3>
+          HubSpot Real Cost
+        </h3>
 
         <p>
           Explore how seats, tiers, onboarding and additional costs affect HubSpot's score.
@@ -1265,7 +1486,9 @@ footer p{
 
       <article class="research-card">
 
-        <h3>More Provider Research</h3>
+        <h3>
+          More Provider Research
+        </h3>
 
         <p>
           Explore the complete Real Cost Score database across the categories currently covered.
@@ -1292,7 +1515,9 @@ footer p{
 
     <div class="section-head">
 
-      <h2>Calculate your real SaaS cost</h2>
+      <h2>
+        Calculate your real SaaS cost
+      </h2>
 
       <p>
         Use this simple calculator to estimate your recurring monthly and annual software cost.
@@ -1303,7 +1528,9 @@ footer p{
 
     <div class="calculator">
 
+
       <div class="form-grid">
+
 
         <div class="field">
 
@@ -1422,7 +1649,9 @@ footer p{
 
     <div class="section-head">
 
-      <h2>Our approach</h2>
+      <h2>
+        Our approach
+      </h2>
 
       <p>
         SaaSRealCost is designed to make software pricing easier to understand before you commit.
@@ -1433,9 +1662,12 @@ footer p{
 
     <div class="approach">
 
+
       <div class="approach-box">
 
-        <h3>We look beyond the headline price</h3>
+        <h3>
+          We look beyond the headline price
+        </h3>
 
         <p>
           A provider can advertise an attractive starting price while the cost changes significantly when you add users, contacts, features or other requirements.
@@ -1450,15 +1682,31 @@ footer p{
 
       <div class="approach-box">
 
-        <h3>One scoring framework</h3>
+        <h3>
+          One scoring framework
+        </h3>
 
         <ul class="approach-list">
 
-          <li>Starting price</li>
-          <li>Growth cost</li>
-          <li>Hidden extras</li>
-          <li>Cost transparency</li>
-          <li>Ease of exit</li>
+          <li>
+            Starting price
+          </li>
+
+          <li>
+            Growth cost
+          </li>
+
+          <li>
+            Hidden extras
+          </li>
+
+          <li>
+            Cost transparency
+          </li>
+
+          <li>
+            Ease of exit
+          </li>
 
         </ul>
 
@@ -1482,9 +1730,15 @@ footer p{
   <div class="container">
 
     <p>
-      <strong>Pricing checked today — September 15, 2026.</strong>
+
+      <strong>
+        Pricing checked today — September 15, 2026.
+      </strong>
+
       Prices, plans, limits, discounts, taxes, add-ons and fees can change at any time. Always verify current pricing with the provider before committing.
+
       SaaSRealCost is independent. We may earn a commission when you purchase through certain links. Providers are scored using the same five-criteria framework, and our research is published regardless of the outcome.
+
     </p>
 
   </div>
@@ -1499,6 +1753,7 @@ footer p{
 <footer>
 
   <div class="container footer-grid">
+
 
     <div>
 
