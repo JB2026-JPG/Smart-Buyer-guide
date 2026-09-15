@@ -21,14 +21,17 @@
   max-width:850px;
   margin:0 auto;
 }
+
 .article-hero{
   padding:65px 0 35px;
 }
+
 .article-intro{
   font-size:19px;
   color:var(--muted);
   max-width:760px;
 }
+
 .price-date{
   background:#faf4e6;
   border:1px solid #e9d9a8;
@@ -36,6 +39,7 @@
   border-radius:12px;
   margin:22px 0;
 }
+
 .calculator-card{
   background:#fff;
   border:1px solid var(--line);
@@ -43,9 +47,11 @@
   padding:30px;
   box-shadow:0 8px 24px rgba(28,43,36,.05);
 }
+
 .calculator-field{
   margin-bottom:20px;
 }
+
 .calculator-field select,
 .calculator-field input{
   width:100%;
@@ -55,11 +61,13 @@
   font-size:16px;
   background:#fff;
 }
+
 .calculator-field select:focus,
 .calculator-field input:focus{
   outline:2px solid rgba(23,105,170,.18);
   border-color:var(--brand);
 }
+
 .calculator-result{
   margin-top:25px;
   padding:24px;
@@ -67,6 +75,7 @@
   background:#eaf3ee;
   border:1px solid #bfdccb;
 }
+
 .calculator-result-label{
   color:var(--muted);
   font-size:13px;
@@ -74,6 +83,7 @@
   text-transform:uppercase;
   letter-spacing:.04em;
 }
+
 .calculator-total{
   font-family:'Source Serif 4',Georgia,serif;
   font-size:40px;
@@ -81,9 +91,11 @@
   line-height:1.1;
   margin:6px 0;
 }
+
 .calculator-per-seat{
   color:var(--muted);
 }
+
 .disclosure{
   margin-top:40px;
   padding:18px;
@@ -92,12 +104,23 @@
   border-radius:12px;
   color:var(--muted);
 }
+
 .back-link{
   display:inline-block;
   margin-top:25px;
   color:var(--brand);
   font-weight:700;
   text-decoration:none;
+}
+
+@media(max-width:700px){
+  .calculator-card{
+    padding:22px;
+  }
+
+  .calculator-total{
+    font-size:34px;
+  }
 }
 </style>
 </head>
@@ -121,6 +144,7 @@
 
 </nav>
 
+
 <article class="article">
 
 <section class="article-hero">
@@ -136,7 +160,7 @@
 
 <div class="price-date">
 
-<strong>Pricing checked today — September 13, 2026.</strong><br>
+<strong>Pricing checked today — September 15, 2026.</strong><br>
 
 The calculator uses current example prices checked today.
 SaaS pricing can change at any time and may already be different
@@ -146,6 +170,7 @@ making a purchase.
 </div>
 
 </section>
+
 
 <section>
 
@@ -161,13 +186,20 @@ Provider
 
 <select id="provider">
 
-<option value="pipedrive">Pipedrive — €14/seat/month</option>
-<option value="hubspot">HubSpot Starter — $7/seat/month</option>
-<option value="custom">Custom price</option>
+<option value="pipedrive">Pipedrive — $14/seat/month</option>
+
+<option value="hubspot">
+HubSpot Starter — $7/seat/month
+</option>
+
+<option value="custom">
+Custom price
+</option>
 
 </select>
 
 </div>
+
 
 <div class="calculator-field">
 
@@ -179,10 +211,12 @@ Number of seats
   id="seats"
   type="number"
   min="1"
+  step="1"
   value="5"
 >
 
 </div>
+
 
 <div class="calculator-field">
 
@@ -200,22 +234,37 @@ Price per seat per month
 
 </div>
 
-<button class="btn" type="button" id="calculate">
+
+<button
+  class="btn"
+  type="button"
+  id="calculate"
+>
   Calculate real cost →
 </button>
 
-<div class="calculator-result" id="result">
+
+<div
+  class="calculator-result"
+  id="result"
+>
 
 <div class="calculator-result-label">
 Estimated monthly cost
 </div>
 
-<div class="calculator-total" id="monthly">
-€70.00
+<div
+  class="calculator-total"
+  id="monthly"
+>
+$70.00
 </div>
 
-<div class="calculator-per-seat" id="annual">
-Estimated annual cost: €840.00
+<div
+  class="calculator-per-seat"
+  id="annual"
+>
+Estimated annual cost: $840.00
 </div>
 
 </div>
@@ -223,6 +272,7 @@ Estimated annual cost: €840.00
 </div>
 
 </section>
+
 
 <section style="margin-top:45px">
 
@@ -234,7 +284,7 @@ Estimated annual cost: €840.00
 </p>
 
 <p>
-  It does not automatically include VAT, add-ons, onboarding,
+  It does not automatically include VAT, taxes, add-ons, onboarding,
   usage-based charges, discounts, implementation or other provider-specific
   costs.
 </p>
@@ -246,6 +296,7 @@ Estimated annual cost: €840.00
 
 </section>
 
+
 <section style="margin-top:45px">
 
 <div class="card">
@@ -256,13 +307,17 @@ Estimated annual cost: €840.00
   See the pricing context and Real Cost framework behind the numbers.
 </p>
 
-<a class="btn secondary" href="real-cost-scores-crm.html">
+<a
+  class="btn secondary"
+  href="real-cost-scores-crm.html"
+>
   Compare CRM Real Cost Scores →
 </a>
 
 </div>
 
 </section>
+
 
 <div class="disclosure">
 
@@ -273,11 +328,16 @@ This does not affect our editorial recommendations.
 
 </div>
 
-<a class="back-link" href="index.html">
+
+<a
+  class="back-link"
+  href="index.html"
+>
   ← Back to SaaS Real Cost
 </a>
 
 </article>
+
 
 <footer>
   © 2026 SaaS Real Cost. All rights reserved.
@@ -285,74 +345,128 @@ This does not affect our editorial recommendations.
 
 </main>
 
-<script>
-const provider = document.getElementById("provider");
-const seats = document.getElementById("seats");
-const price = document.getElementById("price");
-const calculate = document.getElementById("calculate");
-const monthly = document.getElementById("monthly");
-const annual = document.getElementById("annual");
 
-function formatCurrency(value, currency){
+<script>
+
+const provider =
+  document.getElementById("provider");
+
+const seats =
+  document.getElementById("seats");
+
+const price =
+  document.getElementById("price");
+
+const calculate =
+  document.getElementById("calculate");
+
+const monthly =
+  document.getElementById("monthly");
+
+const annual =
+  document.getElementById("annual");
+
+
+function formatCurrency(value){
+
   return new Intl.NumberFormat(
     "en-US",
     {
       style:"currency",
-      currency:currency,
-      minimumFractionDigits:2
+      currency:"USD",
+      minimumFractionDigits:2,
+      maximumFractionDigits:2
     }
   ).format(value);
+
 }
+
 
 function updateProviderPrice(){
 
   if(provider.value === "pipedrive"){
+
     price.value = "14";
-    price.dataset.currency = "EUR";
+
   }
 
-  if(provider.value === "hubspot"){
+  else if(provider.value === "hubspot"){
+
     price.value = "7";
-    price.dataset.currency = "USD";
+
   }
 
-  if(provider.value === "custom"){
+  else if(provider.value === "custom"){
+
     price.value = "";
-    price.dataset.currency = "EUR";
+
     price.focus();
+
   }
 
   calculateCost();
+
 }
+
 
 function calculateCost(){
 
-  const seatCount = Math.max(1, Number(seats.value) || 1);
-  const seatPrice = Math.max(0, Number(price.value) || 0);
+  const seatCount =
+    Math.max(
+      1,
+      Number(seats.value) || 1
+    );
 
-  const totalMonthly = seatCount * seatPrice;
-  const totalAnnual = totalMonthly * 12;
+  const seatPrice =
+    Math.max(
+      0,
+      Number(price.value) || 0
+    );
 
-  const currency =
-    price.dataset.currency ||
-    (provider.value === "hubspot" ? "USD" : "EUR");
+  const totalMonthly =
+    seatCount * seatPrice;
+
+  const totalAnnual =
+    totalMonthly * 12;
+
 
   monthly.textContent =
-    formatCurrency(totalMonthly, currency);
+    formatCurrency(totalMonthly);
+
 
   annual.textContent =
     "Estimated annual cost: " +
-    formatCurrency(totalAnnual, currency);
+    formatCurrency(totalAnnual);
+
 }
 
-provider.addEventListener("change", updateProviderPrice);
-calculate.addEventListener("click", calculateCost);
-seats.addEventListener("input", calculateCost);
-price.addEventListener("input", calculateCost);
 
-price.dataset.currency = "EUR";
+provider.addEventListener(
+  "change",
+  updateProviderPrice
+);
+
+
+calculate.addEventListener(
+  "click",
+  calculateCost
+);
+
+
+seats.addEventListener(
+  "input",
+  calculateCost
+);
+
+
+price.addEventListener(
+  "input",
+  calculateCost
+);
+
 
 calculateCost();
+
 </script>
 
 </body>
