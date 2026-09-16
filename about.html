@@ -13,15 +13,146 @@
 
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>About SaaS Real Cost</title>
-<meta name="description" content="About SaaS Real Cost - Helping buyers avoid hidden software costs and renewal traps.">
-<meta property="og:title" content="About SaaS Real Cost">
-<meta property="og:description" content="Helping buyers avoid hidden software costs and renewal traps.">
+<title>About & Methodology — SaaSRealCost</title>
+<meta name="description" content="How SaaSRealCost researches SaaS pricing, calculates the Real Cost Score, and discloses affiliate relationships. Independent, transparent methodology.">
+<meta property="og:title" content="About & Methodology — SaaSRealCost">
+<meta property="og:description" content="How SaaSRealCost researches SaaS pricing, calculates the Real Cost Score, and discloses affiliate relationships.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://saasrealcost.com/about.html">
 <meta property="og:image" content="https://saasrealcost.com/favicon.svg">
+<link rel="canonical" href="https://saasrealcost.com/about.html">
 <link rel="stylesheet" href="style.css">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+<!-- Page-specific styles for the blocks on this page only (grid, steps, trust row, contact box).
+     Uses the same navy/blue tone as the rest of the site's text/links; adjust the
+     hex values below if your site's accent color differs. -->
+<style>
+  .criteria-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+    margin-top: 1.25rem;
+  }
+  .criteria-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 1.25rem;
+  }
+  .criteria-card .weight {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #2563eb;
+    background: rgba(37, 99, 235, 0.08);
+    padding: 0.2rem 0.55rem;
+    border-radius: 999px;
+    margin-bottom: 0.6rem;
+  }
+  .criteria-card h4 {
+    margin: 0 0 0.4rem;
+    font-size: 0.98rem;
+  }
+  .criteria-card p {
+    font-size: 0.88rem;
+    margin: 0;
+  }
+
+  .steps {
+    counter-reset: step;
+    padding: 0;
+    list-style: none;
+    margin: 1.25rem 0 0;
+  }
+  .steps li {
+    counter-increment: step;
+    position: relative;
+    padding-left: 2.75rem;
+    margin-bottom: 1.25rem;
+  }
+  .steps li::before {
+    content: counter(step);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1.9rem;
+    height: 1.9rem;
+    border-radius: 50%;
+    background: #0f172a;
+    color: #fff;
+    font-size: 0.85rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .steps li strong {
+    display: block;
+    margin-bottom: 0.2rem;
+    font-size: 0.98rem;
+  }
+  .steps li span {
+    font-size: 0.92rem;
+  }
+
+  .callout {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-left: 4px solid #2563eb;
+    border-radius: 8px;
+    padding: 1.25rem 1.5rem;
+    margin-top: 1rem;
+  }
+  .callout p:last-child { margin-bottom: 0; }
+  .callout.success { border-left-color: #16a34a; }
+
+  .trust-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+  .trust-item {
+    text-align: center;
+    padding: 1.25rem 1rem;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+  }
+  .trust-item .num {
+    font-size: 1.5rem;
+    font-weight: 800;
+    display: block;
+  }
+  .trust-item .label {
+    font-size: 0.82rem;
+    color: #94a3b8;
+    margin-top: 0.25rem;
+  }
+
+  .contact-box {
+    background: #0f172a;
+    color: #fff;
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+  }
+  .contact-box h2 { color: #fff; }
+  .contact-box p { color: #cbd5e1; }
+  .contact-box a {
+    display: inline-block;
+    margin-top: 0.75rem;
+    background: #fff;
+    color: #0f172a;
+    font-weight: 700;
+    padding: 0.65rem 1.4rem;
+    border-radius: 8px;
+    font-size: 0.92rem;
+    text-decoration: none;
+  }
+  .contact-box a:hover { background: #e2e8f0; }
+</style>
 </head>
 
 <body>
@@ -36,18 +167,122 @@
 </nav>
 
 <section class="hero">
-  <h1>About SaaS Real Cost</h1>
-  <p class="lead">We provide independent buyer guides and pricing calculators to help businesses make informed software investments.</p>
+  <h1>Independent research. One consistent scoring framework.</h1>
+  <p class="lead">SaaSRealCost exists to answer one question honestly: what will this software actually cost you — not just today, but as you grow? Here's exactly how we research, score, and stay accountable.</p>
 </section>
 
 <article class="card">
-  <h2>Independence & Transparency</h2>
-  <p>SaaS Real Cost is funded through affiliate referral links. When you click a partner link and sign up, we may earn a commission. This comes at no extra cost to you and helps keep our calculators and comparison guides free for everyone.</p>
-
-  <h2>Contact Us</h2>
-  <p>Have questions, feedback, or suggestions for a tool we should cover? Reach out to us at:</p>
-  <p><strong>Email:</strong> <a href="mailto:contact@saasrealcost.com">contact@saasrealcost.com</a></p>
+  <h2>Why SaaSRealCost exists</h2>
+  <p>Advertised pricing rarely tells the full story. A low starting price can hide steep costs once you add seats, contacts, features, or usage. Providers aren't required to make that easy to compare — so we do it for you.</p>
+  <p>SaaSRealCost was built to look past the headline price and evaluate what a piece of software really costs over time: as your team grows, as your usage increases, and if you ever need to leave.</p>
 </article>
+
+<article class="card">
+  <h2>The Real Cost Score™ framework</h2>
+  <p>Every provider we cover is evaluated against the same five criteria, each weighted equally. No provider is scored on a different scale, and no criterion is adjusted to favor a particular outcome.</p>
+
+  <div class="criteria-grid">
+    <div class="criteria-card">
+      <span class="weight">20%</span>
+      <h4>Starting Price</h4>
+      <p>How accessible and competitive is the entry-level plan?</p>
+    </div>
+    <div class="criteria-card">
+      <span class="weight">20%</span>
+      <h4>Growth Cost</h4>
+      <p>What happens to the bill as users, contacts, or usage scale up?</p>
+    </div>
+    <div class="criteria-card">
+      <span class="weight">20%</span>
+      <h4>Hidden Extras</h4>
+      <p>Which important features or capabilities cost extra, and how clearly is that disclosed?</p>
+    </div>
+    <div class="criteria-card">
+      <span class="weight">20%</span>
+      <h4>Cost Transparency</h4>
+      <p>How clearly does the provider explain pricing, limits, and conditions upfront?</p>
+    </div>
+    <div class="criteria-card">
+      <span class="weight">20%</span>
+      <h4>Ease of Exit</h4>
+      <p>How straightforward is it to downgrade, cancel, or migrate away?</p>
+    </div>
+  </div>
+</article>
+
+<article class="card">
+  <h2>How we research each provider</h2>
+  <ol class="steps">
+    <li>
+      <strong>Pull current pricing directly from the source</strong>
+      <span>We start with the provider's own official pricing page — not third-party aggregators — to record current plans, seat costs, and billing terms.</span>
+    </li>
+    <li>
+      <strong>Identify add-ons and growth triggers</strong>
+      <span>We map out what happens as usage grows: additional seats, contact tiers, feature gates, and optional add-ons that aren't included in the base price.</span>
+    </li>
+    <li>
+      <strong>Score against the five-criteria framework</strong>
+      <span>Each criterion is scored independently on a 10-point scale, then combined into the final Real Cost Score using equal 20% weighting.</span>
+    </li>
+    <li>
+      <strong>Write the verdict</strong>
+      <span>We summarize who the provider is genuinely a good fit for, and what to watch out for before committing.</span>
+    </li>
+    <li>
+      <strong>Recheck on a regular cycle</strong>
+      <span>Pricing changes. We revisit provider pages periodically and note the date pricing was last verified on every page.</span>
+    </li>
+  </ol>
+</article>
+
+<article class="card">
+  <h2>Editorial independence</h2>
+  <div class="callout">
+    <p>Our scores are based on publicly available pricing and terms, assessed against the same framework for every provider — regardless of whether we have a commercial relationship with them. A provider cannot pay for a higher score, and our research is published whether the outcome is favorable to them or not.</p>
+  </div>
+</article>
+
+<article class="card">
+  <h2>How we make money</h2>
+  <p>SaaSRealCost is free to use and supported primarily through affiliate commissions. When you click through to a provider and make a purchase, we may earn a commission at no extra cost to you.</p>
+  <div class="callout success">
+    <p><strong>This never influences our scoring.</strong> Affiliate relationships are evaluated using the exact same five-criteria framework as every other provider we cover, and commission rates play no role in how a provider is scored.</p>
+  </div>
+</article>
+
+<article class="card">
+  <h2>What we don't do</h2>
+  <div class="trust-row">
+    <div class="trust-item">
+      <span class="num">✕</span>
+      <span class="label">Accept payment for a higher score</span>
+    </div>
+    <div class="trust-item">
+      <span class="num">✕</span>
+      <span class="label">Hide or omit unfavorable findings</span>
+    </div>
+    <div class="trust-item">
+      <span class="num">✕</span>
+      <span class="label">Copy scores from other review sites</span>
+    </div>
+    <div class="trust-item">
+      <span class="num">✕</span>
+      <span class="label">Use outdated pricing without verifying it</span>
+    </div>
+  </div>
+</article>
+
+<article class="card">
+  <h2>Corrections &amp; updates</h2>
+  <p>Pricing changes constantly, and providers sometimes restructure plans without notice. If you spot pricing on our site that no longer matches what a provider currently charges, we want to know — accuracy is the entire point of SaaSRealCost.</p>
+</article>
+
+<div class="contact-box">
+  <h2>Spotted outdated pricing, or representing a provider?</h2>
+  <p>Get in touch and we'll review it.</p>
+  <a href="mailto:contact@saasrealcost.com">Contact us</a>
+</div>
 
 </main>
 
