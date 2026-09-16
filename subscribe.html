@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-89RYYZGH1F"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-89RYYZGH1F');
+</script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Subscribe for Pricing Updates | SaaSRealCost</title>
+<meta name="description" content="Get a weekly update on SaaS pricing changes and what they mean for your real cost.">
+<meta property="og:title" content="Subscribe for Pricing Updates | SaaSRealCost">
+<meta property="og:description" content="Get a weekly update on SaaS pricing changes and what they mean for your real cost.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://saasrealcost.com/subscribe.html">
+<meta property="og:image" content="https://saasrealcost.com/favicon.svg">
+<link rel="canonical" href="https://saasrealcost.com/subscribe.html">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+<style>
+  .src-optin {
+    --src-navy: #0f172a;
+    --src-accent: #2563eb;
+    --src-border: #e2e8f0;
+    --src-bg: #f8fafc;
+    --src-text-body: #475569;
+    --src-text-muted: #94a3b8;
+    --src-success: #16a34a;
+
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 2.25rem 2rem;
+    border: 1px solid var(--src-border);
+    border-radius: 12px;
+    background: var(--src-bg);
+    text-align: center;
+  }
+  .src-optin-form {
+    display: flex;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .src-optin-input {
+    flex: 1 1 220px;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--src-border);
+    border-radius: 8px;
+    font-size: 0.95rem;
+    color: var(--src-navy);
+    outline: none;
+  }
+  .src-optin-input:focus {
+    border-color: var(--src-accent);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+  }
+  .src-optin-button {
+    padding: 0.75rem 1.6rem;
+    background: var(--src-navy);
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  .src-optin-button:hover { background: var(--src-accent); }
+  .src-optin-success {
+    margin-top: 1.1rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--src-success);
+  }
+  .src-optin-disclaimer {
+    margin: 1.1rem 0 0;
+    font-size: 0.78rem;
+    color: var(--src-text-muted);
+  }
+  @media (max-width: 480px) {
+    .src-optin-form { flex-direction: column; }
+  }
+</style>
+</head>
+
+<body>
+<main class="wrap">
+
+<nav class="nav">
+  <a class="brand" href="index.html">SaaS Real Cost</a>
+  <div class="navlinks">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <h1>Stay ahead of pricing changes</h1>
+  <p class="lead">Once a week: which SaaS providers changed their pricing, and what it means for your real cost. No spam, unsubscribe anytime.</p>
+</section>
+
+<article class="card">
+  <div class="src-optin">
+    <form class="src-optin-form" action="https://formspree.io/f/xaenwlqk" method="POST" id="srcOptinForm">
+      <input type="email" name="email" class="src-optin-input" placeholder="you@company.com" required />
+      <button type="submit" class="src-optin-button">Subscribe</button>
+    </form>
+
+    <p class="src-optin-success" id="srcOptinSuccess" style="display:none;">
+      ✓ Thanks — check your inbox to confirm your subscription.
+    </p>
+
+    <p class="src-optin-disclaimer">
+      By subscribing you agree to receive our weekly update. Your email address is never shared.
+    </p>
+  </div>
+</article>
+
+</main>
+
+<footer class="wrap">
+  Independent buyer information. Verify current pricing and terms with the provider.
+  · <a href="about.html">About</a>
+  · <a href="affiliate-disclosure.html">Affiliate disclosure</a>
+  · <a href="privacy.html">Privacy</a>
+</footer>
+
+<script>
+  document.getElementById("srcOptinForm").addEventListener("submit", function (e) {
+    const action = this.getAttribute("action");
+    if (!action || action === "#") {
+      return;
+    }
+    e.preventDefault();
+    const form = this;
+    const formData = new FormData(form);
+    fetch(action, {
+      method: "POST",
+      body: formData,
+      headers: { Accept: "application/json" },
+    })
+      .then((response) => {
+        if (response.ok) {
+          form.style.display = "none";
+          document.getElementById("srcOptinSuccess").style.display = "block";
+        } else {
+          alert("Something went wrong. Please try again later.");
+        }
+      })
+      .catch(() => {
+        alert("Something went wrong. Please try again later.");
+      });
+  });
+</script>
+</body>
+</html>
