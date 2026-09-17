@@ -152,6 +152,43 @@
     text-decoration: none;
   }
   .contact-box a:hover { background: #e2e8f0; }
+
+  /* ADDED: styles for the new "Who's behind this" author section only.
+     Follows the same card/callout pattern already used on this page. */
+  .author-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+  }
+  .author-avatar {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: #0f172a;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+  }
+  .author-name {
+    margin: 0;
+    font-size: 1.05rem;
+  }
+  .author-meta {
+    margin: 0.15rem 0 0;
+    font-size: 0.88rem;
+    color: #64748b;
+  }
+  .author-meta a {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .author-meta a:hover { text-decoration: underline; }
 </style>
 </head>
 
@@ -175,6 +212,33 @@
   <h2>Why SaaSRealCost exists</h2>
   <p>Advertised pricing rarely tells the full story. A low starting price can hide steep costs once you add seats, contacts, features, or usage. Providers aren't required to make that easy to compare — so we do it for you.</p>
   <p>SaaSRealCost was built to look past the headline price and evaluate what a piece of software really costs over time: as your team grows, as your usage increases, and if you ever need to leave.</p>
+</article>
+
+<!--
+  ADDED: author section. Nothing above or below this block has been
+  changed or removed — this only inserts a new "Who's behind this"
+  card between "Why SaaSRealCost exists" and the Real Cost Score
+  framework section, using the same .card structure and .callout
+  pattern already used elsewhere on this page.
+-->
+<article class="card">
+  <h2>Who's behind this</h2>
+
+  <div class="author-row">
+    <div class="author-avatar">JB</div>
+    <div>
+      <p class="author-name"><strong>Jamal Bouch</strong></p>
+      <p class="author-meta">Founder, SaaSRealCost · Netherlands · <a href="https://www.linkedin.com/in/jamal-bouch-42a08a434" target="_blank" rel="noopener">LinkedIn</a></p>
+    </div>
+  </div>
+
+  <p>SaaSRealCost is built and maintained by me, Jamal Bouch. My background combines a degree in Mathematics, training in Business Administration &amp; Management, and a degree in Applied Psychology — a mix that turns out to matter for this kind of research: getting the numbers right, understanding how pricing structures are actually built, and paying attention to how pricing pages are designed to influence a buying decision.</p>
+
+  <p>I built SaaSRealCost because comparing software pricing is harder than it should be. Every provider presents its numbers differently, and the headline price rarely tells you what you'll actually pay once you factor in growth, add-ons, and renewal terms. This site applies one consistent framework — outlined below — to every provider, so you can compare on equal terms instead of taking each provider's marketing at face value.</p>
+
+  <div class="callout">
+    <p>Want to verify who's behind this yourself? My <a href="https://www.linkedin.com/in/jamal-bouch-42a08a434" target="_blank" rel="noopener">LinkedIn profile</a> is public.</p>
+  </div>
 </article>
 
 <article class="card">
