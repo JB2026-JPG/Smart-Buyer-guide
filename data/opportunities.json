@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-18T22:25:21.759Z",
+  "generatedAt": "2026-09-18T22:51:10.578Z",
   "mode": "market-insights",
   "opportunities": [
     {
@@ -55,6 +55,33 @@
       "intentScore": 20,
       "intentStatus": "RESEARCH",
       "topic": "Business Software"
+    },
+    {
+      "id": 13280897,
+      "title": "Node.js + PHP + MySQL VPS hosting",
+      "link": "https://stackoverflow.com/questions/13280897/node-js-php-mysql-vps-hosting",
+      "score": 3,
+      "intentScore": 20,
+      "intentStatus": "RESEARCH",
+      "topic": "Web Hosting"
+    },
+    {
+      "id": 104106,
+      "title": "Lowest cost Windows VPS hosting?",
+      "link": "https://stackoverflow.com/questions/104106/lowest-cost-windows-vps-hosting",
+      "score": 4,
+      "intentScore": 20,
+      "intentStatus": "RESEARCH",
+      "topic": "Web Hosting"
+    },
+    {
+      "id": 21014794,
+      "title": "Shared Hosting/VPS for mediawiki engine",
+      "link": "https://stackoverflow.com/questions/21014794/shared-hosting-vps-for-mediawiki-engine",
+      "score": 0,
+      "intentScore": 20,
+      "intentStatus": "RESEARCH",
+      "topic": "Web Hosting"
     },
     {
       "id": 3718398,
