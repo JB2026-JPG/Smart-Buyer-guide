@@ -40,7 +40,12 @@
     <loc>https://saasrealcost.com/guide-hosting-small-business</loc>
     <changefreq>weekly</changefreq>
   </url>
-
+  
+  <url>
+    <loc>https://saasrealcost.com/web-hosting-costs-explained</loc>
+    <changefreq>monthly</changefreq>
+  </url>
+  
   <url>
     <loc>https://saasrealcost.com/guide-wordpress-mail-hosting</loc>
     <changefreq>weekly</changefreq>
