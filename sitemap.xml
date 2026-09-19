@@ -40,12 +40,12 @@
     <loc>https://saasrealcost.com/guide-hosting-small-business</loc>
     <changefreq>weekly</changefreq>
   </url>
-  
+
   <url>
     <loc>https://saasrealcost.com/web-hosting-costs-explained</loc>
     <changefreq>monthly</changefreq>
   </url>
-  
+
   <url>
     <loc>https://saasrealcost.com/guide-wordpress-mail-hosting</loc>
     <changefreq>weekly</changefreq>
@@ -133,6 +133,26 @@
 
   <url>
     <loc>https://saasrealcost.com/hubspot-real-cost</loc>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://saasrealcost.com/crm-real-cost-scenarios</loc>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://saasrealcost.com/real-cost-methodology-v2</loc>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://saasrealcost.com/pricing-change-log</loc>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://saasrealcost.com/saas-buying-commitment-checklist</loc>
     <changefreq>monthly</changefreq>
   </url>
 
