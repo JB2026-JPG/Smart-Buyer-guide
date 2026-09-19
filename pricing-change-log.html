@@ -1,49 +1,642 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>SaaS Pricing Change Log | SaaSRealCost</title><meta name="description" content="A transparent structure for recording pricing, plan and limit changes over time and translating them into real-cost impact.">
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>SaaS Pricing Change Log | SaaSRealCost</title>
+
+<meta name="description" content="Track SaaS pricing, plan and limit changes and understand how they can affect real cost over time.">
+
 <link rel="canonical" href="https://saasrealcost.com/pricing-change-log">
+
 <meta property="og:title" content="SaaS Pricing Change Log | SaaSRealCost">
-<meta property="og:description" content="A transparent structure for recording pricing, plan and limit changes over time and translating them into real-cost impact.">
+<meta property="og:description" content="Track SaaS pricing, plan and limit changes and understand how they can affect real cost over time.">
 <meta property="og:url" content="https://saasrealcost.com/pricing-change-log">
 <meta property="og:type" content="article">
+
 <style>
-:root{--blue:#2864d7;--navy:#172033;--green:#198754;--bg:#f7f9fc;--card:#fff;--muted:#667085;--border:#e4e8ef}
-*{box-sizing:border-box}body{margin:0;font-family:Inter,Arial,sans-serif;background:var(--bg);color:var(--navy);line-height:1.65}
-.wrap{max-width:1080px;margin:auto;padding:28px 20px}.nav{background:#fff;border-bottom:1px solid var(--border)}.nav a{color:var(--navy);text-decoration:none;margin-right:22px;font-weight:700}
-h1{font-size:clamp(34px,6vw,56px);line-height:1.08;margin:28px 0 16px}h2{margin-top:42px;font-size:30px}h3{margin-top:28px}
-.lead{font-size:20px;color:#475467;max-width:850px}.hero{padding:52px 0}.eyebrow{color:var(--blue);font-weight:800;text-transform:uppercase;letter-spacing:.08em}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}.card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:22px;box-shadow:0 3px 14px rgba(23,32,51,.04)}
-table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--border);border-radius:12px;overflow:hidden}th,td{padding:13px 14px;border-bottom:1px solid var(--border);text-align:left;vertical-align:top}th{background:#f0f4fa}
-.badge{display:inline-block;padding:5px 9px;border-radius:999px;background:#eaf1ff;color:#1749a8;font-weight:800;font-size:13px}.score{font-size:34px;font-weight:900;color:var(--blue)}
-.callout{border-left:5px solid var(--blue);background:#eef4ff;padding:18px 20px;border-radius:8px}.warn{border-left:5px solid #c77d00;background:#fff8e7;padding:18px 20px;border-radius:8px}
-a{color:#1858c7}.small{font-size:14px;color:var(--muted)}code{background:#eef1f5;padding:2px 5px;border-radius:5px}
-footer{margin-top:70px;padding:30px 0;border-top:1px solid var(--border);color:var(--muted)}
-</style></head><body>
-<header class="nav"><div class="wrap"><a href="https://saasrealcost.com/">SaaSRealCost</a>
-<a href="https://saasrealcost.com/real-cost-scores">Real Cost Scores</a>
-<a href="https://saasrealcost.com/guide-crm">Guides</a>
-<a href="https://saasrealcost.com/crm-cost-calculator">Calculator</a>
-<a href="https://saasrealcost.com/about">About</a></div></header>
-<main class="wrap"><section class="hero"><div class="eyebrow">PRICING INTELLIGENCE</div><h1>SaaS Pricing Change Log</h1><p class="lead">A transparent structure for recording pricing, plan and limit changes over time and translating them into real-cost impact.</p></section>
-<div class="warn"><strong>Do not publish a pricing change without evidence.</strong> A change record should contain the old value, new value, effective/observed date, source, assumptions and real-cost impact.</div>
-<h2>Pricing Event Template</h2>
-<table><tr><th>Field</th><th>Example</th></tr>
-<tr><td>provider</td><td>Pipedrive</td></tr>
-<tr><td>product</td><td>CRM</td></tr>
-<tr><td>observed_date</td><td>2026-09-18</td></tr>
-<tr><td>event_type</td><td>price_change / plan_change / limit_change / add_on_change</td></tr>
-<tr><td>old_value</td><td>$X</td></tr>
-<tr><td>new_value</td><td>$Y</td></tr>
-<tr><td>billing_basis</td><td>annual / monthly</td></tr>
-<tr><td>region</td><td>US</td></tr>
-<tr><td>source</td><td>Official provider URL</td></tr>
-<tr><td>impact</td><td>What changes for a defined buyer scenario?</td></tr>
-<tr><td>score_review</td><td>yes/no + reason</td></tr>
+:root{
+  --blue:#2864d7;
+  --blue-dark:#1d4fae;
+  --navy:#172033;
+  --green:#198754;
+  --bg:#f7f9fc;
+  --card:#fff;
+  --muted:#667085;
+  --border:#e2e7ef;
+  --soft-blue:#eef4ff;
+  --soft-green:#eef9f3
+}
+
+*{
+  box-sizing:border-box
+}
+
+body{
+  margin:0;
+  font-family:Inter,Arial,sans-serif;
+  background:var(--bg);
+  color:var(--navy);
+  line-height:1.65
+}
+
+.wrap{
+  max-width:1120px;
+  width:92%;
+  margin:auto
+}
+
+.nav{
+  background:#fff;
+  border-bottom:1px solid var(--border)
+}
+
+.nav .wrap{
+  padding:18px 0;
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:20px
+}
+
+.nav a{
+  color:var(--navy);
+  text-decoration:none;
+  font-weight:700
+}
+
+.nav .brand{
+  color:var(--blue);
+  margin-right:10px
+}
+
+.hero{
+  padding:58px 0 34px
+}
+
+.eyebrow{
+  color:var(--blue);
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  font-size:14px
+}
+
+h1{
+  font-size:clamp(36px,6vw,58px);
+  line-height:1.08;
+  margin:12px 0 18px
+}
+
+h2{
+  font-size:30px;
+  margin:48px 0 18px
+}
+
+h3{
+  font-size:21px;
+  margin:0 0 10px
+}
+
+.lead{
+  font-size:20px;
+  color:#475467;
+  max-width:850px
+}
+
+.callout{
+  background:var(--soft-blue);
+  border-left:5px solid var(--blue);
+  padding:18px 20px;
+  border-radius:9px;
+  margin:24px 0
+}
+
+.card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:22px;
+  box-shadow:0 3px 14px rgba(23,32,51,.04)
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:18px
+}
+
+table{
+  width:100%;
+  border-collapse:collapse;
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:12px;
+  overflow:hidden
+}
+
+th,
+td{
+  padding:13px 14px;
+  border-bottom:1px solid var(--border);
+  text-align:left;
+  vertical-align:top
+}
+
+th{
+  background:#f0f4fa;
+  font-size:14px
+}
+
+tr:last-child td{
+  border-bottom:0
+}
+
+.price{
+  font-weight:900;
+  color:var(--blue);
+  white-space:nowrap
+}
+
+.badge{
+  display:inline-block;
+  padding:5px 9px;
+  border-radius:999px;
+  background:var(--soft-blue);
+  color:var(--blue-dark);
+  font-weight:800;
+  font-size:13px
+}
+
+.small{
+  font-size:14px;
+  color:var(--muted)
+}
+
+a{
+  color:#1858c7
+}
+
+.source-list{
+  margin-top:8px;
+  padding-left:20px
+}
+
+footer{
+  margin-top:70px;
+  padding:30px 0;
+  border-top:1px solid var(--border);
+  color:var(--muted)
+}
+
+@media(max-width:700px){
+
+  .nav .wrap{
+    gap:12px
+  }
+
+  .nav a{
+    font-size:14px
+  }
+
+  .hero{
+    padding-top:40px
+  }
+
+  table{
+    display:block;
+    overflow-x:auto;
+    white-space:nowrap
+  }
+
+  th,
+  td{
+    white-space:normal;
+    min-width:130px
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header class="nav">
+  <div class="wrap">
+
+    <a class="brand" href="https://saasrealcost.com/">
+      SaaSRealCost
+    </a>
+
+    <a href="https://saasrealcost.com/real-cost-scores">
+      Real Cost Scores
+    </a>
+
+    <a href="https://saasrealcost.com/guide-crm">
+      Guides
+    </a>
+
+    <a href="https://saasrealcost.com/crm-cost-calculator">
+      Calculator
+    </a>
+
+    <a href="https://saasrealcost.com/about">
+      About
+    </a>
+
+  </div>
+</header>
+
+<main class="wrap">
+
+<section class="hero">
+
+  <div class="eyebrow">
+    PRICING INTELLIGENCE
+  </div>
+
+  <h1>
+    SaaS Pricing Change Log
+  </h1>
+
+  <p class="lead">
+    A transparent record of SaaS pricing, plan and limit changes —
+    and how those changes can affect the real cost of choosing a provider.
+  </p>
+
+</section>
+
+<div class="callout">
+
+  <strong>How this page works:</strong>
+  Current prices are shown as a dated baseline.
+  A historical change is only added when SaaSRealCost has enough evidence
+  to document both the previous value and the new value.
+  We do not invent historical prices.
+
+</div>
+
+
+<h2>Current Pricing Baseline</h2>
+
+<p>
+  The following prices represent a SaaSRealCost research snapshot around
+  <strong>September 18–19, 2026</strong>.
+  Unless stated otherwise, prices are shown in USD and are based on annual
+  billing where the provider publishes an annual-billing price.
+  Regional pricing, taxes, promotions, seat requirements and billing terms
+  can change.
+</p>
+
+
+<div class="card" style="margin-top:22px">
+
+<table>
+
+<thead>
+<tr>
+  <th>Provider</th>
+  <th>Entry / free option</th>
+  <th>Published paid tiers</th>
+  <th>Pricing basis</th>
+  <th>Observed</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+  <td>
+    <strong>Pipedrive</strong>
+  </td>
+
+  <td>
+    <span class="price">$14/seat/mo</span>
+  </td>
+
+  <td>
+    Lite $14 · Growth $39 · Premium $59 · Ultimate $79
+  </td>
+
+  <td>
+    Per seat/month, billed annually
+  </td>
+
+  <td>
+    Sep 2026
+  </td>
+</tr>
+
+
+<tr>
+  <td>
+    <strong>Zoho CRM</strong>
+  </td>
+
+  <td>
+    Free for up to 3 users
+  </td>
+
+  <td>
+    Standard $14 · Professional $23 · Enterprise $40 · Ultimate $52
+  </td>
+
+  <td>
+    Per user/month, billed annually
+  </td>
+
+  <td>
+    Sep 2026
+  </td>
+</tr>
+
+
+<tr>
+  <td>
+    <strong>Freshsales</strong>
+  </td>
+
+  <td>
+    Free for up to 3 users
+  </td>
+
+  <td>
+    Growth $9 · Pro $39 · Enterprise $59
+  </td>
+
+  <td>
+    Per user/month, billed annually
+  </td>
+
+  <td>
+    Sep 2026
+  </td>
+</tr>
+
+
+<tr>
+  <td>
+    <strong>monday CRM</strong>
+  </td>
+
+  <td>
+    No permanent free CRM tier
+  </td>
+
+  <td>
+    Basic $12 · Standard $17 · Pro $28 · Enterprise quote
+  </td>
+
+  <td>
+    Per seat/month, billed annually; minimum team size applies
+  </td>
+
+  <td>
+    Sep 2026
+  </td>
+</tr>
+
+
+<tr>
+  <td>
+    <strong>HubSpot Sales Hub</strong>
+  </td>
+
+  <td>
+    Free up to 2 users
+  </td>
+
+  <td>
+    Starter $20 · Professional $100 · Enterprise $150
+  </td>
+
+  <td>
+    Per seat/month; billing terms and onboarding can affect total cost
+  </td>
+
+  <td>
+    Sep 2026
+  </td>
+</tr>
+
+</tbody>
+
 </table>
-<h2>Public change-log format</h2>
-<div class="card"><p><span class="badge">PRICING EVENT</span></p><h3>Provider changed a material pricing term</h3><p><strong>Observed:</strong> [date]</p><p><strong>Change:</strong> [old] → [new]</p><p><strong>Who is affected:</strong> [specific segment]</p><p><strong>Real-cost impact:</strong> [calculated effect]</p><p><strong>Score impact:</strong> [none / review / updated]</p><p><strong>Evidence:</strong> [official source]</p></div>
-<h2>Why this matters</h2>
-<p>A historical record creates an asset that ordinary review sites do not have. Over time, SaaSRealCost can show not only today's price but how pricing changed and what those changes meant for actual buyers.</p>
+
+</div>
+
+
+<p class="small" style="margin-top:14px">
+
+  Prices shown are a research snapshot.
+  Always verify the provider's current pricing, billing period,
+  region, taxes, seat requirements and applicable promotions before purchasing.
+
+</p>
+
+
+<h2>What Counts as a Pricing Change?</h2>
+
+
+<div class="grid">
+
+
+  <div class="card">
+
+    <span class="badge">
+      PRICE
+    </span>
+
+    <h3>
+      Price change
+    </h3>
+
+    <p>
+      A published subscription price moves from one amount to another.
+    </p>
+
+  </div>
+
+
+  <div class="card">
+
+    <span class="badge">
+      PLAN
+    </span>
+
+    <h3>
+      Plan change
+    </h3>
+
+    <p>
+      A provider changes what a plan includes, removes a plan
+      or introduces a new tier.
+    </p>
+
+  </div>
+
+
+  <div class="card">
+
+    <span class="badge">
+      LIMIT
+    </span>
+
+    <h3>
+      Limit change
+    </h3>
+
+    <p>
+      A seat, contact, automation, usage or feature limit
+      changes the economics of a plan.
+    </p>
+
+  </div>
+
+
+  <div class="card">
+
+    <span class="badge">
+      ADD-ON
+    </span>
+
+    <h3>
+      Add-on change
+    </h3>
+
+    <p>
+      An additional feature or service changes price
+      or becomes separately chargeable.
+    </p>
+
+  </div>
+
+
+</div>
+
+
+<h2>How SaaSRealCost Records a Change</h2>
+
+
+<div class="card">
+
+  <p>
+    <strong>Provider:</strong>
+    The affected SaaS product.
+  </p>
+
+  <p>
+    <strong>Observed date:</strong>
+    When SaaSRealCost verified the information.
+  </p>
+
+  <p>
+    <strong>Effective date:</strong>
+    When the provider says the change takes effect, when available.
+  </p>
+
+  <p>
+    <strong>Previous value:</strong>
+    The documented price, limit or plan condition before the change.
+  </p>
+
+  <p>
+    <strong>New value:</strong>
+    The documented price, limit or plan condition after the change.
+  </p>
+
+  <p>
+    <strong>Buyer scenario:</strong>
+    Which type of customer is affected and how.
+  </p>
+
+  <p>
+    <strong>Real-cost impact:</strong>
+    The calculated effect for a defined scenario where enough information is available.
+  </p>
+
+  <p>
+    <strong>Source:</strong>
+    Preferably the provider's own pricing page, documentation or announcement.
+  </p>
+
+  <p>
+    <strong>Score review:</strong>
+    Whether the change requires a review of the provider's Real Cost Score.
+  </p>
+
+</div>
+
+
+<h2>Why a Pricing History Matters</h2>
+
+<p>
+  A current pricing page shows what a buyer may pay today.
+  A change log adds another layer: how pricing, limits and plan structure
+  evolve over time.
+  That matters because a low entry price can become less relevant if a provider
+  later changes tiers, limits, required add-ons or billing terms.
+</p>
+
+<p>
+  SaaSRealCost therefore treats pricing history as evidence that can feed into
+  provider research, Real Cost Scores and scenario calculations —
+  rather than as a collection of unsupported historical claims.
+</p>
+
+
+<h2>Primary Pricing Sources</h2>
+
+<ul class="source-list">
+
+  <li>
+    <a href="https://www.pipedrive.com/en/pricing" rel="noopener">
+      Pipedrive pricing
+    </a>
+  </li>
+
+  <li>
+    <a href="https://www.zoho.com/crm/zohocrm-pricing.html" rel="noopener">
+      Zoho CRM pricing
+    </a>
+  </li>
+
+  <li>
+    <a href="https://www.freshworks.com/crm/pricing/" rel="noopener">
+      Freshsales pricing
+    </a>
+  </li>
+
+  <li>
+    <a href="https://monday.com/crm/pricing" rel="noopener">
+      monday CRM pricing
+    </a>
+  </li>
+
+  <li>
+    <a href="https://www.hubspot.com/pricing/sales" rel="noopener">
+      HubSpot Sales Hub pricing
+    </a>
+  </li>
+
+</ul>
+
 </main>
-<footer><div class="wrap">SaaSRealCost provides independent research and calculators. Pricing changes. Verify current provider pricing before committing. Affiliate relationships may exist; editorial scoring is based on the published methodology.</div></footer>
-</body></html>
+
+
+<footer>
+
+  <div class="wrap">
+
+    SaaSRealCost provides independent research and calculators.
+    Pricing changes.
+    Verify current provider pricing before committing.
+    Affiliate relationships may exist;
+    editorial scoring is based on the published methodology.
+
+  </div>
+
+</footer>
+
+</body>
+</html>
