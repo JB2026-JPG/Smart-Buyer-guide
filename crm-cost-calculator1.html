@@ -1,0 +1,770 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>CRM Cost Calculator | SaaSRealCost</title>
+
+<meta name="description" content="Estimate CRM subscription cost by users, monthly extras and annual commitment.">
+
+<link rel="canonical" href="https://saasrealcost.com/crm-cost-calculator">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="CRM Cost Calculator | SaaSRealCost">
+<meta property="og:description" content="Estimate CRM cost as your team grows, including extras and annual commitment.">
+<meta property="og:url" content="https://saasrealcost.com/crm-cost-calculator">
+<meta property="og:site_name" content="SaaSRealCost">
+
+<style>
+
+:root{
+  --blue:#2864d7;
+  --navy:#172033;
+  --text:#263247;
+  --muted:#667085;
+  --green:#198754;
+  --green-dark:#146c43;
+  --bg:#f7f9fc;
+  --border:#e2e7ef;
+  --soft-blue:#eef4ff;
+  --soft-green:#eef9f3;
+}
+
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  font-family:Inter,Arial,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.7;
+}
+
+a{
+  color:var(--blue);
+  text-decoration:none;
+}
+
+a:hover{
+  text-decoration:underline;
+}
+
+header{
+  background:#fff;
+  border-bottom:1px solid var(--border);
+}
+
+nav{
+  max-width:1120px;
+  width:92%;
+  margin:auto;
+  min-height:66px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+
+.brand{
+  font-weight:800;
+  color:var(--navy);
+}
+
+.navlinks{
+  display:flex;
+  gap:18px;
+  flex-wrap:wrap;
+  font-size:.94rem;
+}
+
+main{
+  max-width:900px;
+  width:92%;
+  margin:auto;
+  padding:52px 0 70px;
+}
+
+.eyebrow{
+  font-size:.82rem;
+  font-weight:800;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--blue);
+}
+
+h1{
+  font-size:clamp(2rem,5vw,3.2rem);
+  line-height:1.08;
+  color:var(--navy);
+  margin:10px 0 18px;
+}
+
+h2{
+  font-size:1.55rem;
+  color:var(--navy);
+  margin:40px 0 12px;
+}
+
+.lede{
+  font-size:1.12rem;
+  color:#475467;
+}
+
+.calculator{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:24px;
+  box-shadow:0 8px 30px rgba(16,37,77,.05);
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:16px;
+}
+
+.field label{
+  display:block;
+  font-weight:700;
+  color:var(--navy);
+  margin-bottom:6px;
+}
+
+input,
+select{
+  width:100%;
+  padding:12px;
+  border:1px solid #ccd4e0;
+  border-radius:9px;
+  font:inherit;
+  background:#fff;
+}
+
+input:focus,
+select:focus{
+  outline:2px solid #d8e5ff;
+  border-color:var(--blue);
+}
+
+.toggle{
+  margin-top:18px;
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+
+.toggle input{
+  width:auto;
+}
+
+.result{
+  background:var(--soft-green);
+  border:1px solid #cfe9dc;
+  border-radius:14px;
+  padding:20px;
+  margin-top:20px;
+}
+
+.big{
+  font-size:2.2rem;
+  font-weight:800;
+  color:var(--navy);
+}
+
+table{
+  width:100%;
+  border-collapse:collapse;
+  margin:22px 0;
+  background:#fff;
+}
+
+th,
+td{
+  padding:12px;
+  border:1px solid var(--border);
+  text-align:right;
+}
+
+th{
+  background:#f2f5fa;
+  color:var(--navy);
+}
+
+th:first-child,
+td:first-child{
+  text-align:left;
+}
+
+.share{
+  margin-top:18px;
+  padding:14px;
+  border:1px solid var(--border);
+  border-radius:10px;
+  background:#fff;
+  word-break:break-all;
+}
+
+button{
+  background:var(--green);
+  color:#fff;
+  border:0;
+  border-radius:9px;
+  padding:11px 16px;
+  font-weight:700;
+  cursor:pointer;
+  font:inherit;
+}
+
+button:hover{
+  background:var(--green-dark);
+}
+
+.callout{
+  background:var(--soft-blue);
+  border:1px solid #d8e5ff;
+  border-radius:14px;
+  padding:20px;
+  margin:26px 0;
+}
+
+.warning{
+  background:#fff8e8;
+  border:1px solid #f0dfb2;
+  border-radius:14px;
+  padding:20px;
+  margin:26px 0;
+}
+
+footer{
+  border-top:1px solid var(--border);
+  background:#fff;
+}
+
+.foot{
+  max-width:1120px;
+  width:92%;
+  margin:auto;
+  padding:28px 0;
+  color:var(--muted);
+  font-size:.9rem;
+}
+
+@media(max-width:700px){
+
+  nav{
+    align-items:flex-start;
+    flex-direction:column;
+    padding:14px 0;
+  }
+
+  .grid{
+    grid-template-columns:1fr;
+  }
+
+  .calculator{
+    padding:18px;
+  }
+
+  table{
+    font-size:.92rem;
+  }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<nav>
+
+<a class="brand" href="https://saasrealcost.com/">
+SaaSRealCost
+</a>
+
+<div class="navlinks">
+
+<a href="https://saasrealcost.com/real-cost-scores">
+Real Cost Scores
+</a>
+
+<a href="https://saasrealcost.com/real-cost-methodology-v2">
+Methodology
+</a>
+
+<a href="https://saasrealcost.com/about">
+About
+</a>
+
+</div>
+
+</nav>
+
+</header>
+
+<main>
+
+<div class="eyebrow">
+Tool
+</div>
+
+<h1>
+CRM Cost Calculator
+</h1>
+
+<p class="lede">
+Estimate seat-based CRM cost as your team grows. User costs, extras and annual commitment are kept separate.
+</p>
+
+<div class="calculator">
+
+<div class="grid">
+
+<div class="field">
+
+<label for="provider">
+Provider preset
+</label>
+
+<select id="provider">
+
+<option value="custom">
+Custom
+</option>
+
+<option value="pipedrive">
+Pipedrive
+</option>
+
+<option value="zoho">
+Zoho CRM
+</option>
+
+<option value="freshsales">
+Freshsales
+</option>
+
+<option value="monday">
+monday CRM
+</option>
+
+<option value="hubspot">
+HubSpot Sales Hub
+</option>
+
+</select>
+
+</div>
+
+<div class="field">
+
+<label for="users">
+Users / seats
+</label>
+
+<input
+id="users"
+type="number"
+min="1"
+step="1"
+value="5"
+>
+
+</div>
+
+<div class="field">
+
+<label for="price">
+Monthly price per user ($)
+</label>
+
+<input
+id="price"
+type="number"
+min="0"
+step="0.01"
+value="14"
+>
+
+</div>
+
+<div class="field">
+
+<label for="extras">
+Monthly extras ($)
+</label>
+
+<input
+id="extras"
+type="number"
+min="0"
+step="0.01"
+value="0"
+>
+
+</div>
+
+<div class="field">
+
+<label for="setup">
+One-time / annual setup cost ($)
+</label>
+
+<input
+id="setup"
+type="number"
+min="0"
+step="0.01"
+value="0"
+>
+
+</div>
+
+<div class="field">
+
+<label for="discount">
+Annual seat discount (%)
+</label>
+
+<input
+id="discount"
+type="number"
+min="0"
+max="100"
+step="0.1"
+value="0"
+>
+
+</div>
+
+</div>
+
+<div class="toggle">
+
+<input
+id="annual"
+type="checkbox"
+>
+
+<label for="annual">
+<strong>Show annual commitment estimate</strong>
+</label>
+
+</div>
+
+<div class="result">
+
+<div>
+Estimated monthly cost
+</div>
+
+<div
+class="big"
+id="monthly"
+>
+$0.00
+</div>
+
+<div id="annualText">
+</div>
+
+</div>
+
+<h2>
+Growth cost
+</h2>
+
+<p>
+See how the same price behaves at 5, 10 and 25 users. Monthly extras are kept separate and are not automatically discounted.
+</p>
+
+<table>
+
+<thead>
+
+<tr>
+<th>Users</th>
+<th>Monthly</th>
+<th>Annual</th>
+</tr>
+
+</thead>
+
+<tbody id="growth">
+</tbody>
+
+</table>
+
+<div class="share">
+
+<strong>
+Share this estimate
+</strong>
+
+<div id="share">
+</div>
+
+<p>
+
+<button id="copy">
+Copy link
+</button>
+
+</p>
+
+</div>
+
+</div>
+
+<div class="callout">
+
+<strong>How to use this:</strong>
+
+Enter the price basis that applies to the plan you are actually considering. The calculator does not automatically include VAT, taxes, usage-based charges, provider minimum-seat rules or implementation fees.
+
+</div>
+
+<div class="warning">
+
+<strong>Why Kit is not a preset:</strong>
+
+Kit uses subscriber tiers rather than a simple per-user CRM model. Treating its price as a per-user figure would produce a misleading estimate.
+
+</div>
+
+</main>
+
+<footer>
+
+<div class="foot">
+© 2026 SaaSRealCost · Independent SaaS cost research
+</div>
+
+</footer>
+
+<script>
+
+const presets = {
+  pipedrive:14,
+  zoho:14,
+  freshsales:9,
+  monday:10,
+  hubspot:20
+};
+
+const $ = id => document.getElementById(id);
+
+const money = number =>
+  new Intl.NumberFormat(
+    "en-US",
+    {
+      style:"currency",
+      currency:"USD"
+    }
+  ).format(number);
+
+function calculate(){
+
+  const users =
+    Math.max(
+      1,
+      parseInt($("users").value || 1,10)
+    );
+
+  const price =
+    Math.max(
+      0,
+      parseFloat($("price").value) || 0
+    );
+
+  const extras =
+    Math.max(
+      0,
+      parseFloat($("extras").value) || 0
+    );
+
+  const setup =
+    Math.max(
+      0,
+      parseFloat($("setup").value) || 0
+    );
+
+  const discount =
+    Math.min(
+      100,
+      Math.max(
+        0,
+        parseFloat($("discount").value) || 0
+      )
+    ) / 100;
+
+  const discountedSeatPrice =
+    price * (1 - discount);
+
+  const monthly =
+    discountedSeatPrice * users + extras;
+
+  const annual =
+    monthly * 12 + setup;
+
+  $("monthly").textContent =
+    money(monthly);
+
+  $("annualText").textContent =
+    "Estimated 12-month cost: " +
+    money(annual);
+
+  const growthUsers = [5,10,25];
+
+  $("growth").innerHTML =
+    growthUsers.map(function(userCount){
+
+      const monthlyGrowth =
+        discountedSeatPrice * userCount + extras;
+
+      const annualGrowth =
+        monthlyGrowth * 12 + setup;
+
+      return `
+        <tr>
+          <td>${userCount}</td>
+          <td>${money(monthlyGrowth)}</td>
+          <td>${money(annualGrowth)}</td>
+        </tr>
+      `;
+
+    }).join("");
+
+  const params =
+    new URLSearchParams({
+      p:price.toFixed(2),
+      u:String(users),
+      e:extras.toFixed(2),
+      s:setup.toFixed(2),
+      d:discount.toFixed(3),
+      a:$("annual").checked ? "1" : "0"
+    });
+
+  const shareUrl =
+    location.origin +
+    location.pathname +
+    "?" +
+    params.toString();
+
+  $("share").textContent =
+    shareUrl;
+
+  history.replaceState(
+    null,
+    "",
+    shareUrl
+  );
+}
+
+$("provider").addEventListener(
+  "change",
+  function(){
+
+    const provider =
+      $("provider").value;
+
+    if(
+      presets[provider] !== undefined
+    ){
+      $("price").value =
+        presets[provider];
+    }
+
+    calculate();
+
+  }
+);
+
+[
+  "users",
+  "price",
+  "extras",
+  "setup",
+  "discount",
+  "annual"
+].forEach(function(id){
+
+  $(id).addEventListener(
+    "input",
+    calculate
+  );
+
+});
+
+$("copy").addEventListener(
+  "click",
+  async function(){
+
+    try{
+
+      await navigator.clipboard.writeText(
+        $("share").textContent
+      );
+
+      $("copy").textContent =
+        "Copied";
+
+      setTimeout(
+        function(){
+          $("copy").textContent =
+            "Copy link";
+        },
+        1200
+      );
+
+    }catch(error){
+
+      $("copy").textContent =
+        "Copy manually";
+
+    }
+
+  }
+);
+
+const query =
+  new URLSearchParams(
+    location.search
+  );
+
+if(query.has("p"))
+  $("price").value =
+    query.get("p");
+
+if(query.has("u"))
+  $("users").value =
+    query.get("u");
+
+if(query.has("e"))
+  $("extras").value =
+    query.get("e");
+
+if(query.has("s"))
+  $("setup").value =
+    query.get("s");
+
+if(query.has("d"))
+  $("discount").value =
+    Number(query.get("d")) * 100;
+
+if(query.get("a") === "1")
+  $("annual").checked =
+    true;
+
+calculate();
+
+</script>
+
+</body>
+</html>
