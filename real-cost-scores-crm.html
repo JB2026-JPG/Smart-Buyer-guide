@@ -8,11 +8,11 @@
 
 <meta name="description" content="Compare CRM providers using the SaaSRealCost Real Cost Score™. Five providers, five criteria and one consistent scoring system.">
 
-<link rel="canonical" href="https://saasrealcost.com/real-cost-scores-crm.html">
+<link rel="canonical" href="https://saasrealcost.com/real-cost-scores-crm">
 
 <meta property="og:title" content="CRM Real Cost Scores™ — SaaSRealCost">
 <meta property="og:description" content="Compare CRM providers using the SaaSRealCost Real Cost Score™. Five providers, five criteria and one consistent scoring system.">
-<meta property="og:url" content="https://saasrealcost.com/real-cost-scores-crm.html">
+<meta property="og:url" content="https://saasrealcost.com/real-cost-scores-crm">
 <meta property="og:type" content="website">
 
 <style>
@@ -26,64 +26,223 @@
 --border:#e4e9f1;
 --gold:#c58a19;
 }
+
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--text);font-family:Arial;line-height:1.65}
-a{text-decoration:none;color:inherit}
-.container{width:min(1100px,92%);margin:auto}
-header{background:#fff;border-bottom:1px solid var(--border)}
-.nav{height:70px;display:flex;justify-content:space-between;align-items:center}
-.brand{font-size:21px;font-weight:900;color:var(--navy)}
-.brand span{color:var(--blue)}
-.navlinks{display:flex;gap:20px;font-size:14px;font-weight:700}
-.hero{padding:85px 0;background:linear-gradient(135deg,#fff,#f1f6ff)}
-.eyebrow,.kicker{font-size:12px;font-weight:900;letter-spacing:1px;text-transform:uppercase;color:var(--gold)}
-h1,h2{font-family:Georgia;color:var(--navy)}
-h1{font-size:clamp(42px,6vw,65px);line-height:1.05;margin:15px 0}
-.hero p{font-size:19px;color:var(--muted);max-width:780px}
-section{padding:65px 0}
-.table-wrap{overflow-x:auto;background:#fff;border:1px solid var(--border);border-radius:18px}
-table{border-collapse:collapse;width:100%;min-width:850px}
-th,td{padding:16px;border-bottom:1px solid var(--border);text-align:left}
-th{background:#f3f6fa;color:var(--navy);font-size:13px;text-transform:uppercase}
-tr:last-child td{border-bottom:0}
-.score{font-size:20px;font-weight:900;color:var(--green)}
-.top{background:#f0faf5}
-.cards{display:grid;grid-template-columns:repeat(5,1fr);gap:15px}
-.card{background:#fff;border:1px solid var(--border);border-radius:16px;padding:22px}
-.card h3{color:var(--navy);margin-top:0}
-.weight{font-size:27px;font-weight:900;color:var(--green)}
-.formula{background:#eef4ff;border:1px solid #d8e5ff;border-radius:18px;padding:28px}
-.provider-links{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
-.provider-link{background:#fff;border:1px solid var(--border);border-radius:15px;padding:20px}
-.provider-link strong{color:var(--navy);display:block;margin-bottom:6px}
-.provider-link a{color:var(--blue);font-weight:800}
+
+body{
+margin:0;
+background:var(--bg);
+color:var(--text);
+font-family:Arial;
+line-height:1.65
+}
+
+a{
+text-decoration:none;
+color:inherit
+}
+
+.container{
+width:min(1100px,92%);
+margin:auto
+}
+
+header{
+background:#fff;
+border-bottom:1px solid var(--border)
+}
+
+.nav{
+height:70px;
+display:flex;
+justify-content:space-between;
+align-items:center
+}
+
+.brand{
+font-size:21px;
+font-weight:900;
+color:var(--navy)
+}
+
+.brand span{
+color:var(--blue)
+}
+
+.navlinks{
+display:flex;
+gap:20px;
+font-size:14px;
+font-weight:700
+}
+
+.hero{
+padding:85px 0;
+background:linear-gradient(135deg,#fff,#f1f6ff)
+}
+
+.eyebrow,.kicker{
+font-size:12px;
+font-weight:900;
+letter-spacing:1px;
+text-transform:uppercase;
+color:var(--gold)
+}
+
+h1,h2{
+font-family:Georgia;
+color:var(--navy)
+}
+
+h1{
+font-size:clamp(42px,6vw,65px);
+line-height:1.05;
+margin:15px 0
+}
+
+.hero p{
+font-size:19px;
+color:var(--muted);
+max-width:780px
+}
+
+section{
+padding:65px 0
+}
+
+.table-wrap{
+overflow-x:auto;
+background:#fff;
+border:1px solid var(--border);
+border-radius:18px
+}
+
+table{
+border-collapse:collapse;
+width:100%;
+min-width:850px
+}
+
+th,td{
+padding:16px;
+border-bottom:1px solid var(--border);
+text-align:left
+}
+
+th{
+background:#f3f6fa;
+color:var(--navy);
+font-size:13px;
+text-transform:uppercase
+}
+
+tr:last-child td{
+border-bottom:0
+}
+
+.score{
+font-size:20px;
+font-weight:900;
+color:var(--green)
+}
+
+.top{
+background:#f0faf5
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(5,1fr);
+gap:15px
+}
+
+.card{
+background:#fff;
+border:1px solid var(--border);
+border-radius:16px;
+padding:22px
+}
+
+.card h3{
+color:var(--navy);
+margin-top:0
+}
+
+.weight{
+font-size:27px;
+font-weight:900;
+color:var(--green)
+}
+
+.formula{
+background:#eef4ff;
+border:1px solid #d8e5ff;
+border-radius:18px;
+padding:28px
+}
+
+.provider-links{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:15px
+}
+
+.provider-link{
+background:#fff;
+border:1px solid var(--border);
+border-radius:15px;
+padding:20px
+}
+
+.provider-link strong{
+color:var(--navy);
+display:block;
+margin-bottom:6px
+}
+
+.provider-link a{
+color:var(--blue);
+font-weight:800
+}
 
 .internal-links{
 background:#fff;
 border:1px solid var(--border);
 border-radius:18px;
 padding:28px;
-margin-top:35px;
+margin-top:35px
 }
 
 .internal-links h3{
 margin-top:0;
 font-family:Georgia;
-color:var(--navy);
+color:var(--navy)
 }
 
 .internal-links p{
 margin-bottom:18px;
-color:var(--muted);
+color:var(--muted)
 }
 
 .internal-links a{
 color:var(--blue);
-font-weight:800;
+font-weight:800
 }
 
-.disclosure{background:#fff;border-top:1px solid var(--border);padding:28px 0;color:var(--muted);font-size:13px}
-footer{background:#0b1935;color:#c8d2e4;padding:30px 0}
+.disclosure{
+background:#fff;
+border-top:1px solid var(--border);
+padding:28px 0;
+color:var(--muted);
+font-size:13px
+}
+
+footer{
+background:#0b1935;
+color:#c8d2e4;
+padding:30px 0
+}
+
 @media(max-width:800px){
 .navlinks{display:none}
 .cards,.provider-links{grid-template-columns:1fr}
@@ -95,11 +254,14 @@ footer{background:#0b1935;color:#c8d2e4;padding:30px 0}
 
 <header>
 <div class="container nav">
+
 <a href="/" class="brand">SaaS<span>RealCost</span></a>
+
 <nav class="navlinks">
 <a href="/">Home</a>
 <a href="#scores">Scores</a>
 </nav>
+
 </div>
 </header>
 
@@ -118,7 +280,7 @@ see what happens beyond the advertised starting price.
 </p>
 
 <p>
-<strong>Current methodology version: 1.0</strong><br>
+<strong>Current methodology version: 2.0</strong><br>
 Prices and provider information checked September 15, 2026.
 </p>
 
@@ -245,7 +407,7 @@ See how SaaSRealCost applies the same methodology across providers and
 categories.
 </p>
 
-<a href="https://saasrealcost.com/real-cost-methodology-v2">
+<a href="/real-cost-methodology-v2">
 Read the full Real Cost Score™ methodology →
 </a>
 
@@ -323,7 +485,7 @@ How difficult is it to cancel, export data and move to another provider?
 Clear pricing and strong transparency, with additional functionality
 available through add-ons.
 <br><br>
-<a href="/pipedrive-real-cost.html">Read the full research →</a>
+<a href="/pipedrive-real-cost">Read the full research →</a>
 </div>
 
 <div class="provider-link">
@@ -331,7 +493,7 @@ available through add-ons.
 Strong value potential and detailed pricing tools, but add-ons and
 support can affect the final cost.
 <br><br>
-<a href="/zoho-crm-real-cost.html">Read the full research →</a>
+<a href="/zoho-crm-real-cost">Read the full research →</a>
 </div>
 
 <div class="provider-link">
@@ -339,7 +501,7 @@ support can affect the final cost.
 Competitive entry pricing and clear plans, with paid AI and document
 add-ons.
 <br><br>
-<a href="/freshsales-real-cost.html">Read the full research →</a>
+<a href="/freshsales-real-cost">Read the full research →</a>
 </div>
 
 <div class="provider-link">
@@ -347,7 +509,7 @@ add-ons.
 Flexible platform, but minimum users, plan limits and advanced features
 matter.
 <br><br>
-<a href="/monday-crm-real-cost.html">Read the full research →</a>
+<a href="/monday-crm-real-cost">Read the full research →</a>
 </div>
 
 <div class="provider-link">
@@ -355,7 +517,7 @@ matter.
 Excellent entry point, but higher-tier growth and onboarding costs can
 change the economics.
 <br><br>
-<a href="/hubspot-real-cost.html">Read the full research →</a>
+<a href="/hubspot-real-cost">Read the full research →</a>
 </div>
 
 </div>
@@ -370,7 +532,7 @@ See how different CRM pricing structures can affect the real cost as your
 team, usage and requirements grow.
 </p>
 
-<a href="https://saasrealcost.com/crm-real-cost-scenarios">
+<a href="/crm-real-cost-scenarios">
 Explore CRM Real Cost Scenarios →
 </a>
 
@@ -412,7 +574,7 @@ hidden extras, contract terms and exit conditions before committing to a
 SaaS provider.
 </p>
 
-<a href="https://saasrealcost.com/saas-buying-commitment-checklist">
+<a href="/saas-buying-commitment-checklist">
 Open the SaaS Buying Commitment Checklist →
 </a>
 
@@ -440,7 +602,7 @@ by the providers.
 
 <br><br>
 
-<a href="https://saasrealcost.com/pricing-change-log"
+<a href="/pricing-change-log"
 style="color:var(--blue);font-weight:800;">
 View the SaaS Pricing Change Log →
 </a>
@@ -451,9 +613,11 @@ View the SaaS Pricing Change Log →
 
 
 <footer>
+
 <div class="container">
 © 2026 SaaSRealCost · Independent SaaS cost research.
 </div>
+
 </footer>
 
 </body>
