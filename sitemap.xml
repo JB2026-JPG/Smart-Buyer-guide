@@ -101,6 +101,8 @@
     <changefreq>monthly</changefreq>
   </url>
 
+  <!-- REAL COST SCORE DATABASE -->
+
   <url>
     <loc>https://saasrealcost.com/real-cost-scores</loc>
     <changefreq>monthly</changefreq>
@@ -110,6 +112,8 @@
     <loc>https://saasrealcost.com/real-cost-scores-crm</loc>
     <changefreq>monthly</changefreq>
   </url>
+
+  <!-- CRM PROVIDER RESEARCH -->
 
   <url>
     <loc>https://saasrealcost.com/pipedrive-real-cost</loc>
@@ -136,6 +140,8 @@
     <changefreq>monthly</changefreq>
   </url>
 
+  <!-- CRM RESEARCH / METHODOLOGY -->
+
   <url>
     <loc>https://saasrealcost.com/crm-real-cost-scenarios</loc>
     <changefreq>monthly</changefreq>
@@ -156,10 +162,51 @@
     <changefreq>monthly</changefreq>
   </url>
 
+  <!-- CRM CALCULATOR -->
+
   <url>
     <loc>https://saasrealcost.com/crm-cost-calculator</loc>
     <changefreq>monthly</changefreq>
   </url>
+
+  <!-- CANCELLATION / RENEWAL RESEARCH -->
+
+  <url>
+    <loc>https://saasrealcost.com/hubspot-cancellation-hidden-fees</loc>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://saasrealcost.com/pipedrive-cancellation-hidden-fees</loc>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://saasrealcost.com/zoho-crm-cancellation-hidden-fees</loc>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://saasrealcost.com/freshsales-cancellation-hidden-fees</loc>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://saasrealcost.com/monday-cancellation-hidden-fees</loc>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://saasrealcost.com/bluehost-renewal-hidden-fees</loc>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://saasrealcost.com/kit-cancellation-hidden-fees</loc>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <!-- OTHER RESEARCH -->
 
   <url>
     <loc>https://saasrealcost.com/how-to-start-a-blog-with-bluehost</loc>
