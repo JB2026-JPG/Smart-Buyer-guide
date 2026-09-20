@@ -1,476 +1,442 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-
-<title>Real Cost Report — SaaSRealCost</title>
-
-<meta name="description"
-content="Calculate the real cost of CRM software using currently verified provider pricing, team growth, multi-year costs and the Real Cost Score™.">
-
-<link rel="canonical"
-href="https://saasrealcost.com/real-cost-report.html">
-
-<meta property="og:title"
-content="Real Cost Report — SaaSRealCost">
-
-<meta property="og:description"
-content="See what your CRM could really cost as your team grows.">
-
-<meta property="og:url"
-content="https://saasrealcost.com/real-cost-report.html">
-
-<style>
-:root{
-  --blue:#2864d7;
-  --blue-dark:#1d4fae;
-  --navy:#172033;
-  --text:#263247;
-  --muted:#667085;
-  --green:#198754;
-  --green-dark:#146c43;
-  --bg:#f7f9fc;
-  --border:#e2e7ef;
-  --soft-blue:#eef4ff;
-  --soft-green:#eef9f3;
-  --white:#fff;
-  --danger:#b42318;
-  --soft-red:#fff1f0;
-}
-
-*{
-  box-sizing:border-box;
-}
-
-html{
-  scroll-behavior:smooth;
-}
-
-body{
-  margin:0;
-  font-family:Inter,Arial,sans-serif;
-  background:var(--bg);
-  color:var(--text);
-  line-height:1.6;
-}
-
-header{
-  position:sticky;
-  top:0;
-  z-index:50;
-  background:rgba(255,255,255,.97);
-  backdrop-filter:blur(10px);
-  border-bottom:1px solid var(--border);
-}
-
-.nav{
-  max-width:1120px;
-  width:92%;
-  min-height:68px;
-  margin:auto;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:20px;
-}
-
-.logo{
-  color:var(--navy);
-  text-decoration:none;
-  font-size:19px;
-  font-weight:800;
-}
-
-.logo span{
-  color:var(--blue);
-}
-
-.navlinks{
-  display:flex;
-  align-items:center;
-  gap:22px;
-}
-
-.navlinks a{
-  color:var(--text);
-  text-decoration:none;
-  font-size:14px;
-  font-weight:650;
-}
-
-main{
-  max-width:1120px;
-  width:92%;
-  margin:auto;
-}
-
-.hero{
-  text-align:center;
-  padding:72px 0 42px;
-}
-
-.live-badge{
-  display:inline-flex;
-  align-items:center;
-  gap:8px;
-  padding:7px 12px;
-  margin-bottom:20px;
-  border-radius:999px;
-  background:var(--soft-green);
-  color:var(--green-dark);
-  font-size:13px;
-  font-weight:800;
-}
-
-.live-dot{
-  width:8px;
-  height:8px;
-  border-radius:50%;
-  background:var(--green);
-}
-
-.hero h1{
-  max-width:820px;
-  margin:0 auto 18px;
-  color:var(--navy);
-  font-size:clamp(35px,5vw,58px);
-  line-height:1.05;
-  letter-spacing:-1.6px;
-}
-
-.hero p{
-  max-width:720px;
-  margin:0 auto;
-  color:var(--muted);
-  font-size:18px;
-}
-
-.card{
-  background:var(--white);
-  border:1px solid var(--border);
-  border-radius:16px;
-  padding:28px;
-  box-shadow:0 5px 20px rgba(23,32,51,.045);
-}
-
-.calculator{
-  max-width:900px;
-  margin:0 auto 48px;
-}
-
-.calculator h2{
-  margin-top:0;
-  color:var(--navy);
-}
-
-.small{
-  color:var(--muted);
-  font-size:13px;
-}
-
-.grid{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:18px;
-  margin-top:22px;
-}
-
-.field{
-  display:flex;
-  flex-direction:column;
-  gap:7px;
-}
-
-.field label{
-  color:var(--navy);
-  font-size:14px;
-  font-weight:750;
-}
-
-select,
-input{
-  width:100%;
-  min-height:48px;
-  padding:0 13px;
-  border:1px solid #cfd6e2;
-  border-radius:10px;
-  background:white;
-  color:var(--text);
-  font:inherit;
-}
-
-select:focus,
-input:focus{
-  outline:3px solid rgba(40,100,215,.12);
-  border-color:var(--blue);
-}
-
-.actions{
-  display:flex;
-  flex-wrap:wrap;
-  gap:12px;
-  margin-top:22px;
-}
-
-button{
-  min-height:48px;
-  padding:0 20px;
-  border-radius:10px;
-  border:0;
-  font:inherit;
-  font-weight:800;
-  cursor:pointer;
-}
-
-.primary{
-  background:var(--green);
-  color:white;
-}
-
-.primary:hover{
-  background:var(--green-dark);
-}
-
-.secondary{
-  background:white;
-  color:var(--blue-dark);
-  border:1px solid var(--border);
-}
-
-button:disabled{
-  opacity:.6;
-  cursor:wait;
-}
-
-.status{
-  display:none;
-  margin-top:18px;
-  padding:13px 15px;
-  border-radius:10px;
-  background:var(--soft-blue);
-  color:var(--blue-dark);
-  font-size:14px;
-}
-
-.status.show{
-  display:block;
-}
-
-.status.error{
-  background:var(--soft-red);
-  color:var(--danger);
-}
-
-#report{
-  display:none;
-  margin-bottom:75px;
-}
-
-.report-head{
-  margin-bottom:24px;
-}
-
-.report-head h2{
-  margin:0 0 10px;
-  color:var(--navy);
-  font-size:32px;
-  line-height:1.15;
-}
-
-.verified{
-  display:inline-flex;
-  align-items:center;
-  gap:7px;
-  padding:6px 10px;
-  border-radius:8px;
-  background:var(--soft-green);
-  color:var(--green-dark);
-  font-size:13px;
-  font-weight:750;
-}
-
-.metrics{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:16px;
-  margin-bottom:20px;
-}
-
-.metric{
-  padding:22px;
-  background:white;
-  border:1px solid var(--border);
-  border-radius:14px;
-}
-
-.metric-label{
-  color:var(--muted);
-  font-size:13px;
-  font-weight:700;
-}
-
-.metric-value{
-  margin-top:5px;
-  color:var(--navy);
-  font-size:28px;
-  font-weight:850;
-}
-
-.report-section{
-  margin-top:20px;
-}
-
-.report-section h3{
-  margin-top:0;
-  color:var(--navy);
-}
-
-.table-wrap{
-  overflow-x:auto;
-}
-
-table{
-  width:100%;
-  min-width:620px;
-  border-collapse:collapse;
-}
-
-th,
-td{
-  padding:13px 12px;
-  border-bottom:1px solid var(--border);
-  text-align:left;
-}
-
-th{
-  background:#fafbfc;
-  color:var(--navy);
-  font-size:13px;
-}
-
-.score{
-  display:grid;
-  gap:15px;
-}
-
-.score-row{
-  display:grid;
-  grid-template-columns:175px 1fr 45px;
-  align-items:center;
-  gap:12px;
-}
-
-.bar{
-  height:9px;
-  overflow:hidden;
-  border-radius:99px;
-  background:#e8edf4;
-}
-
-.bar span{
-  display:block;
-  height:100%;
-  background:var(--blue);
-}
-
-.compare-grid{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:14px;
-}
-
-.provider-card{
-  padding:18px;
-  background:white;
-  border:1px solid var(--border);
-  border-radius:13px;
-}
-
-.provider-card h4{
-  margin:0 0 5px;
-  color:var(--navy);
-}
-
-.provider-price{
-  color:var(--blue-dark);
-  font-size:22px;
-  font-weight:850;
-}
-
-.unverified{
-  color:var(--danger);
-  font-weight:800;
-}
-
-.notice{
-  padding:16px;
-  border-radius:10px;
-  background:var(--soft-blue);
-  font-size:14px;
-}
-
-.source{
-  word-break:break-word;
-}
-
-.source a{
-  color:var(--blue-dark);
-}
-
-.sharebox{
-  display:flex;
-  gap:10px;
-}
-
-.sharebox input{
-  flex:1;
-}
-
-footer{
-  padding:35px 0;
-  border-top:1px solid var(--border);
-  background:white;
-  color:var(--muted);
-  font-size:13px;
-}
-
-.footer-inner{
-  max-width:1120px;
-  width:92%;
-  margin:auto;
-}
-
-@media(max-width:760px){
-
-  .navlinks{
-    display:none;
-  }
-
-  .grid,
-  .metrics,
-  .compare-grid{
-    grid-template-columns:1fr;
-  }
-
-  .score-row{
-    grid-template-columns:1fr;
-    gap:5px;
-  }
-
-  .card{
-    padding:20px;
-  }
-
-  .hero{
-    padding-top:50px;
-  }
-
-  .sharebox{
-    flex-direction:column;
-  }
-}
-</style>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Real Cost Reporter™ — SaaSRealCost</title>
+
+  <meta
+    name="description"
+    content="See the latest verified SaaS pricing data collected by SaaSRealCost."
+  >
+
+  <link
+    rel="canonical"
+    href="https://saasrealcost.com/real-cost-report"
+  >
+
+  <meta
+    property="og:title"
+    content="Real Cost Reporter™ — SaaSRealCost"
+  >
+
+  <meta
+    property="og:description"
+    content="Latest verified SaaS pricing data from SaaSRealCost."
+  >
+
+  <meta
+    property="og:url"
+    content="https://saasrealcost.com/real-cost-report"
+  >
+
+  <style>
+    :root {
+      --blue: #2864d7;
+      --navy: #172033;
+      --green: #198754;
+      --red: #c0392b;
+      --bg: #f7f9fc;
+      --white: #ffffff;
+      --border: #e2e7ef;
+      --muted: #667085;
+      --shadow: 0 8px 24px rgba(23, 32, 51, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Arial,
+        sans-serif;
+      background: var(--bg);
+      color: var(--navy);
+      line-height: 1.6;
+    }
+
+    header {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 20;
+    }
+
+    .nav {
+      max-width: 1180px;
+      margin: auto;
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      color: var(--navy);
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 20px;
+    }
+
+    .logo span {
+      color: var(--blue);
+    }
+
+    nav {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: var(--navy);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      color: var(--blue);
+    }
+
+    main {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 50px 20px 70px;
+    }
+
+    .hero {
+      text-align: center;
+      max-width: 850px;
+      margin: 0 auto 40px;
+    }
+
+    .eyebrow {
+      color: var(--blue);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      margin: 0 0 15px;
+      font-size: clamp(32px, 6vw, 52px);
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+    }
+
+    .hero p {
+      color: var(--muted);
+      font-size: 18px;
+      margin: 0 auto;
+      max-width: 720px;
+    }
+
+    .status {
+      max-width: 900px;
+      margin: 0 auto 30px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 16px 18px;
+      box-shadow: var(--shadow);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .status-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+    }
+
+    .status-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--green);
+      flex: 0 0 auto;
+    }
+
+    .status-dot.error {
+      background: var(--red);
+    }
+
+    .status-text {
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .provider-name {
+      font-size: 22px;
+      font-weight: 800;
+      margin: 0 0 5px;
+    }
+
+    .provider-status {
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .verified {
+      color: var(--green);
+    }
+
+    .unverified {
+      color: var(--red);
+    }
+
+    .price-label {
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 3px;
+    }
+
+    .price {
+      font-size: 36px;
+      line-height: 1.1;
+      font-weight: 850;
+      margin-bottom: 5px;
+    }
+
+    .price small {
+      font-size: 15px;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .checked {
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 18px;
+    }
+
+    .source {
+      font-size: 13px;
+      margin-top: 12px;
+    }
+
+    .source a {
+      color: var(--blue);
+      text-decoration: none;
+      word-break: break-word;
+    }
+
+    .source a:hover {
+      text-decoration: underline;
+    }
+
+    .empty {
+      background: #f8fafc;
+      border: 1px dashed var(--border);
+      border-radius: 10px;
+      padding: 16px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .comparison {
+      margin-top: 45px;
+    }
+
+    .comparison h2 {
+      margin-bottom: 8px;
+      font-size: 28px;
+    }
+
+    .comparison-intro {
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      box-shadow: var(--shadow);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 650px;
+    }
+
+    th,
+    td {
+      padding: 15px 16px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+
+    th {
+      background: #f8fafc;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+
+    td {
+      font-size: 14px;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    .projection {
+      margin-top: 45px;
+    }
+
+    .projection h2 {
+      margin-bottom: 8px;
+      font-size: 28px;
+    }
+
+    .projection-intro {
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+
+    .projection-grid {
+      display: grid;
+      grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+      gap: 15px;
+    }
+
+    .projection-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 18px;
+      box-shadow: var(--shadow);
+    }
+
+    .projection-card span {
+      display: block;
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 5px;
+    }
+
+    .projection-card strong {
+      font-size: 22px;
+    }
+
+    .notice {
+      margin-top: 40px;
+      background: #eef4ff;
+      border: 1px solid #d8e5ff;
+      border-radius: 14px;
+      padding: 20px;
+      color: var(--navy);
+    }
+
+    .notice strong {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      background: var(--white);
+      padding: 30px 20px;
+    }
+
+    .footer-inner {
+      max-width: 1180px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .loading {
+      text-align: center;
+      padding: 50px 20px;
+      color: var(--muted);
+    }
+
+    .error-box {
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 18px;
+      background: #fff4f2;
+      border: 1px solid #f2c7c2;
+      border-radius: 12px;
+      color: #8b2d24;
+    }
+
+    @media (max-width: 800px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .projection-grid {
+        grid-template-columns:
+          repeat(2, minmax(0, 1fr));
+      }
+
+      nav {
+        display: none;
+      }
+    }
+
+    @media (max-width: 500px) {
+      main {
+        padding-top: 35px;
+      }
+
+      .projection-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .card {
+        padding: 20px;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -478,14 +444,18 @@ footer{
 <header>
   <div class="nav">
 
-    <a class="logo" href="/">
-      SaaS<span>Real</span>Cost
+    <a
+      class="logo"
+      href="https://saasrealcost.com/"
+    >
+      SaaS<span>RealCost</span>
     </a>
 
-    <nav class="navlinks">
-      <a href="/real-cost-scores.html">Real Cost Score™</a>
-      <a href="/guide-crm.html">CRM Guide</a>
-      <a href="/">Home</a>
+    <nav>
+      <a href="/real-cost-scores">Real Cost Score</a>
+      <a href="/guides">Guides</a>
+      <a href="/calculator">Calculator</a>
+      <a href="/about">About</a>
     </nav>
 
   </div>
@@ -493,177 +463,68 @@ footer{
 
 <main>
 
-<section class="hero">
+  <section class="hero">
 
-  <div class="live-badge">
-    <span class="live-dot"></span>
-    Live pricing verification
-  </div>
-
-  <h1>
-    What will your CRM really cost?
-  </h1>
-
-  <p>
-    Build a personalised 1–5 year cost report using
-    currently verified pricing from official provider sources.
-  </p>
-
-</section>
-
-<section class="calculator card">
-
-  <h2>Build your Real Cost Report</h2>
-
-  <p class="small">
-    Prices are checked when you generate the report.
-    SaaSRealCost does not silently use an old price when a
-    current provider price cannot be verified.
-  </p>
-
-  <div class="grid">
-
-    <div class="field">
-      <label for="provider">CRM provider</label>
-
-      <select id="provider">
-        <option value="pipedrive">Pipedrive</option>
-        <option value="zoho">Zoho CRM</option>
-        <option value="freshsales">Freshsales</option>
-        <option value="monday">monday CRM</option>
-        <option value="hubspot">HubSpot Sales Hub</option>
-      </select>
+    <div class="eyebrow">
+      Independent pricing data
     </div>
 
-    <div class="field">
-      <label for="plan">Plan</label>
+    <h1>
+      Real Cost Reporter™
+    </h1>
 
-      <select id="plan">
-        <option value="">Loading live pricing...</option>
-      </select>
+    <p>
+      See the latest verified pricing data collected by
+      SaaSRealCost. Prices are automatically checked and
+      updated when the system can verify the data with
+      sufficient confidence.
+    </p>
+
+  </section>
+
+  <div
+    id="status"
+    class="status"
+  >
+    <div class="status-left">
+
+      <span
+        id="statusDot"
+        class="status-dot"
+      ></span>
+
+      <span id="statusTitle">
+        Loading pricing data...
+      </span>
+
     </div>
-
-    <div class="field">
-      <label for="users">Starting team size</label>
-
-      <input
-        id="users"
-        type="number"
-        min="1"
-        max="500"
-        value="5">
-    </div>
-
-    <div class="field">
-      <label for="growth">
-        Expected annual team growth (%)
-      </label>
-
-      <input
-        id="growth"
-        type="number"
-        min="0"
-        max="200"
-        value="20">
-    </div>
-
-    <div class="field">
-      <label for="years">
-        Projection period
-      </label>
-
-      <select id="years">
-        <option value="1">1 year</option>
-        <option value="2">2 years</option>
-        <option value="3">3 years</option>
-        <option value="4">4 years</option>
-        <option value="5" selected>5 years</option>
-      </select>
-    </div>
-
-  </div>
-
-  <div class="actions">
-
-    <button
-      class="primary"
-      id="generate">
-      Check Live Prices &amp; Generate Report
-    </button>
-
-    <button
-      class="secondary"
-      id="reset">
-      Reset
-    </button>
-
-  </div>
-
-  <div id="status" class="status"></div>
-
-</section>
-
-<section id="report">
-
-  <div class="report-head">
-
-    <h2 id="reportTitle"></h2>
 
     <div
-      id="verified"
-      class="verified">
+      id="statusText"
+      class="status-text"
+    >
+      Connecting to the pricing service.
     </div>
-
   </div>
 
-  <div class="metrics">
-
-    <div class="metric">
-      <div class="metric-label">
-        Current verified monthly price
-      </div>
-
-      <div
-        class="metric-value"
-        id="monthlyPrice">
-        —
-      </div>
+  <section
+    id="providerGrid"
+    class="grid"
+  >
+    <div class="loading">
+      Loading verified pricing data...
     </div>
+  </section>
 
-    <div class="metric">
-      <div class="metric-label">
-        Year 1 estimated cost
-      </div>
+  <section class="comparison">
 
-      <div
-        class="metric-value"
-        id="yearOne">
-        —
-      </div>
-    </div>
+    <h2>
+      Pricing comparison
+    </h2>
 
-    <div class="metric">
-      <div class="metric-label">
-        Total projection
-      </div>
-
-      <div
-        class="metric-value"
-        id="totalCost">
-        —
-      </div>
-    </div>
-
-  </div>
-
-  <section class="report-section card">
-
-    <h3>Cost Map</h3>
-
-    <p class="small">
-      The projection applies the currently verified price
-      to your expected team growth. It does not predict
-      future provider price increases.
+    <p class="comparison-intro">
+      Comparison based only on verified pricing data currently
+      stored by the SaaSRealCost pricing system.
     </p>
 
     <div class="table-wrap">
@@ -672,14 +533,20 @@ footer{
 
         <thead>
           <tr>
-            <th>Year</th>
-            <th>Estimated users</th>
-            <th>Monthly cost</th>
-            <th>Annual cost</th>
+            <th>Provider</th>
+            <th>Verified price</th>
+            <th>Currency</th>
+            <th>Price checked</th>
           </tr>
         </thead>
 
-        <tbody id="costTable"></tbody>
+        <tbody id="comparisonBody">
+          <tr>
+            <td colspan="4">
+              Loading...
+            </td>
+          </tr>
+        </tbody>
 
       </table>
 
@@ -687,964 +554,758 @@ footer{
 
   </section>
 
-  <section class="report-section card">
+  <section class="projection">
 
-    <h3>Breakpoint &amp; cost notes</h3>
+    <h2>
+      1–5 year price projection
+    </h2>
 
-    <div id="breakpoints"></div>
-
-  </section>
-
-  <section class="report-section card">
-
-    <h3>Real Cost Score™</h3>
-
-    <p class="small">
-      SaaSRealCost's five-factor framework:
-      starting price, growth cost, hidden extras,
-      cost transparency and ease of exit.
+    <p class="projection-intro">
+      Simple projection based on the currently verified monthly
+      price. This does not predict future provider price changes.
     </p>
-
-    <div id="score" class="score"></div>
-
-  </section>
-
-  <section class="report-section card">
-
-    <h3>Five-provider comparison</h3>
-
-    <p class="small">
-      The comparison uses the same starting team size
-      and growth assumption. Providers are only shown
-      with prices that could be verified from their
-      current source.
-    </p>
-
-    <div id="comparison" class="compare-grid"></div>
-
-  </section>
-
-  <section class="report-section card">
-
-    <h3>Your shareable report</h3>
-
-    <p class="small">
-      Your settings are encoded in the URL.
-      No account is required.
-    </p>
-
-    <div class="sharebox">
-
-      <input
-        id="shareUrl"
-        readonly>
-
-      <button
-        class="primary"
-        id="copyUrl">
-        Copy URL
-      </button>
-
-    </div>
-
-  </section>
-
-  <section class="report-section card">
-
-    <h3>Pricing source &amp; methodology</h3>
 
     <div
-      id="sourceInfo"
-      class="source">
-    </div>
-
-    <div
-      class="notice"
-      style="margin-top:15px">
-
-      SaaSRealCost retrieves pricing from provider
-      sources at the time the report is generated.
-      Pricing can vary by country, currency, taxes,
-      promotions, billing frequency, seat minimums
-      and product configuration.
-
-      The report is therefore an estimate based on the
-      verified pricing returned at calculation time.
-
+      id="projectionGrid"
+      class="projection-grid"
+    >
+      <div class="loading">
+        Loading...
+      </div>
     </div>
 
   </section>
 
-</section>
+  <div class="notice">
+
+    <strong>
+      How the pricing data works
+    </strong>
+
+    SaaSRealCost automatically checks provider pricing pages.
+    A new price is stored only when the automated verification
+    succeeds. If a check fails or the price cannot be verified
+    with sufficient confidence, the previously verified price
+    remains unchanged.
+
+    <br><br>
+
+    Pricing can change at any time. Always confirm the final
+    price with the provider before purchasing.
+
+  </div>
 
 </main>
 
 <footer>
 
   <div class="footer-inner">
-    © 2026 SaaSRealCost. Independent software cost research.
+
+    <div>
+      © 2026 SaaSRealCost
+    </div>
+
+    <div>
+      Independent research. Affiliate commissions may be earned
+      from some providers.
+    </div>
+
   </div>
 
 </footer>
 
 <script>
 
-const API_URL="/api/pricing";
+  /*
+   * ============================================================
+   * SaaSRealCost Real Cost Reporter
+   * ============================================================
+   *
+   * Cloudflare Worker:
+   *
+   * https://saasrealcost-pricing.smart-buyer-guide.workers.dev/
+   *
+   * The Reporter reads the verified data stored by the Worker.
+   *
+   * No current prices are hardcoded in this file.
+   * ============================================================
+   */
 
-const PROVIDER_NAMES={
-  pipedrive:"Pipedrive",
-  zoho:"Zoho CRM",
-  freshsales:"Freshsales",
-  monday:"monday CRM",
-  hubspot:"HubSpot Sales Hub"
-};
+  const API_BASE_URL =
+    "https://saasrealcost-pricing.smart-buyer-guide.workers.dev";
 
-/*
-  Existing SaaSRealCost scoring framework.
-  These are NOT provider prices.
-*/
+  const API_URL =
+    API_BASE_URL + "/api/pricing";
 
-const SCORE_DATA={
 
-  pipedrive:{
-    "Starting price":9,
-    "Growth cost":9,
-    "Hidden extras":8,
-    "Cost transparency":9,
-    "Ease of exit":9
-  },
+  const PROVIDER_ORDER = [
+    "pipedrive",
+    "zoho",
+    "freshsales",
+    "monday",
+    "hubspot"
+  ];
 
-  zoho:{
-    "Starting price":9,
-    "Growth cost":9,
-    "Hidden extras":8,
-    "Cost transparency":8,
-    "Ease of exit":8
-  },
 
-  freshsales:{
-    "Starting price":9,
-    "Growth cost":8,
-    "Hidden extras":8,
-    "Cost transparency":9,
-    "Ease of exit":8
-  },
+  const PROVIDER_NAMES = {
+    pipedrive: "Pipedrive",
+    zoho: "Zoho CRM",
+    freshsales: "Freshsales",
+    monday: "monday CRM",
+    hubspot: "HubSpot Sales Hub"
+  };
 
-  monday:{
-    "Starting price":8,
-    "Growth cost":8,
-    "Hidden extras":7,
-    "Cost transparency":8,
-    "Ease of exit":7
-  },
 
-  hubspot:{
-    "Starting price":7,
-    "Growth cost":6,
-    "Hidden extras":6,
-    "Cost transparency":7,
-    "Ease of exit":7
+  function escapeHtml(value) {
+
+    return String(value ?? "")
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#039;");
+
   }
 
-};
 
-const $=id=>document.getElementById(id);
+  function formatDate(dateString) {
 
-let liveData=null;
-
-function money(value,currency){
-
-  if(
-    value===null ||
-    value===undefined ||
-    !Number.isFinite(value)
-  ){
-    return "Not verified";
-  }
-
-  return new Intl.NumberFormat(
-    "en-US",
-    {
-      style:"currency",
-      currency:currency || "USD",
-      maximumFractionDigits:2
+    if (!dateString) {
+      return "Not available";
     }
-  ).format(value);
-}
 
-function status(message,type=""){
+    const date = new Date(dateString);
 
-  const box=$("status");
+    if (Number.isNaN(date.getTime())) {
+      return "Not available";
+    }
 
-  box.textContent=message;
-
-  box.className=
-    "status show "+type;
-}
-
-function clearStatus(){
-
-  $("status").className="status";
-}
-
-async function getLivePricing(){
-
-  const response=
-    await fetch(
-      API_URL+
-      "?provider=all&v="+
-      Date.now(),
+    return new Intl.DateTimeFormat(
+      "en-US",
       {
-        method:"GET",
-        cache:"no-store",
-        headers:{
-          "Accept":"application/json"
-        }
+        month: "long",
+        year: "numeric",
+        timeZone: "UTC"
       }
-    );
+    ).format(date);
 
-  if(!response.ok){
-
-    throw new Error(
-      "Live pricing service returned HTTP "+
-      response.status+"."
-    );
   }
 
-  const data=
-    await response.json();
 
-  if(
-    !data ||
-    data.live!==true ||
-    !data.providers
-  ){
+  function formatFullDate(dateString) {
 
-    throw new Error(
-      "Live pricing could not be verified."
+    if (!dateString) {
+      return "Not available";
+    }
+
+    const date = new Date(dateString);
+
+    if (Number.isNaN(date.getTime())) {
+      return "Not available";
+    }
+
+    return new Intl.DateTimeFormat(
+      "en-US",
+      {
+        dateStyle: "medium",
+        timeStyle: "short",
+        timeZone: "UTC"
+      }
+    ).format(date);
+
+  }
+
+
+  function validPrice(value) {
+
+    return (
+      typeof value === "number" &&
+      Number.isFinite(value) &&
+      value > 0
     );
+
   }
 
-  return data;
-}
 
-function populatePlans(){
+  function getVerifiedPrice(providerData) {
 
-  const provider=
-    $("provider").value;
+    if (!providerData) {
+      return null;
+    }
 
-  const data=
-    liveData?.providers?.[provider];
+    if (providerData.verified !== true) {
+      return null;
+    }
 
-  const select=
-    $("plan");
+    if (
+      !Array.isArray(providerData.prices) ||
+      providerData.prices.length === 0
+    ) {
+      return null;
+    }
 
-  select.innerHTML="";
+    /*
+     * The Worker is responsible for deciding which price is
+     * sufficiently verified before storing it.
+     *
+     * The Reporter therefore does not invent or hardcode a
+     * current price.
+     */
 
-  if(
-    !data ||
-    data.verified!==true ||
-    !Array.isArray(data.plans) ||
-    !data.plans.length
-  ){
+    const price = providerData.prices[0];
 
-    const option=
-      document.createElement("option");
+    if (!validPrice(price)) {
+      return null;
+    }
 
-    option.value="";
+    return price;
 
-    option.textContent=
-      "No verified plans available";
-
-    select.appendChild(option);
-
-    return;
   }
 
-  data.plans.forEach(
-    plan=>{
 
-      const option=
-        document.createElement("option");
+  function formatMoney(
+    amount,
+    currency = "USD"
+  ) {
 
-      option.value=plan.id;
+    if (!validPrice(amount)) {
+      return "—";
+    }
 
-      option.textContent=
-        plan.name+
-        " — "+
-        money(
-          plan.monthly,
-          plan.currency
-        )+
-        "/seat/month";
+    try {
 
-      select.appendChild(option);
+      return new Intl.NumberFormat(
+        "en-US",
+        {
+          style: "currency",
+          currency: currency
+        }
+      ).format(amount);
+
+    } catch {
+
+      return "$" + amount.toFixed(2);
 
     }
-  );
-}
 
-function selectedPlan(){
-
-  const provider=
-    $("provider").value;
-
-  const planId=
-    $("plan").value;
-
-  const data=
-    liveData?.providers?.[provider];
-
-  if(!data) return null;
-
-  return data.plans.find(
-    plan=>plan.id===planId
-  ) || null;
-}
-
-function usersForYear(
-  start,
-  growth,
-  year
-){
-
-  return Math.max(
-    1,
-    Math.ceil(
-      start*
-      Math.pow(
-        1+(growth/100),
-        year-1
-      )
-    )
-  );
-}
-
-function renderScore(provider){
-
-  const scores=
-    SCORE_DATA[provider];
-
-  if(!scores){
-
-    $("score").innerHTML=
-      "<p>Score unavailable.</p>";
-
-    return;
   }
 
-  $("score").innerHTML=
-    Object.entries(scores)
-      .map(
-        ([name,value])=>`
 
-          <div class="score-row">
+  function buildProviderCard(
+    providerKey,
+    data
+  ) {
 
-            <strong>${name}</strong>
+    const providerName =
+      PROVIDER_NAMES[providerKey] ||
+      data?.name ||
+      providerKey;
 
-            <div class="bar">
-              <span
-                style="width:${value*10}%">
-              </span>
-            </div>
+    const price =
+      getVerifiedPrice(data);
 
-            <strong>${value}/10</strong>
+    if (!price) {
 
+      return `
+        <article class="card">
+
+          <h2 class="provider-name">
+            ${escapeHtml(providerName)}
+          </h2>
+
+          <div class="provider-status unverified">
+            No verified price available
           </div>
 
-        `
-      )
-      .join("");
-}
-
-function renderBreakpoints(
-  provider,
-  plan,
-  data
-){
-
-  const notes=[];
-
-  if(plan.minimumSeats){
-
-    notes.push(
-      "<strong>Plan minimum:</strong> "+
-      plan.minimumSeats+
-      " seats."
-    );
-  }
-
-  if(data.minimumSeats){
-
-    notes.push(
-      "<strong>Provider minimum:</strong> "+
-      data.minimumSeats+
-      " seats."
-    );
-  }
-
-  if(plan.notes){
-
-    notes.push(
-      "<strong>Plan note:</strong> "+
-      plan.notes
-    );
-  }
-
-  if(data.notes){
-
-    notes.push(
-      data.notes
-    );
-  }
-
-  if(!notes.length){
-
-    notes.push(
-      "No additional pricing breakpoint was returned by the live source."
-    );
-  }
-
-  $("breakpoints").innerHTML=
-    "<ul>"+
-    notes
-      .map(note=>"<li>"+note+"</li>")
-      .join("")+
-    "</ul>";
-}
-
-function renderComparison(
-  start,
-  growth
-){
-
-  const container=
-    $("comparison");
-
-  container.innerHTML="";
-
-  Object.entries(
-    liveData.providers
-  ).forEach(
-    ([id,data])=>{
-
-      const card=
-        document.createElement("div");
-
-      card.className=
-        "provider-card";
-
-      if(
-        data.verified!==true ||
-        !data.plans?.length
-      ){
-
-        card.innerHTML=`
-
-          <h4>
-            ${PROVIDER_NAMES[id]}
-          </h4>
-
-          <div class="unverified">
-            Price not verified
+          <div class="empty">
+            The pricing system does not currently have
+            verified pricing data for this provider.
           </div>
 
-          <p class="small">
-            The current official pricing source
-            could not be reliably interpreted.
-            No old price is substituted.
-          </p>
+        </article>
+      `;
 
-        `;
+    }
 
-        container.appendChild(card);
+    const currency =
+      data.currency || "USD";
 
-        return;
-      }
+    const checked =
+      formatDate(data.checkedAt);
 
-      const plan=
-        data.plans[0];
+    const exactChecked =
+      formatFullDate(data.checkedAt);
 
-      const users=
-        usersForYear(
-          start,
-          growth,
-          1
-        );
+    const source =
+      data.source || "#";
 
-      const annual=
-        users*
-        plan.monthly*
-        12;
+    return `
+      <article class="card">
 
-      card.innerHTML=`
+        <h2 class="provider-name">
+          ${escapeHtml(providerName)}
+        </h2>
 
-        <h4>
-          ${PROVIDER_NAMES[id]}
-        </h4>
+        <div class="provider-status verified">
+          ✓ Verified pricing data
+        </div>
 
-        <div class="provider-price">
-          ${money(
-            plan.monthly,
-            plan.currency
+        <div class="price-label">
+          Stored verified price
+        </div>
+
+        <div class="price">
+          ${escapeHtml(
+            formatMoney(price, currency)
           )}
 
-          <span class="small">
-            /seat/month
+          <small>
+            / month*
+          </small>
+        </div>
+
+        <div class="checked">
+          Price checked: ${escapeHtml(checked)}
+          <br>
+          <span title="${escapeHtml(exactChecked)}">
+            Automated verification timestamp available
           </span>
         </div>
 
-        <p class="small">
-          ${plan.name}<br>
-          Approx. year 1:
-          ${money(
-            annual,
-            plan.currency
-          )}
-        </p>
+        <div class="source">
+          Source:
+          <a
+            href="${escapeHtml(source)}"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Provider pricing page
+          </a>
+        </div>
 
+      </article>
+    `;
+
+  }
+
+
+  function buildComparisonRow(
+    providerKey,
+    data
+  ) {
+
+    const providerName =
+      PROVIDER_NAMES[providerKey] ||
+      data?.name ||
+      providerKey;
+
+    const price =
+      getVerifiedPrice(data);
+
+    if (!price) {
+
+      return `
+        <tr>
+
+          <td>
+            <strong>
+              ${escapeHtml(providerName)}
+            </strong>
+          </td>
+
+          <td>
+            Not available
+          </td>
+
+          <td>
+            —
+          </td>
+
+          <td>
+            —
+          </td>
+
+        </tr>
       `;
 
-      container.appendChild(card);
-
     }
-  );
-}
 
-function renderReport(){
+    const currency =
+      data.currency || "USD";
 
-  const provider=
-    $("provider").value;
+    return `
+      <tr>
 
-  const data=
-    liveData?.providers?.[provider];
+        <td>
+          <strong>
+            ${escapeHtml(providerName)}
+          </strong>
+        </td>
 
-  const plan=
-    selectedPlan();
+        <td>
+          ${escapeHtml(
+            formatMoney(price, currency)
+          )}
+        </td>
 
-  if(
-    !data ||
-    data.verified!==true
-  ){
+        <td>
+          ${escapeHtml(currency)}
+        </td>
 
-    throw new Error(
-      "The selected provider's current pricing could not be verified."
-    );
+        <td>
+          ${escapeHtml(
+            formatDate(data.checkedAt)
+          )}
+        </td>
+
+      </tr>
+    `;
+
   }
 
-  if(!plan){
 
-    throw new Error(
-      "No verified plan is available."
-    );
+  function buildProjection(
+    providerKey,
+    data
+  ) {
+
+    const providerName =
+      PROVIDER_NAMES[providerKey] ||
+      data?.name ||
+      providerKey;
+
+    const price =
+      getVerifiedPrice(data);
+
+    if (!price) {
+      return "";
+    }
+
+    const currency =
+      data.currency || "USD";
+
+    const year1 =
+      price * 12;
+
+    const year2 =
+      price * 24;
+
+    const year3 =
+      price * 36;
+
+    const year5 =
+      price * 60;
+
+    return `
+      <div class="projection-card">
+
+        <span>
+          ${escapeHtml(providerName)}
+        </span>
+
+        <strong>
+          ${escapeHtml(
+            formatMoney(year1, currency)
+          )}
+        </strong>
+
+        <span>
+          1 year
+        </span>
+
+      </div>
+
+      <div class="projection-card">
+
+        <span>
+          ${escapeHtml(providerName)}
+        </span>
+
+        <strong>
+          ${escapeHtml(
+            formatMoney(year2, currency)
+          )}
+        </strong>
+
+        <span>
+          2 years
+        </span>
+
+      </div>
+
+      <div class="projection-card">
+
+        <span>
+          ${escapeHtml(providerName)}
+        </span>
+
+        <strong>
+          ${escapeHtml(
+            formatMoney(year3, currency)
+          )}
+        </strong>
+
+        <span>
+          3 years
+        </span>
+
+      </div>
+
+      <div class="projection-card">
+
+        <span>
+          ${escapeHtml(providerName)}
+        </span>
+
+        <strong>
+          ${escapeHtml(
+            formatMoney(year5, currency)
+          )}
+        </strong>
+
+        <span>
+          5 years
+        </span>
+
+      </div>
+    `;
+
   }
 
-  const start=
-    Math.min(
-      500,
-      Math.max(
-        1,
-        parseInt(
-          $("users").value,
-          10
-        )||1
-      )
-    );
 
-  const growth=
-    Math.min(
-      200,
-      Math.max(
-        0,
-        parseFloat(
-          $("growth").value
-        )||0
-      )
-    );
+  async function loadPricing() {
 
-  const years=
-    Math.min(
-      5,
-      Math.max(
-        1,
-        parseInt(
-          $("years").value,
-          10
-        )||5
-      )
-    );
-
-  let total=0;
-
-  let rows="";
-
-  for(
-    let year=1;
-    year<=years;
-    year++
-  ){
-
-    const users=
-      usersForYear(
-        start,
-        growth,
-        year
+    const providerGrid =
+      document.getElementById(
+        "providerGrid"
       );
 
-    const monthly=
-      users*
-      plan.monthly;
+    const comparisonBody =
+      document.getElementById(
+        "comparisonBody"
+      );
 
-    const annual=
-      monthly*
-      12;
+    const projectionGrid =
+      document.getElementById(
+        "projectionGrid"
+      );
 
-    total+=annual;
+    const statusTitle =
+      document.getElementById(
+        "statusTitle"
+      );
 
-    rows+=`
+    const statusText =
+      document.getElementById(
+        "statusText"
+      );
 
-      <tr>
-        <td>Year ${year}</td>
-        <td>${users}</td>
-        <td>
-          ${money(
-            monthly,
-            plan.currency
-          )}
-        </td>
-        <td>
-          ${money(
-            annual,
-            plan.currency
-          )}
-        </td>
-      </tr>
+    const statusDot =
+      document.getElementById(
+        "statusDot"
+      );
 
-    `;
-  }
 
-  const yearOneUsers=
-    usersForYear(
-      start,
-      growth,
-      1
-    );
+    try {
 
-  $("reportTitle").textContent=
-    PROVIDER_NAMES[provider]+
-    " — Real Cost Report";
-
-  $("verified").textContent=
-    "✓ Price verified "+
-    data.verifiedAt;
-
-  $("monthlyPrice").textContent=
-    money(
-      plan.monthly,
-      plan.currency
-    );
-
-  $("yearOne").textContent=
-    money(
-      yearOneUsers*
-      plan.monthly*
-      12,
-      plan.currency
-    );
-
-  $("totalCost").textContent=
-    money(
-      total,
-      plan.currency
-    );
-
-  $("costTable").innerHTML=
-    rows;
-
-  renderBreakpoints(
-    provider,
-    plan,
-    data
-  );
-
-  renderScore(
-    provider
-  );
-
-  renderComparison(
-    start,
-    growth
-  );
-
-  $("sourceInfo").innerHTML=`
-
-    <p>
-      <strong>Provider:</strong>
-      ${PROVIDER_NAMES[provider]}
-    </p>
-
-    <p>
-      <strong>Plan:</strong>
-      ${plan.name}
-    </p>
-
-    <p>
-      <strong>Price retrieved:</strong>
-      ${data.verifiedAt}
-    </p>
-
-    <p>
-      <strong>Official source:</strong>
-      <a
-        href="${data.source}"
-        target="_blank"
-        rel="noopener noreferrer">
-        ${data.source}
-      </a>
-    </p>
-
-    <p>
-      <strong>Billing basis:</strong>
-      ${plan.billing ||
-        "As displayed by provider"}
-    </p>
-
-  `;
-
-  const params=
-    new URLSearchParams();
-
-  params.set(
-    "provider",
-    provider
-  );
-
-  params.set(
-    "plan",
-    plan.id
-  );
-
-  params.set(
-    "users",
-    start
-  );
-
-  params.set(
-    "growth",
-    growth
-  );
-
-  params.set(
-    "years",
-    years
-  );
-
-  $("shareUrl").value=
-    location.origin+
-    location.pathname+
-    "?"+
-    params.toString();
-
-  $("report").style.display=
-    "block";
-}
-
-async function generate(){
-
-  const button=
-    $("generate");
-
-  button.disabled=true;
-
-  button.textContent=
-    "Checking live pricing…";
-
-  try{
-
-    status(
-      "Checking official provider pricing sources. Please wait…"
-    );
-
-    liveData=
-      await getLivePricing();
-
-    populatePlans();
-
-    renderReport();
-
-    status(
-      "Current pricing verified and report generated."
-    );
-
-  }catch(error){
-
-    console.error(error);
-
-    $("report").style.display=
-      "none";
-
-    status(
-      "The report was not generated because current pricing could not be reliably verified. No old or guessed price was used. "+
-      error.message,
-      "error"
-    );
-
-  }finally{
-
-    button.disabled=false;
-
-    button.textContent=
-      "Check Live Prices & Generate Report";
-  }
-}
-
-$("provider").addEventListener(
-  "change",
-  async()=>{
-
-    try{
-
-      if(!liveData){
-
-        status(
-          "Checking live pricing…"
+      const response =
+        await fetch(
+          API_URL,
+          {
+            method: "GET",
+            cache: "no-store"
+          }
         );
 
-        liveData=
-          await getLivePricing();
+
+      if (!response.ok) {
+
+        throw new Error(
+          "Pricing service returned HTTP " +
+          response.status
+        );
+
       }
 
-      populatePlans();
 
-      clearStatus();
+      const payload =
+        await response.json();
 
-    }catch(error){
 
-      status(
-        "Live pricing could not be retrieved.",
+      if (
+        !payload ||
+        typeof payload !== "object"
+      ) {
+
+        throw new Error(
+          "Invalid pricing response."
+        );
+
+      }
+
+
+      const providers =
+        payload.providers || {};
+
+
+      providerGrid.innerHTML =
+        PROVIDER_ORDER
+          .map(
+            providerKey =>
+              buildProviderCard(
+                providerKey,
+                providers[providerKey]
+              )
+          )
+          .join("");
+
+
+      comparisonBody.innerHTML =
+        PROVIDER_ORDER
+          .map(
+            providerKey =>
+              buildComparisonRow(
+                providerKey,
+                providers[providerKey]
+              )
+          )
+          .join("");
+
+
+      const projectionItems = [];
+
+      for (
+        const providerKey
+        of PROVIDER_ORDER
+      ) {
+
+        const data =
+          providers[providerKey];
+
+        if (
+          getVerifiedPrice(data)
+        ) {
+
+          projectionItems.push(
+            buildProjection(
+              providerKey,
+              data
+            )
+          );
+
+        }
+
+      }
+
+
+      if (projectionItems.length) {
+
+        projectionGrid.innerHTML =
+          projectionItems.join("");
+
+      } else {
+
+        projectionGrid.innerHTML = `
+          <div class="empty">
+            No verified pricing data is
+            currently available for projection.
+          </div>
+        `;
+
+      }
+
+
+      const verifiedCount =
+        PROVIDER_ORDER.filter(
+          providerKey =>
+            getVerifiedPrice(
+              providers[providerKey]
+            )
+        ).length;
+
+
+      statusDot.classList.remove(
         "error"
       );
 
-    }
-  }
-);
 
-$("generate").addEventListener(
-  "click",
-  generate
-);
+      statusTitle.textContent =
+        "Pricing service connected";
 
-$("reset").addEventListener(
-  "click",
-  ()=>{
 
-    $("provider").value=
-      "pipedrive";
+      statusText.textContent =
+        verifiedCount +
+        " of " +
+        PROVIDER_ORDER.length +
+        " providers have verified stored pricing data.";
 
-    $("users").value=5;
 
-    $("growth").value=20;
+    } catch (error) {
 
-    $("years").value=5;
-
-    $("report").style.display=
-      "none";
-
-    clearStatus();
-
-    if(liveData){
-      populatePlans();
-    }
-  }
-);
-
-$("copyUrl").addEventListener(
-  "click",
-  async()=>{
-
-    try{
-
-      await navigator.clipboard.writeText(
-        $("shareUrl").value
+      console.error(
+        "Real Cost Reporter error:",
+        error
       );
 
-      $("copyUrl").textContent=
-        "Copied";
 
-      setTimeout(
-        ()=>{
-          $("copyUrl").textContent=
-            "Copy URL";
-        },
-        1800
+      statusDot.classList.add(
+        "error"
       );
 
-    }catch{
 
-      $("shareUrl").select();
+      statusTitle.textContent =
+        "Pricing service unavailable";
 
-      document.execCommand(
-        "copy"
-      );
+
+      statusText.textContent =
+        "Unable to retrieve verified pricing data.";
+
+
+      providerGrid.innerHTML = `
+        <div
+          class="error-box"
+          style="grid-column: 1 / -1;"
+        >
+          <strong>
+            Pricing data could not be loaded.
+          </strong>
+
+          <br><br>
+
+          The Reporter could not connect to the
+          SaaSRealCost pricing service.
+
+          <br><br>
+
+          Please try again later.
+        </div>
+      `;
+
+
+      comparisonBody.innerHTML = `
+        <tr>
+          <td colspan="4">
+            Pricing data could not be loaded.
+          </td>
+        </tr>
+      `;
+
+
+      projectionGrid.innerHTML = `
+        <div class="error-box">
+          Pricing projection unavailable.
+        </div>
+      `;
+
     }
-  }
-);
 
-async function loadSharedReport(){
-
-  const params=
-    new URLSearchParams(
-      location.search
-    );
-
-  if(!params.has("provider")){
-    return;
   }
 
-  const provider=
-    params.get("provider");
 
-  if(PROVIDER_NAMES[provider]){
-
-    $("provider").value=
-      provider;
-  }
-
-  $("users").value=
-    params.get("users")||5;
-
-  $("growth").value=
-    params.get("growth")||20;
-
-  $("years").value=
-    params.get("years")||5;
-
-  await generate();
-
-  const wantedPlan=
-    params.get("plan");
-
-  if(wantedPlan){
-
-    const exists=
-      [...$("plan").options]
-      .some(
-        option=>
-          option.value===
-          wantedPlan
-      );
-
-    if(exists){
-
-      $("plan").value=
-        wantedPlan;
-
-      renderReport();
-    }
-  }
-}
-
-loadSharedReport();
+  /*
+   * Load automatically when the page opens.
+   */
+  loadPricing();
 
 </script>
 
