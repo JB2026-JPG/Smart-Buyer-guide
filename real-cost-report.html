@@ -1,38 +1,18 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
 
   <meta
     name="viewport"
-    content="width=device-width, initial-scale=1.0"
+    content="width=device-width, initial-scale=1"
   >
 
   <title>Real Cost Reporter™ — SaaSRealCost</title>
 
   <meta
     name="description"
-    content="See the latest verified SaaS pricing data collected by SaaSRealCost."
-  >
-
-  <link
-    rel="canonical"
-    href="https://saasrealcost.com/real-cost-report"
-  >
-
-  <meta
-    property="og:title"
-    content="Real Cost Reporter™ — SaaSRealCost"
-  >
-
-  <meta
-    property="og:description"
-    content="Latest verified SaaS pricing data from SaaSRealCost."
-  >
-
-  <meta
-    property="og:url"
-    content="https://saasrealcost.com/real-cost-report"
+    content="Automatically verified SaaS pricing data from official provider pricing pages."
   >
 
   <style>
@@ -40,12 +20,15 @@
       --blue: #2864d7;
       --navy: #172033;
       --green: #198754;
-      --red: #c0392b;
-      --bg: #f7f9fc;
+      --orange: #b26a00;
+      --red: #b42318;
+      --background: #f7f9fc;
       --white: #ffffff;
-      --border: #e2e7ef;
+      --border: #e4e7ec;
       --muted: #667085;
-      --shadow: 0 8px 24px rgba(23, 32, 51, 0.08);
+      --soft-green: #eaf7ef;
+      --soft-orange: #fff4df;
+      --soft-red: #fff0ee;
     }
 
     * {
@@ -54,386 +37,241 @@
 
     body {
       margin: 0;
+      background: var(--background);
+      color: var(--navy);
       font-family:
+        Inter,
+        system-ui,
         -apple-system,
         BlinkMacSystemFont,
         "Segoe UI",
-        Roboto,
-        Arial,
         sans-serif;
-      background: var(--bg);
-      color: var(--navy);
-      line-height: 1.6;
-    }
-
-    header {
-      background: var(--white);
-      border-bottom: 1px solid var(--border);
-      position: sticky;
-      top: 0;
-      z-index: 20;
-    }
-
-    .nav {
-      max-width: 1180px;
-      margin: auto;
-      padding: 16px 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-    }
-
-    .logo {
-      color: var(--navy);
-      text-decoration: none;
-      font-weight: 800;
-      font-size: 20px;
-    }
-
-    .logo span {
-      color: var(--blue);
-    }
-
-    nav {
-      display: flex;
-      gap: 18px;
-      flex-wrap: wrap;
-    }
-
-    nav a {
-      color: var(--navy);
-      text-decoration: none;
-      font-size: 14px;
-      font-weight: 600;
-    }
-
-    nav a:hover {
-      color: var(--blue);
     }
 
     main {
-      max-width: 1180px;
+      width: min(1120px, calc(100% - 32px));
       margin: 0 auto;
-      padding: 50px 20px 70px;
-    }
-
-    .hero {
-      text-align: center;
-      max-width: 850px;
-      margin: 0 auto 40px;
-    }
-
-    .eyebrow {
-      color: var(--blue);
-      font-size: 13px;
-      font-weight: 800;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      margin-bottom: 10px;
+      padding: 40px 0 70px;
     }
 
     h1 {
-      margin: 0 0 15px;
-      font-size: clamp(32px, 6vw, 52px);
+      margin: 14px 0 8px;
+      font-size: clamp(30px, 5vw, 46px);
       line-height: 1.08;
       letter-spacing: -0.03em;
     }
 
-    .hero p {
+    h2 {
+      margin: 0 0 10px;
+      font-size: 24px;
+      line-height: 1.2;
+    }
+
+    p {
+      line-height: 1.6;
+    }
+
+    .intro {
+      max-width: 780px;
       color: var(--muted);
-      font-size: 18px;
-      margin: 0 auto;
-      max-width: 720px;
+      font-size: 17px;
+      margin-top: 0;
     }
 
-    .status {
-      max-width: 900px;
-      margin: 0 auto 30px;
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 16px 18px;
-      box-shadow: var(--shadow);
-      display: flex;
+    .service-status {
+      display: inline-flex;
       align-items: center;
-      justify-content: space-between;
-      gap: 15px;
-      flex-wrap: wrap;
-    }
-
-    .status-left {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-weight: 700;
+      gap: 8px;
+      padding: 8px 13px;
+      border-radius: 999px;
+      background: var(--soft-green);
+      border: 1px solid #ccebd8;
+      color: #176b3f;
+      font-size: 13px;
+      font-weight: 800;
     }
 
     .status-dot {
-      width: 10px;
-      height: 10px;
+      width: 8px;
+      height: 8px;
       border-radius: 50%;
       background: var(--green);
-      flex: 0 0 auto;
     }
 
-    .status-dot.error {
-      background: var(--red);
+    .panel {
+      margin-top: 26px;
+      padding: 24px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      box-shadow: 0 4px 18px rgba(23, 32, 51, 0.04);
     }
 
-    .status-text {
+    .summary {
       color: var(--muted);
-      font-size: 14px;
-      font-weight: 500;
+      margin: 0;
     }
 
     .grid {
       display: grid;
       grid-template-columns:
-        repeat(2, minmax(0, 1fr));
-      gap: 22px;
+        repeat(auto-fit, minmax(255px, 1fr));
+      gap: 16px;
+      margin-top: 20px;
     }
 
-    .card {
+    .provider-card {
       background: var(--white);
       border: 1px solid var(--border);
       border-radius: 16px;
-      padding: 24px;
-      box-shadow: var(--shadow);
+      padding: 20px;
+      min-width: 0;
     }
 
     .provider-name {
-      font-size: 22px;
+      font-size: 13px;
       font-weight: 800;
-      margin: 0 0 5px;
-    }
-
-    .provider-status {
-      font-size: 13px;
-      font-weight: 700;
-      margin-bottom: 20px;
-    }
-
-    .verified {
-      color: var(--green);
-    }
-
-    .unverified {
-      color: var(--red);
-    }
-
-    .price-label {
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
       color: var(--muted);
-      font-size: 13px;
-      margin-bottom: 3px;
     }
 
     .price {
-      font-size: 36px;
-      line-height: 1.1;
+      margin-top: 8px;
+      font-size: 31px;
       font-weight: 850;
-      margin-bottom: 5px;
+      line-height: 1.15;
+      letter-spacing: -0.025em;
     }
 
-    .price small {
+    .price-unit {
       font-size: 15px;
-      color: var(--muted);
       font-weight: 600;
+      color: var(--muted);
     }
 
-    .checked {
+    .detail {
+      margin-top: 7px;
       color: var(--muted);
-      font-size: 13px;
-      margin-bottom: 18px;
+      font-size: 14px;
+      line-height: 1.45;
+    }
+
+    .badge {
+      display: inline-flex;
+      margin-top: 14px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .badge.verified {
+      background: var(--soft-green);
+      color: #176b3f;
+    }
+
+    .badge.pending {
+      background: var(--soft-orange);
+      color: var(--orange);
+    }
+
+    .badge.error {
+      background: var(--soft-red);
+      color: var(--red);
     }
 
     .source {
-      font-size: 13px;
-      margin-top: 12px;
-    }
-
-    .source a {
+      display: inline-block;
+      margin-top: 14px;
       color: var(--blue);
+      font-size: 14px;
+      font-weight: 750;
       text-decoration: none;
-      word-break: break-word;
     }
 
-    .source a:hover {
+    .source:hover {
       text-decoration: underline;
     }
 
-    .empty {
-      background: #f8fafc;
-      border: 1px dashed var(--border);
-      border-radius: 10px;
-      padding: 16px;
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .comparison {
-      margin-top: 45px;
-    }
-
-    .comparison h2 {
-      margin-bottom: 8px;
-      font-size: 28px;
-    }
-
-    .comparison-intro {
-      color: var(--muted);
-      margin-bottom: 20px;
-    }
-
     .table-wrap {
+      width: 100%;
       overflow-x: auto;
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      box-shadow: var(--shadow);
+      margin-top: 18px;
     }
 
     table {
       width: 100%;
+      min-width: 760px;
       border-collapse: collapse;
-      min-width: 650px;
     }
 
     th,
     td {
-      padding: 15px 16px;
+      padding: 13px 9px;
       text-align: left;
+      vertical-align: top;
       border-bottom: 1px solid var(--border);
     }
 
     th {
-      background: #f8fafc;
-      font-size: 13px;
+      color: var(--muted);
+      font-size: 12px;
       text-transform: uppercase;
-      letter-spacing: 0.03em;
+      letter-spacing: 0.04em;
     }
 
     td {
       font-size: 14px;
     }
 
-    tr:last-child td {
-      border-bottom: none;
+    .provider-table-name {
+      font-weight: 800;
     }
 
-    .projection {
-      margin-top: 45px;
-    }
-
-    .projection h2 {
-      margin-bottom: 8px;
-      font-size: 28px;
-    }
-
-    .projection-intro {
+    .small {
       color: var(--muted);
-      margin-bottom: 20px;
-    }
-
-    .projection-grid {
-      display: grid;
-      grid-template-columns:
-        repeat(4, minmax(0, 1fr));
-      gap: 15px;
-    }
-
-    .projection-card {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 18px;
-      box-shadow: var(--shadow);
-    }
-
-    .projection-card span {
-      display: block;
-      color: var(--muted);
-      font-size: 13px;
-      margin-bottom: 5px;
-    }
-
-    .projection-card strong {
-      font-size: 22px;
+      font-size: 12px;
+      line-height: 1.45;
     }
 
     .notice {
-      margin-top: 40px;
-      background: #eef4ff;
-      border: 1px solid #d8e5ff;
-      border-radius: 14px;
-      padding: 20px;
-      color: var(--navy);
+      padding: 15px 17px;
+      border-radius: 12px;
+      background: var(--soft-orange);
+      color: #714b00;
+      font-size: 14px;
+      line-height: 1.55;
     }
 
-    .notice strong {
-      display: block;
-      margin-bottom: 5px;
-    }
-
-    footer {
-      border-top: 1px solid var(--border);
-      background: var(--white);
-      padding: 30px 20px;
-    }
-
-    .footer-inner {
-      max-width: 1180px;
-      margin: auto;
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-      flex-wrap: wrap;
+    .footer-note {
       color: var(--muted);
       font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .error-message {
+      color: var(--red);
+      font-weight: 700;
     }
 
     .loading {
-      text-align: center;
-      padding: 50px 20px;
       color: var(--muted);
+      padding: 20px 0;
     }
 
-    .error-box {
-      max-width: 800px;
-      margin: 30px auto;
-      padding: 18px;
-      background: #fff4f2;
-      border: 1px solid #f2c7c2;
-      border-radius: 12px;
-      color: #8b2d24;
-    }
-
-    @media (max-width: 800px) {
-      .grid {
-        grid-template-columns: 1fr;
-      }
-
-      .projection-grid {
-        grid-template-columns:
-          repeat(2, minmax(0, 1fr));
-      }
-
-      nav {
-        display: none;
-      }
-    }
-
-    @media (max-width: 500px) {
+    @media (max-width: 640px) {
       main {
-        padding-top: 35px;
+        width: min(100% - 22px, 1120px);
+        padding-top: 25px;
       }
 
-      .projection-grid {
-        grid-template-columns: 1fr;
+      .panel {
+        padding: 18px;
       }
 
-      .card {
-        padding: 20px;
+      .price {
+        font-size: 28px;
       }
     }
   </style>
@@ -441,90 +279,69 @@
 
 <body>
 
-<header>
-  <div class="nav">
-
-    <a
-      class="logo"
-      href="https://saasrealcost.com/"
-    >
-      SaaS<span>RealCost</span>
-    </a>
-
-    <nav>
-      <a href="/real-cost-scores">Real Cost Score</a>
-      <a href="/guides">Guides</a>
-      <a href="/calculator">Calculator</a>
-      <a href="/about">About</a>
-    </nav>
-
-  </div>
-</header>
-
 <main>
 
-  <section class="hero">
+  <!-- =====================================================
+       HEADER
+  ====================================================== -->
 
-    <div class="eyebrow">
-      Independent pricing data
-    </div>
-
-    <h1>
-      Real Cost Reporter™
-    </h1>
-
-    <p>
-      See the latest verified pricing data collected by
-      SaaSRealCost. Prices are automatically checked and
-      updated when the system can verify the data with
-      sufficient confidence.
-    </p>
-
-  </section>
-
-  <div
-    id="status"
-    class="status"
-  >
-    <div class="status-left">
-
-      <span
-        id="statusDot"
-        class="status-dot"
-      ></span>
-
-      <span id="statusTitle">
-        Loading pricing data...
-      </span>
-
-    </div>
-
-    <div
-      id="statusText"
-      class="status-text"
-    >
-      Connecting to the pricing service.
-    </div>
+  <div class="service-status">
+    <span class="status-dot"></span>
+    Pricing service connected
   </div>
 
-  <section
-    id="providerGrid"
-    class="grid"
-  >
-    <div class="loading">
-      Loading verified pricing data...
-    </div>
-  </section>
+  <h1>
+    Real Cost Reporter™
+  </h1>
 
-  <section class="comparison">
+  <p class="intro">
+    Automatically verified SaaS pricing data collected from
+    official provider pricing pages.
+  </p>
+
+
+  <!-- =====================================================
+       CURRENT PRICING
+  ====================================================== -->
+
+  <section class="panel">
 
     <h2>
-      Pricing comparison
+      Current verified pricing
     </h2>
 
-    <p class="comparison-intro">
-      Comparison based only on verified pricing data currently
-      stored by the SaaSRealCost pricing system.
+    <p
+      id="summary"
+      class="summary"
+    >
+      Loading pricing data…
+    </p>
+
+    <div
+      id="providerCards"
+      class="grid"
+    >
+      <div class="loading">
+        Loading…
+      </div>
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       LONG-TERM COST
+  ====================================================== -->
+
+  <section class="panel">
+
+    <h2>
+      1–5 year cost comparison
+    </h2>
+
+    <p class="summary">
+      The projection uses the currently verified starting
+      recurring price. Billing terms are shown separately.
     </p>
 
     <div class="table-wrap">
@@ -532,20 +349,27 @@
       <table>
 
         <thead>
+
           <tr>
             <th>Provider</th>
-            <th>Verified price</th>
-            <th>Currency</th>
-            <th>Price checked</th>
+            <th>Starting price</th>
+            <th>1 year</th>
+            <th>3 years</th>
+            <th>5 years</th>
           </tr>
+
         </thead>
 
-        <tbody id="comparisonBody">
+        <tbody id="costTable">
+
           <tr>
-            <td colspan="4">
-              Loading...
+            <td colspan="5">
+              <span class="loading">
+                Loading…
+              </span>
             </td>
           </tr>
+
         </tbody>
 
       </table>
@@ -554,758 +378,759 @@
 
   </section>
 
-  <section class="projection">
+
+  <!-- =====================================================
+       DATA METHOD
+  ====================================================== -->
+
+  <section class="panel">
 
     <h2>
-      1–5 year price projection
+      How pricing data works
     </h2>
 
-    <p class="projection-intro">
-      Simple projection based on the currently verified monthly
-      price. This does not predict future provider price changes.
+    <p>
+      SaaSRealCost automatically checks provider pricing
+      pages and stores a price only when sufficient evidence
+      is found for a recurring USD plan price.
     </p>
 
-    <div
-      id="projectionGrid"
-      class="projection-grid"
-    >
-      <div class="loading">
-        Loading...
-      </div>
+    <p>
+      If a provider temporarily blocks a request, returns a
+      rate limit such as HTTP 429, or the pricing page cannot
+      be reliably interpreted, the system does
+      <strong>not</strong> replace an existing verified price
+      with uncertain data.
+    </p>
+
+    <div class="notice">
+      Prices and plans can change. Always confirm the final
+      price, billing terms, seat requirements and included
+      features on the provider's official pricing page before
+      purchasing.
     </div>
 
   </section>
 
-  <div class="notice">
 
-    <strong>
-      How the pricing data works
-    </strong>
+  <!-- =====================================================
+       FOOTNOTE
+  ====================================================== -->
 
-    SaaSRealCost automatically checks provider pricing pages.
-    A new price is stored only when the automated verification
-    succeeds. If a check fails or the price cannot be verified
-    with sufficient confidence, the previously verified price
-    remains unchanged.
+  <section class="panel">
 
-    <br><br>
+    <p class="footer-note">
+      Pricing data is collected automatically for comparison
+      purposes. SaaSRealCost may receive affiliate commissions
+      when users purchase through qualifying links.
+    </p>
 
-    Pricing can change at any time. Always confirm the final
-    price with the provider before purchasing.
-
-  </div>
+  </section>
 
 </main>
 
-<footer>
-
-  <div class="footer-inner">
-
-    <div>
-      © 2026 SaaSRealCost
-    </div>
-
-    <div>
-      Independent research. Affiliate commissions may be earned
-      from some providers.
-    </div>
-
-  </div>
-
-</footer>
 
 <script>
 
-  /*
-   * ============================================================
-   * SaaSRealCost Real Cost Reporter
-   * ============================================================
-   *
-   * Cloudflare Worker:
-   *
-   * https://saasrealcost-pricing.smart-buyer-guide.workers.dev/
-   *
-   * The Reporter reads the verified data stored by the Worker.
-   *
-   * No current prices are hardcoded in this file.
-   * ============================================================
-   */
+/* =========================================================
+   API CONFIGURATION
+========================================================= */
 
-  const API_BASE_URL =
-    "https://saasrealcost-pricing.smart-buyer-guide.workers.dev";
-
-  const API_URL =
-    API_BASE_URL + "/api/pricing";
+const API_BASE_URL =
+  "https://saasrealcost-pricing.smart-buyer-guide.workers.dev";
 
 
-  const PROVIDER_ORDER = [
-    "pipedrive",
-    "zoho",
-    "freshsales",
-    "monday",
-    "hubspot"
-  ];
+/* =========================================================
+   PROVIDER NAMES
+========================================================= */
+
+const PROVIDER_NAMES = {
+
+  pipedrive:
+    "Pipedrive",
+
+  zoho:
+    "Zoho CRM",
+
+  freshsales:
+    "Freshsales",
+
+  monday:
+    "monday CRM",
+
+  hubspot:
+    "HubSpot Sales Hub"
+};
 
 
-  const PROVIDER_NAMES = {
-    pipedrive: "Pipedrive",
-    zoho: "Zoho CRM",
-    freshsales: "Freshsales",
-    monday: "monday CRM",
-    hubspot: "HubSpot Sales Hub"
-  };
+/* =========================================================
+   HTML ESCAPING
+========================================================= */
+
+function escapeHtml(value) {
+
+  return String(
+    value ?? ""
+  ).replace(
+    /[&<>"']/g,
+    character => {
+
+      const map = {
+
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': "&quot;",
+        "'": "&#39;"
+      };
+
+      return map[character];
+    }
+  );
+}
 
 
-  function escapeHtml(value) {
+/* =========================================================
+   USD FORMAT
+========================================================= */
 
-    return String(value ?? "")
-      .replace(/&/g, "&amp;")
-      .replace(/</g, "&lt;")
-      .replace(/>/g, "&gt;")
-      .replace(/"/g, "&quot;")
-      .replace(/'/g, "&#039;");
+function formatUSD(value) {
 
+  const number =
+    Number(value);
+
+
+  if (
+    !Number.isFinite(number)
+  ) {
+    return "—";
   }
 
 
-  function formatDate(dateString) {
-
-    if (!dateString) {
-      return "Not available";
+  return number.toLocaleString(
+    "en-US",
+    {
+      style: "currency",
+      currency: "USD",
+      maximumFractionDigits: 2
     }
+  );
+}
 
-    const date = new Date(dateString);
 
-    if (Number.isNaN(date.getTime())) {
-      return "Not available";
-    }
+/* =========================================================
+   DATE FORMAT
+========================================================= */
 
-    return new Intl.DateTimeFormat(
-      "en-US",
-      {
-        month: "long",
-        year: "numeric",
-        timeZone: "UTC"
-      }
-    ).format(date);
+function formatCheckedDate(value) {
 
+  if (!value) {
+    return "Not yet verified";
   }
 
 
-  function formatFullDate(dateString) {
+  const date =
+    new Date(value);
 
-    if (!dateString) {
-      return "Not available";
-    }
 
-    const date = new Date(dateString);
-
-    if (Number.isNaN(date.getTime())) {
-      return "Not available";
-    }
-
-    return new Intl.DateTimeFormat(
-      "en-US",
-      {
-        dateStyle: "medium",
-        timeStyle: "short",
-        timeZone: "UTC"
-      }
-    ).format(date);
-
+  if (
+    Number.isNaN(
+      date.getTime()
+    )
+  ) {
+    return "Date unavailable";
   }
 
 
-  function validPrice(value) {
+  return date.toLocaleDateString(
+    "en-US",
+    {
+      month: "long",
+      year: "numeric"
+    }
+  );
+}
 
-    return (
-      typeof value === "number" &&
-      Number.isFinite(value) &&
-      value > 0
-    );
 
+/* =========================================================
+   FULL DATE
+========================================================= */
+
+function formatFullDate(value) {
+
+  if (!value) {
+    return "Not available";
   }
 
 
-  function getVerifiedPrice(providerData) {
+  const date =
+    new Date(value);
 
-    if (!providerData) {
-      return null;
-    }
 
-    if (providerData.verified !== true) {
-      return null;
-    }
-
-    if (
-      !Array.isArray(providerData.prices) ||
-      providerData.prices.length === 0
-    ) {
-      return null;
-    }
-
-    /*
-     * The Worker is responsible for deciding which price is
-     * sufficiently verified before storing it.
-     *
-     * The Reporter therefore does not invent or hardcode a
-     * current price.
-     */
-
-    const price = providerData.prices[0];
-
-    if (!validPrice(price)) {
-      return null;
-    }
-
-    return price;
-
+  if (
+    Number.isNaN(
+      date.getTime()
+    )
+  ) {
+    return "Not available";
   }
 
 
-  function formatMoney(
-    amount,
-    currency = "USD"
+  return date.toLocaleString(
+    "en-US",
+    {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+      hour: "2-digit",
+      minute: "2-digit"
+    }
+  );
+}
+
+
+/* =========================================================
+   YEAR PROJECTION
+========================================================= */
+
+function calculateCost(
+  monthlyPrice,
+  years
+) {
+
+  const price =
+    Number(monthlyPrice);
+
+
+  if (
+    !Number.isFinite(price)
+  ) {
+    return null;
+  }
+
+
+  return (
+    price *
+    12 *
+    years
+  );
+}
+
+
+/* =========================================================
+   BILLING TEXT
+========================================================= */
+
+function billingText(record) {
+
+  if (
+    record.billingMode ===
+    "monthly"
   ) {
 
-    if (!validPrice(amount)) {
-      return "—";
-    }
-
-    try {
-
-      return new Intl.NumberFormat(
-        "en-US",
-        {
-          style: "currency",
-          currency: currency
-        }
-      ).format(amount);
-
-    } catch {
-
-      return "$" + amount.toFixed(2);
-
-    }
-
+    return "Billed monthly";
   }
 
 
-  function buildProviderCard(
-    providerKey,
-    data
+  if (
+    record.billingMode ===
+    "annual"
   ) {
 
-    const providerName =
-      PROVIDER_NAMES[providerKey] ||
-      data?.name ||
-      providerKey;
+    return "Billed annually";
+  }
 
-    const price =
-      getVerifiedPrice(data);
 
-    if (!price) {
+  if (
+    record.billingLabel
+  ) {
 
-      return `
-        <article class="card">
+    return record.billingLabel;
+  }
 
-          <h2 class="provider-name">
-            ${escapeHtml(providerName)}
-          </h2>
 
-          <div class="provider-status unverified">
-            No verified price available
-          </div>
+  return "Billing mode not stated";
+}
 
-          <div class="empty">
-            The pricing system does not currently have
-            verified pricing data for this provider.
-          </div>
 
-        </article>
-      `;
+/* =========================================================
+   STATUS BADGE
+========================================================= */
 
-    }
+function statusBadge(record) {
 
-    const currency =
-      data.currency || "USD";
-
-    const checked =
-      formatDate(data.checkedAt);
-
-    const exactChecked =
-      formatFullDate(data.checkedAt);
-
-    const source =
-      data.source || "#";
+  if (
+    record.verified === true &&
+    Number.isFinite(
+      Number(record.price)
+    )
+  ) {
 
     return `
-      <article class="card">
+      <span class="badge verified">
+        ✓ Verified
+      </span>
+    `;
+  }
 
-        <h2 class="provider-name">
-          ${escapeHtml(providerName)}
-        </h2>
 
-        <div class="provider-status verified">
-          ✓ Verified pricing data
-        </div>
+  if (
+    record.status ===
+    "temporary_failure"
+  ) {
 
-        <div class="price-label">
-          Stored verified price
+    return `
+      <span class="badge pending">
+        Temporary retrieval issue
+      </span>
+    `;
+  }
+
+
+  return `
+    <span class="badge pending">
+      Awaiting verification
+    </span>
+  `;
+}
+
+
+/* =========================================================
+   PROVIDER CARD
+========================================================= */
+
+function createProviderCard(
+  record
+) {
+
+  const name =
+    record.name ||
+    PROVIDER_NAMES[
+      record.id
+    ] ||
+    record.id;
+
+
+  const verified =
+    record.verified === true &&
+    Number.isFinite(
+      Number(record.price)
+    );
+
+
+  if (verified) {
+
+    return `
+
+      <article class="provider-card">
+
+        <div class="provider-name">
+          ${escapeHtml(name)}
         </div>
 
         <div class="price">
-          ${escapeHtml(
-            formatMoney(price, currency)
-          )}
-
-          <small>
-            / month*
-          </small>
-        </div>
-
-        <div class="checked">
-          Price checked: ${escapeHtml(checked)}
-          <br>
-          <span title="${escapeHtml(exactChecked)}">
-            Automated verification timestamp available
+          ${formatUSD(record.price)}
+          <span class="price-unit">
+            / user / month
           </span>
         </div>
 
-        <div class="source">
-          Source:
-          <a
-            href="${escapeHtml(source)}"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Provider pricing page
-          </a>
+        <div class="detail">
+          ${escapeHtml(
+            billingText(record)
+          )}
         </div>
+
+        <div class="detail">
+          Plan:
+          ${escapeHtml(
+            record.plan ||
+            "Starting plan"
+          )}
+        </div>
+
+        <div class="detail">
+          Price checked:
+          ${escapeHtml(
+            formatCheckedDate(
+              record.checkedAt
+            )
+          )}
+        </div>
+
+        ${statusBadge(record)}
+
+        <br>
+
+        <a
+          class="source"
+          href="${escapeHtml(
+            record.source
+          )}"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          View official pricing page →
+        </a>
 
       </article>
+
     `;
-
-  }
-
-
-  function buildComparisonRow(
-    providerKey,
-    data
-  ) {
-
-    const providerName =
-      PROVIDER_NAMES[providerKey] ||
-      data?.name ||
-      providerKey;
-
-    const price =
-      getVerifiedPrice(data);
-
-    if (!price) {
-
-      return `
-        <tr>
-
-          <td>
-            <strong>
-              ${escapeHtml(providerName)}
-            </strong>
-          </td>
-
-          <td>
-            Not available
-          </td>
-
-          <td>
-            —
-          </td>
-
-          <td>
-            —
-          </td>
-
-        </tr>
-      `;
-
-    }
-
-    const currency =
-      data.currency || "USD";
-
-    return `
-      <tr>
-
-        <td>
-          <strong>
-            ${escapeHtml(providerName)}
-          </strong>
-        </td>
-
-        <td>
-          ${escapeHtml(
-            formatMoney(price, currency)
-          )}
-        </td>
-
-        <td>
-          ${escapeHtml(currency)}
-        </td>
-
-        <td>
-          ${escapeHtml(
-            formatDate(data.checkedAt)
-          )}
-        </td>
-
-      </tr>
-    `;
-
-  }
-
-
-  function buildProjection(
-    providerKey,
-    data
-  ) {
-
-    const providerName =
-      PROVIDER_NAMES[providerKey] ||
-      data?.name ||
-      providerKey;
-
-    const price =
-      getVerifiedPrice(data);
-
-    if (!price) {
-      return "";
-    }
-
-    const currency =
-      data.currency || "USD";
-
-    const year1 =
-      price * 12;
-
-    const year2 =
-      price * 24;
-
-    const year3 =
-      price * 36;
-
-    const year5 =
-      price * 60;
-
-    return `
-      <div class="projection-card">
-
-        <span>
-          ${escapeHtml(providerName)}
-        </span>
-
-        <strong>
-          ${escapeHtml(
-            formatMoney(year1, currency)
-          )}
-        </strong>
-
-        <span>
-          1 year
-        </span>
-
-      </div>
-
-      <div class="projection-card">
-
-        <span>
-          ${escapeHtml(providerName)}
-        </span>
-
-        <strong>
-          ${escapeHtml(
-            formatMoney(year2, currency)
-          )}
-        </strong>
-
-        <span>
-          2 years
-        </span>
-
-      </div>
-
-      <div class="projection-card">
-
-        <span>
-          ${escapeHtml(providerName)}
-        </span>
-
-        <strong>
-          ${escapeHtml(
-            formatMoney(year3, currency)
-          )}
-        </strong>
-
-        <span>
-          3 years
-        </span>
-
-      </div>
-
-      <div class="projection-card">
-
-        <span>
-          ${escapeHtml(providerName)}
-        </span>
-
-        <strong>
-          ${escapeHtml(
-            formatMoney(year5, currency)
-          )}
-        </strong>
-
-        <span>
-          5 years
-        </span>
-
-      </div>
-    `;
-
-  }
-
-
-  async function loadPricing() {
-
-    const providerGrid =
-      document.getElementById(
-        "providerGrid"
-      );
-
-    const comparisonBody =
-      document.getElementById(
-        "comparisonBody"
-      );
-
-    const projectionGrid =
-      document.getElementById(
-        "projectionGrid"
-      );
-
-    const statusTitle =
-      document.getElementById(
-        "statusTitle"
-      );
-
-    const statusText =
-      document.getElementById(
-        "statusText"
-      );
-
-    const statusDot =
-      document.getElementById(
-        "statusDot"
-      );
-
-
-    try {
-
-      const response =
-        await fetch(
-          API_URL,
-          {
-            method: "GET",
-            cache: "no-store"
-          }
-        );
-
-
-      if (!response.ok) {
-
-        throw new Error(
-          "Pricing service returned HTTP " +
-          response.status
-        );
-
-      }
-
-
-      const payload =
-        await response.json();
-
-
-      if (
-        !payload ||
-        typeof payload !== "object"
-      ) {
-
-        throw new Error(
-          "Invalid pricing response."
-        );
-
-      }
-
-
-      const providers =
-        payload.providers || {};
-
-
-      providerGrid.innerHTML =
-        PROVIDER_ORDER
-          .map(
-            providerKey =>
-              buildProviderCard(
-                providerKey,
-                providers[providerKey]
-              )
-          )
-          .join("");
-
-
-      comparisonBody.innerHTML =
-        PROVIDER_ORDER
-          .map(
-            providerKey =>
-              buildComparisonRow(
-                providerKey,
-                providers[providerKey]
-              )
-          )
-          .join("");
-
-
-      const projectionItems = [];
-
-      for (
-        const providerKey
-        of PROVIDER_ORDER
-      ) {
-
-        const data =
-          providers[providerKey];
-
-        if (
-          getVerifiedPrice(data)
-        ) {
-
-          projectionItems.push(
-            buildProjection(
-              providerKey,
-              data
-            )
-          );
-
-        }
-
-      }
-
-
-      if (projectionItems.length) {
-
-        projectionGrid.innerHTML =
-          projectionItems.join("");
-
-      } else {
-
-        projectionGrid.innerHTML = `
-          <div class="empty">
-            No verified pricing data is
-            currently available for projection.
-          </div>
-        `;
-
-      }
-
-
-      const verifiedCount =
-        PROVIDER_ORDER.filter(
-          providerKey =>
-            getVerifiedPrice(
-              providers[providerKey]
-            )
-        ).length;
-
-
-      statusDot.classList.remove(
-        "error"
-      );
-
-
-      statusTitle.textContent =
-        "Pricing service connected";
-
-
-      statusText.textContent =
-        verifiedCount +
-        " of " +
-        PROVIDER_ORDER.length +
-        " providers have verified stored pricing data.";
-
-
-    } catch (error) {
-
-      console.error(
-        "Real Cost Reporter error:",
-        error
-      );
-
-
-      statusDot.classList.add(
-        "error"
-      );
-
-
-      statusTitle.textContent =
-        "Pricing service unavailable";
-
-
-      statusText.textContent =
-        "Unable to retrieve verified pricing data.";
-
-
-      providerGrid.innerHTML = `
-        <div
-          class="error-box"
-          style="grid-column: 1 / -1;"
-        >
-          <strong>
-            Pricing data could not be loaded.
-          </strong>
-
-          <br><br>
-
-          The Reporter could not connect to the
-          SaaSRealCost pricing service.
-
-          <br><br>
-
-          Please try again later.
-        </div>
-      `;
-
-
-      comparisonBody.innerHTML = `
-        <tr>
-          <td colspan="4">
-            Pricing data could not be loaded.
-          </td>
-        </tr>
-      `;
-
-
-      projectionGrid.innerHTML = `
-        <div class="error-box">
-          Pricing projection unavailable.
-        </div>
-      `;
-
-    }
-
   }
 
 
   /*
-   * Load automatically when the page opens.
-   */
-  loadPricing();
+   Provider has no currently verified price.
+  */
+
+  const temporary =
+    record.status ===
+    "temporary_failure";
+
+
+  return `
+
+    <article class="provider-card">
+
+      <div class="provider-name">
+        ${escapeHtml(name)}
+      </div>
+
+      <div class="price">
+        Not verified
+      </div>
+
+      <div class="detail">
+
+        ${
+          temporary
+            ? "The latest automatic check encountered a temporary retrieval problem. Existing verified data is never overwritten by a failed check."
+            : "No sufficiently reliable current USD price is stored yet."
+        }
+
+      </div>
+
+      ${
+        record.checkedAt
+          ? `
+            <div class="detail">
+              Last verified:
+              ${escapeHtml(
+                formatCheckedDate(
+                  record.checkedAt
+                )
+              )}
+            </div>
+          `
+          : ""
+      }
+
+      ${statusBadge(record)}
+
+      <br>
+
+      <a
+        class="source"
+        href="${escapeHtml(
+          record.source
+        )}"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        View official pricing page →
+      </a>
+
+    </article>
+
+  `;
+}
+
+
+/* =========================================================
+   TABLE ROW
+========================================================= */
+
+function createTableRow(
+  record
+) {
+
+  const name =
+    record.name ||
+    PROVIDER_NAMES[
+      record.id
+    ] ||
+    record.id;
+
+
+  const price =
+    Number(record.price);
+
+
+  const verified =
+    record.verified === true &&
+    Number.isFinite(price);
+
+
+  if (!verified) {
+
+    return `
+
+      <tr>
+
+        <td>
+          <div class="provider-table-name">
+            ${escapeHtml(name)}
+          </div>
+
+          <div class="small">
+            ${escapeHtml(
+              record.status ===
+              "temporary_failure"
+                ? "Temporary retrieval issue"
+                : "Awaiting verification"
+            )}
+          </div>
+        </td>
+
+        <td colspan="4">
+          Not verified
+        </td>
+
+      </tr>
+
+    `;
+  }
+
+
+  return `
+
+    <tr>
+
+      <td>
+
+        <div class="provider-table-name">
+          ${escapeHtml(name)}
+        </div>
+
+        <div class="small">
+          ${escapeHtml(
+            billingText(record)
+          )}
+        </div>
+
+      </td>
+
+
+      <td>
+
+        ${formatUSD(price)}
+
+        <div class="small">
+          / user / month
+        </div>
+
+      </td>
+
+
+      <td>
+        ${formatUSD(
+          calculateCost(
+            price,
+            1
+          )
+        )}
+      </td>
+
+
+      <td>
+        ${formatUSD(
+          calculateCost(
+            price,
+            3
+          )
+        )}
+      </td>
+
+
+      <td>
+        ${formatUSD(
+          calculateCost(
+            price,
+            5
+          )
+        )}
+      </td>
+
+    </tr>
+
+  `;
+}
+
+
+/* =========================================================
+   LOAD DATA
+========================================================= */
+
+async function loadPricing() {
+
+  const summary =
+    document.getElementById(
+      "summary"
+    );
+
+  const cards =
+    document.getElementById(
+      "providerCards"
+    );
+
+  const table =
+    document.getElementById(
+      "costTable"
+    );
+
+
+  try {
+
+    const response =
+      await fetch(
+        API_BASE_URL +
+        "/api/pricing",
+        {
+          method: "GET",
+          cache: "no-store",
+          headers: {
+            "Accept":
+              "application/json"
+          }
+        }
+      );
+
+
+    if (!response.ok) {
+
+      throw new Error(
+        "Pricing API returned HTTP " +
+        response.status
+      );
+    }
+
+
+    const data =
+      await response.json();
+
+
+    const prices =
+      Array.isArray(
+        data.prices
+      )
+        ? data.prices
+        : [];
+
+
+    const verified =
+      prices.filter(
+        record =>
+          record.verified === true &&
+          Number.isFinite(
+            Number(record.price)
+          )
+      );
+
+
+    /* -------------------------------------------------------
+       Summary
+    ------------------------------------------------------- */
+
+    summary.textContent =
+      verified.length +
+      " of " +
+      prices.length +
+      " providers have verified stored pricing data.";
+
+
+    /* -------------------------------------------------------
+       Cards
+    ------------------------------------------------------- */
+
+    cards.innerHTML =
+      prices.length
+        ? prices
+            .map(
+              createProviderCard
+            )
+            .join("")
+        : `
+            <div class="loading">
+              No pricing records are available yet.
+            </div>
+          `;
+
+
+    /* -------------------------------------------------------
+       Table
+    ------------------------------------------------------- */
+
+    table.innerHTML =
+      prices.length
+        ? prices
+            .map(
+              createTableRow
+            )
+            .join("")
+        : `
+            <tr>
+              <td colspan="5">
+                No pricing records are available yet.
+              </td>
+            </tr>
+          `;
+
+
+  } catch (error) {
+
+    console.error(
+      "Cost Reporter error:",
+      error
+    );
+
+
+    summary.innerHTML = `
+      <span class="error-message">
+        Pricing service could not be reached right now.
+      </span>
+    `;
+
+
+    cards.innerHTML = "";
+
+
+    table.innerHTML = `
+
+      <tr>
+
+        <td colspan="5">
+
+          <span class="error-message">
+            ${escapeHtml(
+              error.message ||
+              "Unable to load pricing data."
+            )}
+          </span>
+
+        </td>
+
+      </tr>
+
+    `;
+  }
+}
+
+
+/* =========================================================
+   START
+========================================================= */
+
+loadPricing();
 
 </script>
 
