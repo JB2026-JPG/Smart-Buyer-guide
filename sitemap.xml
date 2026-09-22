@@ -104,6 +104,11 @@
   <!-- REAL COST SCORE DATABASE -->
 
   <url>
+    <loc>https://saasrealcost.com/real-cost-report</loc>
+    <changefreq>monthly</changefreq>
+  </url>
+  
+  <url>
     <loc>https://saasrealcost.com/real-cost-scores</loc>
     <changefreq>monthly</changefreq>
   </url>
