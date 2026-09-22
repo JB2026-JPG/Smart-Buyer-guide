@@ -446,9 +446,6 @@ const API_BASE_URL =
 
 const PROVIDER_NAMES = {
 
-  pipedrive:
-    "Pipedrive",
-
   zoho:
     "Zoho CRM",
 
@@ -456,10 +453,7 @@ const PROVIDER_NAMES = {
     "Freshsales",
 
   monday:
-    "monday CRM",
-
-  hubspot:
-    "HubSpot Sales Hub"
+    "monday CRM"
 };
 
 
@@ -1019,12 +1013,23 @@ async function loadPricing() {
       await response.json();
 
 
+    /*
+     * The Worker returns providers as an object keyed by
+     * provider id (e.g. { zoho: {...}, monday: {...} }),
+     * not as an array under "prices". Convert it here.
+     */
+
+    const providersObject =
+      data.providers &&
+      typeof data.providers === "object"
+        ? data.providers
+        : {};
+
+
     const prices =
-      Array.isArray(
-        data.prices
-      )
-        ? data.prices
-        : [];
+      Object.values(
+        providersObject
+      ).filter(Boolean);
 
 
     const verified =
